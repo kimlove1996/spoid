@@ -74,7 +74,6 @@
 		width : 0;
 		height: 100%;
 		background-color: #fff;
-		padding : 0 50px 50px 0;
 		z-index:1;
 		overflow:hidden;
 		transition : 0.5s;
@@ -200,12 +199,12 @@
 	<div id="menu_modal">
 		<div id="menu_section" >	
 			<ul id="menu_ul">
-					<li><a href="#" class="menu_btn">글자를 어또카지</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
+					<li><a href="#" class="menu_btn">박스오피스</a></li>
+					<li><a href="#" class="menu_btn">현재 상영작</a></li>
+					<li><a href="#" class="menu_btn">모든 영화</a></li>
+					<li><a href="#" class="menu_btn">로그인</a></li>
+					<li><a href="#" class="menu_btn">회원가입</a></li>
+					<li><a href="#" class="menu_btn">마이페이지</a></li>
 
 			</ul>
 		</div>
