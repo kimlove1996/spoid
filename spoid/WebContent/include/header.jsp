@@ -52,10 +52,10 @@
 	.menu_ham{
 		background-color: #0e4754;
 		width : 85px;
-		height : 30px;
-		line-height : 30px;
+		height : 40px;
+		line-height : 40px;
 		border-radius: 4px;
-		padding :15px 16px 12px;	
+		
 		float:right;
 		text-align: center;
 		
@@ -77,14 +77,13 @@
 		padding : 0 50px 50px 0;
 		z-index:1;
 		overflow:hidden;
-		transition : 1s;
+		transition : 0.5s;
 
 	}
 	#menu_section{
 		width : 80%;
 		overflow-x : hidden;
 		margin: 5% auto;
-		transition : 1s;
 	}
 	#menu_ul > li{
 		display: inline-block;
@@ -93,7 +92,6 @@
 		background-color: #fbfbfb;
 		margin-bottom: 10px;
 		box-sizing: border-box;
-		transition : 0.5s;
 	}
 	.menu_btn{
 		display: inline-block;
@@ -109,45 +107,46 @@
 	.search > input[type=text] {
 	    width: 0px;
 	    box-sizing: border-box;
-	    font-size: 24px;
-	    height : 50px;
+	    font-size: 18px;
+	    height : 40px;
 	    -webkit-transition: width 0.4s ease-in-out;
 	    transition: width 0.4s ease-in-out;
 	    overflow: hidden;
-	    border:none;
-		background-color: #0e4754;
-		color:white;
+	    border : none;
+	    padding-left : 10px;
+
 	}
 	.search *{
 		display: inline-block;
-		line-height: 50px;
+		line-height: 40px;
 		
 	}
-	.search > input[type=text],span{float:left;}
+	.search > input[type=text],.search >span{float:left;}
 	.search > input[type=text].active {
 	    width: 300px;
-	    caret-color:red;
+	 	border-bottom: 3px solid #0e4754;
 	}
 	.search > span{
 		display : inline-block;
-		padding-left : 5px;
+		border-radius: 0 4px 4px 0px;
 		font-size : 25px;
-		line-height : 50px;
-		height: 50px;
-		width : 50px;
+		line-height : 40px;
+		height: 40px;
+		width : 40px;
 		background-color: #0e4754;
 		color:white;
-		border-left: 3px solid white;
+
 	}
 	.search > span *{
-		
-		line-height: 50px;
+		margin-left: 4px;
+		line-height: 40px;
 	}
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
 
 		$('.search-button').click(function(){
+			
 			$(".search-box").addClass("active");
 			$(".search-box").focus();
 		});
@@ -157,13 +156,11 @@
  		$(this).css("display","none");
 		if(menu_state == "MENU"){ // 같으면 menu modal 을 열어주고 버튼의 상태를 close로 바꿈
 			$("#menu_modal").width("100%");
-			$("#menu_section").width("70%");
 			$("#menu_close").css("display","block");
 		
 		}else{
 			alert("다름");
 			$("#menu_modal").width("0");
-			$("#menu_section").width("0");
 			$("#menu_open").css("display","block");
 
 		}
@@ -209,10 +206,7 @@
 					<li><a href="#" class="menu_btn">?</a></li>
 					<li><a href="#" class="menu_btn">?</a></li>
 					<li><a href="#" class="menu_btn">?</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
-					<li><a href="#" class="menu_btn">?</a></li>
+
 			</ul>
 		</div>
 	</div>
