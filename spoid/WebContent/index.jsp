@@ -47,6 +47,7 @@
 		display: inline-block;
 		width : 33%;
 		max-height: 2100px;
+		float: left;
 	}
 	.col1{
 		height: 690px;
@@ -58,8 +59,9 @@
 	.col2{
 		height: 515px;
 		max-height:515px;
-		margin-bottom: 10px;
+		margin: 0 10px 10px 10px;
 		background-color: #fff;
+		
 	
 	}
 	.score_icon{
@@ -69,6 +71,10 @@
 	td *{	
 		vertical-align: middle;		
 	}
+	.clr_both{
+		clear:both;
+	}
+
 </style>
 
 </head>
@@ -155,30 +161,30 @@
 		</div>
 		<div class="topmv_section">
 			<div class="topmv_content">
-				
+
 				<div class="inner_topmv">
-					<div class="col1"></div>
-					<div class="col1"></div>
-					<div class="col1">
-					</div>
+					<div class="col1">1</div>
+					<div class="col1">5</div>
+					<div class="col1">8</div>
 				</div>
+
 				<div class="inner_topmv">
-					<div class="col2">
-					</div>
-					<div class="col2">
-					</div>
-					<div class="col2">
-					</div>
-					<div class="col2"></div>
+					<div class="col2">2</div>
+					<div class="col2">4</div>
+					<div class="col2">6</div>
+					<div class="col2">9</div>
 				</div>
+
 				<div class="inner_topmv">
-					<div class="col1">
-					</div>
-					<div class="col1"></div>
-					<div class="col1"></div>
+						<div class="col1">3
+						</div>
+						<div class="col1">7</div>
+						<div class="col1">10</div>
 				</div>
+				<div class="clr_both"></div>
 			</div>
 		</div>
+		
 	</div>
 	
 </body>

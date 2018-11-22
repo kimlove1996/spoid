@@ -154,7 +154,7 @@
 		var menu_state = $.trim($(this).text()); // 메뉴 햄버거 버튼의 이름을 가지고 온다
  		$(this).css("display","none");
 		if(menu_state == "MENU"){ // 같으면 menu modal 을 열어주고 버튼의 상태를 close로 바꿈
-			$("#menu_modal").width("100%");
+			$("#menu_modal").width("30%");
 			$("#menu_close").css("display","block");
 		
 		}else{

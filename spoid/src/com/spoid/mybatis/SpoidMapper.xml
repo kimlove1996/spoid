@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com/spoid/mybatis/spoidMapper.xml">
+	<select id="bestView" resultType="com.spoid.dto.ProductDTO">
+
+		<![CDATA[
+			SELECT * FROM (SELECT * FROM minproduct 
+							ORDER BY purchasecnt DESC) 
+			WHERE ROWNUM <=8
+		]]>
+	</select>
+	<select id="newView" resultType="com.spoid.dto.ProductDTO">
+
+		<![CDATA[
+		SELECT * FROM (SELECT * FROM minproduct 
+					   ORDER BY p_indate DESC) 
+		WHERE ROWNUM <= 8
+		]]>
+	</select>
+	<select id="eventView" resultType="com.spoid.dto.ProductDTO">
+
+		<![CDATA[
+  			SELECT * FROM (SELECT * FROM minproduct ORDER BY p_discount DESC) WHERE rownum <= 8 and p_discount > 0
+		]]>
+	</select>
+	<!--  CRUD 
+			parameterType 무조건 작성
+			select만 제외한 resultType은 생략 가능
+			select의 성공 여부를 나타내주는 resultType은 String이어야 한다
+			단 로그인 시에는 session에 접근해야 하기 때문에 dto타입으로 사용
+	 -->
+ 	<!-- ===========================================> -->
+ 	<insert id="insertMember" parameterType="com.spoid.dto.MemberDTO">
+		INSERT INTO shop_mem(id,pwd,name,birth,phone,zipcode,addr1,addr2,email) 
+		VALUES(#{id},#{pwd},#{name},#{birth},#{phone},#{zipcode},#{addr1},#{addr2},#{email})
+	</insert>
+	
+	<select id="confirmID" parameterType="String" resultType="String">
+		SELECT * FROM shop_mem WHERE id=#{userid}
+	</select>
+	
+	<select id="confirmPwd" parameterType="com.spoid.dto.MemberDTO"  resultType="String">
+		SELECT * FROM shop_mem WHERE id=#{id} and pwd=#{pwd}
+	</select>
+	
+	<select id="loginCheck"  parameterType="com.spoid.dto.MemberDTO" resultType="com.spoid.dto.MemberDTO">
+		SELECT * FROM shop_mem WHERE id=#{id} AND pwd =#{pwd}
+	</select>
+	
+	<update id="updateMember" parameterType="com.spoid.dto.MemberDTO">
+			 UPDATE shop_mem SET 
+			 name = #{name}, 
+			 birth = #{birth}, 
+			 phone = #{phone},
+			 zipcode= #{zipcode}, 
+			 addr1 = #{addr1}, 
+			 addr2 = #{addr2},
+			 email = #{email}  
+			 where id = #{id}
+	</update>
+	
+	<update id="updatePassword" parameterType="com.spoid.dto.MemberDTO">
+			UPDATE shop_mem SET pwd = #{new_pwd} WHERE id=#{id} and pwd =#{pwd}
+	</update> 
+	<delete id="deleteMember" parameterType="String">
+			DELETE FROM shop_mem
+			WHERE id = #{userid}
+	</delete>
+	<!-- ================================= -->
+	<!--  BoardDAO -->
+<!-- 	<select id="" resultType = "com.spoid.dto.BoardDTO">
+       
+       	<![CDATA[
+       		 SELECT * FROM ( SELECT rownum rnum, 
+                            a.* 
+                            FROM( SELECT *
+                            FROM minionsboard
+                            WHERE bno >0
+                            ORDER BY bno desc
+                            )a
+                        )
+       	 	WHERE rnum BETWEEN #{pageStart} AND #{perPageNum}
+       	 ]]>
+	</select>
+	 -->
+	<select id="countPaging" resultType="int">
+		<![CDATA[
+		    SELECT count(bno) 
+			FROM minionsboard 
+			WHERE bno>0
+		]]>
+		  <if test='flag=="1"'>               
+             <![CDATA[ AND title LIKE '%'||#{keyword}||'%' OR content LIKE '%'||#{keyword}||'%']]>
+		</if>
+        <if test='flag=="2"'>               
+              <![CDATA[ AND title LIKE '%'||#{keyword}||'%']]>
+         </if>
+         <if test='flag=="3"'>               
+              <![CDATA[ AND content LIKE '%'||#{keyword}||'%']]>
+          </if>
+          <if test='flag=="4"'>               
+              <![CDATA[ AND writer LIKE '%'||#{keyword}||'%']]>
+          </if>  
+	</select>
+
+	<select id="boardList" resultType = "com.spoid.dto.BoardDTO">
+       
+       	<![CDATA[
+       		 SELECT * FROM ( SELECT rownum rnum, 
+                            a.* 
+                            FROM( SELECT *
+                            FROM minionsboard
+                            WHERE bno >0 ]]>
+                
+                            <if test='flag=="1"'>               
+                          	 <![CDATA[AND title LIKE '%'||#{keyword}||'%' OR content LIKE '%'||#{keyword}||'%']]>
+                            </if>
+                            <if test='flag=="2"'>               
+                            	 <![CDATA[AND title LIKE '%'||#{keyword}||'%']]>
+                            </if>
+                            <if test='flag=="3"'>               
+                           		 <![CDATA[AND content LIKE '%'||#{keyword}||'%']]>
+                            </if>
+                            <if test='flag=="4"'>               
+                         		 <![CDATA[AND writer LIKE '%'||#{keyword}||'%']]>
+                            </if>
+                            <if test='code=="new"'>
+								ORDER BY bno desc                            
+                            </if>                                                                        
+                            <if test='code=="good"'>
+								ORDER BY goodcnt desc, bno desc                            
+                            </if> 
+                             <if test='code=="reply"'>
+								ORDER BY replycnt desc, bno desc                            
+                            </if>
+                             <if test='code=="cnt"'>
+								ORDER BY viewcnt desc, bno desc                            
+                            </if>      
+                  <![CDATA[		
+                            )a
+                        )
+       	 	WHERE rnum BETWEEN #{pageStart} AND #{perPageNum}
+       	 ]]>
+	</select>
+	<select id="boardDetailView" resultType="com.spoid.dto.BoardDTO">
+		<![CDATA[
+			SELECT * FROM minionsboard
+			WHERE bno = #{bno}
+		]]>
+	
+	</select>
+	
+	<update id="viewCnt">
+		UPDATE minionsboard
+			SET viewcnt = viewcnt+1
+			WHERE bno = #{bno}
+	</update>
+	<insert id="boardInsert" parameterType="com.spoid.dto.BoardDTO">
+		
+		<choose>
+			<when test="content != null">
+			INSERT INTO minionsboard(bno, title, content, writer,filename,filesize) VALUES(seq_minions.NEXTVAL, #{title},#{content},#{writer},#{filename},#{filesize})
+			</when>
+			<otherwise>
+			INSERT INTO minionsboard(bno, title, writer,filename,filesize) VALUES(seq_minions.NEXTVAL, #{title},#{writer},#{filename},#{filesize})
+			</otherwise>
+		
+		</choose>
+		
+	</insert>
+	<update id="boardUpdate" parameterType="com.spoid.dto.BoardDTO">
+		UPDATE minionsboard 
+			SET title = #{title},
+				writer = #{writer}, 
+				
+			<if test="filename != 'no'">	
+				filename=#{filename}, 
+				filesize=#{filesize},
+			</if>
+				content=#{content} 
+			WHERE bno=#{bno}
+	</update>
+	<delete id="boardDelete" parameterType="String">
+		DELETE FROM minionsboard WHERE bno=#{bno}
+	</delete>
+	
+	<!--  ================================= -->
+	<!-- ReplyDAO -->
+	<select id="replyListAll" parameterType="String" resultType="com.spoid.dto.ReplyDTO">
+		SELECT * FROM minionsreply
+		WHERE bno = #{bno}
+		ORDER BY rno ASC
+	</select>
+	<delete id="deleteComment" parameterType="String">
+		DELETE FROM minionsreply WHERE rno=#{rno}
+	</delete>
+	
+	
+	<insert id="replyInsert" parameterType="com.spoid.dto.ReplyDTO">
+		INSERT INTO minionsreply(rno, content, writer,bno) 
+		VALUES(seq_minionsreply_rno.NEXTVAL,#{content},#{writer},#{bno})	
+	</insert>
+	<update id="updateReplyCnt"  parameterType="com.spoid.dto.BoardDTO">
+		 UPDATE minionsboard 
+		 SET replycnt=replycnt+#{flag}
+		 WHERE bno=#{bno}
+	
+	</update>
+	<update id="updateGoodCnt"  parameterType="String">
+		 UPDATE minionsboard 
+		 SET  goodcnt=goodcnt+1
+		 WHERE bno=#{bno}
+	
+	</update>
+	<update id="replyUpdate" parameterType="com.spoid.dto.ReplyDTO">
+		 UPDATE minionsreply 
+		 SET  content=#{content}
+		 WHERE bno=#{bno} AND rno=#{rno}	
+	</update>
+ </mapper>
