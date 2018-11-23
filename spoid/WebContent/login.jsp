@@ -6,6 +6,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$(".inputidpw").focus(function(){
+			$(this).css("background-color","#e5f3ff").css("transition", "all 1s");
+		});
+		$(".inputidpw").blur(function(){
+			$(this).css("background-color","white").css("transition", "all 1s");
+		});
+		
+	});
+</script>
+
 <style type="text/css">
 	
      
@@ -14,21 +27,19 @@
 	    margin: 0 auto;
 	    width: 730px;
 	    height: 400px;
-	    border: thin solid #EAEAEA;
+	    border: 7px double #30a1c07d;
 	    background-color: white;
-	    border-radius: 72px;
-	    position: relative;
-	    top: 190px;
+	    border-radius: 30px;
+	    margin-top: 190px;
 	    padding: 25px 29px;
      }
      
      
      /* 로고 */
      #logo{
-	    width: 142px;
+		width: 115px;
 	    margin: 0 auto;
 	    height: 54px;
-	    border: 1px solid #9e9e9e;
      }
      
      #logo_img{
@@ -42,6 +53,7 @@
      	display: block;
      	margin-top: 70px;
      	padding-left: 25px;
+     	border-radius: 5px;
      }
      
      #insert_idpw > div{
@@ -49,16 +61,22 @@
      }
      
      .insert_text{
-	    font-size: 32px;
+		font-size: 32px;
 	    padding-right: 10px;
+	    font-weight: bold;
+	    color: #6b9a95;
      }
      
      .inputidpw{
 	    width: 350px;
 	    height: 28px;
 	    border: none;
-	    border-bottom: 3px solid gray;
+	    border-bottom: 3px solid #bacbd1;
 	    padding: 3px 10px 0px 11px;
+	    outline: 0px;
+	    border-radius: 5px;
+     	font-size: 19px;
+    	font-weight: bold;
      }
      
      #insert_pw{
@@ -69,15 +87,38 @@
      
      /* 로그인 버튼 */
      #login_btn_in{
-		border: 1px solid gray;
+		border: 1px solid #ffa84f;
 	    border-radius: 63px;
 	    width: 115px;
 	    height: 115px;
-	    margin-left: 60px;
+	    position: relative;
+	    left: 90px;
+	    bottom: 77px;
+	    background-color: #ffb263;
+	    letter-spacing: 6px;
+	    box-shadow: 4px 1px 5px 0px rgba(42, 42, 42, 0.28);
+	    cursor: pointer;
      }
      
+     #login_text{
+	    position: relative;
+	    left: 16px;
+	    top: 46px;
+	    font-weight: bold;
+	    font-size: 24px;
+     }
      
+     #login_btn_in:hover{
+	    transition: all 2.4s;
+	    transform: rotate(1080deg);
+     }
      
+     /* 계정 관련 */
+     #loginhelp{
+	    color: gray;
+	    font-size: 13px;
+	    padding-left: 34px;
+     }
 	
 </style>
 </head>
@@ -85,7 +126,7 @@
     
      <div id="login_all">
 	     <div id="logo">
-	     	<span id="logo_img">SPOID</span>
+	     	<span id="logo_img">LOGO</span>
 	     </div>
 	     
 	     <div id="insert_idpw">
@@ -100,13 +141,21 @@
 		     
 		     
 	     	<div id="login_btn_in">
-	     		<span id="login_text">login</span>
+	     		<span id="login_text">LOGIN</span>
 	     	</div>
 	     </div>
+	     
+	     <!-- 계정찾기, 회원가입 -->
+	     <div id="loginhelp">
+	     	ID/PW를 잊어버리셨나요? <a href="#" id="find_idpw">ID/PW찾기</a> │
+	     	아직 회원이 아니신가요? <a href="#" id="join_mem">회원가입</a>
+	     </div>
+	     
 	     
      </div>
 
      
      
+<%-- <%@ include file="include/footer.jsp" %> --%>
 </body>
 </html>
