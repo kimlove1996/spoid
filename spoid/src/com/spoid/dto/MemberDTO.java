@@ -3,80 +3,74 @@ package com.spoid.dto;
 import java.util.Date;
 
 public class MemberDTO {
-
-
 	private String id;
-	private String pwd;
-	private String name;
-	private String birth;
-	private String phone;
-	private String zipcode;
-	private String addr1;
-	private String addr2;
+	private String pw;
+	private String rpw;
+	private String nick;
 	private String email;
-	private Date date;
-	private String new_pwd;
-
+	private String hint1;
+	private String hint2;
+	private Date regdate;
+	
+	
 	public MemberDTO() {
-		// TODO Auto-generated constructor stub
-	
+		
 	}
 	
-
-	public MemberDTO(String id, String pwd, String name, String birth, String phone, String zipcode, String addr1,
-			String addr2, String email, Date date, String new_pwd) {
+	// 로그인을 위한 DTO
+	public MemberDTO(String id, String pw) {
 		super();
 		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
-		this.birth = birth;
-		this.phone = phone;
-		this.zipcode = zipcode;
-		this.addr1 = addr1;
-		this.addr2 = addr2;
-		this.email = email;
-		this.date = date;
-		this.new_pwd = new_pwd;
+		this.pw = pw;
 	}
-
-
-	public MemberDTO(String id, String pwd, String name, String birth, String phone, String zipcode, String addr1,
-			String addr2, String email) {
+	
+	// 회원가입을 위한 DTO
+	public MemberDTO(String id, String pw, String rpw, String nick, String email, String hint1, String hint2) {
 		super();
 		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
-		this.birth = birth;
-		this.phone = phone;
-		this.zipcode = zipcode;
-		this.addr1 = addr1;
-		this.addr2 = addr2;
+		this.pw = pw;
+		this.rpw = rpw;
+		this.nick = nick;
 		this.email = email;
+		this.hint1 = hint1;
+		this.hint2 = hint2;
 	}
-
-
-	public MemberDTO(String id, String pwd, String name, String birth, String phone, String zipcode, String addr1,
-			String addr2, String email, Date date) {
+	
+	// id를 통해 pw를 찾기위한 DTO
+	public MemberDTO(String id, String hint1, String hint2) {
 		super();
 		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
-		this.birth = birth;
-		this.phone = phone;
-		this.zipcode = zipcode;
-		this.addr1 = addr1;
-		this.addr2 = addr2;
+		this.hint1 = hint1;
+		this.hint2 = hint2;
+	}
+	
+	// pw 재 수정 DTO
+	
+	
+	// 회원 수정 DTO
+	public MemberDTO(String nick, String email, String hint1, String hint2) {
+		super();
+		this.nick = nick;
 		this.email = email;
-		this.date = date;
+		this.hint1 = hint1;
+		this.hint2 = hint2;
 	}
+	
+	
+	
+	
 
-
-	public MemberDTO(String id, String pwd) {
-		// TODO Auto-generated constructor stub
+	public MemberDTO(String id, String pw, String rpw, String nick, String email, String hint1, String hint2, Date regdate) {
+		super();
 		this.id = id;
-		this.pwd = pwd;
+		this.pw = pw;
+		this.rpw = rpw;
+		this.nick = nick;
+		this.email = email;
+		this.hint1 = hint1;
+		this.hint2 = hint2;
+		this.regdate = regdate;
 	}
-
 
 	public String getId() {
 		return id;
@@ -88,73 +82,31 @@ public class MemberDTO {
 	}
 
 
-	public String getPwd() {
-		return pwd;
+	public String getPw() {
+		return pw;
 	}
 
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 
 
-	public String getName() {
-		return name;
+	public String getRpw() {
+		return rpw;
+	}
+
+	public void setRpw(String rpw) {
+		this.rpw = rpw;
+	}
+
+	public String getNick() {
+		return nick;
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getBirth() {
-		return birth;
-	}
-
-
-	public void setBirth(String birth) {
-		this.birth = birth;
-	}
-
-
-	public String getPhone() {
-		return phone;
-	}
-
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-
-	public String getZipcode() {
-		return zipcode;
-	}
-
-
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
-	}
-
-
-	public String getAddr1() {
-		return addr1;
-	}
-
-
-	public void setAddr1(String addr1) {
-		this.addr1 = addr1;
-	}
-
-
-	public String getAddr2() {
-		return addr2;
-	}
-
-
-	public void setAddr2(String addr2) {
-		this.addr2 = addr2;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
 
@@ -168,31 +120,42 @@ public class MemberDTO {
 	}
 
 
-	public Date getDate() {
-		return date;
+	public String getHint1() {
+		return hint1;
 	}
 
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	
-	public String getNew_pwd() {
-		return new_pwd;
+	public void setHint1(String hint1) {
+		this.hint1 = hint1;
 	}
 
 
-	public void setNew_pwd(String new_pwd) {
-		this.new_pwd = new_pwd;
+	public String getHint2() {
+		return hint2;
+	}
+
+
+	public void setHint2(String hint2) {
+		this.hint2 = hint2;
+	}
+
+
+	public Date getRegdate() {
+		return regdate;
+	}
+
+
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
 
 
 	@Override
 	public String toString() {
-		return "MemberDTO [id=" + id + ", pwd=" + pwd + ", name=" + name + ", birth=" + birth + ", phone=" + phone
-				+ ", zipcode=" + zipcode + ", addr1=" + addr1 + ", addr2=" + addr2 + ", email=" + email + ", date="
-				+ date + "]";
+		return "MemberDTO [id=" + id + ", pw=" + pw + ", nick=" + nick + ", email=" + email + ", hint1=" + hint1
+				+ ", hint2=" + hint2 + ", regdate=" + regdate + "]";
 	}
 	
-
+	
+	
 }

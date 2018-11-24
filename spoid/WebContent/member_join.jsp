@@ -11,6 +11,9 @@
 #MJ {
 	margin-top: 200px;
 }
+
+
+/* 선택 메뉴 바 */
 #MJ_menu {
 	width: 409px;
     height: 40px;
@@ -28,10 +31,21 @@
 	clear: both;
 }
 
+.mj_hr{
+	border: 0.5px solid #d4d4d4;
+}
 
 
 
+/* ================================================================== 이용약관 */
+#constract_area{
+	display: none;
+}
 
+/* ================================================================== 정보입력*/
+
+#write_info_area{
+}
 
 /* MomeberJoin_middle */
 #MJ_title {
@@ -48,11 +62,10 @@
 
 /* 입력창 */
 #MJ_content {
-	padding: 0 auto;
-	margin: 0 auto;
-	width: 800px;
-	height: 500px;
-	border: 1px solid black;
+    margin: 0 auto;
+    width: 800px;
+    height: 500px;
+    border: 2px solid #30a1c0;
 }
 .mj_info {
 	padding: 0 auto;
@@ -92,21 +105,130 @@
 	background-color: #ffcd00;
     color: #1e1e1e;
 }
+
+
+
+
+
+
+/* ================================================================== 가입인증*/
+
+#authentication_area{
+	display: none;
+}
+
+/* 주의사항 text관련 */
+.fa-exclamation{
+	border: 2px solid #fff810;
+    border-radius: 15px;
+    padding: 4px 9px 4px 9px;
+    vertical-align: middle;
+}
+
+#caution_text{
+    padding: 20px 18px;
+    font-size: 14px;
+}
+
+#caution_text span{
+	color: gray;
+}
+
+
+/* 힌트텍스트와 박스 */
+#hint_box{
+    margin: 141px 0 35px 96px;
+}
+#hint_box select{
+	height: 30px;
+    width: 300px;
+    margin-bottom: 28px;
+    font-weight: bold;
+    outline: 0;
+}
+
+#hint_box input{
+	outline: 0px;
+    width: 510px;
+    height: 28px;
+    border: none;
+    border-bottom: 3px solid #338298;
+    margin: 18px 0px 34px 26px;
+    padding-left: 8px;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+
+.hint{
+	font-size: 18px;
+    color: #464646;
+}
+
+
+
+
+
+
+
+
+
+
+/* ================================================================== 가입완료*/
+#complete_area{
+	display: none;
+}
+
 </style>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".insert_answer").focus(function(){
+		$(this).css("background-color","#e5f3ff").css("transition", "all 1s");
+	});
+	$(".insert_answer").blur(function(){
+		$(this).css("background-color","white").css("transition", "all 1s");
+	});
+	
+});
+</script>
 </head>
 <body>
 <div id="MJ">
 <div id="MJ_header">
 	<div id="MJ_menu">
-			<div class="menu_box">이용약관</div>
-			<div class="menu_box">정보입력</div>
-			<div class="menu_box">가입인증</div>
-			<div class="menu_box">가입완료</div>
+			<div class="menu_box" id="constract">이용약관</div>
+			<div class="menu_box" id="write_info">정보입력</div>
+			<div class="menu_box" id="authentication">가입인증</div>
+			<div class="menu_box" id="complete">가입완료</div>
 	</div>
 	<div id="MJ_menu_end"></div>
 </div>
 
-<article id="MJ_middle">
+
+
+
+
+
+
+
+
+
+<!-- 이용약관 area -->
+<article id="constract_area">
+
+</article>
+
+
+
+
+
+
+
+
+
+<!-- 정보입력 area -->
+<article id="write_info_area">
 	<div id="MJ_title">
 		<span>spoid slime 정보입력</span>
 	</div>
@@ -135,6 +257,61 @@
 	
 		<input type="button" value="다음" id="login_btn">
 	</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+<!-- 가입인증 area -->
+<article id="authentication_area">
+		<div id="MJ_title">
+		<span>spoid slime 가입인증</span>
+	</div>
+		<hr class="mj_hr">
+	<div id="MJ_content">
+		<div id="caution_text">
+			<i class="fa fa-exclamation"></i><span> PW 찾기를 이용하실 시 하단 힌트의 설정한 답을 입력하게 됩니다. 바른 작성 부탁드립니다.</span>
+		</div>
+
+
+
+	<div id="hint_box">
+		<div id="hint1" class="hint">
+			<select>
+				<option value="1">내가 살던 동네 이름은?</option>
+				<option value="2">내 부모님 성함은?</option>
+				<option value="3">어렸을적 내 별명은?</option>
+			</select>
+		</div>
+			<input id="village" name="village" placeholder="오치동" class="insert_answer">
+			
+			
+			
+		
+
+	</div>	
+	
+		<input type="button" value="다음" id="login_btn">
+	</div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- 가입완료 -->
+<article id="complete_area">
+
 </article>
 </div>
 </body>
