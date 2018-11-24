@@ -77,18 +77,17 @@ public class MemberDAO {
 		return result;
 		
 	}
+	
 	//비밀번호 중복 체크
 	public String confirmPwd(String id, String pw) {
 		String result = null;
 		MemberDTO mDto = new MemberDTO(); // selectOne은 id와 pwd 두개의 변수를 담을 수 없다
 		// 그러므로 가방에 담아 객체로 전달해야한다
-		
-		sqlSession = sqlSessionFactory.openSession();
 		mDto.setId(id);
 		mDto.setPw(pw);
 		try {
 			result = sqlSession.selectOne("confirmPwd",mDto); // selectOne : 한 건만 조회할 때 사용
-	
+			System.out.println(result);
 			if(result != null) {
 				result = "-1";
 			}else {

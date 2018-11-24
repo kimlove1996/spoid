@@ -17,12 +17,16 @@ public class MemberDeletePlayAction implements Action{
 			HttpServletResponse response) throws ServletException, IOException {
 		String url = "index.bizpoll";
 		String userid = request.getParameter("id");
-		String userpwd = request.getParameter("pwd");
+		String userpw = request.getParameter("pw");
+		
+		
+		System.out.println(userid+userpw);
+		
 		
 		HttpSession session = request.getSession();
 		
 		MemberDAO mDao = MemberDAO.getInstance(); // 객체 빌려오기
-		String message = mDao.confirmPwd(userid,userpwd);
+		String message = mDao.confirmPwd(userid,userpw);
 		
 		if(message.equals("-1")) {
 			System.out.println("회원 삭제");

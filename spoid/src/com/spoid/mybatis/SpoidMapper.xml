@@ -44,7 +44,8 @@
 	</select>
 	
 	<select id="confirmPwd" parameterType="com.spoid.dto.MemberDTO"  resultType="String">
-		SELECT * FROM SpoidMember WHERE id=#{id} and pw=#{pwd}
+		SELECT * FROM SpoidMember 
+		WHERE id=#{id} and pw=#{pw}
 	</select>
 	
 	<select id="loginCheck"  parameterType="com.spoid.dto.MemberDTO" resultType="com.spoid.dto.MemberDTO">
