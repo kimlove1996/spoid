@@ -44,6 +44,19 @@ public class MemberDTO {
 		this.hint2 = hint2;
 	}
 	
+	// pw 재 수정 DTO
+	
+	
+	// 회원 수정 DTO
+	public MemberDTO(String nick, String email, String hint1, String hint2) {
+		super();
+		this.nick = nick;
+		this.email = email;
+		this.hint1 = hint1;
+		this.hint2 = hint2;
+	}
+	
+	
 	
 	
 
@@ -58,8 +71,6 @@ public class MemberDTO {
 		this.hint2 = hint2;
 		this.regdate = regdate;
 	}
-
-
 
 	public String getId() {
 		return id;

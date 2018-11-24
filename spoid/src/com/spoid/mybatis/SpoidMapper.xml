@@ -33,10 +33,10 @@
 			select의 성공 여부를 나타내주는 resultType은 String이어야 한다
 			단 로그인 시에는 session에 접근해야 하기 때문에 dto타입으로 사용
 	 -->
- 	<!-- ===========================================> -->
+ 	<!-- ======================================================================================== -->
  	<insert id="insertMember" parameterType="com.spoid.dto.MemberDTO">
-		INSERT INTO SpoidMember(id,pwd,name,birth,phone,zipcode,addr1,addr2,email) 
-		VALUES(#{id},#{pwd},#{name},#{birth},#{phone},#{zipcode},#{addr1},#{addr2},#{email})
+		INSERT INTO SpoidMember(id,pw,rpw, nick, email, hint1, hint2) 
+		VALUES(#{id},#{pw},#{rpw},#{nick},#{email},#{hint1},#{hint2})
 	</insert>
 	
 	<select id="confirmID" parameterType="String" resultType="String">
@@ -54,24 +54,21 @@
 	
 	<update id="updateMember" parameterType="com.spoid.dto.MemberDTO">
 			 UPDATE SpoidMember SET 
-			 name = #{name}, 
-			 birth = #{birth}, 
-			 phone = #{phone},
-			 zipcode= #{zipcode}, 
-			 addr1 = #{addr1}, 
-			 addr2 = #{addr2},
-			 email = #{email}  
+			 nick = #{nick}, 
+			 email = #{email},
+			 hint1 = #{hint1},
+			 hint2 = #{hint2}  
 			 where id = #{id}
 	</update>
 	
 	<update id="updatePassword" parameterType="com.spoid.dto.MemberDTO">
-			UPDATE SpoidMember SET pwd = #{new_pwd} WHERE id=#{id} and pwd =#{pwd}
+			UPDATE SpoidMember SET pw = #{new_pw} WHERE id=#{id} and pw =#{pw}
 	</update> 
 	<delete id="deleteMember" parameterType="String">
 			DELETE FROM SpoidMember
 			WHERE id = #{userid}
 	</delete>
-	<!-- ================================= -->
+	<!-- ====================================================================================== -->
 	<!--  BoardDAO -->
 <!-- 	<select id="" resultType = "com.spoid.dto.BoardDTO">
        

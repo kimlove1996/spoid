@@ -78,14 +78,14 @@ public class MemberDAO {
 		
 	}
 	//비밀번호 중복 체크
-	public String confirmPwd(String id, String pwd) {
+	public String confirmPwd(String id, String pw) {
 		String result = null;
 		MemberDTO mDto = new MemberDTO(); // selectOne은 id와 pwd 두개의 변수를 담을 수 없다
 		// 그러므로 가방에 담아 객체로 전달해야한다
 		
 		sqlSession = sqlSessionFactory.openSession();
 		mDto.setId(id);
-		mDto.setPw(pwd);
+		mDto.setPw(pw);
 		try {
 			result = sqlSession.selectOne("confirmPwd",mDto); // selectOne : 한 건만 조회할 때 사용
 	
@@ -109,13 +109,8 @@ public class MemberDAO {
 		MemberDTO mDto = new MemberDTO();
 		mDto.setId(id);
 		mDto.setPw(pw);
-		System.out.println(id+pw);
-		System.out.println("이건 됨?"+mDto.getId());
-		System.out.println(mDto.getPw());
 		try {
 			mDto = sqlSession.selectOne("loginCheck",mDto); // selectOne : 한 건만 조회할 때 사용
-			System.out.println(mDto+"들어감?");
-			
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -144,13 +139,13 @@ public class MemberDAO {
 		return result;	
 	}
 	//회원정보 수정 (비밀번호만)
-	public int updatePassword(String id, String pwd_now, String new_pwd) {
+	public int updatePassword(String id, String pw_now, String new_pw) {
 		int result = 0;
 		// 그러므로 가방에 담아 객체로 전달해야한다
 		sqlSession = sqlSessionFactory.openSession();
 		MemberDTO mDto = new MemberDTO();
 		mDto.setId(id);
-		mDto.setPw(pwd_now);
+		mDto.setPw(pw_now);
 		try {
 			result = sqlSession.update("updatePassword",mDto); // selectOne : 한 건만 조회할 때 사용
 			sqlSession.commit();
