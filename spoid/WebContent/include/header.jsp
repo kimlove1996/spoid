@@ -68,26 +68,43 @@
 	.menu_ham:hover{background-color: #ec4c6a;}
 	#menu_modal{
 		position : fixed;
-
+		overflow : hidden;
 		left : 0;
 		top : 0;
 		width : 0;
 		height: 100%;
 		background-color: #fff;
 		z-index:1;
-		overflow:hidden;
 		transition : 0.5s;
+		text-align: center;
 
 	}
 	#menu_section{
-		width : 80%;
-		overflow-x : hidden;
+		width : 70%;
+
 		margin: 5% auto;
+		display: inline-block;
 	}
+	#menu_section > div{
+
+		margin: 5% auto;
+		display: inline-block;
+		float:left;
+	}
+	#menu_wrapper{
+		width:70%;
+	}
+	#log_section{
+		
+		width : 30%;
+		background-color: #fbfbfb;
+		height: 610px;
+	}
+
 	#menu_ul > li{
 		display: inline-block;
 		width : 32%;
-		height : 400px;
+		height : 300px;
 		background-color: #fbfbfb;
 		margin-bottom: 10px;
 		box-sizing: border-box;
@@ -154,8 +171,9 @@
 		var menu_state = $.trim($(this).text()); // 메뉴 햄버거 버튼의 이름을 가지고 온다
  		$(this).css("display","none");
 		if(menu_state == "MENU"){ // 같으면 menu modal 을 열어주고 버튼의 상태를 close로 바꿈
-			$("#menu_modal").width("30%");
+			$("#menu_modal").width("100%");
 			$("#menu_close").css("display","block");
+			$("#header_body").css("overflow","hidden");
 		
 		}else{
 			alert("다름");
@@ -197,16 +215,24 @@
 	
 	</header>
 	<div id="menu_modal">
-		<div id="menu_section" >	
-			<ul id="menu_ul">
-					<li><a href="#" class="menu_btn">박스오피스</a></li>
-					<li><a href="#" class="menu_btn">현재 상영작</a></li>
-					<li><a href="#" class="menu_btn">모든 영화</a></li>
-					<li><a href="#" class="menu_btn">로그인</a></li>
-					<li><a href="#" class="menu_btn">회원가입</a></li>
-					<li><a href="#" class="menu_btn">마이페이지</a></li>
 
-			</ul>
+		<div id="menu_section" >	
+			<div id="log_section">
+				<span id="login_status">
+					잉여인간님 환영합니다!
+				</span>
+			</div>
+			<div id="menu_wrapper">
+				<ul id="menu_ul">
+						
+						<li><a href="#" class="menu_btn">박스오피스</a></li>
+						<li><a href="#" class="menu_btn">현재 상영작</a></li>
+						<li><a href="#" class="menu_btn">모든 영화</a></li>
+						<li><a href="#" class="menu_btn">About us</a></li>
+						<li><a href="#" class="menu_btn">게시판</a></li>
+						<li><a href="#" class="menu_btn">고객센터</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </body>
