@@ -33,7 +33,7 @@ public class MemberUpdatePlayAction implements Action{
 		String addr2 = request.getParameter("addr2");
 		String email = request.getParameter("email")+"@"+request.getParameter("email_url");
 		
-		MemberDTO mDto = new MemberDTO(id,pwd,name,birth,phone,zipcode,addr1,addr2,email);
+		MemberDTO mDto = new MemberDTO();
 		MemberDAO mDao = MemberDAO.getInstance();
 		int result = mDao.updateMember(mDto);
 	

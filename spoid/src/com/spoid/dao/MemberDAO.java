@@ -85,7 +85,7 @@ public class MemberDAO {
 		
 		sqlSession = sqlSessionFactory.openSession();
 		mDto.setId(id);
-		mDto.setPwd(pwd);
+		mDto.setPw(pwd);
 		try {
 			result = sqlSession.selectOne("confirmPwd",mDto); // selectOne : 한 건만 조회할 때 사용
 	
@@ -104,13 +104,18 @@ public class MemberDAO {
 		return result;
 	}
 	//로그인 기능
-	public MemberDTO loginCheck(String id, String pwd){
+	public MemberDTO loginCheck(String id, String pw){
 		sqlSession = sqlSessionFactory.openSession();
 		MemberDTO mDto = new MemberDTO();
 		mDto.setId(id);
-		mDto.setPwd(pwd);
+		mDto.setPw(pw);
+		System.out.println(id+pw);
+		System.out.println("이건 됨?"+mDto.getId());
+		System.out.println(mDto.getPw());
 		try {
 			mDto = sqlSession.selectOne("loginCheck",mDto); // selectOne : 한 건만 조회할 때 사용
+			System.out.println(mDto+"들어감?");
+			
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -145,8 +150,7 @@ public class MemberDAO {
 		sqlSession = sqlSessionFactory.openSession();
 		MemberDTO mDto = new MemberDTO();
 		mDto.setId(id);
-		mDto.setPwd(pwd_now);
-		mDto.setNew_pwd(new_pwd);
+		mDto.setPw(pwd_now);
 		try {
 			result = sqlSession.update("updatePassword",mDto); // selectOne : 한 건만 조회할 때 사용
 			sqlSession.commit();
@@ -176,207 +180,5 @@ public class MemberDAO {
 		}
 		return flag;
 	}
-	/*Connection conn = null;
-	PreparedStatement pstmt = null;
-	ArrayList<MemberDTO> list = null;			
-	ResultSet rs = null;
-	MemberDTO mDto;
-	
-	public int insertMember(MemberDTO mDto) {
-		// TODO Auto-generated method stub
-		int result = 0;	
-		
-		try {
-			conn = DBManager.getConnection();
-			String sql = "INSERT INTO shop_mem(id,pwd,name,birth,phone,zipcode,addr1,addr2,email) VALUES(?,?,?,?,?,?,?,?,?)";
-		
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,mDto.getId());
-			pstmt.setString(2,mDto.getPwd());
-			pstmt.setString(3,mDto.getName());
-			pstmt.setString(4,mDto.getBirth());
-			pstmt.setString(5,mDto.getPhone());
-			pstmt.setString(6,mDto.getZipcode());
-			pstmt.setString(7,mDto.getAddr1());
-			pstmt.setString(8,mDto.getAddr2());
-			pstmt.setString(9,mDto.getEmail());
-			result = pstmt.executeUpdate();
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}finally {
-			DBManager.close(conn,pstmt);
-		}
-
-		return result;
-	}
-	public MemberDTO loginCheck(String id, String pwd){
-		try {
-		
-			conn = DBManager.getConnection();
-			String sql = "SELECT * FROM shop_mem WHERE id=? AND pwd =?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,id);
-			pstmt.setString(2, pwd);
-			rs = pstmt.executeQuery();
-
-			while(rs.next()) {
-				String mem_id = rs.getString("id");
-				String mem_pwd = rs.getString("pwd");
-				String name = rs.getString("name");
-				String birth = rs.getString("birth");
-				String phone = rs.getString("phone");
-				String zipcode = rs.getString("zipcode");
-				String addr1 = rs.getString("addr1");
-				String addr2 = rs.getString("addr2");
-				String email = rs.getString("email");
-				Date mdate = rs.getDate("mdate");
-				mDto = new MemberDTO(mem_id, mem_pwd, name, birth, phone, zipcode, addr1, addr2, email, mdate);
-				
-			}
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}finally {
-			DBManager.close(conn, pstmt, rs);
-		}
-		return mDto;
-	}
-	public int updateMember(MemberDTO mDto) {
-		// TODO Auto-generated method stub
-		int result = 0;
-		try {
-			
-			conn = DBManager.getConnection();
-			String sql = "UPDATE shop_mem SET "
-									+"name = ?, "
-									+"birth = ?, "
-									+"phone = ?, "
-									+"zipcode=?, "
-									+"addr1 = ?, "
-									+"addr2 = ?, "
-									+"email = ? " 
-									+"where id = ?";
-		
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1,mDto.getName());
-			pstmt.setString(2,mDto.getBirth());
-			pstmt.setString(3,mDto.getPhone());
-			pstmt.setString(4,mDto.getZipcode());
-			pstmt.setString(5,mDto.getAddr1());
-			pstmt.setString(6,mDto.getAddr2());
-			pstmt.setString(7,mDto.getEmail());
-			pstmt.setString(8,mDto.getId());
-			result = pstmt.executeUpdate();
-
-		} catch (Exception e) {
-			// TODO: handle exception
-		}finally {
-			DBManager.close(conn, pstmt);
-		}
-		return result;
-	}
-	//Ajax를 활용한 id 중복체크
-	public String confirmID(String userid) {
-
-		String msg = "";
-		System.out.println("sql "+ userid);
-		try {
-			conn = DBManager.getConnection();
-			String sql = "SELECT * FROM shop_mem WHERE id=?";
-			pstmt = conn.prepareStatement(sql);
-	
-			pstmt.setString(1,userid);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				String mem_id = rs.getString("id");
-				String mem_pwd = rs.getString("pwd");
-				String name = rs.getString("name");
-				String birth = rs.getString("birth");
-				String phone = rs.getString("phone");
-				String zipcode = rs.getString("zipcode");
-				String addr1 = rs.getString("addr1");
-				String addr2 = rs.getString("addr2");
-				String email = rs.getString("email");
-				Date mdate = rs.getDate("mdate");
-				mDto = new MemberDTO(mem_id, mem_pwd, name, birth, phone, zipcode, addr1, addr2, email, mdate);
-				System.out.println("멤버"+mem_id);
-			}
-			System.out.println(mDto.toString());
-			if(mDto != null) {			
-				msg = "-1";
-			}else {
-				msg = "1";
-			}
-							
-		}catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}finally {
-			DBManager.close(conn, pstmt, rs);
-		}
-		return msg;
-		
-	}
-	public String confirmPwd(String id, String pwd) {
-		// TODO Auto-generated method stub
-		String msg = "";
-		try {
-			conn = DBManager.getConnection();
-			String sql = "SELECT * FROM shop_mem WHERE id=? and pwd=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.setString(2, pwd);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				String mem_id = rs.getString("id");
-				String mem_pwd = rs.getString("pwd");
-				String name = rs.getString("name");
-				String birth = rs.getString("birth");
-				String phone = rs.getString("phone");
-				String zipcode = rs.getString("zipcode");
-				String addr1 = rs.getString("addr1");
-				String addr2 = rs.getString("addr2");
-				String email = rs.getString("email");
-				Date mdate = rs.getDate("mdate");
-				mDto = new MemberDTO(mem_id, mem_pwd, name, birth, phone, zipcode, addr1, addr2, email, mdate);
-				System.out.println("멤버"+mem_id);
-			}	
-			
-			if(mDto != null) {
-				msg =  "-1";
-			}else {
-				msg = "1";
-			}
-		}catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}finally {
-			DBManager.close(conn, pstmt);
-		}
-		return msg;
-	}
-	public int updatePassword(String id, String pwd_now, String new_pwd) {
-		// TODO Auto-generated method stub
-		int result = 0;
-		try {
-			conn = DBManager.getConnection();
-			String sql = "UPDATE shop_mem SET pwd =? WHERE id=? and pwd =?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, new_pwd);
-			pstmt.setString(2, id);
-			pstmt.setString(3,pwd_now);
-			result = pstmt.executeUpdate();
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}finally {
-			DBManager.close(conn, pstmt);
-		}
-		return result;
-	}*/
 
 }

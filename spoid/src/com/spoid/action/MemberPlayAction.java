@@ -32,7 +32,7 @@ public class MemberPlayAction implements Action {
 		  String addr2 = request.getParameter("addr2");
 		  String email = request.getParameter("email")+"@"+request.getParameter("email_url");
 		  System.out.println(phone+"전화");
-		  MemberDTO mDto = new MemberDTO(id,pwd,name,birth,phone,zipcode,addr1,addr2,email);
+		  MemberDTO mDto = new MemberDTO();
 		  // 1.class 설계
 		  // 2. 객체 생성
 		  // 3. 객체(인스턴스) 사용
