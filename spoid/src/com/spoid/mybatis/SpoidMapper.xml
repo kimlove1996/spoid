@@ -35,24 +35,25 @@
 	 -->
  	<!-- ===========================================> -->
  	<insert id="insertMember" parameterType="com.spoid.dto.MemberDTO">
-		INSERT INTO shop_mem(id,pwd,name,birth,phone,zipcode,addr1,addr2,email) 
+		INSERT INTO SpoidMember(id,pwd,name,birth,phone,zipcode,addr1,addr2,email) 
 		VALUES(#{id},#{pwd},#{name},#{birth},#{phone},#{zipcode},#{addr1},#{addr2},#{email})
 	</insert>
 	
 	<select id="confirmID" parameterType="String" resultType="String">
-		SELECT * FROM shop_mem WHERE id=#{userid}
+		SELECT * FROM SpoidMember WHERE id=#{userid}
 	</select>
 	
 	<select id="confirmPwd" parameterType="com.spoid.dto.MemberDTO"  resultType="String">
-		SELECT * FROM shop_mem WHERE id=#{id} and pwd=#{pwd}
+		SELECT * FROM SpoidMember WHERE id=#{id} and pw=#{pwd}
 	</select>
 	
 	<select id="loginCheck"  parameterType="com.spoid.dto.MemberDTO" resultType="com.spoid.dto.MemberDTO">
-		SELECT * FROM shop_mem WHERE id=#{id} AND pwd =#{pwd}
+		SELECT * FROM SpoidMember
+		WHERE id=#{id} AND pw=#{pw}
 	</select>
 	
 	<update id="updateMember" parameterType="com.spoid.dto.MemberDTO">
-			 UPDATE shop_mem SET 
+			 UPDATE SpoidMember SET 
 			 name = #{name}, 
 			 birth = #{birth}, 
 			 phone = #{phone},
@@ -64,10 +65,10 @@
 	</update>
 	
 	<update id="updatePassword" parameterType="com.spoid.dto.MemberDTO">
-			UPDATE shop_mem SET pwd = #{new_pwd} WHERE id=#{id} and pwd =#{pwd}
+			UPDATE SpoidMember SET pwd = #{new_pwd} WHERE id=#{id} and pwd =#{pwd}
 	</update> 
 	<delete id="deleteMember" parameterType="String">
-			DELETE FROM shop_mem
+			DELETE FROM SpoidMember
 			WHERE id = #{userid}
 	</delete>
 	<!-- ================================= -->

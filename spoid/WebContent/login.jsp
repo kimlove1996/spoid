@@ -56,7 +56,7 @@
      	border-radius: 5px;
      }
      
-     #insert_idpw > div{
+     #insert_idpw > div:not(#login_err_check){
      	display: inline-block;
      }
      
@@ -87,17 +87,18 @@
      
      /* 로그인 버튼 */
      #login_btn_in{
-		border: 1px solid #ffa84f;
-	    border-radius: 63px;
-	    width: 115px;
-	    height: 115px;
-	    position: relative;
-	    left: 90px;
-	    bottom: 77px;
-	    background-color: #ffb263;
-	    letter-spacing: 6px;
-	    box-shadow: 4px 1px 5px 0px rgba(42, 42, 42, 0.28);
-	    cursor: pointer;
+	   	border: 1px solid #ffa84f;
+   		border-radius: 63px;
+    	width: 115px;
+    	height: 115px;
+    	position: relative;
+    	left: -50px;
+   	 	bottom: 30px;
+    	background-color: #ffb263;
+    	letter-spacing: 6px;
+    	box-shadow: 4px 1px 5px 0px rgba(42, 42, 42, 0.28);
+    	cursor: pointer;
+    	float: right;
      }
      
      #login_text{
@@ -118,6 +119,7 @@
 	    color: gray;
 	    font-size: 13px;
 	    padding-left: 34px;
+	  	padding-top: 50px;
      }
 	
 	
@@ -139,11 +141,47 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
-	});
-	$(document).on("#login_text","click",function(){
-		var id = $("#inputid").val();
-		var pw = 
-		$("#login_err_check").css("display","block");
+		
+	
+	 $("#login_btn_in").click(function(){
+		 alert("연결");
+		 var id = $("#inputid").val();
+		 var pw = $("#inputpw").val();
+		 alert(id+", "+pw);
+		 /* 유효성 체크 */
+			/* id와 pw중 하나라도 값이 없으면 경고문 출력 */
+			if(id != "" && pw !=""){
+				
+					$.ajax({
+						url: "LoginPlay.bizpoll",
+						type: "POST",
+						dataType: "json",
+						data: "id="+id+"&pw="+pw,
+						success: function(data) {
+							if(data.message =="1"){
+								alert("로그인 성공");
+								location.href="index.bizpoll";
+							} else {
+								alert("로그인 실패");
+								$("#login_err_check").css("display","block");
+								$("#login_err_check_msg").text("ID와 PW가 일치하지 않습니다.");
+								return false;
+							}
+						},
+						error:function(){
+							alert("SYSTEM ERROR!!");
+						}
+						
+					});
+				alert("페이지 이동");	
+			}else{
+				$("#login_err_check").css("display","block");
+				return false;
+			}
+	 });
+	 
+	 
+	 
 	});
 </script>
 </head>
@@ -163,13 +201,13 @@
 		     	<span class="insert_text">PW </span>
 		     	<input type="password" name="inputpw" id="inputpw" class="inputidpw">
 		     </div>
-		     <div id="login_err_check">
-				<span id="login_err_check_msg">아이디와 비밀번호를 입력해주세요.</span>
-			</div>
-		     
 	     	<div id="login_btn_in">
 	     		<span id="login_text">LOGIN</span>
 	     	</div>
+		     <div id="login_err_check">
+				<span id="login_err_check_msg">아이디와 비밀번호를 입력해주세요.</span>
+			 </div>
+		     
 	     </div>
 	     
 	     <!-- 계정찾기, 회원가입 -->
