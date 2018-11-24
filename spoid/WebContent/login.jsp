@@ -120,7 +120,32 @@
 	    padding-left: 34px;
      }
 	
+	
+	/* 로그인error 체크 */
+	#login_err_check{
+		display: none;
+	}
+	#login_err_check_msg {
+		display: inline-block;
+		width: 428px;
+		height: 24px;
+		font-size: 11px;
+		font-weight: 700;
+		line-height: 24px;
+		color: #E71D36;
+		padding: 0px 15px;
+		text-align: center;
+	}
 </style>
+<script type="text/javascript">
+	$(document).ready(function(){
+	});
+	$(document).on("#login_text","click",function(){
+		var id = $("#inputid").val();
+		var pw = 
+		$("#login_err_check").css("display","block");
+	});
+</script>
 </head>
 <body>
     
@@ -138,7 +163,9 @@
 		     	<span class="insert_text">PW </span>
 		     	<input type="password" name="inputpw" id="inputpw" class="inputidpw">
 		     </div>
-		     
+		     <div id="login_err_check">
+				<span id="login_err_check_msg">아이디와 비밀번호를 입력해주세요.</span>
+			</div>
 		     
 	     	<div id="login_btn_in">
 	     		<span id="login_text">LOGIN</span>
