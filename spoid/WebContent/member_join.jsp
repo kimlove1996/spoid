@@ -19,29 +19,32 @@
 
 /* 선택 메뉴 바 */
 #MJ_menu {
-    width: 730px;
     height: 53px;
-    margin: 49px auto;
     text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 800px;
 }
+
 .menu_box {
-    width: 138px;
-    height: 50px;
-    border: 1px solid #ededed;
+    width: 84px;
+    height: 80px;
+    border: 5px double #ffa50073;
     float: left;
-    line-height: 3;
-    margin: 0 16px;
-    border-radius: 0px 34px 26px 22px;
-    border-right: 7px double #96c9d7;
-    border-top: 1px solid #96c9d7;
-    background: linear-gradient(to bottom, #91d4ed, #f9f9f9 41%, #f8ffdd);
+    margin: 0 53px;
+    border-radius: 100px;
+    color: #5c5c5c;
+    line-height: 80px;
+    font-weight: bold;
+    font-size: 17px;
+    z-index: 10;
 }
 #MJ_menu_end{
 	clear: both;
 }
 
 .mj_hr{
-    border: 6.5px double #f8f3e6;
+    border: 6.5px double #f3f3f3;
     width: 50%;
     float: left;
     margin-bottom: 31px;
@@ -66,13 +69,12 @@
 }
 
 #MJ_title > span {
-	text-align: left;
+    text-align: left;
     font-size: 38px;
     padding-left: 34px;
-    color: orange;
-    background-color: #fdf9eb;
+    color: #373737;
+    background-color: #ffffff;
     padding: 13px 26px 13px 34px;
-    border-right: 14px double #ffae4c;
     border-radius: 0 6px 58px 0;
 }
 
@@ -270,7 +272,7 @@ $(document).ready(function(){
 <!-- 정보입력 area -->
 <article id="write_info_area">
 	<div id="MJ_title">
-		<span>spoid slime 정보입력 >></span>
+		<span>spoid slime 정보입력</span>
 	</div>
 		<hr class="mj_hr">
 	<div id="MJ_content">
