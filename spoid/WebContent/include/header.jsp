@@ -108,6 +108,8 @@
 		background-color: #fbfbfb;
 		margin-bottom: 10px;
 		box-sizing: border-box;
+		float : left;
+		margin-left: 10px;
 	}
 	.menu_btn{
 		display: inline-block;
@@ -156,6 +158,13 @@
 	.search > span *{
 		margin-left: 4px;
 		line-height: 40px;
+	}
+	.menu_icon{
+		width : 80%;
+		height: 80%;
+	}
+	.menu_li_div{
+		margin : 50px;
 	}
 </style>
 <script type="text/javascript">
@@ -219,15 +228,32 @@
 		<div id="menu_section" >	
 			<div id="log_section">
 				<span id="login_status">
-					잉여인간님 환영합니다!
+
 				</span>
+				<a href="#">로그아웃</a>
+				<a href="#">마이페이지</a>
 			</div>
 			<div id="menu_wrapper">
 				<ul id="menu_ul">
 						
-						<li><a href="#" class="menu_btn">박스오피스</a></li>
-						<li><a href="#" class="menu_btn">현재 상영작</a></li>
-						<li><a href="#" class="menu_btn">모든 영화</a></li>
+						<li>
+							<div class="menu_li_div">
+								<img src="img/menu/movie_box.png" class="menu_icon">
+								<a href="#" class="menu_btn">박스오피스</a>
+							</div>
+						</li>
+						<li>
+							<div class="menu_li_div">
+								<img src="img/menu/movie_now.png" class="menu_icon">
+								<a href="#" class="menu_btn">현재 상영작</a>
+							</div>
+						</li>
+						<li>
+							<div class="menu_li_div">
+								<img src="img/menu/movie_all.png" class="menu_icon">
+								<a href="#" class="menu_btn">모든 영화</a>
+							</div>
+						</li>
 						<li><a href="#" class="menu_btn">About us</a></li>
 						<li><a href="#" class="menu_btn">게시판</a></li>
 						<li><a href="#" class="menu_btn">고객센터</a></li>
