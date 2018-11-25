@@ -27,7 +27,7 @@
 
 #MJ_menu > li:nth-child(1){
 	border-bottom :4px solid #f4c36a;
-	color : #7f6400:
+	color: #f8c465;
 }
 
 
