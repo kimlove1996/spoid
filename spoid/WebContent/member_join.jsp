@@ -9,7 +9,6 @@
 <style type="text/css">
 /* MemberJoin_TOP */
 #MJ {
-    width: 1920px;
     margin: 200px auto 0 auto;
 }
 *{
@@ -26,18 +25,22 @@
     width: 800px;
 }
 
+#MJ_menu > li:nth-child(1){
+	border-bottom :4px solid #f4c36a;
+	color : #7f6400:
+}
+
+
+
+
 .menu_box {
-    width: 84px;
-    height: 80px;
-    border: 5px double #ffa50073;
-    float: left;
-    margin: 0 53px;
-    border-radius: 100px;
-    color: #5c5c5c;
-    line-height: 80px;
+	float: left;
+    padding: 0 47px 32px 47px;
+    font-size: 22px;
+    border-bottom: 4px solid #b6b6b6;
+    width: 106px;
+    color: #b6b6b6;
     font-weight: bold;
-    font-size: 17px;
-    z-index: 10;
 }
 #MJ_menu_end{
 	clear: both;
@@ -45,30 +48,19 @@
 
 .mj_hr{
     border: 6.5px double #f3f3f3;
-    width: 50%;
+    width: 37%;
     float: left;
-    margin-bottom: 31px;
+    margin-bottom: 51px;
 }
 
-
-
-/* ================================================================== 이용약관 */
-#constract_area{
-	display: none;
-}
-
-/* ================================================================== 정보입력*/
-
-#write_info_area{
-}
 
 /* MomeberJoin_middle */
 #MJ_title {
-    margin: 29px 0;
+    margin: 108px 0 14px 0;
     width: 700px;
 }
 
-#MJ_title > span {
+#MJ_title > span:first-child {
     text-align: left;
     font-size: 38px;
     padding-left: 34px;
@@ -76,7 +68,64 @@
     background-color: #ffffff;
     padding: 13px 26px 13px 34px;
     border-radius: 0 6px 58px 0;
+    letter-spacing: 20px;
+    font-weight: bold;
 }
+
+#MJ_title > span:last-child{
+	font-weight: bold;
+    font-size: 33px;
+    color: #000000;
+}
+
+
+
+
+/* spoid slime 글씨 색 */
+#MJ_title >span> i:nth-child(1){
+	font-style: normal;
+	color: #ff4f6e;
+}
+#MJ_title >span> i:nth-child(2){
+	font-style: normal;
+	color: #ffff03;
+}
+#MJ_title >span> i:nth-child(3){
+	font-style: normal;
+	color: #90ce90;
+}
+#MJ_title >span> i:nth-child(4){
+	font-style: normal;
+	color: #a328a3;
+}
+#MJ_title >span> i:nth-child(5){
+	font-style: normal;
+	color: #9393ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================== 이용약관 */
+#constract_area{
+	display: block;
+}
+
+/* ================================================================== 정보입력*/
+
+#write_info_area{
+	display: none;
+}
+
+
+
 
 
 /* 입력창 */
@@ -135,6 +184,7 @@
     background-color: #d4d4d4;
     color: #777;
     margin: 2% 45% 4% 45%;
+    cursor: pointer;
 }
 #login_btn:hover {
     background-color: #ffcd00;
@@ -150,7 +200,7 @@
 /* ================================================================== 가입인증*/
 
 #authentication_area{
-	display: block;
+	display: none;
 }
 
 /* 주의사항 text관련 */
@@ -214,36 +264,107 @@
 	display: none;
 }
 
+
+
+	#all_welcom {
+		margin: 0px;
+    	padding: 0px;
+    	font-family: 'Jeju Myeongjo', serif;
+	}
+	
+	
+	#welcom_logo{
+		width: 226px;
+	    margin: 0 auto;
+	}
+	
+	#welcomtext01{
+		font-size: 26px;
+    	color: #ff9f5a;
+	}
+	#welcomtext02{
+		font-size: 20px;
+	    color: #718f96;
+	}
+	
+	#rCnt{
+		display: inline-block;
+		font-weight: bold;
+		font-style: normal;
+	}
+	#welcom_text_in{
+	    padding: 11px 0 59px 0;
+	    margin: 0px auto;
+	    text-align: center;
+	    border: 7px double #cddde1;
+	    border-radius: 31px;
+	    width: 812px;
+	    margin-top: 57px;
+	}
+	#logo>img{
+	    width: 218px;
+	    height: 181px;
+	}
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
+
 	
-	$(".insert_answer").focus(function(){
+	
+	$(".input_color").focus(function(){
 		$(this).css("background-color","#e5f3ff").css("transition", "all 1s");
 	});
-	$(".insert_answer").blur(function(){
+	$(".input_color").blur(function(){
 		$(this).css("background-color","white").css("transition", "all 1s");
 	});
 	
-	$(".input_signin").focus(function(){
-		$(this).css("background-color","#e5f3ff").css("transition", "all 1s");
-	});
-	$(".input_signin").blur(function(){
-		$(this).css("background-color","white").css("transition", "all 1s");
-	});
+	
+	
 	
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 가입환영인사 및 메인으로 */
+	var cnt=2;
+	function countdown(){/* 함수 생성한것 뿐임. 호출 전까진 동작을 하지 않는다. */
+		if(cnt == 0){/* cnt == 0 이라면 */
+			clearInterval(s);	/* setinterval 함수를 종료하고 */
+			/* location.href="index.bizpoll"; */ /* index.bizpoll로 이동하라! */
+		}/* 아니라면, */
+		document.getElementById("rCnt").innerHTML=cnt;/* rCnt에 cnt(3)을 넣고, cnt를 한번씩 --하라. */
+		cnt --;
+	}
+	var s = setInterval(countdown, 1000); // Start!!! 1000=천 밀리세컨드, 즉 1초단위로 countdown()을 실행합니다.
 </script>
 </head>
 <body>
 <div id="MJ">
 <div id="MJ_header">
-	<div id="MJ_menu">
-			<div class="menu_box" id="constract">이용약관</div>
-			<div class="menu_box" id="write_info">정보입력</div>
-			<div class="menu_box" id="authentication">가입인증</div>
-			<div class="menu_box" id="complete">가입완료</div>
-	</div>
+	<ul id="MJ_menu">
+			<li class="menu_box" id="constract">이용약관</li>
+			<li class="menu_box" id="write_info">정보입력</li>
+			<li class="menu_box" id="authentication">가입인증</li>
+			<li class="menu_box" id="complete">가입완료</li>
+	</ul>
 	<div id="MJ_menu_end"></div>
 </div>
 
@@ -257,8 +378,15 @@ $(document).ready(function(){
 
 
 <!-- 이용약관 area -->
-<article id="constract_area">
-
+<article id="constract_area" class="area">
+	<div id="MJ_title">
+		<span><i>S</i>p<i>o</i>i<i>d</i>S<i>l</i>i<i>m</i>e</span><span>이용약관</span>
+	</div>
+		<hr class="mj_hr">
+	<div id="MJ_content">
+	
+		<input type="button" value="NEXT" id="login_btn">
+	</div>
 </article>
 
 
@@ -270,9 +398,9 @@ $(document).ready(function(){
 
 
 <!-- 정보입력 area -->
-<article id="write_info_area">
+<article id="write_info_area" class="area">
 	<div id="MJ_title">
-		<span>spoid slime 정보입력</span>
+		<span><i>S</i>p<i>o</i>i<i>d</i>S<i>l</i>i<i>m</i>e</span><span>정보입력</span>
 	</div>
 		<hr class="mj_hr">
 	<div id="MJ_content">
@@ -280,23 +408,23 @@ $(document).ready(function(){
 	
 		<div class="mj_info">
 			<label for="inputid" id="in_id" class="label_singnin">아이디</label>
-			<input type="text" id="inputid" class="input_signin" name="inputid">
+			<input type="text" id="inputid" class="input_color input_signin" name="inputid">
 		</div> 
 		<div class="mj_info">
 			<label for="inputpw" id="in_pw" class="label_singnin">비밀번호</label>
-			<input type="password" id="inputpw" class="input_signin" name="inputpw">
+			<input type="password" id="inputpw" class="input_color input_signin" name="inputpw">
 		</div> 
 		<div class="mj_info">
 			<label for="inputrpw" id="in_rpw" class="label_singnin">비밀번호 재입력</label>
-			<input type="password" id="inputrpw" class="input_signin" name="inputrpw">
+			<input type="password" id="inputrpw" class="input_color input_signin" name="inputrpw">
 		</div> 
 		<div class="mj_info">
 			<label for="inputname" id="in_name" class="label_singnin">닉네임</label>
-			<input type="text" id="inputname" class="input_signin" name="inputname">
+			<input type="text" id="inputname" class="input_color input_signin" name="inputname">
 		</div> 
 		<div class="mj_info">
 			<label for="inputemail" id="in_email" class="label_singnin">이메일</label>
-			<input type="text" id="inputemail" class="input_signin" name="inputemail">
+			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail">
 		</div> 
 	
 		<input type="button" value="NEXT" id="login_btn">
@@ -313,9 +441,9 @@ $(document).ready(function(){
 
 
 <!-- 가입인증 area -->
-<article id="authentication_area">
+<article id="authentication_area" class="area">
 		<div id="MJ_title">
-		<span>spoid slime 가입인증</span>
+		<span><i>S</i>p<i>o</i>i<i>d</i>S<i>l</i>i<i>m</i>e</span><span>가입인증</span>
 	</div>
 		<hr class="mj_hr">
 	<div id="MJ_content">
@@ -333,7 +461,7 @@ $(document).ready(function(){
 				<option value="3">어렸을적 내 별명은?</option>
 			</select>
 		</div>
-			<input id="input_answer" name="input_answer" placeholder="오치동" class="insert_answer">
+			<input id="input_answer" name="input_answer" placeholder="오치동" class="input_color insert_answer">
 			
 			
 			
@@ -354,9 +482,29 @@ $(document).ready(function(){
 
 
 <!-- 가입완료 -->
-<article id="complete_area">
-
+<article id="complete_area" class="area">
+				<div id="welcom_text_in">
+					<div id="welcom_logo">
+						<div id="logo">
+							<img alt="" src="img/slime/score5.png">
+						</div>
+					</div>
+				
+				
+					<p id="welcomtext01">회원님의 가입을 진심으로 환영합니다.</p>
+					<p id="welcomtext02"><i id="rCnt">3</i>초 후 메인화면으로 이동됩니다.</p>
+					
+					
+					<!-- 카운트다운 방법 -->
+					<!-- 1. meta 태그 활용 -->
+					<!-- 2. javaScript의 setInterval() 활용-->
+					
+				</div>
 </article>
+
+
+
+
 </div>
 </body>
 </html>
