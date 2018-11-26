@@ -509,27 +509,30 @@ $(document).ready(function(){
 	$(".input_color").blur(function(){
 		$(this).css("background-color","white").css("transition", "all 1s");
 	});
+		// 정보입력 후 -> 힌트
+	 	/* $("#info_next").click(function(){
+			$("#write_info_area").css("display","none");
+			$("#authentication_area").css("display","block");
+			$("#write_info").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+			$("#authentication").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+			
+			// 힌트 입력  후 -> 회원가입 성공
+			$("#hint_next").click(function(){
+				$("#authentication_area").css("display","none");
+				$("#complete_area").css("display","block");
+				$("#authentication").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+				$("#complete").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+			});
+		});  */
 	
-});
-
-
-
-
-
-// 이용약관 동의
-$(document).ready(function(){
+		
+	
+	// 이용약관 동의
 	$("#cbox").click(function(){
 		var ckAll = $("#cbox").is(":checked");
-			/* 전체체크 ⇒ ckAll true
-			   전체체크X ⇒ ckAll false  */
-			/* alert("상태: "+ckAll);
-			true일때 전부다 키고, false 일때 전부다 끈다. */
-
 		if(ckAll == true) {
-		 	alert("상태: "+ckAll);
 			$(".ckboxs").prop("checked", true);
 		} else {
-			alert("상태: "+ckAll);
 			$(".ckboxs").prop("checked", false);
 		}
 	});
@@ -565,33 +568,12 @@ $(document).ready(function(){
 				$("#err_check").css("display", "block");
 			}
 		});
-});
 
-
-
-$(document).ready(function(){
-	
-		// 정보입력 후 -> 힌트
-	 	$("#info_next").click(function(){
-			$("#write_info_area").css("display","none");
-			$("#authentication_area").css("display","block");
-			$("#write_info").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
-			$("#authentication").css("border-bottom-color","#f4c36a").css("color","#f8c465");
-			
-			// 힌트 입력  후 -> 회원가입 성공
-			$("#hint_next").click(function(){
-				$("#authentication_area").css("display","none");
-				$("#complete_area").css("display","block");
-				$("#authentication").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
-				$("#complete").css("border-bottom-color","#f4c36a").css("color","#f8c465");
-			});
-		}); 
-});
-
-
-// 회원가입 정보 입력
-$(document).ready(function(){
-	$("#inputid").blur(function(){
+		
+		
+		
+	// 회원가입 정보 입력
+ 	$("#inputid").blur(function(){
 		var inputval = $(this).val();
 		if(inputval == ""){
 			$(this).next().css("display", "block");
@@ -599,7 +581,7 @@ $(document).ready(function(){
 			$(this).next().css("display", "block");
 		}
 	});
-	$("#inputpw").blur(function(){
+ 	$("#inputpw").blur(function(){
 		var inputval2 = $(this).val();
 		if(inputval2 == ""){
 			$(this).next().css("display", "block");
@@ -614,8 +596,8 @@ $(document).ready(function(){
 		}else {
 			$(this).next().css("display", "block");
 		}
-	});
-	$("#inputnick").blur(function(){
+	}); 
+ 	$("#inputnick").blur(function(){
 		var inputval4 = $(this).val();
 		if(inputval4 == ""){
 			$(this).next().css("display", "block");
@@ -631,13 +613,26 @@ $(document).ready(function(){
 			$(this).next().css("display", "block");
 		}
 	});
+	
+	 
 	/* Ajax사용할 아이디 블러 */
 	$("#inputid").blur(function(){
 		/* id값 받아오기 */
 		var idVal = $(this).val();
+		var mid= $(inputid);
 		
+		/* 유효성체크 */
+		/* trim: 앞뒤 공백 제거 */
+		var id=$.trim(mid.val());
+		var regid = /^[a-zA-Z0-9]{4,12}$/; /* 4~12자 까지 영대소문자와 숫자만 입력가능 */		
 		/* 유효검사를 통해 아이가 null인 경우를 실행했으니, null이 아닌경오 Ajax를 실행하겠다는 코드 */
 		if(idVal != ""){
+			if(!regid.test(id)){
+				mid.focus();
+				mid.next().text("4~12까지의 영문자와 숫자만 입력하세요.").css("display","block");
+				mid.parent().css("margin-bottom","30px");
+				return false; /* 이걸해야 submit이 안됨! 꼭 해야함 */				
+			}
 			$.ajax({
 				url: "idCheck.bizpoll",
 				type: "POST",
@@ -663,104 +658,62 @@ $(document).ready(function(){
 		
 	});
 	
+	$("input:password").blur(function(){
+		pwcheck();
+	});
+	
+
+	
+	$("#inputnick").blur(function(){
+		var nickVal = $(this).val();
+		var mnick= $(inputnick);
+			
+		nickcheck();
+	});
+	
 });
 
 
-// 유효성 검사
-$(document).on("click", "#hint_next", function(){
+function pwcheck(){
+	var mpw= $(inputpw);
+	var mpw2= $(inputrpw);
+	var pw = $.trim(mpw.val());
+ 	var pw2 = $.trim(mpw2.val());
 	
-		/* 유효성 체크하는 값 받아오기 */
-		var
-		form = $("#memberinfo_fmt");
-		mid= $(inputid);
-		mpw= $(inputpw);
-		mpw2= $(inputrpw);
-		mnick= $(inputnick);
-		memail1= $(email_id);
-		memail2= $(email_url);
-		
-		/* 유효성체크 */
-		/* trim: 앞뒤 공백 제거 */
-		var id=$.trim(mid.val());
-		var regid = /^[a-zA-Z0-9]{4,12}$/; /* 4~12자 까지 영대소문자와 숫자만 입력가능 */
-		if(id==""){
-			mid.focus();
-			mid.next().text("필수정보 입니다.").css("display","block");
-			mid.parent().css("margin-bottom","30px");
-			return false; /* 이걸해야 submit이 안됨! 꼭 해야함 */
-		
-		} else if (!regid.test(id)) {
-			mid.focus();
-			mid.next().text("4~12까지의 영문자와 숫자만 입력하세요.").css("display","block");
-			mid.parent().css("margin-bottom","30px");
-			return false; /* 이걸해야 submit이 안됨! 꼭 해야함 */
-		}
-		
-		var pw = $.trim(mpw.val());
-		var pw2 = $.trim(mpw2.val());
-		var regPass = /^.*(?=.{8,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;/* 영문자, 숫자 포함 특수문자 사용가능 8~20자리 */
-		if (pw == ""){
-			mpw.focus();
-			mpw.next().text("필수정보 입니다.").css("display","block");
-			mpw.parent().css("margin-bottom","30px");
-			return false;
-		} else if(!regPass.test(pw)){
-			mpw.focus();
-			mpw.next().text("8~20자 이내 영문자와 숫자 특수문자만 입력하세요.").css("display","block");
-			mpw.parent().css("margin-bottom","30px");
-			return false;
-		} else if(pw2 == ""){
-			mpw2.focus();
-			mpw2.next().text("필수정보 입니다.").css("display","block");
-			mpw2.parent().css("margin-bottom","30px");
-			return false;
-		} else if(pw != pw2){
-			mpw2.select();
-			mpw2.next().text("비밀번호가 일치하지않습니다.").css("display","block");
-			mpw2.parent().css("margin-bottom","30px");
-			return false;
-		}
-		 
-		var nick = $.trim(mnick.val());
-		if(nick = "") {
-			mnick.focus();
-			mnick.next().text("필수정보 입니다.").css("display","block");
-			mnick.parent().css("margin-bottom","30px");
-			return false;
-		}
-		
-	
-	 
-		var mailid = $.trim(memail1.val());
-		var mailurl = $.trim(memail2.val());
-		/* var mail = meailid.val() + "@" + meailurl.val(); */
-		var mail = mailid + "@" +mailurl;
-		var regMail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-		if(mailid == ""){
-			memail1.focus();
-			$("#selmail").next().text("필수정보 입니다.").css("display","block");
-			return false;
-			
-		} else if(mailurl==""){
-			memail2.focus();
-			$("#selmail").next().text("필수정보 입니다.").css("display","block");
-			return false;
-		} else if(!regMail.test(mail)){
-			memail1.select();
-			mail.next().text("Email형식이 올바르지 않습니다").css("display","block");
-			return false;
-		}
-		
-		/* 유효성체크 값이 유효한 값 확인 끝! */
-		form.submit(); /* -->> DB로 보낸다!! */
-		
-		
-		
-});	
-		
+	var regPass = /^.*(?=.{8,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;/* 영문자, 숫자 포함 특수문자 사용가능 8~20자리 */
+	if (pw == ""){
+		mpw.focus();
+		mpw.next().text("필수정보 입니다.").css("display","block");
+		mpw.parent().css("margin-bottom","30px");
+		return false;
+	} else if(!regPass.test(pw)){
+		mpw.focus();
+		mpw.next().text("8~20자 이내 영문자와 숫자 특수문자만 입력하세요.").css("display","block");
+		mpw.parent().css("margin-bottom","30px");
+		return false;
+	} else if(pw2 == ""){
+		mpw2.focus();
+		mpw2.next().text("필수정보 입니다.").css("display","block");
+		mpw2.parent().css("margin-bottom","30px");
+		return false;
+	} else if(pw != pw2){
+		mpw2.select();
+		mpw2.next().text("비밀번호가 일치하지않습니다.").css("display","block");
+		mpw2.parent().css("margin-bottom","30px");
+		return false;
+	}
+}
 
 
-
+function nickcheck(){
+	var nick = $.trim(mnick.val());
+	if(nick = "") {
+		mnick.focus();
+		mnick.next().text("필수정보 입니다.").css("display","block");
+		mnick.parent().css("margin-bottom","30px");
+		return false;
+	}
+}
 
 
 
@@ -962,8 +915,6 @@ $(document).on("click", "#hint_next", function(){
 			<i class="fa fa-exclamation"></i><span> PW 찾기를 이용하실 시 하단 힌트의 설정한 답을 입력하게 됩니다. 바른 작성 부탁드립니다.</span>
 		</div>
 
-
-
 	<div id="hint_box">
 		<div id="hint1" class="hint">
 			<select>
@@ -973,13 +924,7 @@ $(document).on("click", "#hint_next", function(){
 			</select>
 		</div>
 			<input id="input_answer" name="input_answer" placeholder="오치동" class="input_color insert_answer">
-			
-			
-			
-		
-
 	</div>	
-	
 		<input type="button" value="NEXT" class="login_btn" id="hint_next">
 	</div>
 </article>
@@ -994,23 +939,15 @@ $(document).on("click", "#hint_next", function(){
 
 <!-- 가입완료 -->
 <article id="complete_area" class="area">
-				<div id="welcom_text_in">
-					<div id="welcom_logo">
-						<div id="logo">
-							<img alt="" src="img/slime/score5.png">
-						</div>
-					</div>
-				
-				
-					<p id="welcomtext01">회원님의 가입을 진심으로 환영합니다.</p>
-					<p id="welcomtext02"><i id="rCnt">3</i>초 후 메인화면으로 이동됩니다.</p>
-					
-					
-					<!-- 카운트다운 방법 -->
-					<!-- 1. meta 태그 활용 -->
-					<!-- 2. javaScript의 setInterval() 활용-->
-					
-				</div>
+	<div id="welcom_text_in">
+		<div id="welcom_logo">
+			<div id="logo">
+				<img alt="" src="img/slime/score5.png">
+			</div>
+		</div>
+		<p id="welcomtext01">회원님의 가입을 진심으로 환영합니다.</p>
+		<p id="welcomtext02"><i id="rCnt">3</i>초 후 메인화면으로 이동됩니다.</p>
+	</div>
 </article>
 
 
