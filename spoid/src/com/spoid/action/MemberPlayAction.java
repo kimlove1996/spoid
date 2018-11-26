@@ -23,10 +23,13 @@ public class MemberPlayAction implements Action {
 		  String rpw = request.getParameter("inputrpw");
 		  String nick = request.getParameter("inputnick");
 		  String email = request.getParameter("inputemail");
+		  String hint1 = "1";
+		  String hint2 = "1";
 		  /*String email = request.getParameter("email")+"@"+request.getParameter("email_url");*/
-		  MemberDTO mDto = new MemberDTO(id, pw, rpw, nick, email);
 		  MemberDAO mDao = MemberDAO.getInstance();
-
+		  MemberDTO mDto = new MemberDTO(id, pw, rpw, nick, email, hint1, hint2);
+		  System.out.println("action단에서 이동!!!!!!!!!"+mDto.toString());
+		  
 		  int result = mDao.insertMember(mDto);
 		  
 		  System.out.println("회원가입 여부 : "+result);

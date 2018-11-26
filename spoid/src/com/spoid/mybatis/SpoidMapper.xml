@@ -8,8 +8,8 @@
 	<!-- MEMBERDAO -->
  	<!-- ======================================================================================== -->
  	<insert id="insertMember" parameterType="com.spoid.dto.MemberDTO">
-		INSERT INTO SpoidMember(id,pw,rpw, nick, email, hint1, hint2) 
-		VALUES(#{id},#{pw},#{rpw},#{nick},#{email},#{hint1},#{hint2})
+		INSERT INTO SpoidMember(id, pw, rpw, nick, email, hint1, hint2) 
+		VALUES(#{id},#{pw},#{rpw},#{nick},#{email}, #{hint1}, #{hint2})
 	</insert>
 	
 	<select id="confirmID" parameterType="String" resultType="String">
@@ -27,11 +27,13 @@
 	</select>
 	
 	<update id="updateMember" parameterType="com.spoid.dto.MemberDTO">
-			 UPDATE SpoidMember SET 
-			 nick = #{nick}, 
+			 UPDATE SpoidMember SET
+			 pw = #{pw},
+			 rpw = #{rpw}, 
+			 nick = #{nick},
 			 email = #{email},
 			 hint1 = #{hint1},
-			 hint2 = #{hint2}  
+			 hint2 = #{hint2}
 			 where id = #{id}
 	</update>
 	
@@ -42,6 +44,13 @@
 			DELETE FROM SpoidMember
 			WHERE id = #{userid}
 	</delete>
+	
+	<update id="hintCheck" parameterType="com.spoid.dto.MemberDTO">
+		UPDATE SpoidMember SET
+		hint1 = #{hint1}
+		hint2 = #{hint2}
+		WHERE id = #{id}
+	</update>
 	<!-- ====================================================================================== -->
 	<!--  BoardDAO -->
 <!-- 	<select id="" resultType = "com.spoid.dto.BoardDTO">

@@ -44,7 +44,7 @@ public class MemberDAO {
 		try {
 			result = sqlSession.insert("insertMember",mDto);
 			sqlSession.commit(); //insert, update, delete 는 반드시 commit
-
+			System.out.println(mDto.toString());
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -74,8 +74,23 @@ public class MemberDAO {
 		}		
 		
 		return result;
-		
 	}
+	
+	// 회원가입 hint 값
+	public void hintCheck(String id) {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			sqlSession.update("hintCheck",id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+	}
+	
+	
+	
+	
 	
 	//비밀번호 중복 체크
 	public String confirmPwd(String id, String pw) {

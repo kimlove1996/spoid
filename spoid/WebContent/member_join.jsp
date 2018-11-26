@@ -516,13 +516,7 @@ $(document).ready(function(){
 			$("#write_info").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
 			$("#authentication").css("border-bottom-color","#f4c36a").css("color","#f8c465");
 			
-			// 힌트 입력  후 -> 회원가입 성공
-			$("#hint_next").click(function(){
-				$("#authentication_area").css("display","none");
-				$("#complete_area").css("display","block");
-				$("#authentication").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
-				$("#complete").css("border-bottom-color","#f4c36a").css("color","#f8c465");
-			});
+			
 		});  */
 	
 		
@@ -573,12 +567,13 @@ $(document).ready(function(){
 		
 		
 	// 회원가입 정보 입력
+		
  	$("#inputid").blur(function(){
 		var inputval = $(this).val();
 		if(inputval == ""){
 			$(this).next().css("display", "block");
 		}else {
-			$(this).next().css("display", "block");
+			$(this).next().css("display", "none");
 		}
 	});
  	$("#inputpw").blur(function(){
@@ -586,7 +581,7 @@ $(document).ready(function(){
 		if(inputval2 == ""){
 			$(this).next().css("display", "block");
 		}else {
-			$(this).next().css("display", "block");
+			$(this).next().css("display", "none");
 		}
 	});
 	$("#inputrpw").blur(function(){
@@ -594,7 +589,7 @@ $(document).ready(function(){
 		if(inputval3 == ""){
 			$(this).next().css("display", "block");
 		}else {
-			$(this).next().css("display", "block");
+			$(this).next().css("display", "none");
 		}
 	}); 
  	$("#inputnick").blur(function(){
@@ -602,7 +597,7 @@ $(document).ready(function(){
 		if(inputval4 == ""){
 			$(this).next().css("display", "block");
 		}else {
-			$(this).next().css("display", "block");
+			$(this).next().css("display", "none");
 		}
 	});
 	$("#inputemail").blur(function(){
@@ -610,7 +605,7 @@ $(document).ready(function(){
 		if(inputval5 == ""){
 			$(this).next().css("display", "block");
 		}else {
-			$(this).next().css("display", "block");
+			$(this).next().css("display", "none");
 		}
 	});
 	
@@ -662,8 +657,6 @@ $(document).ready(function(){
 		pwcheck();
 	});
 	
-
-	
 	$("#inputnick").blur(function(){
 		var nickVal = $(this).val();
 		var mnick= $(inputnick);
@@ -671,6 +664,38 @@ $(document).ready(function(){
 		nickcheck();
 	});
 	
+	$("#info_next").click(function(){
+	
+	$.ajax({
+		url: "memberplayaction.bizpoll",
+		data:$("#memberinfo_fmt").serialize(),
+		contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+		success: function(data) {
+			$("#write_info_area").css("display","none");
+			$("#authentication_area").css("display","block");
+			$("#write_info").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+			$("#authentication").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+		},
+		error: function() {
+			alert("SYSTEM ERROR");
+		}
+		
+	});
+	
+	
+	});
+	
+	
+	
+	
+	// 힌트 입력  후 -> 회원가입 성공
+	$("#hint_next").click(function(){
+		$("#authentication_area").css("display","none");
+		$("#complete_area").css("display","block");
+		$("#authentication").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+		$("#complete").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+	});
+
 });
 
 
@@ -863,7 +888,7 @@ function nickcheck(){
 		<hr class="mj_hr">
 	<div id="MJ_content">
 		<span>[ JOIN ]</span>
-		<form method="POST" action="memberplayaction.bizpoll" name="memberinfo_fmt" id="memberinfo_fmt">
+		<form method="" action="" name="memberinfo_fmt" id="memberinfo_fmt">
 		<div class="mj_info">
 			<label for="inputid" id="in_id" class="label_singnin">아이디</label>
 			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in">
