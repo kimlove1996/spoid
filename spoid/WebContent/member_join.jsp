@@ -117,6 +117,195 @@
 #constract_area{
 	display: block;
 }
+/*container*/
+#container {
+	position: relative;
+}
+#join_content {
+	width: 460px;
+	margin: 0 auto;
+}
+.terms {
+	margin-bottom: 20px;
+	background-color: white;
+	border: 1px solid #dadada;
+}
+.terms_p {
+	position: relative;
+	margin: 0px;
+	padding: 15px;
+	display: block;
+}
+.terms_span {
+	position: relative;
+	display: block;
+	height: 58px;
+}
+.terms_span>input {
+	position: absolute;
+	right: 1px;
+	top: 50%;
+	width: 22px;
+	height: 22px;
+	margin-top: -11px;
+	visibility: hidden;
+}
+.terms_span>input:checked +label {
+	background-image: url("img/logo_check_on.png");
+}
+.terms_span>label {
+	font-size: 14px;
+	font-weight: 700;
+	top: -1px;
+	height: 58px;
+	line-height: 20px;
+	display: block;
+	cursor: pointer;
+	background: url(img/logo_check_off.gif) 100% 50% no-repeat;
+}
+#terms_ul {
+	padding-bottom: 7px;
+}
+#terms_ul>li {
+	display: block;
+	padding: 13px 15px 7px;
+}
+#terms_ul_li1 {
+	border-top: 1px solid #f0f0f0;
+}
+.ul_li_span {
+	position: relative;
+	display: block;
+	height: 24px;
+}
+.ul_li_span>input {
+	position: absolute;
+	right: 1px;
+	top: 50%;
+	margin-top: -11px;
+	width: 22px;
+	visibility: hidden;
+}
+.ul_li_span>input:checked +label {
+	background-image: url("img/logo_check_on.png");
+}
+.ul_li_span>label {
+	background: url("img/logo_check_off.gif") 100% 50% no-repeat;
+	display: block;
+}
+.label1 {
+	height: 24px;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 24px;
+	position: absolute;
+	color: #333;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+.span_only {
+	color: #f8c465;
+	font-size: 12px;
+	font-weight: 400;
+	font-weight: bold;
+}
+.span_select {
+
+	color: #ccc;
+
+	font-size: 12px;
+
+	font-weight: 400;
+
+	font-weight: bold;
+
+}
+
+ 
+
+.terms_box {
+
+	box-sizing: border-box;
+
+	position: relative;
+
+	height: 88px;
+
+	margin-top: 11px;
+
+	padding: 8px 10px;
+
+	border: 1px solid #f0f0f0;
+
+	background-color: #f7f7f7;
+
+	overflow: auto;
+
+}
+
+ 
+
+.article {
+
+	margin-top: 0px;
+
+}
+
+ 
+
+h3.article_title {
+
+	font-size: 12px;
+
+	font-weight: 700;
+
+	line-height: 16px;
+
+	color: #666;
+
+	margin: 0;
+
+	padding: 0;
+
+	padding-bottom: 8px;
+
+}
+
+ 
+
+.article>p {
+
+	display: block;
+
+	font-size: 12px;
+
+	line-height: 16px;
+
+	color: #666;
+
+}
+
+ 
+
+
+ 
+
+
+#err_check_msg {
+	display: inline-block;
+	width: 428px;
+	height: 24px;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 24px;
+	color: #f46665;
+	padding: 0px 15px;
+	text-align: center;
+}
+#err_check {
+	display: none;
+}
 
 /* ================================================================== 정보입력*/
 
@@ -173,7 +362,7 @@
     outline: 0;
 }
 
-#login_btn {
+.login_btn {
 	width: 100px;
     height: 46px;
     margin-top: 40px;
@@ -186,7 +375,7 @@
     margin: 2% 45% 4% 45%;
     cursor: pointer;
 }
-#login_btn:hover {
+.login_btn:hover {
     background-color: #ffcd00;
     color: #474747;
     font-weight: bold;
@@ -308,8 +497,6 @@
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
-
-	
 	
 	$(".input_color").focus(function(){
 		$(this).css("background-color","#e5f3ff").css("transition", "all 1s");
@@ -318,9 +505,61 @@ $(document).ready(function(){
 		$(this).css("background-color","white").css("transition", "all 1s");
 	});
 	
-	
-	
-	
+});
+
+
+
+
+
+// 이용약관 동의
+$(document).ready(function(){
+	$("#cbox").click(function(){
+		var ckAll = $("#cbox").is(":checked");
+			/* 전체체크 ⇒ ckAll true
+			   전체체크X ⇒ ckAll false  */
+			/* alert("상태: "+ckAll);
+			true일때 전부다 키고, false 일때 전부다 끈다. */
+
+		if(ckAll == true) {
+		 	alert("상태: "+ckAll);
+			$(".ckboxs").prop("checked", true);
+		} else {
+			alert("상태: "+ckAll);
+			$(".ckboxs").prop("checked", false);
+		}
+	});
+
+		/* 선택버튼 전부 다 클릭시 전체버튼 클릭 */
+		$(document).on("click", ".ckboxs", function(){
+			var ck1 = $("#li1box").is(":checked");
+			var ck2 = $("#li2box").is(":checked");
+			var ck3 = $("#li3box").is(":checked");
+			var ck4 = $("#li4box").is(":checked");
+
+			if(ck1 == true && ck2 == true && ck3 == true && ck4 == true) {
+				$("#cbox").prop("checked", true);
+			}else {
+				$("#cbox").prop("checked", false);
+			}
+		});
+
+		
+
+		/* 다음버튼 클릭 시 */
+		$("#constract_next").click(function(){
+			var filsu1 = $("#li1box").is(":checked");
+			var filsu2 = $("#li2box").is(":checked");
+
+			if(filsu1 == true && filsu2 == true) {
+				// 이용약관 후-> 정보입력
+				$("#constract_area").css("display","none");
+				$("#write_info_area").css("display","block");
+				$("#constract").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+				$("#write_info").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+			} else {
+				$("#err_check").css("display", "block");
+			}
+		});
 });
 
 
@@ -331,7 +570,24 @@ $(document).ready(function(){
 
 
 
-
+$(document).ready(function(){
+	
+		// 정보입력 후 -> 힌트
+		$("#info_next").click(function(){
+			$("#write_info_area").css("display","none");
+			$("#authentication_area").css("display","block");
+			$("#write_info").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+			$("#authentication").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+			
+			// 힌트 입력  후 -> 회원가입 성공
+			$("#hint_next").click(function(){
+				$("#authentication_area").css("display","none");
+				$("#complete_area").css("display","block");
+				$("#authentication").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+				$("#complete").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+			});
+		});
+});
 
 
 
@@ -370,13 +626,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
 <!-- 이용약관 area -->
 <article id="constract_area" class="area">
 	<div id="MJ_title">
@@ -384,8 +633,97 @@ $(document).ready(function(){
 	</div>
 		<hr class="mj_hr">
 	<div id="MJ_content">
+		<div id="container" class="divsize">
+			<form id="join_content">
+				<div class="terms">
+					<p class="terms_p">
+						<span class="terms_span"> <input type="checkbox" id="cbox">
+							<label for="cbox"> 이용약관, 개인정보 수집 및 이용, <br> 위치정보
+								이용약관(선택), 프로모션 안내<br> 메일 수신(선택)에 모두 동의합니다.
+						</label>
+						</span>
+					</p>
+					<ul id="terms_ul">
+						<li id="terms_ul_li1"><span class="ul_li_span">
+						 <input type="checkbox" id="li1box" class="ckboxs">
+						  <label for="li1box" class="label1"> spoid's slime 이용약관 동의<span class="span_only">(필수)</span>
+							</label>
+						</span>
+							<div class="terms_box">
+								<div class="article">
+									<h3 class="article_title">여러분을 환영합니다.</h3>
+									<p>
+										spoid's slime 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 <br>다양한spoid's slime
+										서비스의 이용과 관련하여 spoid's slime 서비스를 제공하는spoid's slime 주식회사(이하 ‘spoid's slime’)와 이를 이용하는 spoid's slime
+										서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, <br> 아울러 여러분의 spoid's slime 서비스
+										이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+									</p>
+									<br>
+									<h3 class="article_title">제 2 조 (목적)</h3>
+									<p></p>
+									<br>
+								</div>
+							</div>
+						</li>
+						<li id="terms_ul_li2">
+						 <span class="ul_li_span">
+						 <input type="checkbox" id="li2box" class="ckboxs">
+						  <label for="li2box" class="label1"> 개인정보 수집 및 이용에 대한 안내
+						  	<span class="span_only">(필수)</span>
+						  </label>
+						</span>
+							<div class="terms_box">
+								<div class="article">
+									<p>
+										정보통신망법 규정에 따라spoid's slime에 회원가입 신청하시는 분께 수집하는 개인<br> 정보의 항목,
+										개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간을 <br> 안내 드리오니 자세히 읽은 후
+										동의하여 주시기 바랍니다.
+									</p>
+									<br>
+									<h3 class="article_title">1. 수집하는 개인정보</h3>
+									<p>
+										이용자는 회원가입을 하지 않아도 정보 검색, 뉴스 보기 등 대부분의spoid's slime <br>서비스를 회원과
+										동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더, 카페, <br>블로그 등과 같이 개인화 혹은
+										회원제 서비스를 이용하기 위해 회원가입을 할<br> 경우,spoid's slime는 서비스 이용을 위해 필요한 최소한의
+										개인정보를 수집합니다.
+									</p>
+								</div>
+							</div>
+						</li>
+						<li id="terms_ul_li3">
+						 <span class="ul_li_span"> 
+							<input type="checkbox" id="li3box" class="ckboxs"> 
+								<label for="li3box" class="label1"> 위치정보 이용약관 동의
+								<span class="span_select">(선택)</span>
+							</label>
+						</span>
+							<div class="terms_box">
+								<div class="article">
+									<p>위치정보 이용약관에 동의하시면, <strong>위치를 활용한 광고 정보 수신</strong> 등을 포함하<br>는spoid's slime 위치기반 서비스를 이용할 수 있습니다.</p>
+									<br>
+									<h3 class="article_title">제 1 조 (목적)</h3>
+									<p>이 약관은spoid's slime 주식회사 (이하 “회사”)가 제공하는 위치정보사업 또는 위치<br> 기반서비스사업과관련하여 회사와 개인위치정보주체와의 권리, 의무 및 책임
+									<br> 사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+									</p>
+								</div>
+							</div></li>
+						<li id="terms_ul_li4">
+						 <span class="ul_li_span">
+							<input type="checkbox" id="li4box" class="ckboxs">
+							<label for="li4box" class="label1">이벤트 등 프로모션 알림 메일 수신
+							<span class="span_select">(선택)</span>
+							</label>
+						 </span>
+					   </li>
+					</ul>
+				</div>
+				<div id="err_check">
+					<span id="err_check_msg">spoid's slime 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.</span>
+				</div>
+			</form>
+		</div>
 	
-		<input type="button" value="NEXT" id="login_btn">
+		<input type="button" value="NEXT" class="login_btn" id="constract_next">
 	</div>
 </article>
 
@@ -427,7 +765,7 @@ $(document).ready(function(){
 			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail">
 		</div> 
 	
-		<input type="button" value="NEXT" id="login_btn">
+		<input type="button" value="NEXT" class="login_btn" id="info_next">
 	</div>
 </article>
 
@@ -469,7 +807,7 @@ $(document).ready(function(){
 
 	</div>	
 	
-		<input type="button" value="NEXT" id="login_btn">
+		<input type="button" value="NEXT" class="login_btn" id="hint_next">
 	</div>
 </article>
 
