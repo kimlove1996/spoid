@@ -77,15 +77,18 @@ public class MemberDAO {
 	}
 	
 	// 회원가입 hint 값
-	public void hintCheck(String id) {
+	public int hintCheck(MemberDTO mDto) {
+		int result = 0;
 		sqlSession = sqlSessionFactory.openSession();
 		try {
-			sqlSession.update("hintCheck",id);
+			result = sqlSession.update("hintCheck",mDto);
+			sqlSession.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
+		return result;
 	}
 	
 	

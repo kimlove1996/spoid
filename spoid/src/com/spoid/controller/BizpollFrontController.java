@@ -34,6 +34,7 @@ import com.spoid.action.LoginAction;
 import com.spoid.action.LoginOutPlayAction;
 import com.spoid.action.LoginPlayAction;
 import com.spoid.action.MemberDeletePlayAction;
+import com.spoid.action.MemberHintPlayAction;
 import com.spoid.action.MemberPlayAction;
 import com.spoid.action.MemberUpdateAction;
 import com.spoid.action.MemberUpdatePlayAction;
@@ -110,6 +111,9 @@ public class BizpollFrontController extends HttpServlet
 		  forward = action.excute(request, response);
 	  }else if(command.equals("/memdeleteplayaction.bizpoll")) {
 		  action = new MemberDeletePlayAction();
+		  forward = action.excute(request, response);
+	  }else if(command.equals("/memberhintplay.bizpoll")) {
+		  action = new MemberHintPlayAction();
 		  forward = action.excute(request, response);
 	  }else if(command.equals("/LoginPlay.bizpoll")) {
 		  action = new LoginPlayAction();
