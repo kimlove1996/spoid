@@ -95,7 +95,8 @@
 		width:70%;
 	}
 	#log_section{
-		
+		box-sizing:border-box;
+		padding-top : 10%;
 		width : 30%;
 		background-color: #fbfbfb;
 		height: 610px;
@@ -131,8 +132,6 @@
 	    transition: width 0.4s ease-in-out;
 	    overflow: hidden;
 	    border : none;
-	    padding-left : 10px;
-
 	}
 	.search *{
 		display: inline-block;
@@ -166,6 +165,17 @@
 	.menu_li_div{
 		margin : 50px;
 	}
+	.white{
+		background-color: white;
+	}
+	.img_log{
+		width : 100%;
+	}
+	.mlog_btn{
+		color:black;
+		font-weight: bold;
+	}
+
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -175,6 +185,7 @@
 			$(".search-box").addClass("active");
 			$(".search-box").focus();
 		});
+
 	});
 	$(document).on("click",".menu_ham",function(){
 		var menu_state = $.trim($(this).text()); // 메뉴 햄버거 버튼의 이름을 가지고 온다
@@ -182,7 +193,7 @@
 		if(menu_state == "MENU"){ // 같으면 menu modal 을 열어주고 버튼의 상태를 close로 바꿈
 			$("#menu_modal").width("100%");
 			$("#menu_close").css("display","block");
-			$("#header_body").css("overflow","hidden");
+		
 		
 		}else{
 			alert("다름");
@@ -198,7 +209,7 @@
 
 </head>
 <body id="header_body">
-	<header>
+	<header id="header_wrap">
 		<div class="header_line">
 			<div class="header_inner">
 				<div class="logo" id="logo_anim">
@@ -227,11 +238,14 @@
 
 		<div id="menu_section" >	
 			<div id="log_section">
-				<span id="login_status">
-
-				</span>
-				<a href="#">로그아웃</a>
-				<a href="#">마이페이지</a>
+	
+				<img src="img/menu/nolog.jpg" class="img_log">
+				<p>로그인을 하지 않으셨어요~~</p>
+				<a href="#" class="mlog_btn">로그인</a>
+				<a href="#" class="mlog_btn">회원가입</a>	
+								
+				<a href="#" style="display:none">로그아웃</a>
+				<a href="#" style="display:none">마이페이지</a>
 			</div>
 			<div id="menu_wrapper">
 				<ul id="menu_ul">
@@ -239,24 +253,38 @@
 						<li>
 							<div class="menu_li_div">
 								<img src="img/menu/movie_box.png" class="menu_icon">
-								<a href="#" class="menu_btn">박스오피스</a>
+								<span class="menu_btn">박스오피스</span>
 							</div>
 						</li>
 						<li>
 							<div class="menu_li_div">
 								<img src="img/menu/movie_now.png" class="menu_icon">
-								<a href="#" class="menu_btn">현재 상영작</a>
+								<span class="menu_btn">현재 상영작</span>
 							</div>
 						</li>
 						<li>
 							<div class="menu_li_div">
 								<img src="img/menu/movie_all.png" class="menu_icon">
-								<a href="#" class="menu_btn">모든 영화</a>
+								<span class="menu_btn">모든 영화</span>
 							</div>
 						</li>
-						<li><a href="#" class="menu_btn">About us</a></li>
-						<li><a href="#" class="menu_btn">게시판</a></li>
-						<li><a href="#" class="menu_btn">고객센터</a></li>
+						<li>
+							<div class="menu_li_div">
+								<img src="img/menu/about-us-1.gif" class="menu_icon">
+								<span class="menu_btn">About us</span>
+							</div>
+						</li>
+						<li>
+							<div class="menu_li_div">
+								<img src="img/menu/board.gif" class="menu_icon">
+								<span class="menu_btn">게시판</span>
+							</div>
+						<li>
+							<div class="menu_li_div">
+								<img src="img/menu/as.gif" class="menu_icon">
+								<span class="menu_btn">고객센터</span>
+							</div>
+						</li>
 				</ul>
 			</div>
 		</div>

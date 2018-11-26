@@ -24,6 +24,24 @@
 		width : 29%;
 		padding: 180px 60px 20px;
 	}
+	.score_view table{
+		border-collapse: collapse;
+		text-align: center;
+	}
+	
+	.score_view table th,.score_view table td{
+    	border-bottom: 1px solid #cccccc;
+    	overflow: hidden;
+    	padding : 0 10px;
+
+  	}
+	.score_view table tr:nth-child(odd){
+		background-color: #F8F6F8;
+	}
+	.score_view table th{
+		background-color: white;
+		padding-bottom : 5px;
+	}
 	.graph_view{
 		background-color: #F8F6F8;
 		width : 64%;
@@ -36,7 +54,9 @@
 		min-height: 500px;
 	}
 	.topmv_content{
-		padding : 50px;
+		
+		width : 90%;
+		margin: 0 auto;
 	}
 	.graph_div > div{
 		display: inline-block;
@@ -45,11 +65,21 @@
 	
 	.inner_topmv{
 		display: inline-block;
-		width : 33%;
 		max-height: 2100px;
 		float: left;
 	}
+	.inner_topmv:first-child,.inner_topmv:nth-child(3){
+		width : 32%;
+	}
+	.inner_topmv:nth-child(2){
+		width: 30%;
+	}
+	.inner_topmv > div > img{
+		width: 100%;
+		height: 100%;
+	}
 	.col1{
+		
 		height: 690px;
 		max-height: 690px;
 		background-color: #fff;
@@ -57,6 +87,7 @@
 		
 	}
 	.col2{
+
 		height: 515px;
 		max-height:515px;
 		margin: 0 10px 10px 10px;
@@ -83,7 +114,7 @@
 		<div class="graph_div">	
 			<div class="score_view">
 				<p>네티즌 평점 지수</p>
-				<table>
+				<table >
 					<tr>
 						<th>순위</th>
 						<th>이름</th>
@@ -156,6 +187,7 @@
 				<div class="graph1">2018.11.20</div>
 				<div class="graph_txt">박스오피스</div> 
 				<div class="graph2">TOP 10</div>
+				<canvas></canvas>
 			</div>
 			<div class="clr_both"></div>
 		</div>
@@ -163,23 +195,42 @@
 			<div class="topmv_content">
 
 				<div class="inner_topmv">
-					<div class="col1">1</div>
-					<div class="col1">5</div>
-					<div class="col1">8</div>
+					<div class="col1">
+						<img src="img/poster/movie_image.jpg">
+					</div>
+					<div class="col1">
+						<img src="img/poster/movie_image (4).jpg">
+					</div>
+					<div class="col1">
+						<img src="img/poster/movie_image (7).jpg">
+					</div>
 				</div>
 
 				<div class="inner_topmv">
-					<div class="col2">2</div>
-					<div class="col2">4</div>
-					<div class="col2">6</div>
-					<div class="col2">9</div>
+					<div class="col2">
+						<img src="img/poster/movie_image (1).jpg">
+					</div>
+					<div class="col2">
+						<img src="img/poster/movie_image (3).jpg">
+					</div>
+					<div class="col2">
+						<img src="img/poster/movie_image (5).jpg">
+					</div>
+					<div class="col2">
+						<img src="img/poster/movie_image (8).jpg">
+					</div>
 				</div>
 
 				<div class="inner_topmv">
-						<div class="col1">3
+						<div class="col1">
+							<img src="img/poster/movie_image (3).jpg">
 						</div>
-						<div class="col1">7</div>
-						<div class="col1">10</div>
+						<div class="col1">
+							<img src="img/poster/movie_image (6).jpg">
+						</div>
+						<div class="col1">
+							<img src="img/poster/movie_image (9).jpg">
+						</div>
 				</div>
 				<div class="clr_both"></div>
 			</div>
@@ -189,3 +240,4 @@
 	
 </body>
 </html>
+<%@ include file="include/footer.jsp" %>
