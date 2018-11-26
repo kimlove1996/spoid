@@ -14,7 +14,7 @@
 		background-color: #F8F6F8;
 	}
 	header p{
-		margin-top : 0px;
+		margin-top : -100px;
 	}
 	li{
 		list-style : none;
