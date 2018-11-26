@@ -312,7 +312,12 @@ h3.article_title {
 #write_info_area{
 	display: none;
 }
-
+.error {
+	font-size: 10px;
+	color: red;
+	display: none;
+	padding-left: 25%;
+}
 
 
 
@@ -564,16 +569,10 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
 $(document).ready(function(){
 	
 		// 정보입력 후 -> 힌트
-		$("#info_next").click(function(){
+	 	$("#info_next").click(function(){
 			$("#write_info_area").css("display","none");
 			$("#authentication_area").css("display","block");
 			$("#write_info").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
@@ -586,11 +585,179 @@ $(document).ready(function(){
 				$("#authentication").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
 				$("#complete").css("border-bottom-color","#f4c36a").css("color","#f8c465");
 			});
-		});
+		}); 
 });
 
 
+// 회원가입 정보 입력
+$(document).ready(function(){
+	$("#inputid").blur(function(){
+		var inputval = $(this).val();
+		if(inputval == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "block");
+		}
+	});
+	$("#inputpw").blur(function(){
+		var inputval2 = $(this).val();
+		if(inputval2 == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "block");
+		}
+	});
+	$("#inputrpw").blur(function(){
+		var inputval3 = $(this).val();
+		if(inputval3 == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "block");
+		}
+	});
+	$("#inputnick").blur(function(){
+		var inputval4 = $(this).val();
+		if(inputval4 == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "block");
+		}
+	});
+	$("#inputemail").blur(function(){
+		var inputval5 = $(this).val();
+		if(inputval5 == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "block");
+		}
+	});
+	/* Ajax사용할 아이디 블러 */
+	$("#inputid").blur(function(){
+		/* id값 받아오기 */
+		var idVal = $(this).val();
+		
+		/* 유효검사를 통해 아이가 null인 경우를 실행했으니, null이 아닌경오 Ajax를 실행하겠다는 코드 */
+		if(idVal != ""){
+			$.ajax({
+				url: "idCheck.bizpoll",
+				type: "POST",
+				dateType: "json",
+				data: "id="+ idVal,
+				success: function(data) {
+					if(data.message == "-1"){
+						$("#inputid").next().text("이미 사용중인 아이디입니다.").css("display", "block").css("color", "#F46665");
+						$("#inputid").select();
+						$("#inputid").parent().css("margin-bottom","30px");
+					} else {
+						$("#inputid").next().text("멋진 아이디네요!").css("display", "block").css("color", "#0000FF");
+						$("#inputid").parent().css("margin-bottom","30px");
+					}
+					
+				},
+				error: function() {
+					alert("SYSTEM ERROR");
+				}
+				
+			});
+		}
+		
+	});
+	
+});
 
+
+// 유효성 검사
+$(document).on("click", "#hint_next", function(){
+	
+		/* 유효성 체크하는 값 받아오기 */
+		var
+		form = $("#memberinfo_fmt");
+		mid= $(inputid);
+		mpw= $(inputpw);
+		mpw2= $(inputrpw);
+		mnick= $(inputnick);
+		memail1= $(email_id);
+		memail2= $(email_url);
+		
+		/* 유효성체크 */
+		/* trim: 앞뒤 공백 제거 */
+		var id=$.trim(mid.val());
+		var regid = /^[a-zA-Z0-9]{4,12}$/; /* 4~12자 까지 영대소문자와 숫자만 입력가능 */
+		if(id==""){
+			mid.focus();
+			mid.next().text("필수정보 입니다.").css("display","block");
+			mid.parent().css("margin-bottom","30px");
+			return false; /* 이걸해야 submit이 안됨! 꼭 해야함 */
+		
+		} else if (!regid.test(id)) {
+			mid.focus();
+			mid.next().text("4~12까지의 영문자와 숫자만 입력하세요.").css("display","block");
+			mid.parent().css("margin-bottom","30px");
+			return false; /* 이걸해야 submit이 안됨! 꼭 해야함 */
+		}
+		
+		var pw = $.trim(mpw.val());
+		var pw2 = $.trim(mpw2.val());
+		var regPass = /^.*(?=.{8,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;/* 영문자, 숫자 포함 특수문자 사용가능 8~20자리 */
+		if (pw == ""){
+			mpw.focus();
+			mpw.next().text("필수정보 입니다.").css("display","block");
+			mpw.parent().css("margin-bottom","30px");
+			return false;
+		} else if(!regPass.test(pw)){
+			mpw.focus();
+			mpw.next().text("8~20자 이내 영문자와 숫자 특수문자만 입력하세요.").css("display","block");
+			mpw.parent().css("margin-bottom","30px");
+			return false;
+		} else if(pw2 == ""){
+			mpw2.focus();
+			mpw2.next().text("필수정보 입니다.").css("display","block");
+			mpw2.parent().css("margin-bottom","30px");
+			return false;
+		} else if(pw != pw2){
+			mpw2.select();
+			mpw2.next().text("비밀번호가 일치하지않습니다.").css("display","block");
+			mpw2.parent().css("margin-bottom","30px");
+			return false;
+		}
+		 
+		var nick = $.trim(mnick.val());
+		if(nick = "") {
+			mnick.focus();
+			mnick.next().text("필수정보 입니다.").css("display","block");
+			mnick.parent().css("margin-bottom","30px");
+			return false;
+		}
+		
+	
+	 
+		var mailid = $.trim(memail1.val());
+		var mailurl = $.trim(memail2.val());
+		/* var mail = meailid.val() + "@" + meailurl.val(); */
+		var mail = mailid + "@" +mailurl;
+		var regMail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+		if(mailid == ""){
+			memail1.focus();
+			$("#selmail").next().text("필수정보 입니다.").css("display","block");
+			return false;
+			
+		} else if(mailurl==""){
+			memail2.focus();
+			$("#selmail").next().text("필수정보 입니다.").css("display","block");
+			return false;
+		} else if(!regMail.test(mail)){
+			memail1.select();
+			mail.next().text("Email형식이 올바르지 않습니다").css("display","block");
+			return false;
+		}
+		
+		/* 유효성체크 값이 유효한 값 확인 끝! */
+		form.submit(); /* -->> DB로 보낸다!! */
+		
+		
+		
+});	
+		
 
 
 
@@ -743,27 +910,33 @@ $(document).ready(function(){
 		<hr class="mj_hr">
 	<div id="MJ_content">
 		<span>[ JOIN ]</span>
-	
+		<form method="POST" action="memberplayaction.bizpoll" name="memberinfo_fmt" id="memberinfo_fmt">
 		<div class="mj_info">
 			<label for="inputid" id="in_id" class="label_singnin">아이디</label>
-			<input type="text" id="inputid" class="input_color input_signin" name="inputid">
+			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in">
+			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">
 			<label for="inputpw" id="in_pw" class="label_singnin">비밀번호</label>
-			<input type="password" id="inputpw" class="input_color input_signin" name="inputpw">
+			<input type="password" id="inputpw" class="input_color input_signin" name="inputpw" class="input_in">
+			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">
 			<label for="inputrpw" id="in_rpw" class="label_singnin">비밀번호 재입력</label>
-			<input type="password" id="inputrpw" class="input_color input_signin" name="inputrpw">
+			<input type="password" id="inputrpw" class="input_color input_signin" name="inputrpw" class="input_in">
+			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">
 			<label for="inputname" id="in_name" class="label_singnin">닉네임</label>
-			<input type="text" id="inputname" class="input_color input_signin" name="inputname">
+			<input type="text" id="inputnick" class="input_color input_signin" name="inputnick" class="input_in">
+			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">
 			<label for="inputemail" id="in_email" class="label_singnin">이메일</label>
-			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail">
+			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in">
+			<span class="error">필수 정보입니다.</span>
 		</div> 
+		</form>
 	
 		<input type="button" value="NEXT" class="login_btn" id="info_next">
 	</div>

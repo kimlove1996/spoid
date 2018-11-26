@@ -5,34 +5,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com/spoid/mybatis/spoidMapper.xml">
-	<select id="bestView" resultType="com.spoid.dto.ProductDTO">
-
-		<![CDATA[
-			SELECT * FROM (SELECT * FROM minproduct 
-							ORDER BY purchasecnt DESC) 
-			WHERE ROWNUM <=8
-		]]>
-	</select>
-	<select id="newView" resultType="com.spoid.dto.ProductDTO">
-
-		<![CDATA[
-		SELECT * FROM (SELECT * FROM minproduct 
-					   ORDER BY p_indate DESC) 
-		WHERE ROWNUM <= 8
-		]]>
-	</select>
-	<select id="eventView" resultType="com.spoid.dto.ProductDTO">
-
-		<![CDATA[
-  			SELECT * FROM (SELECT * FROM minproduct ORDER BY p_discount DESC) WHERE rownum <= 8 and p_discount > 0
-		]]>
-	</select>
-	<!--  CRUD 
-			parameterType 무조건 작성
-			select만 제외한 resultType은 생략 가능
-			select의 성공 여부를 나타내주는 resultType은 String이어야 한다
-			단 로그인 시에는 session에 접근해야 하기 때문에 dto타입으로 사용
-	 -->
+	<!-- MEMBERDAO -->
  	<!-- ======================================================================================== -->
  	<insert id="insertMember" parameterType="com.spoid.dto.MemberDTO">
 		INSERT INTO SpoidMember(id,pw,rpw, nick, email, hint1, hint2) 

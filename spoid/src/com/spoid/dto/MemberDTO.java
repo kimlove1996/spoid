@@ -25,15 +25,13 @@ public class MemberDTO {
 	}
 	
 	// 회원가입을 위한 DTO
-	public MemberDTO(String id, String pw, String rpw, String nick, String email, String hint1, String hint2) {
+	public MemberDTO(String id, String pw, String rpw, String nick, String email) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.rpw = rpw;
 		this.nick = nick;
 		this.email = email;
-		this.hint1 = hint1;
-		this.hint2 = hint2;
 	}
 	
 	// id를 통해 pw를 찾기위한 DTO

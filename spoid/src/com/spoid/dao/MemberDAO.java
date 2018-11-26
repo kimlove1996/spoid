@@ -12,7 +12,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.spoid.common.DBManager;
 import com.spoid.dto.MemberDTO;
-import com.spoid.dto.ProductDTO;
 import com.spoid.mybatis.SqlMapConfig;
 
 public class MemberDAO {
