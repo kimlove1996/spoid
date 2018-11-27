@@ -35,6 +35,7 @@ import com.spoid.action.LoginOutPlayAction;
 import com.spoid.action.LoginPlayAction;
 import com.spoid.action.MemberDeletePlayAction;
 import com.spoid.action.MemberHintPlayAction;
+import com.spoid.action.MemberPageAtcion;
 import com.spoid.action.MemberPlayAction;
 import com.spoid.action.MemberUpdateAction;
 import com.spoid.action.MemberUpdatePlayAction;
@@ -106,6 +107,9 @@ public class BizpollFrontController extends HttpServlet
 	  }else if(command.equals("/pwdupdateplayaction.bizpoll")) {
 		  action = new PwdUpdatePlayAction();
 		  forward = action.excute(request, response);
+	  }else if(command.equals("/memberpage.bizpoll")) {
+		  action = new MemberPageAtcion();
+		  forward = action.excute(request, response);
 	  }else if(command.equals("/memberDelete.bizpoll")) {
 		  action = new DeleteAction();
 		  forward = action.excute(request, response);
@@ -133,7 +137,6 @@ public class BizpollFrontController extends HttpServlet
 	  }else if(command.equals("/boardInsert.bizpoll")) {
 		  action = new BoardInsertAction();
 		  forward = action.excute(request, response);
-				  
 	  }else if(command.equals("/boardInsertPlay.bizpoll")) {
 		  action = new BoardInsertPlayAction();
 		  forward = action.excute(request, response);
