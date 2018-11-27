@@ -175,15 +175,15 @@ input[type="file"]{display: none;}
 			</div>
 			<div class="bw_path">
 			
-					<a href="index.bizpoll">home</a>>
-					<a href="boardList.bizpoll">게시판</a>>
+					<a href="index.spoid">home</a>>
+					<a href="boardList.spoid">게시판</a>>
 					<a href="#">게시글 작성</a>			
 	
 			</div>
 			<div class="clr_both"></div>
 		</div>
 
-		<form method="POST" action = "boardInsertPlay.bizpoll" id="bw_info" name="bw_info"   enctype="multipart/form-data">
+		<form method="POST" action = "boardInsertPlay.spoid" id="bw_info" name="bw_info"   enctype="multipart/form-data">
 			<div class="bw_title">
 				<select id="bw_cate">
 					<option selected="selected">질문</option>

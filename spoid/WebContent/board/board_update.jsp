@@ -262,15 +262,15 @@ input[type="file"]{display: none;}
 			</div>
 			<div class="bu_path">
 			
-					<a href="index.bizpoll">home</a>>
-					<a href="boardList.bizpoll">게시판</a>>
+					<a href="index.spoid">home</a>>
+					<a href="boardList.spoid">게시판</a>>
 					<a href="#">게시글 수정</a>			
 	
 			</div>
 			<div class="clr_both"></div>
 		</div>
 
-		<form method="POST" action = "boardupdateplay.bizpoll" id="bu_info" name="bu_info"   enctype="multipart/form-data">
+		<form method="POST" action = "boardupdateplay.spoid" id="bu_info" name="bu_info"   enctype="multipart/form-data">
 			<div class="bu_title">
 				<select id="bu_cate">
 					<option selected="selected">질문</option>

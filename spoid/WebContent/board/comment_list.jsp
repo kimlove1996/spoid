@@ -14,7 +14,7 @@
 
 </head>
 <body id="comment_body">
-	<form action ="replyInsert.bizpoll" action="POST" name="frm_cmt" id="frm_cmt">
+	<form action ="replyInsert.spoid" action="POST" name="frm_cmt" id="frm_cmt">
 		<div class="comment_lay">
 			<div class="comment_wrap">
 				<div class="comment_header_bar">
@@ -73,7 +73,7 @@
 			<div class="write_comment">
 					  <c:choose>
 							<c:when test="${empty sessionScope.loginUser}">
-								<a href="login.bizpoll" class="c_write_btn">회원만 댓글 쓰기가 가능합니다.</a>		
+								<a href="login.spoid" class="c_write_btn">회원만 댓글 쓰기가 가능합니다.</a>		
 							</c:when>
 							<c:otherwise>
 								<textarea rows="" cols="" class="cmt_txt" placeholder="댓글을 입력해주세요." name="cmt_txt"></textarea>	

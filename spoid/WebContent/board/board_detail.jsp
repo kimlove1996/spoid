@@ -307,7 +307,7 @@ ul,li{
 		  	//serialize()=> form의 하위 태그들을 한꺼번에 서브스트링 형태로 보내주도록 해줌
 		  	
 			$.ajax({
-				url:"updateGoodcnt.bizpoll",
+				url:"updateGoodcnt.spoid",
 				data:"bno=${boardView.bno}",
 				success:function(data){
 					if(data.result == "1"){
@@ -326,7 +326,7 @@ ul,li{
 	function comment_list(){
 		$.ajax({
 			type:"post",
-			url:"commentlist.bizpoll",
+			url:"commentlist.spoid",
 			data:"bno=${boardView.bno}",
 			success:function(result){
 				// 성공하면 commentlist값을 result에 담아 있음
@@ -340,7 +340,7 @@ ul,li{
 		$("#bdelModal").css("display","block");
 	});
 	$(document).on("click","#bdyes_btn",function(){
-		location.href="boarddeleteplay.bizpoll?bno=${boardView.bno}&filename=${boardView.filename}";
+		location.href="boarddeleteplay.spoid?bno=${boardView.bno}&filename=${boardView.filename}";
 		
 	});	
 	$(document).on("click",".bdno_btn",function(){
@@ -352,7 +352,7 @@ ul,li{
 		alert(rno);
 		$.ajax({
 			type:"post",
-			url:"commentdeleteplay.bizpoll",
+			url:"commentdeleteplay.spoid",
 			data:"bno=${boardView.bno}&rno="+rno,
 			success:function(result){
 				// 성공하면 commentlist값을 result에 담아 있음
@@ -380,7 +380,7 @@ ul,li{
 	
 		//serialize()=> form의 하위 태그들을 한꺼번에 서브스트링 형태로 보내주도록 해줌
 		$.ajax({
-			url:"commentInsert.bizpoll",
+			url:"commentInsert.spoid",
 			data:$("#frm_cmt").serialize(),
 			contentType:'application/x-www-form-urlencoded; charset=UTF-8',
 			success:function(){
@@ -424,7 +424,7 @@ ul,li{
 		}
 		//serialize()=> form의 하위 태그들을 한꺼번에 서브스트링 형태로 보내주도록 해줌
 		$.ajax({
-			url:"commentUpdate.bizpoll",
+			url:"commentUpdate.spoid",
 			data:$("#frm_cmt").serialize(),
 			contentType:'application/x-www-form-urlencoded; charset=UTF-8',
 			success:function(){
@@ -463,8 +463,8 @@ ul,li{
 			</div>
 			<div class="b_path">
 			
-					<a href="index.bizpoll">home</a>>
-					<a href="boardList.bizpoll">게시판</a>>
+					<a href="index.spoid">home</a>>
+					<a href="boardList.spoid">게시판</a>>
 					<a href="#">QnA</a>			
 	
 			</div>
@@ -514,17 +514,17 @@ ul,li{
 				</c:if>
 				<div class="board_info file_layout">
 					<span>첨부파일</span>
-					<span id="filename"><a href="boarddownload.bizpoll?filename=${boardView.filename}">${boardView.filename}</a></span>
+					<span id="filename"><a href="boarddownload.spoid?filename=${boardView.filename}">${boardView.filename}</a></span>
 					
 				</div>
 				<div class="btm_board">
 					<div class="left_btm">
-						<a href="boardList.bizpoll" id="list_go">목록</a>
+						<a href="boardList.spoid" id="list_go">목록</a>
 					</div>
 				
 					<c:if test="${sessionScope.loginUser.id == boardView.writer}">
 						<div class="right_btm">	
-							<a href="boardUpdate.bizpoll?bno=${boardView.bno}" id="b_bdelaet_btn">수정하기</a>
+							<a href="boardUpdate.spoid?bno=${boardView.bno}" id="b_bdelaet_btn">수정하기</a>
 							<a href="#" id="b_bdelete_btn">삭제하기</a>
 						</div>
 					</c:if>

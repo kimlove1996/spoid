@@ -182,7 +182,7 @@
 		var flag = $(".bl_search_sel").val();
 		var keyword = $("#bl_search").val();
 
-		location.href="boardList.bizpoll?flag="+flag+"&keyword="+keyword;
+		location.href="boardList.spoid?flag="+flag+"&keyword="+keyword;
 		
 	});
 
@@ -191,7 +191,7 @@
 		var keyword = $("#bl_search").val();
 		var key = $(this).val();
 		alert(key);
-		location.href = "boardList.bizpoll?flag="+flag+"&keyword="+keyword+"&key="+key;
+		location.href = "boardList.spoid?flag="+flag+"&keyword="+keyword+"&key="+key;
 	});
 </script>
 </head>
@@ -251,7 +251,7 @@
 						<td width ="100" class="bl_num_td">${bDto.bno}</td>
 						<td width = "150" class="bl_cate_td">QnA</td>
 						<td width = "600" class="bl_title_td">
-							<a href="boardviewcnt.bizpoll?bno=${bDto.bno}" class="bl_title">${bDto.title}</a>
+							<a href="boardviewcnt.spoid?bno=${bDto.bno}" class="bl_title">${bDto.title}</a>
 							<c:if test="${today2==regdate2}">
 								<span class="new_time">New</span>
 								
@@ -285,7 +285,7 @@
 		<div class="bl_bottom">
 			<div class="bl_write_area">
 				<c:if test="${not empty sessionScope.loginUser.id}">
-					<a href="boardInsert.bizpoll" id="write_btn"><i class="fas fa-pen"></i> 글쓰기</a>	
+					<a href="boardInsert.spoid" id="write_btn"><i class="fas fa-pen"></i> 글쓰기</a>	
 				</c:if>
 					
 			</div>
@@ -311,18 +311,18 @@
 		<div class="pagination_area">
 			<div class="pagination">
 				<c:if test="${pageMaker.prev}">
-					<a href="boardList.bizpoll?page=${pageMaker.startPage-1}">&laquo;</a>
-					<a href="boardList.bizpoll?page=1">1</a>
+					<a href="boardList.spoid?page=${pageMaker.startPage-1}">&laquo;</a>
+					<a href="boardList.spoid?page=1">1</a>
 					<a href="#">...</a>
 					
 				</c:if>
 				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-					<a href="boardList.bizpoll?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" <c:out value="${pageMaker.criDto.page==idx?'class=active':''}"/>>${idx}</a>
+					<a href="boardList.spoid?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" <c:out value="${pageMaker.criDto.page==idx?'class=active':''}"/>>${idx}</a>
 			  	</c:forEach>
 			  	<c:if test="${pageMaker.next}">
 			  		<a href="#">...</a>
-			  		<a href="boardList.bizpoll?page=${pageMaker.finalPage}">${pageMaker.finalPage}</a>
-			  		<a href="boardList.bizpoll?page=${pageMaker.endPage+1}">&raquo;</a>
+			  		<a href="boardList.spoid?page=${pageMaker.finalPage}">${pageMaker.finalPage}</a>
+			  		<a href="boardList.spoid?page=${pageMaker.endPage+1}">&raquo;</a>
 			  		
 			  	</c:if>
 

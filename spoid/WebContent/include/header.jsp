@@ -173,6 +173,8 @@
 	}
 	.menu_li_div{
 		margin : 50px;
+		color:#0e4754;
+		font-weight: bold;
 	}
 	.white{
 		background-color: white;
@@ -210,9 +212,7 @@
 	#menu_ul>li:hover,#log_section:hover{
 		background-color: #cccccc;
 	}
-	#log_section{
-	
-	}
+	#menu_ul>li{cursor: pointer;}
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -297,7 +297,7 @@
 				<c:choose>
 					<c:when test="${empty sessionScope.loginUser}">
 						<p>로그인을 하지 않으셨어요~~</p>
-						<a href="<%=path%>/login.spoid" class="mlog_btn menu_btn">로그인</a>
+						<a href="<%=path%>/login.spoid" class="mlog_btn">로그인</a>
 						<a href="<%=path%>/memberpage.spoid" class="mlog_btn" >회원가입</a>						
 					</c:when>
 					<c:otherwise>
@@ -313,37 +313,38 @@
 			<div id="menu_wrapper">
 				<ul id="menu_ul">
 						
-						<li>
-							<div class="menu_li_div">
+						<li onclick="location.href='boxoffice.spoid'">
+							<div class="menu_li_div" data-li="boxoffice">
+								<!-- onclick="location.href=''" 클릭 이벤트 시 해당 주소로 가라> -->
 								<img src="<%=path%>/img/menu/movie_box.png" class="menu_icon">
 								<span class="menu_btn">박스오피스</span>
 							</div>
 						</li>
-						<li>
+						<li onclick="location.href='nowmovie.spoid'">
 							<div class="menu_li_div">
-								<img src="<%=path%>/img/menu/movie_now.png" class="menu_icon">
+								<img src="<%=path%>/img/menu/movie_now.png" class="menu_icon" >
 								<span class="menu_btn">현재 상영작</span>
 							</div>
 						</li>
-						<li>
+						<li onclick="location.href='allmovie.spoid'">
 							<div class="menu_li_div">
-								<img src="<%=path%>/img/menu/movie_all.png" class="menu_icon">
+								<img src="<%=path%>/img/menu/movie_all.png" class="menu_icon" >
 								<span class="menu_btn">모든 영화</span>
 							</div>
 						</li>
-						<li>
+						<li onclick="location.href='aboutus.spoid'">
 							<div class="menu_li_div">
 								<img src="<%=path%>/img/menu/about-us-1.gif" class="menu_icon">
 								<span class="menu_btn">About us</span>
 							</div>
 						</li>
 						<li>
-							<div class="menu_li_div">
+							<div class="menu_li_div"  onclick="location.href='boardList.spoid'">
 								<img src="<%=path%>/img/menu/board.gif" class="menu_icon">
 								<span class="menu_btn">게시판</span>
 							</div>
 						<li>
-							<div class="menu_li_div">
+							<div class="menu_li_div"  onclick="location.href='ascenter.spoid'">
 								<img src="<%=path%>/img/menu/as.gif" class="menu_icon">
 								<span class="menu_btn">고객센터</span>
 							</div>
