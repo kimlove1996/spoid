@@ -195,12 +195,14 @@
 	.changeCol{
 		background : linear-gradient(to bottom,#a4a4a4, #dedede38 62%, #ffffff00 100%);
 	}
-	.sactive{
-		border-radius:0px 4px;
+
+	.logo > a > span{
+		display : inline-block;
+		margin-top :30px;
 	}
 	.logo > a > img{
 		width: 80px;
-		margin-top : 15px;
+		margin-top: 5px;
 	}
 	#menu_ul>li:hover,#log_section:hover{
 		background-color: #cccccc;
@@ -213,7 +215,7 @@
 	$(document).ready(function(){
 
 		$('.search-button').click(function(){
-			$(".search-button").addClass("sactive");
+			$(".search-button").css("border-radius","0px 4px 4px 0px");
 			$(".search-box").addClass("active");
 			$(".search-box").focus();
 		});
