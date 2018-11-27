@@ -119,6 +119,9 @@
 		width : 100%;
 		height: 100%;
 	}
+	.search-button{
+		cursor:pointer;  	
+	}
 	.search{
 		position: relative;
 		width : 400px;
@@ -241,13 +244,12 @@
 		if(menu_state == "MENU"){ // 같으면 menu modal 을 열어주고 버튼의 상태를 close로 바꿈
 			$("#menu_modal").width("100%");
 			$("#menu_close").css("display","block");
-		
+			$("#index_box").css("overflow","hidden");
 		
 		}else{
-			alert("다름");
 			$("#menu_modal").width("0");
 			$("#menu_open").css("display","block");
-
+			$("#index_box").css("overflow","none");
 		}
 		
 	});
@@ -264,7 +266,7 @@
 				<div class="logo" id="logo_anim">
 					<a href = "index.spoid">
 						<span>Spoid's Slime</span>
-						<img src="img/slime/slime.svg">
+						<img src="<%=path%>/img/slime/slime.svg">
 					</a>
 				</div>
 				<div class="search">
@@ -295,8 +297,8 @@
 				<c:choose>
 					<c:when test="${empty sessionScope.loginUser}">
 						<p>로그인을 하지 않으셨어요~~</p>
-						<a href="<%=path%>/login.spoid" class="mlog_btn">로그인</a>
-						<a href="<%=path%>/memberpage.spoid" class="mlog_btn">회원가입</a>						
+						<a href="<%=path%>/login.spoid" class="mlog_btn menu_btn">로그인</a>
+						<a href="<%=path%>/memberpage.spoid" class="mlog_btn" >회원가입</a>						
 					</c:when>
 					<c:otherwise>
 						<p>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})님 환영합니다</p>
@@ -313,36 +315,36 @@
 						
 						<li>
 							<div class="menu_li_div">
-								<img src="img/menu/movie_box.png" class="menu_icon">
+								<img src="<%=path%>/img/menu/movie_box.png" class="menu_icon">
 								<span class="menu_btn">박스오피스</span>
 							</div>
 						</li>
 						<li>
 							<div class="menu_li_div">
-								<img src="img/menu/movie_now.png" class="menu_icon">
+								<img src="<%=path%>/img/menu/movie_now.png" class="menu_icon">
 								<span class="menu_btn">현재 상영작</span>
 							</div>
 						</li>
 						<li>
 							<div class="menu_li_div">
-								<img src="img/menu/movie_all.png" class="menu_icon">
+								<img src="<%=path%>/img/menu/movie_all.png" class="menu_icon">
 								<span class="menu_btn">모든 영화</span>
 							</div>
 						</li>
 						<li>
 							<div class="menu_li_div">
-								<img src="img/menu/about-us-1.gif" class="menu_icon">
+								<img src="<%=path%>/img/menu/about-us-1.gif" class="menu_icon">
 								<span class="menu_btn">About us</span>
 							</div>
 						</li>
 						<li>
 							<div class="menu_li_div">
-								<img src="img/menu/board.gif" class="menu_icon">
+								<img src="<%=path%>/img/menu/board.gif" class="menu_icon">
 								<span class="menu_btn">게시판</span>
 							</div>
 						<li>
 							<div class="menu_li_div">
-								<img src="img/menu/as.gif" class="menu_icon">
+								<img src="<%=path%>/img/menu/as.gif" class="menu_icon">
 								<span class="menu_btn">고객센터</span>
 							</div>
 						</li>
