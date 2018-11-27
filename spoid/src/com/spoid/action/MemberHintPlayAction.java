@@ -18,13 +18,13 @@ public class MemberHintPlayAction implements Action  {
 		// TODO Auto-generated method stub
 		  request.setCharacterEncoding("UTF-8");
 		  
-		  String id = request.getParameter("hint_id");
+		  String id = request.getParameter("id");
 		  String hint1 = request.getParameter("hint1");
 		  String hint2 = request.getParameter("hint2");
-		  
 		  MemberDAO mDao = MemberDAO.getInstance();
 		  MemberDTO mDto = new MemberDTO(id, hint1, hint2);
-		  System.out.println("action단에서 이동!!!!!!!!!"+mDto.toString());
+		  System.out.println("action단에서 이동!!!!!!!!!");
+		  System.out.println("====================="+id+hint1+hint2);
 		  
 		  int result = mDao.hintCheck(mDto);
 		  
@@ -33,7 +33,7 @@ public class MemberHintPlayAction implements Action  {
 		  if(result>0) {
 			  System.out.println("힌트입력 성공");
 		  }else {
-			  System.out.println("힌트입력ㄴ 실패");
+			  System.out.println("힌트입력 실패");
 		  }
 		  
 		

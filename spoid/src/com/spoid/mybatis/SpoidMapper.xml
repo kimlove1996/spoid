@@ -47,27 +47,18 @@
 	
 	<update id="hintCheck" parameterType="com.spoid.dto.MemberDTO">
 		UPDATE SpoidMember SET
-		hint1 = #{hint1}
+		hint1 = #{hint1},
 		hint2 = #{hint2}
 		WHERE id = #{id}
 	</update>
-	<!-- ====================================================================================== -->
-	<!--  BoardDAO -->
-<!-- 	<select id="" resultType = "com.spoid.dto.BoardDTO">
-       
-       	<![CDATA[
-       		 SELECT * FROM ( SELECT rownum rnum, 
-                            a.* 
-                            FROM( SELECT *
-                            FROM minionsboard
-                            WHERE bno >0
-                            ORDER BY bno desc
-                            )a
-                        )
-       	 	WHERE rnum BETWEEN #{pageStart} AND #{perPageNum}
-       	 ]]>
+	
+	<!-- 회원정보 조회 -->
+	<select id="selectMember" parameterType="String" resultType="com.spoid.dto.MemberDTO">
+		SELECT * FROM SpoidMember
+		WHERE id = #{id}
 	</select>
-	 -->
+
+	<!-- ====================================================================================== -->
 	<select id="countPaging" resultType="int">
 		<![CDATA[
 		    SELECT count(bno) 

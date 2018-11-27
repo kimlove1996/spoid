@@ -191,5 +191,22 @@ public class MemberDAO {
 		}
 		return flag;
 	}
+	
+	// 회원정보 조회
+	public List<MemberDTO> selectMember(String id){
+		sqlSession = sqlSessionFactory.openSession();
+		List<MemberDTO> memberList = null;
+		
+		try {
+			memberList = sqlSession.selectList("selectMember",id); // while(rs.next)와 같은 코드를 작성하지 않아도 알아서 담아준다.
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		
+		return memberList;
+	}
+	
 
 }
