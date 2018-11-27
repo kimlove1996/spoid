@@ -11,9 +11,10 @@ public class IndexAction implements Action
 		public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 		{
 		  String url = "index.jsp";
-
-		  
+		 
+		 
 		  ActionForward forward = new ActionForward();
+		  forward.setPath(url);
 		  forward.setRedirect(false);
 		  return forward;
 		}

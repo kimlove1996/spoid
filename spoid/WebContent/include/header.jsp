@@ -176,6 +176,11 @@
 	}
 	.img_log{
 		width : 100%;
+		height : 60%;
+		background-repeat : no-repeat;
+		background-size: cover;
+		border : 3px solid white;
+		box-sizing : border-box;
 		border-radius: 7px;
 		-moz-border-radius: 7px;
 		-khtml-border-radius: 7px;
@@ -253,7 +258,10 @@
 		<div class="header_line">
 			<div class="header_inner">
 				<div class="logo" id="logo_anim">
-					<a href = "#"><img src="img/slime/logo.svg"></a>
+					<a href = "#">
+						<span>Spoid's Slime</span>
+						<img src="img/slime/slime.svg">
+					</a>
 				</div>
 				<div class="search">
   					<input type="text" class="search-box" placeholder="영화 검색 키워드 입력"/>
@@ -263,7 +271,7 @@
 				</div>
 
 				<a class="menu_ham" id="menu_open" href="#">
-           			 <span class="text"><i class="fas fa-bars"></i> MENU</span>
+           			 <span class="stext"><i class="fas fa-bars"></i> MENU</span>
           		</a>
           		<a class="menu_ham" id="menu_close" href="#" style="display:none;">
           			 <span class="text"><i class="fas fa-times"></i>CLOSE</span>
@@ -278,14 +286,23 @@
 
 		<div id="menu_section" >	
 			<div id="log_section">
-	
-				<img src="img/menu/login_no.svg" class="img_log">
-				<p>로그인을 하지 않으셨어요~~</p>
-				<a href="<%=path%>/login.bizpoll" class="mlog_btn">로그인</a>
-				<a href="#" class="mlog_btn">회원가입</a>	
+				<div id="login_circle" class="img_log" style="background-image: url(<%=path%>/img/menu/login_no.svg);">	
+				</div>
+				<c:choose>
+					<c:when test="${empty sessionScope.loginUser}">
+						<p>로그인을 하지 않으셨어요~~</p>
+						<a href="<%=path%>/login.bizpoll" class="mlog_btn">로그인</a>
+						<a href="<%=path%>/memberplayaction.bizpoll" class="mlog_btn">회원가입</a>						
+					</c:when>
+					<c:otherwise>
+						<p>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})님 환영합니다</p>
+						<a href="<%=path%>/loginOut.bizpoll">로그아웃</a>
+						<a href="<%=path%>/myPage.bizpoll">마이페이지</a>
+					</c:otherwise>
+				</c:choose>
+
 								
-				<a href="#" style="display:none">로그아웃</a>
-				<a href="#" style="display:none">마이페이지</a>
+
 			</div>
 			<div id="menu_wrapper">
 				<ul id="menu_ul">
