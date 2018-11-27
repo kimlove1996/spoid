@@ -461,7 +461,7 @@ $(document).on("click","#yes_btn",function(){
 
 	<div id="delete_div">
 		<header>
-			<a href="index.bizpoll"><img src="img/minilog.png" id="shop_logo"></a>
+			<a href="index.bizpoll"><img src="img/slime/slime.svg" id="shop_logo"></a>
 			<p>회원 탈퇴</p>
 		</header>
 		<section class="del_notice_sec">

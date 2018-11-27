@@ -21,7 +21,6 @@ public class LoginPlayAction implements Action{
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		

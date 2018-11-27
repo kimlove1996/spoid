@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="include/header.jsp" %>
+<%
+	String referer = request.getHeader("referer");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,9 +67,11 @@
 		font-size: 32px;
 	    padding-right: 10px;
 	    font-weight: bold;
-	    color: #6b9a95;
+	    color: #8ac0ba;
      }
-     
+     #inputpw {
+     	letter-spacing: 5px;
+     }
      .inputidpw{
 	    width: 350px;
 	    height: 28px;
@@ -77,6 +82,7 @@
 	    border-radius: 5px;
      	font-size: 19px;
     	font-weight: bold;
+    	vertical-align: 4px;
      }
      
      #insert_pw{
@@ -95,7 +101,7 @@
     	left: -50px;
    	 	bottom: 30px;
     	background-color: #ffb263;
-    	letter-spacing: 6px;
+    	letter-spacing: 4px;
     	box-shadow: 4px 1px 5px 0px rgba(42, 42, 42, 0.28);
     	cursor: pointer;
     	float: right;
@@ -103,8 +109,8 @@
      
      #login_text{
 	    position: relative;
-	    left: 16px;
-	    top: 46px;
+	    left: 13px;
+	    top: 43px;
 	    font-weight: bold;
 	    font-size: 24px;
      }
@@ -160,7 +166,7 @@
 						success: function(data) {
 							if(data.message =="1"){
 								alert("로그인 성공");
-								location.href="index.bizpoll";
+								location.href="<%=referer%>";
 							} else {
 								alert("로그인 실패");
 								$("#login_err_check").css("display","block");
@@ -194,7 +200,7 @@
 	     
 	     <div id="insert_idpw">
 		     <div id="insert_id">
-		     	<span class="insert_text">ID </span>
+		     	<span class="insert_text" style="padding-right: 27px">ID </span>
 		     	<input type="text" name="inputid" id="inputid" class="inputidpw">
 		     </div>
 		     <div id="insert_pw">

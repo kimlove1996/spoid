@@ -165,6 +165,7 @@ public class BizpollFrontController extends HttpServlet
 		  action = new GoodCntUpdateAction();
 		  forward = action.excute(request, response);		 		  
 	  }
+	  
 	  if (forward != null) {
 	    if (forward.isRedirect()) //true : sendRedirect
 	    {

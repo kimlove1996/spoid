@@ -41,7 +41,7 @@
 			UPDATE SpoidMember SET pw = #{new_pw} WHERE id=#{id} and pw =#{pw}
 	</update> 
 	<delete id="deleteMember" parameterType="String">
-			DELETE FROM SpoidMember
+			DELETE FROM SpoidMemberv
 			WHERE id = #{userid}
 	</delete>
 	
