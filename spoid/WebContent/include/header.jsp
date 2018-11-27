@@ -44,7 +44,7 @@
 		
 	}
 	#logo_anim > a{
-		
+		color:white;
 	}
 	.menu_ham{
 		display: inline-block;
@@ -260,7 +260,7 @@
 		<div class="header_line">
 			<div class="header_inner">
 				<div class="logo" id="logo_anim">
-					<a href = "#">
+					<a href = "index.spoid">
 						<span>Spoid's Slime</span>
 						<img src="img/slime/slime.svg">
 					</a>
@@ -299,7 +299,7 @@
 					<c:otherwise>
 						<p>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})님 환영합니다</p>
 						<a href="<%=path%>/loginOut.spoid">로그아웃</a>
-						<a href="<%=path%>/myPage.spoid">계정관리</a>
+						<a href="<%=path%>/memberpage.spoid">계정관리</a>
 					</c:otherwise>
 				</c:choose>
 
