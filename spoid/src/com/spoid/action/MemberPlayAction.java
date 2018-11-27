@@ -2,6 +2,7 @@ package com.spoid.action;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +42,9 @@ public class MemberPlayAction implements Action {
 		  }
 		  
 		
+		  List<MemberDTO> memberList = mDao.selectMember(id);
+		  request.setAttribute("memberList", memberList);
+		  
 		return null;
 	}
 

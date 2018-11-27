@@ -432,7 +432,7 @@ h3.article_title {
     height: 28px;
     border: none;
     border-bottom: 3px solid #338298;
-    margin: 18px 0px 34px 26px;
+    margin: 18px 0px 0px 26px;
     padding-left: 8px;
     font-size: 17px;
     border-radius: 5px;
@@ -443,7 +443,12 @@ h3.article_title {
 	font-size: 18px;
     color: #464646;
 }
-
+#error_hint{
+	font-size: 10px;
+    color: red;
+    display: none;
+    padding-left: 5%;
+}
 
 
 
@@ -679,20 +684,27 @@ $(document).ready(function(){
 			error: function() {
 				alert("SYSTEM ERROR");
 			}
-			
-		}); 
+		});
+	 		$("#hint_id").val($("#inputid").val());
+		});
 	
-	
+	 	
+	 	
 	// 힌트 입력  후 -> 회원가입 성공
-	/* $("#hint_next").click(function(){
+	 $("#hint_next").click(function(){
+		var id = $("#hint_id").val();
 		var hint1 = $("#hint_flag").val();
 		var hint2 = $("#input_answer").val();
-		alert(hint1+hint2);
+		alert("아이디"+id+"힌트"+hint1+hint2);
+		if(hint2 == ""){
+			$("#input_answer").focus();
+			$("#input_answer").next().text("필수정보 입니다.").css("display","block");;
+		}else{
 		
 		$.ajax({
 			type:"post",
 			url:"memberhintplay.bizpoll",
-			data:"hint1="+hint1+"&hint2="+hint2,
+			data:"id="+id+"&hint1="+hint1+"&hint2="+hint2,
 			success:function(data){
 	 		$("#authentication_area").css("display","none");
 			$("#complete_area").css("display","block");
@@ -703,10 +715,14 @@ $(document).ready(function(){
 				alert("System Error!!!");
 			}
 		});
-	}); */
+		
+		}
+	});
+	
+	
+	
 
 });
-
 
 
 
@@ -746,6 +762,7 @@ function pwcheck(){
 
 
 function nickcheck(){
+	var mnick = $(inputnick);
 	var nick = $.trim(mnick.val());
 	if(nick = "") {
 		mnick.focus();
@@ -760,16 +777,16 @@ function nickcheck(){
 
 
 /* 가입환영인사 및 메인으로 */
-	var cnt=2;
-	function countdown(){/* 함수 생성한것 뿐임. 호출 전까진 동작을 하지 않는다. */
-		if(cnt == 0){/* cnt == 0 이라면 */
-			clearInterval(s);	/* setinterval 함수를 종료하고 */
-			/* location.href="index.bizpoll"; */ /* index.bizpoll로 이동하라! */
-		}/* 아니라면, */
-		document.getElementById("rCnt").innerHTML=cnt;/* rCnt에 cnt(3)을 넣고, cnt를 한번씩 --하라. */
+/* 	var cnt=2;
+	function countdown(){// 함수 생성한것 뿐임. 호출 전까진 동작을 하지 않는다.
+		if(cnt == 0){// cnt == 0 이라면 
+			clearInterval(s);	// setinterval 함수를 종료하고 
+			// location.href="index.bizpoll"; // index.bizpoll로 이동하라! 
+		}// 아니라면, 
+		document.getElementById("rCnt").innerHTML=cnt;// rCnt에 cnt(3)을 넣고, cnt를 한번씩 --하라.
 		cnt --;
 	}
-	var s = setInterval(countdown, 1000); // Start!!! 1000=천 밀리세컨드, 즉 1초단위로 countdown()을 실행합니다.
+	var s = setInterval(countdown, 1000);  // Start!!! 1000=천 밀리세컨드, 즉 1초단위로 countdown()을 실행합니다. */
 </script>
 </head>
 <body>
@@ -788,10 +805,6 @@ function nickcheck(){
 
 <!-- 이용약관 area -->
 <article id="constract_area" class="area">
-	<div id="MJ_title">
-		<span><i>S</i>p<i>o</i>i<i>d</i>S<i>l</i>i<i>m</i>e</span><span>이용약관</span>
-	</div>
-		<hr class="mj_hr">
 	<div id="MJ_content">
 		<div id="container" class="divsize">
 			<form id="join_content">
@@ -884,6 +897,7 @@ function nickcheck(){
 		</div>
 	
 		<input type="button" value="NEXT" class="login_btn" id="constract_next">
+
 	</div>
 </article>
 
@@ -894,13 +908,8 @@ function nickcheck(){
 
 
 
-
 <!-- 정보입력 area -->
 <article id="write_info_area" class="area">
-	<div id="MJ_title">
-		<span><i>S</i>p<i>o</i>i<i>d</i>S<i>l</i>i<i>m</i>e</span><span>정보입력</span>
-	</div>
-		<hr class="mj_hr">
 	<div id="MJ_content">
 		<span>[ JOIN ]</span>
 		<form method="" action="" name="memberinfo_fmt" id="memberinfo_fmt">
@@ -929,8 +938,9 @@ function nickcheck(){
 			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in">
 			<span class="error">필수 정보입니다.</span>
 		</div> 
+		
 		</form>
-	
+		
 		<input type="button" value="NEXT" class="login_btn" id="info_next">
 	</div>
 </article>
@@ -938,18 +948,12 @@ function nickcheck(){
 
 
 
-
-
-
+<input type="hidden" id="hint_id" value="">
 
 
 
 <!-- 가입인증 area -->
 <article id="authentication_area" class="area">
-		<div id="MJ_title">
-		<span><i>S</i>p<i>o</i>i<i>d</i>S<i>l</i>i<i>m</i>e</span><span>가입인증</span>
-	</div>
-		<hr class="mj_hr">
 	<div id="MJ_content">
 		<div id="caution_text">
 			<i class="fa fa-exclamation"></i><span> PW 찾기를 이용하실 시 하단 힌트의 설정한 답을 입력하게 됩니다. 바른 작성 부탁드립니다.</span>
@@ -962,13 +966,12 @@ function nickcheck(){
 				<option value="3">어렸을적 내 별명은?</option>
 			</select>
 		</div>
-			<input id="input_answer" name="input_answer" placeholder="오치동" class="input_color insert_answer">
+			<input id="input_answer" name="input_answer" placeholder="ex)오치동" class="input_color insert_answer">
+			<span id="error_hint">필수 정보입니다.</span>
 	</div>	
 		<input type="button" value="NEXT" class="login_btn" id="hint_next">
 	</div>
 </article>
-
-
 
 
 
