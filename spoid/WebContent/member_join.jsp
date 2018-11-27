@@ -672,7 +672,7 @@ $(document).ready(function(){
 		$("#info_next").click(function(){
 		
 	 	$.ajax({
-			url: "memberplayaction.bizpoll",
+			url: "memberplayaction.spoid",
 			data:$("#memberinfo_fmt").serialize(),
 			contentType:'application/x-www-form-urlencoded; charset=UTF-8',
 			success: function(data) {
@@ -703,7 +703,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			type:"post",
-			url:"memberhintplay.bizpoll",
+			url:"memberhintplay.spoid",
 			data:"id="+id+"&hint1="+hint1+"&hint2="+hint2,
 			success:function(data){
 	 		$("#authentication_area").css("display","none");

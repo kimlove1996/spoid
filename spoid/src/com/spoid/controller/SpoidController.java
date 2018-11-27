@@ -67,32 +67,25 @@ public class SpoidController extends HttpServlet
 	  System.out.println("url : " + uri);
 	  System.out.println("ctx : " + ctx);
 	  System.out.println("??====>" + command);
-	  if (command.equals("/index.spoid"))
-	  {
+	  if (command.equals("/index.spoid")){ // 인덱스
 	    action = new IndexAction();
 	    forward = action.excute(request, response);
 	  }else if (command.equals("/agreementjoin.spoid")){
 	    action = new ConstractAction();
 	    forward = action.excute(request, response);
-	  }else if (command.equals("/login.spoid")){
+	  }else if (command.equals("/login.spoid")){ // 로그인페이지 이동
 	    action = new LoginAction();
 	    forward = action.excute(request, response);
-	  }else if(command.equals("/memberplayaction.spoid")) {
-		  //이동
+	  }else if(command.equals("/memberplayaction.spoid")) { // 회원가입기능
 		  action = new MemberPlayAction();
 		   forward = action.excute(request, response);		  
-	  }/*else if(command.equals("/loginplayaction.spoid")) {
-		  action = new LoginPlayAction();
-		  forward = action.excute(request, response);
-		  
-	  }*/else if(command.equals("/loginOut.spoid")) {
+	  }else if(command.equals("/loginOut.spoid")) { // 로그아웃
 		  action = new LoginOutPlayAction();
 		  forward = action.excute(request,response);
-	  }else if(command.equals("/memberUpdate.spoid")) {
+	  }else if(command.equals("/memberupdate.spoid")) { // 회원수정페이지 이동
 		  action = new MemberUpdateAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memberupdateplay.spoid")) {
-		
+	  }else if(command.equals("/memberupdateplay.spoid")) { // 회원수정 기능
 		  action = new MemberUpdatePlayAction();
 		  forward = action.excute(request, response);		  
 	  }else if(command.equals("/idCheck.spoid")) {
@@ -169,17 +162,18 @@ public class SpoidController extends HttpServlet
 		  forward = action.excute(request, response);		 		  
 	  }
 	  
+	  
 	  if (forward != null) {
-	    if (forward.isRedirect()) //true : sendRedirect
-	    {
+	    if (forward.isRedirect()){
 	      response.sendRedirect(forward.getPath());
 	    }
-	    else
-	    {
+	    else{
 	      RequestDispatcher rd = request.getRequestDispatcher(forward.getPath());
 	      rd.forward(request, response);
 	    }
 	  }
+	  
+	  
 	}
 }
 

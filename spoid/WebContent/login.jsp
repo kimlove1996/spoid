@@ -159,7 +159,7 @@
 			if(id != "" && pw !=""){
 				
 					$.ajax({
-						url: "LoginPlay.bizpoll",
+						url: "LoginPlay.spoid",
 						type: "POST",
 						dataType: "json",
 						data: "id="+id+"&pw="+pw,

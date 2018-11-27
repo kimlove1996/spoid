@@ -23,17 +23,16 @@ public class MemberUpdatePlayAction implements Action{
 		HttpSession session = request.getSession();
 		request.setCharacterEncoding("UTF-8");
 		
-		String id = request.getParameter("mem_id");
-		String pwd = request.getParameter("mem_pwd");
-		String name = request.getParameter("mem_name");
-		String birth = request.getParameter("birth_year")+request.getParameter("monthselect")+request.getParameter("birth_day");
-		String phone = request.getParameter("phone_num")+request.getParameter("phone");
-		String zipcode = request.getParameter("zipcode");
-		String addr1 = request.getParameter("addr1");
-		String addr2 = request.getParameter("addr2");
-		String email = request.getParameter("email")+"@"+request.getParameter("email_url");
+		String id = request.getParameter("inputid");
+		String pw = request.getParameter("inputpw");
+		String rpw = request.getParameter("inputrpw");
+		String nick = request.getParameter("inputnick");
+		String email = request.getParameter("inputemail");
+		String hint1 = request.getParameter("hint_flag");
+		String hint2 = request.getParameter("input_answer");
+		/*String email = request.getParameter("email")+"@"+request.getParameter("email_url");*/
 		
-		MemberDTO mDto = new MemberDTO();
+		MemberDTO mDto = new MemberDTO(id, pw, rpw, nick, email, hint1, hint2);
 		MemberDAO mDao = MemberDAO.getInstance();
 		int result = mDao.updateMember(mDto);
 	

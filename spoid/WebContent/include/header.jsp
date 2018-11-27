@@ -301,7 +301,7 @@
 					<c:otherwise>
 						<p>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})님 환영합니다</p>
 						<a href="<%=path%>/loginOut.spoid">로그아웃</a>
-						<a href="<%=path%>/memberpage.spoid">계정관리</a>
+						<a href="<%=path%>/memberupdate.spoid">계정관리</a>
 					</c:otherwise>
 				</c:choose>
 
