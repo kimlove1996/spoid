@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%@ include file="include/header.jsp" %>
-
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,11 +54,9 @@
 		width: 95%;
 		margin-left : 0;
 	}
-	
-	
 </style>
-
 <script type="text/javascript">
+
 	$(document).ready(function() {
 		
 		
@@ -75,6 +72,7 @@
 				j=0;
 			}
 		});
+		
 		
 		
 		var i = 0;
@@ -121,7 +119,7 @@
 				<ul>
 					<li class="text_li text_first">회원 가입 시에 ‘아이디, 비밀번호, 이름, 생년월일, 성별, 가입인증 휴대폰번호’를 필수항목으로 수집합니다.<br>
 										그리고 선택항목으로 이메일 주소를 수집합니다.</li>    
-					<li class="text_li"><div id="detail_info">회원 가입 시 수집하는 개인정보에 대한 추가 설명<span id="detail_span" style="margin-left: 10px;">▼</span></div></li>
+					<li class="text_li" id="detail"><div id="detail_info">회원 가입 시 수집하는 개인정보에 대한 추가 설명<span id="detail_span" style="margin-left: 10px;">▼</span></div></li>
 				</ul>
 				<div id="detail_content" style="margin: 20px 50px; padding: 10px 10px;border: 1px solid lightgrey; display: none;">
 					<h4 style="margin: 0">(1) 필수항목과 선택항목의 차이</h4>
@@ -157,7 +155,7 @@
 													<strong>spoid</strong>에 개인정보 제출 의무가 발생한 경우, 이용자의 생명이나 안전에 급박한 위험이 확인되어<br>
 													이를 해소하기 위한 경우에 한하여 개인정보를 제공하고 있습니다.</li>    
 													
-					<li class="text_li"><div id="give_info">개인정보 제공 및 위탁에 대한 추가 설명<span id="give_span" style="margin-left: 10px;">▼</span></div></li>
+					<li class="text_li" id="give"><div id="give_info">개인정보 제공 및 위탁에 대한 추가 설명<span id="give_span" style="margin-left: 10px;">▼</span></div></li>
 				</ul>
 				
 				<div id="give_content" style="margin: 20px 50px; padding: 10px 10px;border: 1px solid lightgrey; display: none;">
