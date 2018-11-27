@@ -43,7 +43,10 @@
 		top : 0px;
 		
 	}
-	#logo_anim > a,.menu_ham{
+	#logo_anim > a{
+		
+	}
+	.menu_ham{
 		display: inline-block;
 		margin-top : 30px;
 		height : inherit;
@@ -81,7 +84,6 @@
 	}
 	#menu_section{
 		width : 70%;
-
 		margin: 5% auto;
 		display: inline-block;
 	}
@@ -96,9 +98,9 @@
 	}
 	#log_section{
 		box-sizing:border-box;
-		padding-top : 10%;
+		padding-top : 5%;
 		width : 30%;
-		background-color: #fbfbfb;
+		background-color: #f1f1f1;
 		height: 610px;
 	}
 
@@ -106,7 +108,7 @@
 		display: inline-block;
 		width : 32%;
 		height : 300px;
-		background-color: #fbfbfb;
+		background-color: #f1f1f1;
 		margin-bottom: 10px;
 		box-sizing: border-box;
 		float : left;
@@ -142,10 +144,14 @@
 	.search > input[type=text].active {
 	    width: 300px;
 	 	border-bottom: 3px solid #0e4754;
+		padding-left: 8px;
+		outline-color: #a8c6cc;
+		height: 39px;
+		margin-top: 1px;
 	}
 	.search > span{
 		display : inline-block;
-		border-radius: 0 4px 4px 0px;
+		border-radius:4px;
 		font-size : 25px;
 		line-height : 40px;
 		height: 40px;
@@ -170,21 +176,54 @@
 	}
 	.img_log{
 		width : 100%;
+		border-radius: 7px;
+		-moz-border-radius: 7px;
+		-khtml-border-radius: 7px;
+		-webkit-border-radius: 7px;
 	}
 	.mlog_btn{
 		color:black;
 		font-weight: bold;
 	}
-
+	.changeCol{
+		background : linear-gradient(to bottom,#a4a4a4, #dedede38 62%, #ffffff00 100%);
+	}
+	.sactive{
+		border-radius:0px 4px;
+	}
+	.logo > a > img{
+		width: 80px;
+		margin-top : 15px;
+	}
+	#menu_ul>li:hover,#log_section:hover{
+		background-color: #cccccc;
+	}
+	#log_section{
+	
+	}
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
 
 		$('.search-button').click(function(){
-			
+			$(".search-button").addClass("sactive");
 			$(".search-box").addClass("active");
 			$(".search-box").focus();
 		});
+		$(window).on('scroll', function() {
+			if($(window).scrollTop()){
+				$('#header_body header').addClass('changeCol');
+	
+			}else{
+				$('#header_body header').removeClass('changeCol');
+			}	
+		});
+		
+		$('.icon').click(function(){
+			$('.search').toggleClass('active')
+			
+		});
+		
 
 	});
 	$(document).on("click",".menu_ham",function(){
@@ -204,6 +243,7 @@
 		
 	});
 
+
 </script>
 
 
@@ -213,7 +253,7 @@
 		<div class="header_line">
 			<div class="header_inner">
 				<div class="logo" id="logo_anim">
-					<a href = "#">Spoide's Slime</a>
+					<a href = "#"><img src="img/slime/logo.svg"></a>
 				</div>
 				<div class="search">
   					<input type="text" class="search-box" placeholder="영화 검색 키워드 입력"/>
@@ -239,9 +279,9 @@
 		<div id="menu_section" >	
 			<div id="log_section">
 	
-				<img src="img/menu/nolog.jpg" class="img_log">
+				<img src="img/menu/login_no.svg" class="img_log">
 				<p>로그인을 하지 않으셨어요~~</p>
-				<a href="#" class="mlog_btn">로그인</a>
+				<a href="<%=path%>/login.bizpoll" class="mlog_btn">로그인</a>
 				<a href="#" class="mlog_btn">회원가입</a>	
 								
 				<a href="#" style="display:none">로그아웃</a>

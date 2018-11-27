@@ -88,7 +88,7 @@
 		line-height:30px;
 		border :3px solid #186786;
 		box-sizing: border-box;
-		top : -1px;
+	
 		
 	}
 	#bl_search{
@@ -98,6 +98,7 @@
 		height: 30px;
 		line-height: 30px;
 		box-sizing: border-box;
+		top : -1px;
 	}
 	#bl_search_btn{
 		background-color : #186786;
@@ -108,7 +109,7 @@
 		width : 50px;
 		position: relative;
 		right : 50px;
-		top : 1px;
+		top : 0px;
 		display: inline-block;
 		text-align: center;
 		
@@ -172,6 +173,7 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
+
 		$(".bl_search_sel").val("${flag}");
 		$("#bl_search").val("${keyword}");
 		$("#order_sel").val("${code}");
