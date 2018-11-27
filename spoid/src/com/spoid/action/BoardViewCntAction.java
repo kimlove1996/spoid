@@ -20,7 +20,7 @@ public class BoardViewCntAction implements Action{
 		  
 		BoardDAO  bDao = BoardDAO.getInstance();
 		
-		String url = "boardDetail.bizpoll?bno="+bno;                                                                                                                                  
+		String url = "boardDetail.spoid?bno="+bno;                                                                                                                                  
 		
 		//조회 수 1 증가
 		//Session을 활용한 조회수 증가 방지

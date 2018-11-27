@@ -175,16 +175,18 @@
 		background-color: white;
 	}
 	.img_log{
-		width : 100%;
-		height : 60%;
+		margin : auto;
+		width : 90%;
+		height : 70%;
+		
 		background-repeat : no-repeat;
 		background-size: cover;
 		border : 3px solid white;
 		box-sizing : border-box;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-khtml-border-radius: 7px;
-		-webkit-border-radius: 7px;
+		border-radius: 90%;
+		-moz-border-radius: 90%;
+		-khtml-border-radius: 90%;
+		-webkit-border-radius: 90%;
 	}
 	.mlog_btn{
 		color:black;
@@ -291,13 +293,13 @@
 				<c:choose>
 					<c:when test="${empty sessionScope.loginUser}">
 						<p>로그인을 하지 않으셨어요~~</p>
-						<a href="<%=path%>/login.bizpoll" class="mlog_btn">로그인</a>
-						<a href="<%=path%>/memberplayaction.bizpoll" class="mlog_btn">회원가입</a>						
+						<a href="<%=path%>/login.spoid" class="mlog_btn">로그인</a>
+						<a href="<%=path%>/memberpage.spoid" class="mlog_btn">회원가입</a>						
 					</c:when>
 					<c:otherwise>
 						<p>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})님 환영합니다</p>
-						<a href="<%=path%>/loginOut.bizpoll">로그아웃</a>
-						<a href="<%=path%>/myPage.bizpoll">마이페이지</a>
+						<a href="<%=path%>/loginOut.spoid">로그아웃</a>
+						<a href="<%=path%>/myPage.spoid">계정관리</a>
 					</c:otherwise>
 				</c:choose>
 

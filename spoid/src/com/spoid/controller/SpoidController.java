@@ -44,10 +44,10 @@ import com.spoid.action.PwCheckAction;
 import com.spoid.action.PwdUpdatePlayAction;
 
 /**
- * Servlet implementation class BizpollFrontController
+ * Servlet implementation class spoidFrontController
  */
-@WebServlet("/BizpollFrontController")
-public class BizpollFrontController extends HttpServlet
+@WebServlet("/spoidFrontController")
+public class SpoidController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -67,104 +67,104 @@ public class BizpollFrontController extends HttpServlet
 	  System.out.println("url : " + uri);
 	  System.out.println("ctx : " + ctx);
 	  System.out.println("??====>" + command);
-	  if (command.equals("/index.bizpoll"))
+	  if (command.equals("/index.spoid"))
 	  {
 	    action = new IndexAction();
 	    forward = action.excute(request, response);
-	  }else if (command.equals("/agreementjoin.bizpoll")){
+	  }else if (command.equals("/agreementjoin.spoid")){
 	    action = new ConstractAction();
 	    forward = action.excute(request, response);
-	  }else if (command.equals("/login.bizpoll")){
+	  }else if (command.equals("/login.spoid")){
 	    action = new LoginAction();
 	    forward = action.excute(request, response);
-	  }else if(command.equals("/memberplayaction.bizpoll")) {
+	  }else if(command.equals("/memberplayaction.spoid")) {
 		  //이동
 		  action = new MemberPlayAction();
 		   forward = action.excute(request, response);		  
-	  }/*else if(command.equals("/loginplayaction.bizpoll")) {
+	  }/*else if(command.equals("/loginplayaction.spoid")) {
 		  action = new LoginPlayAction();
 		  forward = action.excute(request, response);
 		  
-	  }*/else if(command.equals("/loginOut.bizpoll")) {
+	  }*/else if(command.equals("/loginOut.spoid")) {
 		  action = new LoginOutPlayAction();
 		  forward = action.excute(request,response);
-	  }else if(command.equals("/memberUpdate.bizpoll")) {
+	  }else if(command.equals("/memberUpdate.spoid")) {
 		  action = new MemberUpdateAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memberupdateplay.bizpoll")) {
+	  }else if(command.equals("/memberupdateplay.spoid")) {
 		
 		  action = new MemberUpdatePlayAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/idCheck.bizpoll")) {
+	  }else if(command.equals("/idCheck.spoid")) {
 		  action = new IdCheckAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/pwdCheck.bizpoll")) {
+	  }else if(command.equals("/pwdCheck.spoid")) {
 		  action = new PwCheckAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/pwdUpdate.bizpoll")) {
+	  }else if(command.equals("/pwdUpdate.spoid")) {
 		  action = new PasswordAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/pwdupdateplayaction.bizpoll")) {
+	  }else if(command.equals("/pwdupdateplayaction.spoid")) {
 		  action = new PwdUpdatePlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memberpage.bizpoll")) {
+	  }else if(command.equals("/memberpage.spoid")) {
 		  action = new MemberPageAtcion();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memberDelete.bizpoll")) {
+	  }else if(command.equals("/memberDelete.spoid")) {
 		  action = new DeleteAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memdeleteplayaction.bizpoll")) {
+	  }else if(command.equals("/memdeleteplayaction.spoid")) {
 		  action = new MemberDeletePlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memberhintplay.bizpoll")) {
+	  }else if(command.equals("/memberhintplay.spoid")) {
 		  action = new MemberHintPlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/LoginPlay.bizpoll")) {
+	  }else if(command.equals("/LoginPlay.spoid")) {
 		  action = new LoginPlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/boardList.bizpoll")) {
+	  }else if(command.equals("/boardList.spoid")) {
 		  action = new BoardListAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/boardSearch.bizpoll")) {
+	  }else if(command.equals("/boardSearch.spoid")) {
 		  action = new BoardSearchAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/boardDetail.bizpoll")) {
+	  }else if(command.equals("/boardDetail.spoid")) {
 		  action = new BoardDetailAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/boardviewcnt.bizpoll")) {
+	  }else if(command.equals("/boardviewcnt.spoid")) {
 		  action = new BoardViewCntAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/boardInsert.bizpoll")) {
+	  }else if(command.equals("/boardInsert.spoid")) {
 		  action = new BoardInsertAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/boardInsertPlay.bizpoll")) {
+	  }else if(command.equals("/boardInsertPlay.spoid")) {
 		  action = new BoardInsertPlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/boarddownload.bizpoll")) {
+	  }else if(command.equals("/boarddownload.spoid")) {
 		  action = new BoardLocationAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/boardUpdate.bizpoll")) {
+	  }else if(command.equals("/boardUpdate.spoid")) {
 		  action = new BoardUpdateAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/boardupdateplay.bizpoll")) {
+	  }else if(command.equals("/boardupdateplay.spoid")) {
 		  action = new BoardUpdatePlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/boarddeleteplay.bizpoll")) {
+	  }else if(command.equals("/boarddeleteplay.spoid")) {
 		  action = new BoardDeleteAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/commentlist.bizpoll")) {
+	  }else if(command.equals("/commentlist.spoid")) {
 		  action = new CommentListAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/commentdeleteplay.bizpoll")) {
+	  }else if(command.equals("/commentdeleteplay.spoid")) {
 		  action = new CommentDeletePlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/commentInsert.bizpoll")) {
+	  }else if(command.equals("/commentInsert.spoid")) {
 		  action = new CommentInsertAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/commentUpdate.bizpoll")) {
+	  }else if(command.equals("/commentUpdate.spoid")) {
 		  action = new CommentUpdateAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/updateGoodcnt.bizpoll")) {
+	  }else if(command.equals("/updateGoodcnt.spoid")) {
 		  action = new GoodCntUpdateAction();
 		  forward = action.excute(request, response);		 		  
 	  }

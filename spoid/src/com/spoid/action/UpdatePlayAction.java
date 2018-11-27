@@ -12,12 +12,12 @@ public class UpdatePlayAction implements Action{
 	public ActionForward excute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String url = "index.bizpoll";
+		String url = "index.spoid";
 		int result = 0;
 		
 		
 		if(result >0) {
-			url = "index.bizpoll";
+			url = "index.spoid";
 		}else {
 			url = "member_update.jsp";
 		}

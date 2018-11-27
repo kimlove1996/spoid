@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class LoginOutPlayAction implements Action{
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-	  String url = "index.bizpoll";
+	  String url = "index.spoid";
 	  
 	  //session 값을 가져욤
 	  HttpSession session = request.getSession();

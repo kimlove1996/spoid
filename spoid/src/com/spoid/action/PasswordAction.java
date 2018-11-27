@@ -16,7 +16,7 @@ public class PasswordAction implements Action{
 		// session 이 null 이 아니면 로그인
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginUser") == null) { //로그인 안됨
-			url = "index.bizpoll";
+			url = "index.spoid";
 		}else {
 			url = "password_update.jsp";
 		}

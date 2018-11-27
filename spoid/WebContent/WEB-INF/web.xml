@@ -10,11 +10,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
    <servlet>
-    <servlet-name>BizpollController</servlet-name>
-    <servlet-class>com.spoid.controller.BizpollFrontController</servlet-class>
+    <servlet-name>SpoidController</servlet-name>
+    <servlet-class>com.spoid.controller.SpoidController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>BizpollController</servlet-name>
-    <url-pattern>*.bizpoll</url-pattern>
+    <servlet-name>SpoidController</servlet-name>
+    <url-pattern>*.spoid</url-pattern>
   </servlet-mapping>
 </web-app>

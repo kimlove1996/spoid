@@ -38,14 +38,14 @@ public class MemberUpdatePlayAction implements Action{
 		int result = mDao.updateMember(mDto);
 	
 		if(result > 0) { 
-			url = "index.bizpoll";
+			url = "index.spoid";
 			//session 값을 최신 정보로 수정!
 			session.removeAttribute("id");
 			//최신 회원 정보
 			session.setAttribute("loginUser", mDto);
 			
 		}else {
-			url = "memberUpdate.bizpoll";
+			url = "memberUpdate.spoid";
 		}
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);

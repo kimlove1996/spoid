@@ -27,7 +27,7 @@ public class GoodCntUpdateAction implements Action{
 		  // true 라고 하는 boolean 값을 매개변수로 전달
 		HttpSession session = request.getSession();
 		int result= bDao.updateGoodCnt(bno,session);
-		String url = "boardviewcnt.bizpoll?bno="+bno;
+		String url = "boardviewcnt.spoid?bno="+bno;
 		System.out.println("좋아요 결과 : "+result);
 		JSONObject jObj = new JSONObject();
 		jObj.put("result", result);

@@ -15,7 +15,7 @@ import com.spoid.dao.MemberDAO;
 public class MemberDeletePlayAction implements Action{
 	public ActionForward excute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url = "index.bizpoll";
+		String url = "index.spoid";
 		String userid = request.getParameter("id");
 		String userpw = request.getParameter("pw");
 		
