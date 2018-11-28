@@ -171,7 +171,7 @@
 
 
 </head>
-<body id="index_box">
+<body id="index_box" onload="load()">
 	<div id="index_wrapper" class="wrapper">
 		<div class="graph_div">	
 			<div class="score_view">

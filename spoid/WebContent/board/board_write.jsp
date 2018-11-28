@@ -20,7 +20,7 @@ ul,li{
 }
 #bw_wrapper{
 	
-	margin :10px auto;
+	margin :5% auto;
 	width : 70%;
 }
 .bw_header{

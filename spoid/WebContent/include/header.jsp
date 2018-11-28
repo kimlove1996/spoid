@@ -15,6 +15,7 @@
 		margin : 0; 
 	 	padding:0;
 	}
+	input[type=text]{padding:0px;}
 	li{list-style: none;}
 	#header_body a{text-decoration: none;}
 	#header_body header{
@@ -137,6 +138,7 @@
 	    transition: width 0.4s ease-in-out;
 	    overflow: hidden;
 	    border : none;
+	    background-color: #d1d9e438;
 	}
 	.search *{
 		display: inline-block;
@@ -254,12 +256,28 @@
 		
 	});
 
+	function load(){
+		  document.body.addEventListener("wheel", zoomShortcut); //add the event
+	}
 
+	function zoomShortcut(e){
+		  if(e.ctrlKey){            //[ctrl] pressed?
+		    event.preventDefault();  //prevent zoom
+		    if(e.deltaY<0){        //scrolling up?
+		                            //do something..
+		      return false;
+		    }
+		    if(e.deltaY>0){        //scrolling down?
+		                            //do something..
+		      return false;
+		    }
+		  }
+	}
 </script>
 
 
 </head>
-<body id="header_body">
+<body id="header_body" onload="load()">
 	<header id="header_wrap">
 		<div class="header_line">
 			<div class="header_inner">

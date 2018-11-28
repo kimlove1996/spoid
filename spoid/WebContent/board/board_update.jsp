@@ -286,10 +286,7 @@ input[type="file"]{display: none;}
 			<div class="bu_wrapper">
 				<div class="bu_content">
 
-					<textarea id = "content" name="content" placeholder = "입력하고 싶은 내용을 입력해주세요">
-						${boardView.content}
-					
-					</textarea>
+					<textarea id = "content" name="content" placeholder = "입력하고 싶은 내용을 입력해주세요">${boardView.content}</textarea>
 					
 					<div class="edit_box file_layout">
 				
