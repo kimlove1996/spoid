@@ -29,7 +29,7 @@ ul,li{
 .b_header{
 	
 	height : 50px;
-	border-bottom: 3px solid #186786;
+	border-bottom: 3px solid #0e4754;
 }
 .b_header *{
 	display: inline-block;
@@ -100,7 +100,7 @@ ul,li{
 	background-color: yellow;
 	text-align:center;
 	display: inline-block;
-	background-color: #186786;
+	background-color: #0e4754;
 }
 .like_article{
 	margin-bottom : 10px;
@@ -109,7 +109,7 @@ ul,li{
 	font-size : 30px;
 }
 .like_artice i {
-	background-color:#186786;
+	background-color:#0e4754;
 	color :white;
 	border-radius: 50%;
 }
@@ -189,7 +189,7 @@ ul,li{
 	.modal{
 		display: none;
 		position : fixed;
-		z-index : 10;
+		z-index : 500;
 		padding-top :3%;
 		top : 0;
 		width : 100%;
@@ -215,7 +215,7 @@ ul,li{
 
 	}
 	#dmodal_content > span > button{
-		background-color: #186786;
+		background-color: #0e4754;
 		color:white;
 		border : none;
 		width : 50px;
@@ -223,7 +223,7 @@ ul,li{
 	#m_modal{
 		width : 100%;
 		background-color: rgba(244,221,71,0.92);
-    	border-bottom: 3px solid #186786;
+    	border-bottom: 3px solid #0e4754;
 	}
 	@-webkit-keyframes zoom {
 	    from {-webkit-transdiv:scale(0)} 
@@ -238,7 +238,7 @@ ul,li{
 		height: 50px;
 		border-radius: 10px 10px 0px 0px;
 		background-color: rgba(244,221,71,0.92);
-		border-bottom: 5px solid #186786;
+		border-bottom: 5px solid #0e4754;
 		
 	}
 	.bdel_modal_close{
@@ -248,7 +248,7 @@ ul,li{
 	    font-size: 40px;
 	    font-weight: bold;
 	    transition: 0.3s;
-	    color: #186786;
+	    color: #0e4754;
 	   
 	}
 	.bdel_modal_close:hover{
@@ -261,11 +261,11 @@ ul,li{
 		line-height : 30px;
 		border-radius : 5px;
 		display : inline-block;
-		background-color: #186786;
+		background-color: #0e4754;
 		color : rgba(244,221,71,0.92);
 	}
 	#dmodal_content > span > a:hover{
-		color: #186786;
+		color: #0e4754;
 		background-color : rgba(244,221,71,0.92);
 	}
 	/* 100% Image Width on Smaller Screens */

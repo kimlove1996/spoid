@@ -22,7 +22,7 @@
 	}
 	.board_header{
 		height : 50px;
-		border-bottom: 3px solid #186786;
+		border-bottom: 3px solid #0e4754;
 	}
 	.board_header > div{ display: inline-block;}
 	.board_title{
@@ -81,21 +81,21 @@
 		position : relative;
 		height : 30px;
 		line-height:30px;
-		border :3px solid #186786;
+		border :3px solid #0e4754;
 		box-sizing: border-box;
 		top : -1px;
 		
 	}
 	#b_search{
 		position : relative;
-		border : 3px solid #186786;
+		border : 3px solid #0e4754;
 		width : 300px;
 		height: 30px;
 		line-height: 30px;
 		box-sizing: border-box;
 	}
 	#b_search_btn{
-		background-color : #186786;
+		background-color : #0e4754;
 		height: 30px;
 		line-height: 30px;
 		color:white;
@@ -120,7 +120,7 @@
 		display: inline-block;
 		float : left;
 		color : white;
-		background-color : #186786;
+		background-color : #0e4754;
 		width : 80px;
 		height: 30px;
 		text-align: center;
@@ -144,7 +144,7 @@
 	}
 	
 	.pagination a.active {
-	    background-color:  #186786;
+	    background-color:  #0e4754;
 	    color: white;
 	}
 	.pagination a:hover:not(.active) {background-color: #ddd;}

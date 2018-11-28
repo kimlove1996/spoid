@@ -14,16 +14,16 @@
 	p,h2{margin : 0;}
 	th,td{height: 30px;}
 	#blist_body{
-		margin-top: 150px;
+		margin-top: 110px;
 	}
 	#blist_wrapper{
 		width : 80%;
-		margin:auto;
+		margin: 110px auto;
 
 	}
 	.blist_header{
 		height : 50px;
-		border-bottom: 3px solid #186786;
+		border-bottom: 3px solid #0e4754;
 	}
 	.blist_header > div{ display: inline-block;}
 
@@ -80,36 +80,36 @@
 		float : right;
 		display: inline-block;
 		height: 30px;
-		
+	}
+	.bl_s_a_wrap{
+		position: relative;
 	}
 	.bl_search_sel{
-		position : relative;
+
 		height : 30px;
 		line-height:30px;
-		border :3px solid #186786;
+		border :3px solid #0e4754;
 		box-sizing: border-box;
 	
 		
 	}
 	#bl_search{
-		position : relative;
-		border : 3px solid #186786;
+		border : 3px solid #0e4754;
 		width : 300px;
 		height: 30px;
 		line-height: 30px;
 		box-sizing: border-box;
-		top : -1px;
 	}
 	#bl_search_btn{
-		background-color : #186786;
+		background-color : #0e4754;
 		height: 30px;
 		line-height: 30px;
 		color:white;
 		border: none;
 		width : 50px;
-		position: relative;
-		right : 50px;
+		position:absolute;
 		top : 0px;
+		right : 0px;
 		display: inline-block;
 		text-align: center;
 		
@@ -128,7 +128,7 @@
 		display: inline-block;
 		float : left;
 		color : white;
-		background-color : #186786;
+		background-color : #0e4754;
 		width : 80px;
 		height: 30px;
 		text-align: center;
@@ -152,7 +152,7 @@
 	}
 	
 	.pagination a.active {
-	    background-color:  #186786;
+	    background-color:  #0e4754;
 	    color: white;
 	}
 	.pagination a:hover:not(.active) {background-color: #ddd;}
@@ -200,8 +200,8 @@
 		<form class="blist_frm">
 		<div class="blist_header">
 			<div class="blist_title">
-				<h2>QnA</h2>
-				<p>|QnA 게시판 입니다.</p>
+				<h2>자유게시판</h2>
+				<p>|자유게시판 입니다.</p>
 				
 			</div>
 
@@ -210,14 +210,8 @@
 		<div class="bl_category">
 				<ul>
 					<li><a href= "#" class="c_active">전체</a></li>
-					<li><a href= "#">배송조회</a></li>
-					<li><a href= "#">반품/교환/AS</a></li>
-					<li><a href= "#">영수증/증빙서류</a></li>
-					<li><a href= "#">구매등급안내</a></li>
-					<li><a href= "#">배송지변경</a></li>
-					<li><a href= "#">무통장계좌안내</a></li>
-					<li><a href= "#">회원탈퇴</a></li>
-					<li><a href= "#">해외구매</a></li>
+					<li><a href= "#">리뷰</a></li>
+					<li><a href= "#">잡담</a></li>
 				</ul>
 				<div class="clr_both"></div>
 		</div>
@@ -292,14 +286,16 @@
 
 		
 			<div class="bl_search_area">
-				<select class="bl_search_sel" name="bl_search_sel">
-					<option value = "1" selected="selected">제목+내용</option>
-					<option value = "2">제목</option>
-					<option value = "3">내용</option>
-					<option value = "4">글쓴이</option>
-				</select>
-				<input type="text" id="bl_search" name="bl_search">
-				<a href="#"id="bl_search_btn">검색</a>
+				<div class="bl_s_a_wrap">
+					<select class="bl_search_sel" name="bl_search_sel">
+						<option value = "1" selected="selected">제목+내용</option>
+						<option value = "2">제목</option>
+						<option value = "3">내용</option>
+						<option value = "4">글쓴이</option>
+					</select>
+					<input type="text" id="bl_search" name="bl_search">
+					<a href="#"id="bl_search_btn">검색</a>
+				</div>
 			</div>
 			<div class="clr_both"></div>
 		</div>

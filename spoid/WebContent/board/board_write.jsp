@@ -26,7 +26,7 @@ ul,li{
 .bw_header{
 	
 	height : 50px;
-	border-bottom: 3px solid #186786;
+	border-bottom: 3px solid #0e4754;
 }
 .bw_header *{
 	display: inline-block;
@@ -119,11 +119,11 @@ ul,li{
 	background-color: yellow;
 	text-align:center;
 	display: inline-block;
-	background-color: #186786;
+	background-color: #0e4754;
 }
 input[type="file"]{display: none;}
 .btn-file{
-	background-color: #186786;
+	background-color: #0e4754;
 	color : white;
 	border:none;
 }
