@@ -131,6 +131,7 @@ public class SpoidController extends HttpServlet
 		  action = new BoardInsertAction();
 		  forward = action.excute(request, response);
 	  }else if(command.equals("/boardInsertPlay.spoid")) {
+		  System.out.println("rr?");
 		  action = new BoardInsertPlayAction();
 		  forward = action.excute(request, response);
 	  }else if(command.equals("/boarddownload.spoid")) {

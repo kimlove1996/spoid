@@ -22,8 +22,8 @@ public class BoardInsertPlayAction implements Action{
 	public ActionForward excute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String url = "boardList.bizpoll";
-		
+		String url = "boardList.spoid";
+		System.out.println("안탐?");
 		//파일 업로드 처리
 		//
 		File uploadDir = new File(Constants.UPLOAD_PATH);

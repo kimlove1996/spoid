@@ -17,7 +17,7 @@ public class BoardDeleteAction implements Action{
 	public ActionForward excute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String url = "boardList.bizpoll";
+		String url = "boardList.spoid";
 		String sbno = request.getParameter("bno");
 		
 		
@@ -33,13 +33,13 @@ public class BoardDeleteAction implements Action{
 		
 		System.out.println("삭제 결과?");
 		if(result > 0) {
-			url = "boardList.bizpoll";
+			url = "boardList.spoid";
 			File file = new File(Constants.UPLOAD_PATH+filename);
 			file.delete();	
 			
 			
 		}else {
-			url = "boardviewcnt.bizpoll?bno="+sbno;
+			url = "boardviewcnt.spoid?bno="+sbno;
 			System.out.println("삭제 완료");
 		}
 		ActionForward forward = new ActionForward();

@@ -134,7 +134,7 @@ input[type="file"]{display: none;}
 <script type="text/javascript" src="<%=path%>/smarteditor/js/service/HuskyEZCreator.js" charset = "utf-8"></script>
 
 <script type="text/javascript">
-	$(document).on("click","#bw_instert",function(elClickedObj){
+	$(document).on("click","#bw_insert",function(elClickedObj){
 		var title = $("#title").val();
 		alert("게시글 이름 : "+title);
 		alert($("#add_file").val());
@@ -214,7 +214,7 @@ input[type="file"]{display: none;}
 						<a href="#" id="list_go">목록</a>
 					</div>
 					<div class="right_btm">	
-						<a href="#" id="bw_instert">등록하기</a>
+						<a href="#" id="bw_insert">등록하기</a>
 						<a href="#" id="bw_cancel">취소하기</a>
 					</div>
 					<div class="clr_both"></div>
