@@ -138,7 +138,8 @@
 	    transition: width 0.4s ease-in-out;
 	    overflow: hidden;
 	    border : none;
-	    background-color: #d1d9e438;
+	    background-color: white;
+	    opacity: 0.8;
 	}
 	.search *{
 		display: inline-block;
