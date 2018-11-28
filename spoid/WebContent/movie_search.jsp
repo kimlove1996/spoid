@@ -91,7 +91,7 @@
 	}
 </style>
 </head>
-<body id="movie_search">
+<body id="movie_search" onload="load()">
 	<div id="movie_search_all">
 		<div id="search_input">
 		

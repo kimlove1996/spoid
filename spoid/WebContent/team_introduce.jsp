@@ -186,7 +186,7 @@
 </style>
 
 </head>
-<body id="team_introduce">
+<body id="team_introduce" onload="load()">
 	<div id="team_introduce_all">
 		<div id="introduce_text_top">
 			<span id="introduce_text">Who We Are?</span><br>
@@ -206,9 +206,9 @@
 					
 					<div class="introduce_ment">
 						<p>역할</p>
-						<span class="ment1">디자인, 이미지 관련 제작</span><br>
+						<span class="ment1">슬라임 저작권자</span><br>
 						<p>한마디  : </p>
-						<span class="ment2">" 안녕하세오 "</span>
+						<span class="ment2">" 병가로 불참 "</span>
 					</div>
 				</div>
 			</div>
@@ -235,9 +235,9 @@
 					</div>
 					<div class="introduce_ment">
 						<p>역할</p>
-						<span class="ment1">디자인, 이미지 관련 제작</span><br>
+						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
-						<span class="ment2">" 안녕하세오 "</span>
+						<span class="ment2">" 뚜쉬뚜쉬 "</span>
 					</div>	
 				</div>
 			</div>
@@ -261,9 +261,9 @@
 					</div>
 					<div class="introduce_ment">
 						<p>역할</p>
-						<span class="ment1">디자인, 이미지 관련 제작</span><br>
+						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
-						<span class="ment2">" 안녕하세오 "</span>
+						<span class="ment2">" 킹리적갓심 "</span>
 					</div>
 				</div>
 			</div>
@@ -288,9 +288,9 @@
 					</div>
 					<div class="introduce_ment">
 						<p>역할</p>
-						<span class="ment1">디자인, 이미지 관련 제작</span><br>
+						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
-						<span class="ment2">" 안녕하세오 "</span>
+						<span class="ment2">" 시*인생 "</span>
 					</div>
 				</div>
 			</div>
@@ -316,9 +316,9 @@
 					</div>
 					<div class="introduce_ment">
 						<p>역할</p>
-						<span class="ment1">디자인, 이미지 관련 제작</span><br>
+						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
-						<span class="ment2">" 안녕하세오 "</span>
+						<span class="ment2">" 취직런 "</span>
 					</div>
 				</div>
 			</div>

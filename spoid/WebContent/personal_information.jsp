@@ -91,7 +91,7 @@
 </script>
 
 </head>
-<body id="personal">
+<body id="personal" onload="load()">
 
 	<div id="personal_all" style="margin: 124px auto 124px auto;">
 		<div id="personal_text_top" style="text-align: center; margin-bottom: 70px;">

@@ -456,7 +456,7 @@ $(document).on("click","#yes_btn",function(){
 	
 </script>
 </head>
-<body>
+<body onload="load()">
 <div id="wrapper">
 
 	<div id="delete_div">

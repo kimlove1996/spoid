@@ -42,6 +42,7 @@ import com.spoid.action.MemberUpdatePlayAction;
 import com.spoid.action.PasswordAction;
 import com.spoid.action.PwCheckAction;
 import com.spoid.action.PwdUpdatePlayAction;
+import com.spoid.action.TeamInfoAction;
 
 /**
  * Servlet implementation class spoidFrontController
@@ -70,9 +71,6 @@ public class SpoidController extends HttpServlet
 	  if (command.equals("/index.spoid")){ // 인덱스
 	    action = new IndexAction();
 	    forward = action.excute(request, response);
-	  }else if (command.equals("/agreementjoin.spoid")){
-	    action = new ConstractAction();
-	    forward = action.excute(request, response);
 	  }else if (command.equals("/login.spoid")){ // 로그인페이지 이동
 	    action = new LoginAction();
 	    forward = action.excute(request, response);
@@ -88,10 +86,10 @@ public class SpoidController extends HttpServlet
 	  }else if(command.equals("/memberupdateplay.spoid")) { // 회원수정 기능
 		  action = new MemberUpdatePlayAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/idCheck.spoid")) {
+	  }else if(command.equals("/idCheck.spoid")) { // 아이디체크(중복방지)
 		  action = new IdCheckAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/pwdCheck.spoid")) {
+	  }else if(command.equals("/pwdCheck.spoid")) { 
 		  action = new PwCheckAction();
 		  forward = action.excute(request, response);		  
 	  }else if(command.equals("/pwdUpdate.spoid")) {
@@ -100,19 +98,19 @@ public class SpoidController extends HttpServlet
 	  }else if(command.equals("/pwdupdateplayaction.spoid")) {
 		  action = new PwdUpdatePlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memberpage.spoid")) {
+	  }else if(command.equals("/memberpage.spoid")) { // 회원가입 페이지 이동
 		  action = new MemberPageAtcion();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memberDelete.spoid")) {
+	  }else if(command.equals("/memberDelete.spoid")) { // 회원탈퇴 페이지 이동
 		  action = new DeleteAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memdeleteplayaction.spoid")) {
+	  }else if(command.equals("/memdeleteplayaction.spoid")) { // 회원탈퇴
 		  action = new MemberDeletePlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/memberhintplay.spoid")) {
+	  }else if(command.equals("/memberhintplay.spoid")) { // 회원가입시 힌트입력
 		  action = new MemberHintPlayAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/LoginPlay.spoid")) {
+	  }else if(command.equals("/LoginPlay.spoid")) { // 로그인 기능
 		  action = new LoginPlayAction();
 		  forward = action.excute(request, response);
 	  }else if(command.equals("/boardList.spoid")) {
@@ -131,7 +129,6 @@ public class SpoidController extends HttpServlet
 		  action = new BoardInsertAction();
 		  forward = action.excute(request, response);
 	  }else if(command.equals("/boardInsertPlay.spoid")) {
-		  System.out.println("rr?");
 		  action = new BoardInsertPlayAction();
 		  forward = action.excute(request, response);
 	  }else if(command.equals("/boarddownload.spoid")) {
@@ -160,6 +157,9 @@ public class SpoidController extends HttpServlet
 		  forward = action.excute(request, response);		  
 	  }else if(command.equals("/updateGoodcnt.spoid")) {
 		  action = new GoodCntUpdateAction();
+		  forward = action.excute(request, response);		 		  
+	  }else if(command.equals("/teaminfo.spoid")) { // 팀소개 페이지 이동
+		  action = new TeamInfoAction();
 		  forward = action.excute(request, response);		 		  
 	  }
 	  

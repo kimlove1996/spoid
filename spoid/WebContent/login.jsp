@@ -191,7 +191,7 @@
 	});
 </script>
 </head>
-<body>
+<body onload="load()">
     
      <div id="login_all">
 	     <div id="logo">
