@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>member_join.jsp</title>
+<title>Spoid membership</title>
 <style type="text/css">
 /* MemberJoin_TOP */
 #MJ {
@@ -789,7 +789,7 @@ function nickcheck(){
 	var s = setInterval(countdown, 1000);  // Start!!! 1000=천 밀리세컨드, 즉 1초단위로 countdown()을 실행합니다. */
 </script>
 </head>
-<body>
+<body onload="load()">
 <div id="MJ">
 <div id="MJ_header">
 	<ul id="MJ_menu">

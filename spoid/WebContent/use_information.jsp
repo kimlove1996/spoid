@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Spoid Use Information</title>
 <style type="text/css">
 	#use{
 		margin: 0;
@@ -93,7 +93,7 @@
 </script>
 
 </head>
-<body id="use">
+<body id="use" onload="load()">
 
 	<div id="use_all" style="margin: 124px auto 124px auto;">
 		<div id="use_text_top" style="text-align: center; margin-bottom: 70px;">

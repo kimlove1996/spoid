@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Spoid personal Information</title>
 <style type="text/css">
 	#personal{
 		margin: 0;
@@ -91,7 +91,7 @@
 </script>
 
 </head>
-<body id="personal">
+<body id="personal" onload="load()">
 
 	<div id="personal_all" style="margin: 124px auto 124px auto;">
 		<div id="personal_text_top" style="text-align: center; margin-bottom: 70px;">

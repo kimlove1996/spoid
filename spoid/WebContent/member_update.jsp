@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>member_update.jsp</title>
+<title>Spoid Member Manager</title>
 <style type="text/css">
 /* MemberJoin_TOP */
 #MJ {
@@ -171,7 +171,14 @@
 
 
 /* ================================================================== 가입인증*/
-
+.MJ_content {
+    margin: 28px auto;
+    width: 800px;
+    border: 3px solid #cddde1;
+    border-radius: 5px;
+    clear: both;
+    padding-top: 50px;
+}
 #authentication_area{
 }
 
@@ -368,7 +375,7 @@ function nickcheck(){
 	var s = setInterval(countdown, 1000);  // Start!!! 1000=천 밀리세컨드, 즉 1초단위로 countdown()을 실행합니다. */
 </script>
 </head>
-<body>
+<body onload="load()">
 <div id="MJ">
 
 <!-- 정보입력 area -->

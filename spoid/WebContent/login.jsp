@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Spoid Login</title>
 <script type="text/javascript">
 	$(document).ready(function(){
 		
@@ -191,7 +191,7 @@
 	});
 </script>
 </head>
-<body>
+<body onload="load()">
     
      <div id="login_all">
 	     <div id="logo">
