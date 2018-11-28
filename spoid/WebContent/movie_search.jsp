@@ -23,7 +23,7 @@
 	}
 	
 	#serch_input{
-		background-color: #e9e9e9;
+		background-color: #92d1e2;
 	    height: 89px;
 	    width: 71%;
 	    margin: 0 auto;
@@ -37,10 +37,12 @@
 	}
 	
 	#selectbox{
-		width: 143px;
+	    width: 128px;
 	    height: 31px;
 	    margin-right: 16px;
 	    outline: 0px;
+	    vertical-align: middle;
+	    padding: 0 0 3px 5px;
 	}
 	
 	#search_input_box{
@@ -48,15 +50,14 @@
 	    height: 25px;
 	    outline: 0px;
 	    padding-left: 10px;
-	    border-radius: 3px;
+	    border-radius: 0px;
 	}
 	
 	/* 안내 text area */
 	#Guid_text{
 		font-size: 31px;
-	    padding: 30px 0;
+	    padding: 74px 0;
 	    width: 1312.08px;
-	    margin: 0 auto;
 	}
 	
 	#Guid_text > span:nth-child(1) {
@@ -73,22 +74,122 @@
 	#counting{
 	    display: inline-block;
 	    margin-left: 46px;
-	    color: #200909;
+	    color: #5f5f5f;
 	    border-top: 3px solid #e2e2e2;
 	    margin-bottom: 35px;
+	    padding: 7px 0 0 0;
+	    width: 290px;
+	    font-size: 15px;
 	}
 	
 	#movielist{
-	    border-top: 1px dotted #c8c8c8;
-	    border-bottom: 1px dotted #c8c8c8;
+	    border: 1px dotted #c8c8c8;
 	    padding: 41px 17px;
-	    border-left: 1px dotted #c8c8c8;
-	    border-right: 1px dotted #c8c8c8;
+	    border-radius: 5px;
 	}
 	
 	#movielist p{
-		margin: 10px 0;
+		margin: 0 0 12px 0;
 	}
+	
+	#movielist p:nth-child(1){
+		color: #3a3a3a;
+	}
+	#movielist p:nth-child(2){
+		font-weight: 100;
+	    font-size: 14px;
+	    color: #8c8c8c;
+	}
+	#movielist p:nth-child(3){
+	    margin-bottom: 3px;
+	    color: #ff4343;
+	    font-size: 15px;
+	}
+	#movielist p:nth-child(4){
+		overflow: hidden;
+	    height: 63px;
+	    -webkit-line-clamp: 4;
+	    display: -webkit-box;
+	    -webkit-box-orient: vertical;
+	    font-size: 12px;
+	    color: #717171;
+	}
+	
+	
+	#search_table{
+	    border: 1px solid #d0d0d0;
+	    border-left: none;
+	    border-right: none;
+	    width: 94%;
+	    padding: 10px 6px;
+	    margin: 0 auto;
+	    border-collapse: collapse;
+	}
+	
+	#search_table td{
+		padding-right: 18px;
+	    border-bottom: 1px solid #d0d0d0;
+	    padding: 15px 7px;
+	}
+	
+	#search_table th{
+	    width: 100%;
+	    text-align: left;
+	    padding-left: 10px;
+	    border-bottom: 1px solid #d0d0d0;
+	}
+	
+	
+	
+	
+	
+	
+		/* 페이지네이션 */
+	#paging ul{
+		display: inline-block;
+	}
+	
+	#paging li{
+	    border: 1px solid #d7d5d5;
+	    font-size: 12px;
+	    color: #757575;
+	    line-height: 59px;
+	    width: 34px;
+	    height: 34px;
+	}
+	
+	
+	.pagenation{
+		text-align: center;
+		clear: both;
+		height: 35px;
+		margin-top: 26px;
+	}
+	
+	.pagenation a{
+	    padding: 4px 8px;
+	    border: 3px solid #d4d4d4;
+	    background-color: #ffffff;
+	    border-radius: 6px;
+	    color: #111111;
+	    border-top: 0.5px solid #d5ced8;
+	    border-left: none;
+	}
+	
+	.pagenation .active{
+	    font-weight: bold;
+	    padding: 4px 8px;
+	    border: 3px solid #9b9b9b;
+	    background-color: #ffffff;
+	    border-radius: 6px;
+	    color: #111111;
+	    border-top: 0.5px solid #9b9b9b;
+	    border-left: none;
+	}
+	
+	
+	
+	
 </style>
 </head>
 <body id="movie_search">
@@ -99,11 +200,12 @@
 			<div id="serch_input">
 				<div id="serch_input_in">
 					<select id="selectbox">
-						<option value="1">
-						<option value="2">
-						<option value="3">
+						<option value="1">제목별
+						<option value="2">줄거리
+						<option value="4">제목 + 줄거리
+						<option value="3">장르별
 					</select>
-					<input id="search_input_box">
+					<input id="search_input_box" placeholder="보헤미안 렙소디">
 				</div>
 			</div>
 			
@@ -124,21 +226,245 @@
 			
 			
 			
-				<table>
+				<table id="search_table">
 					<tr>
 						<td>
 							<img src="img/movie_image(1).jpg">
 						</td>
 						<th>
-							<p>새오새오새오</p>
-							<p>새오새오새오</p>
-							<p>새오새오새오</p>
-							<p>새오새오새오</p>
-							<p>새오새오새오</p>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(2).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(3).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(4).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(5).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(6).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(7).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(8).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(9).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<img src="img/movie_image(10).jpg">
+						</td>
+						<th>
+							<p>보헤미안 렙소디</p>
+							<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+							<p>줄거리</p>
+							<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
+								공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
+								 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
+								 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
+								 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
+								 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
+								 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
+								 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
+								 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
+								 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
+							<p></p>
 						</th>
 					</tr>
 				</table>
 			</div>
+			
+			
+			<!-- 페이지넘기기 -->
+			<div class="pagenation">
+				<c:if test="${pageMaker.prev}">  
+						<a href="★★★★★★★★★★★★?page=${pageMaker.startPage - 1}">&laquo;</a>
+				</c:if>																
+			
+				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+					
+					
+						<a href="★★★★★★★★★★★★?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" 
+						<c:out value="${pageMaker.criDto.page == idx? 'class=active':''}"/>>${idx}</a> 
+					
+				</c:forEach>
+				
+				<c:if test="${pageMaker.next}">
+						<a href="★★★★★★★★★★★★?page=${pageMaker.endPage + 1}">&raquo;</a>
+				</c:if>															
+			</div>
+			
+			
+			
+			
+			
+			
 		</div>
 	</div>
 </body>
