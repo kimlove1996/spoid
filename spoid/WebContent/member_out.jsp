@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>member_out.jsp</title>
+<title>Spoid membership withdrawal</title>
 <style type="text/css">
 	
 	body,ul{

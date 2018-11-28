@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>member_join.jsp</title>
+<title>Spoid membership</title>
 <style type="text/css">
 /* MemberJoin_TOP */
 #MJ {

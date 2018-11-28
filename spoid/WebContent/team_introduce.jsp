@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Spoid team member</title>
 <style type="text/css">
 	#team_introduce{
 		margin: 0;
