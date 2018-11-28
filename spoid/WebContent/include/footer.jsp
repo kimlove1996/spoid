@@ -37,9 +37,9 @@
 		<div style="margin: 2%"></div>
 		
 		<div>
-			<a class="information" href="team_info.jsp"><span style="color : white; margin-left: 5%; font-size: 20px;">팀 소개</span></a>
-			<a class="information" href="alone_info.jsp"><span style="color : white; margin-left: 2%; font-size: 20px;">개인정보 취급방침</span></a>
-			<a class="information" href="use_info.jsp"><span style="color : white; margin-left: 2%; font-size: 20px;">이용약관</span></a>
+			<a class="information" href="teaminfo.spoid"><span style="color : white; margin-left: 5%; font-size: 20px;">팀 소개</span></a>
+			<a class="information" href="personalinfo.spoid"><span style="color : white; margin-left: 2%; font-size: 20px;">개인정보 취급방침</span></a>
+			<a class="information" href="useinfo.spoid"><span style="color : white; margin-left: 2%; font-size: 20px;">이용약관</span></a>
 		</div>
 		
 		<div style="margin-top: 2.5%;">

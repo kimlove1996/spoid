@@ -6,13 +6,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class TeamInfoAction implements Action{
+public class UseInfoAction implements Action{
 
 	@Override
 	public ActionForward excute(HttpServletRequest paramHttpServletRequest,
 			HttpServletResponse paramHttpServletResponse) throws ServletException, IOException {
-		String url = "team_introduce.jsp";
-		// 팀소개로 페이지이동
+		String url = "use_information.jsp";
+		// 이용약관 페이지이동
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);
