@@ -61,11 +61,15 @@ ul,li{
 	width : 80px;
 	height: 30px;
 	float : left;
+	box-sizing: border-box;
+	vertical-align: middle;
 }
 .bu_title > input{
 	width : 92%;
 	height: 30px;
 	float : right;
+	box-sizing: border-box;
+	vertical-align: middle;
 }
 .board_title{
 	width : 70%;
@@ -307,7 +311,7 @@ input[type="file"]{display: none;}
 
 				<div class="btm_board">
 					<div class="left_btm">
-						<a href="#" id="list_go">목록</a>
+						<a href="boardList.spoid" id="list_go">목록</a>
 					</div>
 					<div class="right_btm">	
 						<a href="#" id="bu_update">수정하기</a>

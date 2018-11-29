@@ -154,7 +154,7 @@ ul,li{
 	resize: none;
 	width : 100%;
 	min-height: 80px;
-	border-bottom : 1px solid #cccccc;
+	border : none;
 	box-sizing: border-box;
 }
 .c_write_btn{
@@ -164,7 +164,7 @@ ul,li{
 	line-height: 30px;
 	background-color: rgb(249, 249, 247);
 	text-align: center;
-
+	border-top : 1px solid #cccccc;	
 	box-sizing: border-box;
 	color : #333;
 }
@@ -182,6 +182,7 @@ ul,li{
 .c_update_btn{
 	background-color: rgb(249, 249, 247);
 	color : #333;
+	border-right: 1px solid #cccccc;
 }
 
 .cu_close_btn{
@@ -308,6 +309,9 @@ ul,li{
 		cursor: pointer;
 	}
 	.fa-heart:hover{color:red;}
+	.cu_btn_wrapper{
+		border-top: 1px solid #cccccc;
+	}
 </style>
 
 

@@ -86,8 +86,11 @@
 			</div>
 			<div class="update_comment" style="display:none" id="">
 				<textarea rows="" cols="" class="cmt_txt2" placeholder="댓글을 입력해주세요." name="cmt_txt2"></textarea>	
-				<a href="#" class="c_update_btn cu_btn">수정</a>
-				<a href="#" class="cu_close_btn cu_btn">취소</a>						
+				<div class="cu_btn_wrapper">
+					<a href="#" class="c_update_btn cu_btn">수정</a>
+					<a href="#" class="cu_close_btn cu_btn">취소</a>	
+				</div>
+					
 			    <input type="hidden" name="cmt_writer2" value="${sessionScope.loginUser.id}">
 				<input type="hidden" name="cmt_bno2" id="cmt_bno2">
 				<input type="hidden" name="cmt_cnt2" id="cmt_cnt2" value="${replyList.size()}"> 

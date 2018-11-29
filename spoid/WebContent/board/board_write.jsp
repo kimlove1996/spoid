@@ -216,7 +216,7 @@ input[type="file"]{display: none;}
 
 				<div class="btm_board">
 					<div class="left_btm">
-						<a href="#" id="list_go">목록</a>
+						<a href="boardList.spoid" id="list_go">목록</a>
 					</div>
 					<div class="right_btm">	
 						<a href="#" id="bw_insert">등록하기</a>

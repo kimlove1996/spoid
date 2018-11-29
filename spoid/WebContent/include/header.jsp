@@ -310,15 +310,16 @@
 
 		<div id="menu_section" >	
 			<div id="log_section">
-				<div id="login_circle" class="img_log" style="background-image: url(<%=path%>/img/menu/login_no.svg);">	
-				</div>
+				
 				<c:choose>
 					<c:when test="${empty sessionScope.loginUser}">
+						<div id="login_circle" class="img_log" style="background-image: url(<%=path%>/img/menu/login_no.svg);"></div>
 						<p>로그인을 하지 않으셨어요~~</p>
 						<a href="<%=path%>/login.spoid" class="mlog_btn">로그인</a>
 						<a href="<%=path%>/memberpage.spoid" class="mlog_btn" >회원가입</a>						
 					</c:when>
 					<c:otherwise>
+						<div id="login_circle" class="img_log" style="background-image: url(<%=path%>/img/menu/login_yes.svg);">	</div>
 						<p>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})님 환영합니다</p>
 						<a href="<%=path%>/loginOut.spoid">로그아웃</a>
 						<a href="<%=path%>/memberupdate.spoid">계정관리</a>
