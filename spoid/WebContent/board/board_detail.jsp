@@ -189,8 +189,7 @@ ul,li{
 	.modal{
 		display: none;
 		position : fixed;
-		z-index : 500;
-		padding-top :3%;
+		z-index : 1000;
 		top : 0;
 		width : 100%;
 		height: 100%;
@@ -237,7 +236,7 @@ ul,li{
 	#dm_header{
 		height: 50px;
 		border-radius: 10px 10px 0px 0px;
-		background-color: rgba(244,221,71,0.92);
+		background-color:#30a1c0;
 		border-bottom: 5px solid #0e4754;
 		
 	}
@@ -252,7 +251,7 @@ ul,li{
 	   
 	}
 	.bdel_modal_close:hover{
-		color : orange;
+		color : white;
 		cursor: pointer;
 	}
 	#dmodal_content > span > a{
@@ -295,6 +294,12 @@ ul,li{
 	.empty_content::-ms-input-placeholder { /* Microsoft Edge */
   		 color: red;
 	}
+	
+	.fa-heart{
+		color:red;
+		cursor: pointer;
+	}
+	.fa-heart:hover{color:#ec4c6a;}
 </style>
 
 

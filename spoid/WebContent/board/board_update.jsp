@@ -250,6 +250,9 @@ input[type="file"]{display: none;}
 		$("#now-file-name").val(nowfile);
 		$("#bu_info").submit();
 	});
+	$(document).on("click","#bu_cancel",function(){
+		location.href = "boardviewcnt.bizpoll?bno=${boardView.bno}";
+	});
 </script>
 
 </head>

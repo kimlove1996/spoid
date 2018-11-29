@@ -150,6 +150,9 @@ input[type="file"]{display: none;}
 		$("#bw_info").submit();
 	}
 	);
+	$(document).on("click","#bw_cancel",function(){
+		location.href = "boardList.spoid";
+	});	
 	$(document).on("click",".btn-file",function(){
 		$("#add_file").click();
 	});

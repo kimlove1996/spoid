@@ -147,7 +147,7 @@
 		
 	}
 	.search > input[type=text],.search >span{float:left;}
-	.search > input[type=text].active {
+	.search > input[type=text].s_active {
 	    width: 300px;
 	 	border-bottom: 3px solid #0e4754;
 		padding-left: 8px;
@@ -235,7 +235,7 @@
 		});
 		
 		$('.icon').click(function(){
-			$('.search').toggleClass('active')
+			$('.search').toggleClass('s_active');
 			
 		});
 		

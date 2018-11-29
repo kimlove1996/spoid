@@ -90,8 +90,7 @@
 		line-height:30px;
 		border :3px solid #0e4754;
 		box-sizing: border-box;
-	
-		
+		vertical-align: middle;
 	}
 	#bl_search{
 		border : 3px solid #0e4754;
@@ -99,6 +98,7 @@
 		height: 30px;
 		line-height: 30px;
 		box-sizing: border-box;
+		vertical-align: middle;
 	}
 	#bl_search_btn{
 		background-color : #0e4754;
@@ -108,7 +108,8 @@
 		border: none;
 		width : 50px;
 		position:absolute;
-		top : 1px;
+		vertical-align: middle;
+		top : 0px;
 		right : 0px;
 		display: inline-block;
 		text-align: center;
