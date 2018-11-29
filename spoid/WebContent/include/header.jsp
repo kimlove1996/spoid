@@ -299,7 +299,7 @@
            			 <span class="stext"><i class="fas fa-bars"></i> MENU</span>
           		</a>
           		<a class="menu_ham" id="menu_close" href="#" style="display:none;">
-          			 <span class="text"><i class="fas fa-times"></i>CLOSE</span>
+          			 <span class="text"><i class="fas fa-times"></i> CLOSE</span>
           		</a>
           		<div class="clr_both"></div>
           	</div>

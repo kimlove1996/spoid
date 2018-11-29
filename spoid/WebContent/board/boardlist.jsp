@@ -108,7 +108,7 @@
 		border: none;
 		width : 50px;
 		position:absolute;
-		top : 0px;
+		top : 1px;
 		right : 0px;
 		display: inline-block;
 		text-align: center;

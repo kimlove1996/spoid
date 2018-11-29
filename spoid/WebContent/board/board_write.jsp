@@ -63,6 +63,7 @@ ul,li{
 	float : left;
 }
 .bw_title > input{
+	box-sizing : border-box;
 	width : 92%;
 	height: 30px;
 	float : right;
@@ -126,6 +127,8 @@ input[type="file"]{display: none;}
 	background-color: #0e4754;
 	color : white;
 	border:none;
+	box-sizing: border-box;
+	height: 30px;
 }
 #file_close_btn{display: inline-block;}
 #file_close_btn:hover{color:red;}
@@ -186,9 +189,8 @@ input[type="file"]{display: none;}
 		<form method="POST" action = "boardInsertPlay.spoid" id="bw_info" name="bw_info"   enctype="multipart/form-data">
 			<div class="bw_title">
 				<select id="bw_cate">
-					<option selected="selected">질문</option>
-					<option selected="selected">잡담</option>
-					<option selected="selected">공지</option>
+					<option selected="selected">리뷰</option>
+					<option>잡담</option>
 				</select>
 				<input type="text" placeholder = "제목을 입력해주세요" id="title" name="title">
 				<input type="hidden" value="${sessionScope.loginUser.id}" name="writer" id="writer">

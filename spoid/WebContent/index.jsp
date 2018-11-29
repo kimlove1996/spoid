@@ -117,9 +117,9 @@
 	}
 	.col1 .overlay_story{
 		width: 100%;
-		height :23.2em;
+		height :22.4em;
 		line-height : 1.2em;
-		-webkit-line-clamp: 18;
+		-webkit-line-clamp: 17;
 		-webkit-box-orient: vertical;
 		display: -webkit-box;
 		overflow: hidden;
@@ -128,7 +128,7 @@
 	}
 	.col2 .overlay_story{
 		width: 100%;
-		height :9.2em;
+		height :9.3em;
 		line-height : 1.2em;
 		-webkit-line-clamp: 6;
 		-webkit-box-orient: vertical;
