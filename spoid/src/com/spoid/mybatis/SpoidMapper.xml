@@ -62,7 +62,7 @@
 	<select id="countPaging" resultType="int">
 		<![CDATA[
 		    SELECT count(bno) 
-			FROM minionsboard 
+			FROM spoidboard 
 			WHERE bno>0
 		]]>
 		  <if test='flag=="1"'>               
@@ -85,7 +85,7 @@
        		 SELECT * FROM ( SELECT rownum rnum, 
                             a.* 
                             FROM( SELECT *
-                            FROM minionsboard
+                            FROM spoidboard
                             WHERE bno >0 ]]>
                 
                             <if test='flag=="1"'>               
@@ -120,14 +120,14 @@
 	</select>
 	<select id="boardDetailView" resultType="com.spoid.dto.BoardDTO">
 		<![CDATA[
-			SELECT * FROM minionsboard
+			SELECT * FROM spoidboard
 			WHERE bno = #{bno}
 		]]>
 	
 	</select>
 	
 	<update id="viewCnt">
-		UPDATE minionsboard
+		UPDATE spoidboard
 			SET viewcnt = viewcnt+1
 			WHERE bno = #{bno}
 	</update>
@@ -135,17 +135,17 @@
 		
 		<choose>
 			<when test="content != null">
-			INSERT INTO minionsboard(bno, title, content, writer,filename,filesize) VALUES(seq_minions.NEXTVAL, #{title},#{content},#{writer},#{filename},#{filesize})
+			INSERT INTO spoidboard(bno, title, content, writer,filename,filesize) VALUES(seq_minions.NEXTVAL, #{title},#{content},#{writer},#{filename},#{filesize})
 			</when>
 			<otherwise>
-			INSERT INTO minionsboard(bno, title, writer,filename,filesize) VALUES(seq_minions.NEXTVAL, #{title},#{writer},#{filename},#{filesize})
+			INSERT INTO spoidboard(bno, title, writer,filename,filesize) VALUES(seq_minions.NEXTVAL, #{title},#{writer},#{filename},#{filesize})
 			</otherwise>
 		
 		</choose>
 		
 	</insert>
 	<update id="boardUpdate" parameterType="com.spoid.dto.BoardDTO">
-		UPDATE minionsboard 
+		UPDATE spoidboard 
 			SET title = #{title},
 				writer = #{writer}, 
 				
@@ -157,39 +157,39 @@
 			WHERE bno=#{bno}
 	</update>
 	<delete id="boardDelete" parameterType="String">
-		DELETE FROM minionsboard WHERE bno=#{bno}
+		DELETE FROM spoidboard WHERE bno=#{bno}
 	</delete>
 	
 	<!--  ================================= -->
 	<!-- ReplyDAO -->
 	<select id="replyListAll" parameterType="String" resultType="com.spoid.dto.ReplyDTO">
-		SELECT * FROM minionsreply
+		SELECT * FROM spoidreply
 		WHERE bno = #{bno}
 		ORDER BY rno ASC
 	</select>
 	<delete id="deleteComment" parameterType="String">
-		DELETE FROM minionsreply WHERE rno=#{rno}
+		DELETE FROM spoidreply WHERE rno=#{rno}
 	</delete>
 	
 	
 	<insert id="replyInsert" parameterType="com.spoid.dto.ReplyDTO">
-		INSERT INTO minionsreply(rno, content, writer,bno) 
-		VALUES(seq_minionsreply_rno.NEXTVAL,#{content},#{writer},#{bno})	
+		INSERT INTO spoidreply(rno, content, writer,bno) 
+		VALUES(seq_spoidreply_rno.NEXTVAL,#{content},#{writer},#{bno})	
 	</insert>
 	<update id="updateReplyCnt"  parameterType="com.spoid.dto.BoardDTO">
-		 UPDATE minionsboard 
+		 UPDATE spoidboard 
 		 SET replycnt=replycnt+#{flag}
 		 WHERE bno=#{bno}
 	
 	</update>
 	<update id="updateGoodCnt"  parameterType="String">
-		 UPDATE minionsboard 
+		 UPDATE spoidboard 
 		 SET  goodcnt=goodcnt+1
 		 WHERE bno=#{bno}
 	
 	</update>
 	<update id="replyUpdate" parameterType="com.spoid.dto.ReplyDTO">
-		 UPDATE minionsreply 
+		 UPDATE spoidreply 
 		 SET  content=#{content}
 		 WHERE bno=#{bno} AND rno=#{rno}	
 	</update>

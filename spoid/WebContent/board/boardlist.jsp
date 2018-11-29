@@ -225,10 +225,7 @@
 			<div class="blist_title">
 				<h2>자유게시판</h2>
 				<p>|자유게시판 입니다.</p>
-				
 			</div>
-
-			
 		</div>
 		<div class="bl_category">
 				<ul>
