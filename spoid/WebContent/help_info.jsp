@@ -55,42 +55,61 @@
 
 
 #help_box{
-    margin: 80px 0 35px 96px;
+    margin: 42px 32px;
 }
 #help_img {
-	width: 350px;
+	width: 320px;
 }
 
 
 .help{
 	font-size: 18px;
     color: #464646;
+    margin-bottom: 100px;
 }
 .hi_info {
-	padding: 0 auto;
-	margin: 0 auto;
-	width: 600px;
-	height: 50px;
-	margin-top: 34px;
+    margin: 0 auto;
+    height: 50px;
+    margin-top: 34px;
 }
 
 .label_singnin {
-    width: 142px;
+    width: 65px;
     height: 20px;
     float: left;
     line-height: 40px;
     font-size: 14px;
     font-weight: bold;
-    color: #383838;
+    color: #6f6f6f;
 }
+
+#in_title{
+	width: 90px;
+    height: 20px;
+    float: left;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #6f6f6f;
+}
+
 .input_signin {
-    width: 393px;
+    width: 290px;
     height: 36px;
-    padding: 0 13px;
     border: none;
     border-radius: 3px;
     border-bottom: 3px solid #cddde1;
     outline: 0;
+}
+
+#inputQ{
+	width: 393px;
+    height: 36px;
+    border: none;
+    border-radius: 3px;
+    border-bottom: 3px solid #cddde1;
+    outline: 0;
+    padding-left: 6px;
 }
 #input_a{
 	margin: 0 auto;
@@ -101,6 +120,14 @@
     border-radius: 5px;
     padding: 25px;
 }
+
+#qna_textarea{
+	margin: 0 auto;
+    width: 605px;
+    margin-top: 24px;
+}
+
+
 #error_help{
 	font-size: 10px;
     color: red;
@@ -110,7 +137,6 @@
 #next_btn {
 	width: 100px;
     height: 46px;
-    margin-top: 40px;
     border: 1px solid #d4d4d4;
     border-radius: 3px;
     font-size: 16px;
@@ -125,6 +151,27 @@
     color: #474747;
     font-weight: bold;
 }
+
+
+
+#help_img_wr{
+	display: inline-block;
+}
+
+#hi_info_title{
+    margin: 0 auto;
+    width: 606px;
+    height: 50px;
+    margin-top: 34px;
+}
+
+#hi_info_area{
+    display: inline-block;
+    vertical-align: 66px;
+    margin-left: 40px;
+}
+
+
 </style>
 <title>QnA</title>
 <script type="text/javascript">
@@ -151,21 +198,27 @@ $(document).ready(function(){
 		<div id="help_img_wr">
 			<img alt="" src="img/contact.jpg" id="help_img">
 		</div>
+		
+		<div id="hi_info_area">
 			<div class="hi_info">
 			<label for="inputid" id="in_id" class="label_singnin">아이디</label>
 			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in" value="${sessionScope.loginUser.id}" readonly="readonly">
 			</div>
 			<div class="hi_info">
-			<label for="inputemail" id="in_id" class="label_singnin">이메일</label>
+			<label for="inputemail" id="in_email" class="label_singnin">이메일</label>
 			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in" value="${sessionScope.loginUser.email}" readonly="readonly">
 			</div>
 		</div>
-			<div class="hi_info">
-			<label for="inputQ" id="in_id" class="label_singnin">제목</label>
-			<input type="text" id="inputQ" class="input_color input_signin" name="inputQ" class="input_in" placeholder="문의할 내용을 적어주세요.">
+			
+		</div>
+			<div id="hi_info_title">
+			<label for="inputQ" id="in_title" >제목</label>
+			<input type="text" id="inputQ" class="input_color" name="inputQ" class="input_in" placeholder="문의할 내용을 적어주세요.">
 			</div>
 			<span id="error_help">필수 정보입니다.</span>
-			<textarea rows="" cols="" placeholder="ex) 문의할 내용을 적어주세요." id="input_a" name="a" style="resize: none;"></textarea>
+			<div id="qna_textarea">
+				<textarea rows="" cols="" placeholder="ex) 문의할 내용을 적어주세요." id="input_a" name="a" style="resize: none;"></textarea>
+			</div>
 			<span id="error_help">필수 정보입니다.</span>
 	</div>	
 		<input type="button" value="NEXT" id="next_btn">
