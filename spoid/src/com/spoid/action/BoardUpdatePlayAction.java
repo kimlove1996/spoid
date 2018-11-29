@@ -148,7 +148,7 @@ public class BoardUpdatePlayAction implements Action{
 		
 
 		
-		String url = "boardviewcnt.bizpoll?bno="+bno;
+		String url = "boardviewcnt.spoid?bno="+bno;
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);
 		forward.setRedirect(true);

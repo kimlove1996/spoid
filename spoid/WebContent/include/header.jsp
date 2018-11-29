@@ -221,7 +221,7 @@
 
 		$('.search-button').click(function(){
 			$(".search-button").css("border-radius","0px 4px 4px 0px");
-			$(".search-box").addClass("active");
+			$(".search-box").addClass("s_active");
 			$(".search-box").focus();
 		});
 		$(window).on('scroll', function() {

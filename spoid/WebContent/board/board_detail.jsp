@@ -102,6 +102,9 @@ ul,li{
 	display: inline-block;
 	background-color: #0e4754;
 }
+.btm_board > div > a:hover{
+	background-color:#ec4c6a;
+}
 .like_article{
 	margin-bottom : 10px;
 	box-sizing : border-box;
@@ -129,6 +132,8 @@ ul,li{
 }
 .c_writer{
 	display : inline-block;
+	font-weight: bold;
+	color: #0e4754;
 }
 .comment_btn{
 	display: inline-block;
@@ -149,7 +154,8 @@ ul,li{
 	resize: none;
 	width : 100%;
 	min-height: 80px;
-	border: none;
+	border-bottom : 1px solid #cccccc;
+	box-sizing: border-box;
 }
 .c_write_btn{
 	display :inline-block;
@@ -165,7 +171,7 @@ ul,li{
 
 .cu_btn{
 	display :inline-block;
-	width :100%;
+	width :49%;
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
@@ -217,7 +223,9 @@ ul,li{
 		background-color: #0e4754;
 		color:white;
 		border : none;
-		width : 50px;
+	    width: 70px;
+	    height: 25px;
+	    line-height: 25px;
 	}
 	#m_modal{
 		width : 100%;
@@ -296,10 +304,10 @@ ul,li{
 	}
 	
 	.fa-heart{
-		color:red;
+		color:black;
 		cursor: pointer;
 	}
-	.fa-heart:hover{color:#ec4c6a;}
+	.fa-heart:hover{color:red;}
 </style>
 
 
@@ -459,7 +467,7 @@ ul,li{
 		
 		<div class="b_header">
 			<div class="b_page">
-				<h2>QnA</h2>
+				<h2>게시글</h2>
 				<p>|글번호:${boardView.bno}</p>
 		
 									
@@ -470,7 +478,7 @@ ul,li{
 			
 					<a href="index.spoid">home</a>>
 					<a href="boardList.spoid">게시판</a>>
-					<a href="#">QnA</a>			
+					<a href="#">게시글</a>			
 	
 			</div>
 			<div class="clr_both"></div>

@@ -18,6 +18,7 @@ import com.spoid.mybatis.SqlMapConfig;
 
 public class BoardDAO {
 	private int bno;
+	private String category;
 	private String title;
 	private String content;
 	private String writer;

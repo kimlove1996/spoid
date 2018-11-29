@@ -177,7 +177,13 @@
 
 		$(".bl_search_sel").val("${flag}");
 		$("#bl_search").val("${keyword}");
-		$("#order_sel").val("${code}");
+		if("${code}==''"){
+			alert("뭐여?");
+			$("#order_sel").val("제목+내용");
+		}else{
+			$("#order_sel").val("${code}");
+		}
+		
 	});
 	$(document).on("click","#bl_search_btn", function () {
 		var flag = $(".bl_search_sel").val();
