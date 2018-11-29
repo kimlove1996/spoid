@@ -15,7 +15,6 @@
 		margin : 0; 
 	 	padding:0;
 	}
-	input[type=text]{padding:0px;}
 	li{list-style: none;}
 	#header_body a{text-decoration: none;}
 	#header_body header{
