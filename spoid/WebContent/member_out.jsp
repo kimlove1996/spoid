@@ -32,7 +32,7 @@
 	}
 
 	#wrapper{
-	    margin: 88px auto 0 auto;
+	    margin: 88px auto 63px auto;
 	    width: 31%;
 	}
 	
@@ -46,7 +46,7 @@
 	
 	#delete_div_background{
 		width: 600px;
-	    height: auto;
+	    height: 706px;
 	    margin: 0 auto;
 	    background-color: white;
 	    border-radius: 25px;
@@ -58,7 +58,8 @@
 	
 	#btn_wrap{
 		height: 80px;
-		border-radius: 1px solid black;
+		padding-top: 54px;
+		text-align: center;
 	}
 
 	#header p{
@@ -205,38 +206,41 @@
 		color : red;
 		font-size: 15px;
 	}
-	#btn_wrap{
-		text-align: center;	
-		margin-bottom :10px;
-	}
+
 	.delete_pwd_delete_area{
-		padding-left : 3%;
 		margin: 30px auto;
 		overflow: hidden;
-		width : 100%;
+		width : 476px;
 		text-align: left;
 	
 	}
 
 	.delete_pwd_delete_area>span{
-		display : inline-block;
-		width:46%;
-		height : 50px;
-		border-radius: 10px;
-		margin-bottom : 20px;
-		text-align: center;
+	    display: inline-block;
+	    width: 220px;
+	    border-radius: 10px;
+	    margin-bottom: 20px;
+	    text-align: center;
 		
 	}
 	
-	.delete_pwd_delete_area > span > a{
+	.delete_pwd_delete_area > span:nth-child(2) > a{
+	    line-height: 50px;
+	    font-size: 30px;
+	    width: 100%;
+	    display: inline-block;
+	    background-color: #78caea;
+	    color: white;
+	    border-radius: 5px;
+	}
+	.delete_pwd_delete_area > span:nth-child(1) > a{
 		line-height : 50px;
 	 	font-size : 30px;
 		width : 100%;
 		display : inline-block;	 
 		background-color: #186786;
-		color : rgba(244,221,71,0.92);
-		
-	 	
+		color : white;
+		border-radius: 5px;
 	}
 	.delete_input_select input:not([type=button]),.delete_input_select select{
 		border-bottom : 3px solid  #cccccc;
@@ -355,6 +359,13 @@
 		vertical-align: middle;
 	}
 	
+	#input_id_div{
+		margin-top: 40px;
+	}
+	
+	#delete_pwd_delete_span{
+		margin-right: 28px;
+	}
 </style>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -433,18 +444,26 @@ $(document).ready(function() {
 	
 	/* 클릭시 라벨 텍스트 무빙 */
 	$("#id_label").click(function(){
-		$(this).css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s");
+		$(this).css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s").css("width","100px");
 		$("#deleteId").focus();
-		$("#deleteId").css("background-color","#e5f3ff")
+		$("#deleteId").css("background-color","#e5f3ff").css("transition", "all 0.5s");
 	});
+	$("#deleteId").click(function(){
+		$(this).css("background-color","#e5f3ff").css("transition", "all 0.5s");
+	});
+	
 	$("#pw_label").click(function(){
-		$(this).css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s");
+		$(this).css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s").css("width","150px");
 		$("#del_pwd").focus();
-		$("#del_pwd").css("background-color","#e5f3ff")
+		$("#del_pwd").css("background-color","#e5f3ff").css("transition", "all 0.5s");
 	});
+	$("#del_pwd").click(function(){
+		$(this).css("background-color","#e5f3ff").css("transition", "all 0.5s");
+	});
+	
 		
 	$(".delete_idpw").blur(function(){
-		$(this).css("background-color","rgb(248, 252, 255)")
+		$(this).css("background-color","rgb(248, 252, 255)");
 	})	
 		
 	
@@ -568,11 +587,11 @@ $(document).on("click","#yes_btn",function(){
 			</section>
 			
 			<div id="delete_pwd_div">
-				<div class="delete_input" id="input_pwd_div">
+				<div class="delete_input" id="input_id_div">
 					<label id="id_label">삭제할 ID</label>	
 					<input type = "text" name="deleteId" id="deleteId" class="delete_idpw" value="${sessionScope.loginUser.id}">
 				</div>
-				<div class="delete_input" id="input_pwd_div">
+				<div class="delete_input" id="input_pw_div">
 				<label id="pw_label">패스워드 입력<strong class="strong_label">*</strong></label>
 					<input type="password" id="del_pwd" class="delete_idpw" name="del_pwd" class="neccessary">
 					<span class="err_chk2">필수 항목을 입력해주세요</span>
@@ -605,3 +624,4 @@ $(document).on("click","#yes_btn",function(){
 </div>
 </body>
 </html>
+<%@ include file="include/footer.jsp" %>
