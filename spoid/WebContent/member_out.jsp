@@ -391,10 +391,10 @@ $(document).on("blur","#del_pwd",function(){
 		
 		if(delPw != ""){
 			$.ajax({
-				url : "pwdCheck.bizpoll",
+				url : "pwdCheck.spoid",
 				type : "POST",
 				dataType : "json",
-				data : "id=${sessionScope.loginUser.id}&"+"pwd="+delPw, //쿼리스트링 공백 넣지 말것!
+				data : "id=${sessionScope.loginUser.id}&"+"pw="+delPw, //쿼리스트링 공백 넣지 말것!
 				success : function(data){
 					
 					if(data.message == "-1"){

@@ -43,6 +43,7 @@ import com.spoid.action.PasswordAction;
 import com.spoid.action.PersonalInfoAction;
 import com.spoid.action.PwCheckAction;
 import com.spoid.action.PwdUpdatePlayAction;
+import com.spoid.action.QnaPageAction;
 import com.spoid.action.TeamInfoAction;
 import com.spoid.action.UseInfoAction;
 
@@ -169,7 +170,11 @@ public class SpoidController extends HttpServlet
 	  }else if(command.equals("/personalinfo.spoid")) { // 이용약관 페이지 이동
 		action = new PersonalInfoAction();
 		forward = action.excute(request, response);		 		  
+	  }else if(command.equals("/qnapage.spoid")) { // 고객관리센터 이동
+		action = new QnaPageAction();
+		forward = action.excute(request, response);		 		  
 	  }
+
 
 
 	  

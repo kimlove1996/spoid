@@ -153,7 +153,6 @@
 		 alert("연결");
 		 var id = $("#inputid").val();
 		 var pw = $("#inputpw").val();
-		 alert(id+", "+pw);
 		 /* 유효성 체크 */
 			/* id와 pw중 하나라도 값이 없으면 경고문 출력 */
 			if(id != "" && pw !=""){
@@ -165,10 +164,8 @@
 						data: "id="+id+"&pw="+pw,
 						success: function(data) {
 							if(data.message =="1"){
-								alert("로그인 성공");
 								location.href="<%=referer%>";
 							} else {
-								alert("로그인 실패");
 								$("#login_err_check").css("display","block");
 								$("#login_err_check_msg").text("ID와 PW가 일치하지 않습니다.");
 								return false;
@@ -179,7 +176,6 @@
 						}
 						
 					});
-				alert("페이지 이동");	
 			}else{
 				$("#login_err_check").css("display","block");
 				return false;

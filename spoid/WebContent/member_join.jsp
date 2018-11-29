@@ -634,7 +634,7 @@ $(document).ready(function(){
 					return false; /* 이걸해야 submit이 안됨! 꼭 해야함 */				
 				}
 				$.ajax({
-					url: "idCheck.bizpoll",
+					url: "idCheck.spoid",
 					type: "POST",
 					dateType: "json",
 					data: "id="+ idVal,

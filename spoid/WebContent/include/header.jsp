@@ -351,7 +351,7 @@
 								<span class="menu_btn">모든 영화</span>
 							</div>
 						</li>
-						<li onclick="location.href='aboutus.spoid'">
+						<li onclick="location.href='teaminfo.spoid'">
 							<div class="menu_li_div">
 								<img src="<%=path%>/img/menu/about-us-1.gif" class="menu_icon">
 								<span class="menu_btn">About us</span>
@@ -363,7 +363,7 @@
 								<span class="menu_btn">게시판</span>
 							</div>
 						<li>
-							<div class="menu_li_div"  onclick="location.href='ascenter.spoid'">
+							<div class="menu_li_div"  onclick="location.href='qnapage.spoid'">
 								<img src="<%=path%>/img/menu/as.gif" class="menu_icon">
 								<span class="menu_btn">고객센터</span>
 							</div>
