@@ -13,8 +13,13 @@
 		padding : 0;
 		background-color: #F8F6F8;
 	}
-	header p{
-		margin-top : -260px;
+	#memout_text_top p{
+		margin: 0 auto;
+	    text-align: center;
+	    padding-top: 25px;
+	    font-size: 32px;
+	    color: #1e2a2b;
+	    font-weight: bold;
 	}
 	li{
 		list-style : none;
@@ -27,23 +32,36 @@
 	}
 
 	#wrapper{
-		width :600px;
-		height : auto;
-		margin: 10% auto;
-		background-color: white;
-		border-radius : 25px;
-		box-sizing: border-box;
+	    margin: 88px auto 0 auto;
+	    width: 31%;
+	}
+	
+	#wrapper > a{
+		display: inline-block;
 	}
 	
 	.clr_both{
 		clear:both;
 	}
-	footer{
+	
+	#delete_div_background{
+		width: 600px;
+	    height: auto;
+	    margin: 0 auto;
+	    background-color: white;
+	    border-radius: 25px;
+	    box-sizing: border-box;
+	    position: relative;
+	    bottom: 26px;
+	}
+	
+	
+	#btn_wrap{
 		height: 80px;
 		border-radius: 1px solid black;
 	}
 
-	header p{
+	#header p{
 		text-align : center;
 		font-size : 30px;
 	}
@@ -65,10 +83,8 @@
 	}
 	
 	#shop_logo{
-		padding-left : 30px;
-		width : 100px;
-		height: 40px;
-		text-align: left;
+		padding-left : 85px;
+		width : 431px;
 		display: inline-block;
 		
 	}
@@ -87,17 +103,33 @@
 	}
 	#del_notice{
 		border: 7px double #30a1c07d;
-    	border-radius: 15px;
-		margin : 0 auto;
+	    border-radius: 15px;
+	    margin: 0 auto;
+	    padding: 18px;
+	    margin-bottom: 7px;
 	}
+	#d_content{
+	    font-size: 13px;
+	    padding-left: 6px;
+	    color: #6d6d6d;
+	}
+	
 	#d_content em{
 		color : orange;
 	}
+	
+	
 	.d_header{ 
 		font-weight: bold;
 		text-align: center;
 		font-size: 20px;
 
+	}
+	
+	#del_notice > p:nth-child(2){
+		color: red;
+	    font-size: 12px;
+	    padding-left: 7px;
 	}
 	#deleteId,#del_pwd{
 		border:none;
@@ -105,8 +137,11 @@
 		line-height: 30px;
 		font-size : 18px;
 		box-sizing: border-box;
+	    outline-color: #dcf1f9;
 	}
-	#deleteId{	border-bottom : 3px solid #186786;}
+	#deleteId{
+		border-bottom: 3px solid #186786;
+	}
 	#del_pwd{	border-bottom : 3px solid #cccccc;}
 	input[type=button]{
 		background-color:  #cccccc;
@@ -123,7 +158,7 @@
 		display: none;
 	}
 
-	header a:hover{
+	delete_div_background a:hover{
 		color: orange;
 	}
 	.clr_both{
@@ -145,11 +180,15 @@
 		margin: auto;
 	}
 	#delete_pwd_div label{
-		text-align : left;
-		
-		display: block;
-		margin-top: 10px;
-		
+	    text-align: left;
+	    display: block;
+	    margin-top: 10px;
+	    position: relative;
+	    top: 34px;
+	    font-size: 16px;
+	    padding-left: 4px;
+	    color: #8a8a8a;
+	    height: 28px;
 	}
 
 	.delete_input > input:not([type="button"]){
@@ -166,7 +205,7 @@
 		color : red;
 		font-size: 15px;
 	}
-	footer{
+	#btn_wrap{
 		text-align: center;	
 		margin-bottom :10px;
 	}
@@ -306,6 +345,16 @@
 	        width: 100%;
 	    }
 	}
+	
+	#info_text{
+		font-size: 13px;
+	}
+	
+	
+	#chk_del{
+		vertical-align: middle;
+	}
+	
 </style>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -377,6 +426,45 @@ $(document).ready(function() {
 
 	/*유효성 체크 값이 유효한지 확인 끝!!*/
 
+	
+	
+	
+	
+	
+	/* 클릭시 라벨 텍스트 무빙 */
+	$("#id_label").click(function(){
+		$(this).css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s");
+		$("#deleteId").focus();
+		$("#deleteId").css("background-color","#e5f3ff")
+	});
+	$("#pw_label").click(function(){
+		$(this).css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s");
+		$("#del_pwd").focus();
+		$("#del_pwd").css("background-color","#e5f3ff")
+	});
+		
+	$(".delete_idpw").blur(function(){
+		$(this).css("background-color","rgb(248, 252, 255)")
+	})	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 });
 $(document).on("click","#chk_del",function(){
 
@@ -436,7 +524,7 @@ $(document).on("click","#yes_btn",function(){
 				
 				if(data.message == "-1"){
 					//현재 비밀번호가 있는 경우
-					location.href = "index.bizpoll";
+					location.href = "index.spoid";
 				}else{
 					$("#del_pwd").select();
 					$("#del_pwd").next().text("비밀번호가 일치하지 않습니다.").css("display","block").css("color","red");
@@ -458,51 +546,51 @@ $(document).on("click","#yes_btn",function(){
 </head>
 <body onload="load()">
 <div id="wrapper">
-
-	<div id="delete_div">
-		<header>
-			<a href="index.bizpoll"><img src="img/slime/slime.svg" id="shop_logo"></a>
-			<p>회원 탈퇴</p>
-		</header>
-		<section class="del_notice_sec">
-		<div id="del_notice">
-			<div class="d_header">탈퇴 안내</div>
-			<p>회원탈퇴를 신청하기 전에 안내 사항을 꼭 확인해주세요.</p>
-			<div id= "d_content">
-				<p>✔사용하고 계신 아이디(<em>${sessionScope.loginUser.id}</em>)는 탈퇴할 경우 재사용 및 복구가 불가능합니다</p>
-				<p>✔탈퇴 후 회원정보 및 개인형 서비스 이용기록은 모두 삭제됩니다.</p>
-				<p>✔탈퇴 후에도 게시판형 서비스에 등록한 게시물은 그대로 남아 있습니다.</p>
-			</div>
-		</div>
-			<label for="chk_del"><input type="checkbox" name="chk_del" id="chk_del">
-				위의 안내사항을 모두 확인하였으며, 탈퇴를 진행하겠습니다.</label>
-			<span class="err_chk2" id="del_chk_err">탈퇴를 해주시려면 체크 해주세요</span>
-		</section>
-		
-		<div id="delete_pwd_div">
-			<div class="delete_input" id="input_pwd_div">
-				<label>삭제할 ID</label>	
-				<input type = "text" name="deleteId" id="deleteId" value="${sessionScope.loginUser.id}">
-			</div>
-			<div class="delete_input" id="input_pwd_div">
-			<label>패스워드 입력<strong class="strong_label">*</strong></label>
-				<input type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" id="del_pwd" name = "del_pwd" class="neccessary">
-				<span class="err_chk2">필수 항목을 입력해주세요</span>
-			</div>
-
-			
-		<footer>
-				<div class="delete_pwd_delete_area">
-					<span id="delete_pwd_delete_span"><a href="#" class="btn_pwd_delete">확인</a></span>
-					<span><a href="index.bizpoll" class="pwd_delete_cancel">취소</a></span>
-					<div class="clr_both"></div>
-				</div>
-				
-		</footer>
-		</div>
+				<a href="index.spoid"><img src="img/slime/slime.svg" id="shop_logo"></a>
+	<div id="delete_div_background">
+	<div id="memout_text_top">
+		<p>회원 탈퇴</p>
 	</div>
-	<div class="clr_both"></div>
-
+		<div id="delete_div">
+			<section class="del_notice_sec">
+			<div id="del_notice">
+				<div class="d_header">탈퇴 안내</div>
+				<p>* 회원탈퇴를 신청하기 전에 안내 사항을 꼭 확인해주세요.</p>
+				<div id= "d_content">
+					<p>✔ 사용하고 계신 아이디(<em>${sessionScope.loginUser.id}</em>)는 탈퇴할 경우 재사용 및 복구가 불가능합니다</p>
+					<p>✔ 탈퇴 후 회원정보 및 개인형 서비스 이용기록은 모두 삭제됩니다.</p>
+					<p>✔ 탈퇴 후에도 게시판형 서비스에 등록한 게시물은 그대로 남아 있습니다.</p>
+				</div>
+			</div>
+				<label for="chk_del" id="info_text"><input type="checkbox" name="chk_del" id="chk_del">
+					위의 안내사항을 모두 확인하였으며, 탈퇴를 진행하겠습니다.</label>
+				<span class="err_chk2" id="del_chk_err">탈퇴를 해주시려면 체크 해주세요</span>
+			</section>
+			
+			<div id="delete_pwd_div">
+				<div class="delete_input" id="input_pwd_div">
+					<label id="id_label">삭제할 ID</label>	
+					<input type = "text" name="deleteId" id="deleteId" class="delete_idpw" value="${sessionScope.loginUser.id}">
+				</div>
+				<div class="delete_input" id="input_pwd_div">
+				<label id="pw_label">패스워드 입력<strong class="strong_label">*</strong></label>
+					<input type="password" id="del_pwd" class="delete_idpw" name="del_pwd" class="neccessary">
+					<span class="err_chk2">필수 항목을 입력해주세요</span>
+				</div>
+	
+				
+			<div id="btn_wrap">
+					<div class="delete_pwd_delete_area">
+						<span id="delete_pwd_delete_span"><a href="#" class="btn_pwd_delete">확인</a></span>
+						<span><a href="index.spoid" class="pwd_delete_cancel">취소</a></span>
+						<div class="clr_both"></div>
+					</div>
+					
+			</div>
+			</div>
+		</div>
+		<div class="clr_both"></div>
+		</div>
 </div>
 <div id="delModal" class="modal">
 		<div id="modal_content">
@@ -512,7 +600,7 @@ $(document).on("click","#yes_btn",function(){
 
 			<p>정말 탈퇴하시겠습니까?</p>
 			<span id="yes_btn"><a href="#">예</a></span> 
-			<span><a href="index.bizpoll">아니오</a></span>
+			<span><a href="index.spoid">아니오</a></span>
 		</div>
 </div>
 </body>
