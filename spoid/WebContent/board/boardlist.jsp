@@ -35,18 +35,19 @@
 	.bl_category > ul > li{
 		display: inline-block;
 	}
-	.bl_category > ul > li >a{
+	.bl_category > ul > li >button{
 		border-radius : 5px;
 		display : inline-block;
-		color : black;
-		line-height: 30px;
+		color : white;
 		height: 30px;
+		vertical-align : middle;
 		padding : 5px;
-		
-
+		border : none;
+		cursor: pointer;
 	}
+	.bl_category > ul > li >button:hover{background-color: #30a1c0;}
 	.c_active{
-		background-color: #cccccc;
+		background-color: #30a1c0;
 	}
 	.bl_tab{
 		width : 100%;
@@ -175,21 +176,24 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 
-		$(".bl_search_sel").val("${flag}");
+		
 		$("#bl_search").val("${keyword}");
-		if("${code}==''"){
-			alert("뭐여?");
-			$("#order_sel").val("제목+내용");
+		$("#order_sel").val("${code}");
+	
+		
+		if("${flag}==''"){	
+
+			$(".bl_search_sel").val("1");
 		}else{
-			$("#order_sel").val("${code}");
+			$(".bl_search_sel").val("${flag}");
 		}
 		
 	});
 	$(document).on("click","#bl_search_btn", function () {
 		var flag = $(".bl_search_sel").val();
 		var keyword = $("#bl_search").val();
-
-		location.href="boardList.spoid?flag="+flag+"&keyword="+keyword;
+		var category = $(".c_active").val();
+		location.href="boardList.spoid?flag="+flag+"&keyword="+keyword+"&category="+category;
 		
 	});
 
@@ -197,8 +201,20 @@
 		var flag = $(".bl_search_sel").val();
 		var keyword = $("#bl_search").val();
 		var key = $(this).val();
-		alert(key);
-		location.href = "boardList.spoid?flag="+flag+"&keyword="+keyword+"&key="+key;
+		var category = $(".c_active").val();
+		location.href = "boardList.spoid?flag="+flag+"&keyword="+keyword+"&key="+key+"&category="+category;
+	});
+	$(document).on("click",".cat_btn",function(){
+		var flag = $(".bl_search_sel").val();
+		var keyword = $("#bl_search").val();
+		var category = $(this).val();
+		location.href="boardList.spoid?flag="+flag+"&keyword="+keyword+"&category="+category;
+		$(".c_active").removeClass();
+		$(this).addClass("c_active");
+
+
+
+		
 	});
 </script>
 </head>
@@ -216,15 +232,15 @@
 		</div>
 		<div class="bl_category">
 				<ul>
-					<li><a href= "#" class="c_active">전체</a></li>
-					<li><a href= "#">리뷰</a></li>
-					<li><a href= "#">잡담</a></li>
+					<li><button class="c_active cat_btn" value="all">전체</button></li>
+					<li><button class="cat_btn" value="review">리뷰</button></li>
+					<li><button class="cat_btn" value="free">잡담</button></li>
 				</ul>
 				<div class="clr_both"></div>
 		</div>
 		<div class="order_area">
 				<select id="order_sel">
-					<option id="orderNew" value="new">최신순</option>
+					<option id="orderNew" value="new" selected="selected">최신순</option>
 					<option id="orderReply" value="reply">댓글순</option>
 					<option id="orderGood" value="good">좋아요순</option>
 					<option id="orderCnt" value="cnt">조회순</option>		

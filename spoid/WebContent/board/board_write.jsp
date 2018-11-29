@@ -191,9 +191,9 @@ input[type="file"]{display: none;}
 
 		<form method="POST" action = "boardInsertPlay.spoid" id="bw_info" name="bw_info"   enctype="multipart/form-data">
 			<div class="bw_title">
-				<select id="bw_cate">
-					<option selected="selected">리뷰</option>
-					<option>잡담</option>
+				<select id="bw_cate" name="category">
+					<option selected="selected" value="free">잡담</option>
+					<option value="review">리뷰</option>
 				</select>
 				<input type="text" placeholder = "제목을 입력해주세요" id="title" name="title">
 				<input type="hidden" value="${sessionScope.loginUser.id}" name="writer" id="writer">

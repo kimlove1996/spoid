@@ -52,10 +52,11 @@ public class BoardListAction implements Action{
 			
 			request.setAttribute("flag", flag);
 			request.setAttribute("keyword", keyword);
+			
 			System.out.println(page+"페이지 "+flag+","+keyword+code);
 		}
 		
-		
+		request.setAttribute("code", code);
 		BoardDAO bDao = BoardDAO.getInstance();	//생성자 
 		//게시글 목록(정보글) 출력
 		List<BoardDTO> boardList = bDao.boardListAll(criDto); 
