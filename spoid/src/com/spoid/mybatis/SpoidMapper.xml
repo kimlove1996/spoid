@@ -193,4 +193,14 @@
 		 SET  content=#{content}
 		 WHERE bno=#{bno} AND rno=#{rno}	
 	</update>
+	
+	
+	
+	
+	<!-- =================================================================================================================== -->
+	<!-- OneCenterDAO -->
+	<insert id="insertOneCenter" parameterType="com.spoid.dto.OneCenterDTO">
+		INSERT INTO SpoidOneCenter(id,title,content)
+		VALUES(#{id}, #{title}, #{content});
+	</insert>
  </mapper>

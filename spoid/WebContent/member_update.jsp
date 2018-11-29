@@ -385,7 +385,7 @@ function nickcheck(){
 		<i class="fa fa-exclamation"></i><span> 다음과 같이 회원정보가 수정됩니다. 바른 작성 부탁드립니다.</span>
 		<div class="mj_info">
 			<label for="inputid" id="in_id" class="label_singnin">아이디</label>
-			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in">
+			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in" readonly="readonly" value="${sessionScope.loginUser.id}">
 			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">

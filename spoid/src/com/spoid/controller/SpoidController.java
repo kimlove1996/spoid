@@ -44,6 +44,7 @@ import com.spoid.action.PersonalInfoAction;
 import com.spoid.action.PwCheckAction;
 import com.spoid.action.PwdUpdatePlayAction;
 import com.spoid.action.QnaPageAction;
+import com.spoid.action.QnaPlayAction;
 import com.spoid.action.TeamInfoAction;
 import com.spoid.action.UseInfoAction;
 
@@ -172,6 +173,9 @@ public class SpoidController extends HttpServlet
 		forward = action.excute(request, response);		 		  
 	  }else if(command.equals("/qnapage.spoid")) { // 고객관리센터 이동
 		action = new QnaPageAction();
+		forward = action.excute(request, response);		 		  
+	  }else if(command.equals("/qnaplay.spoid")) { // 1:1 문의 play Action단
+		action = new QnaPlayAction();
 		forward = action.excute(request, response);		 		  
 	  }
 

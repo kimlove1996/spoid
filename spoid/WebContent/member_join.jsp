@@ -738,17 +738,14 @@ function pwcheck(){
 	
 	var regPass = /^.*(?=.{8,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;/* 영문자, 숫자 포함 특수문자 사용가능 8~20자리 */
 	if (pw == ""){
-		mpw.focus();
 		mpw.next().text("필수정보 입니다.").css("display","block");
 		mpw.parent().css("margin-bottom","30px");
 		return false;
 	} else if(!regPass.test(pw)){
-		mpw.focus();
 		mpw.next().text("8~20자 이내 영문자와 숫자 특수문자만 입력하세요.").css("display","block");
 		mpw.parent().css("margin-bottom","30px");
 		return false;
 	} else if(pw2 == ""){
-		mpw2.focus();
 		mpw2.next().text("필수정보 입니다.").css("display","block");
 		mpw2.parent().css("margin-bottom","30px");
 		return false;

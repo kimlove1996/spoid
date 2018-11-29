@@ -65,7 +65,7 @@
 .help{
 	font-size: 18px;
     color: #464646;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .hi_info {
     margin: 0 auto;
@@ -103,7 +103,7 @@
 }
 
 #inputQ{
-	width: 393px;
+	width: 500px;
     height: 36px;
     border: none;
     border-radius: 3px;
@@ -128,11 +128,10 @@
 }
 
 
-#error_help{
+.error{
 	font-size: 10px;
     color: red;
     display: none;
-    padding-left: 5%;
 }
 #next_btn {
 	width: 100px;
@@ -182,6 +181,35 @@ $(document).ready(function(){
 	$(".input_color").blur(function(){
 		$(this).css("background-color","white").css("transition", "all 1s");
 	});
+	
+	
+	$("#inputQ").blur(function(){
+		var title = $("#inputQ").val();
+		if(title == ""){
+			$(this).next().css("display", "block");
+		}
+	});
+	
+	$("#input_a").blur(function(){
+		var content = $("#input_a").val();
+		if(content == ""){
+			$(this).next().css("display", "block");
+		}
+	});
+	$("#next_btn").click(function(){
+		
+	$.ajax({
+		url: "qnaplay.spoid",
+		data:$("#help_fmt").serialize(),
+		contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+		success: function(data) {
+		},
+		error: function() {
+			alert("SYSTEM ERROR");
+		}
+	});
+	
+	});
 });
 </script>
 </head>
@@ -193,6 +221,7 @@ $(document).ready(function(){
 			<span id="qna_title">1:1문의하기</span>
 			<i class="fa fa-home"></i><span id="qna_subtitle"> 운영진에게 묻거나 하고 싶은 이야기가 있으세요? 이 게시판은 운영진과의 독립적인 공간으로 다른 회원은 열람할 수 없고 오로지 작성자와 운영진만 열람 가능합니다.</span>
 		</div>
+		<form action="" id="help_fmt" name="help_fmt">
 	<div id="help_box">
 		<div class="help">
 		<div id="help_img_wr">
@@ -214,14 +243,15 @@ $(document).ready(function(){
 			<div id="hi_info_title">
 			<label for="inputQ" id="in_title" >제목</label>
 			<input type="text" id="inputQ" class="input_color" name="inputQ" class="input_in" placeholder="문의할 내용을 적어주세요.">
+			<span class="error" style="padding-left: 15%">필수 정보입니다.</span>
 			</div>
-			<span id="error_help">필수 정보입니다.</span>
 			<div id="qna_textarea">
-				<textarea rows="" cols="" placeholder="ex) 문의할 내용을 적어주세요." id="input_a" name="a" style="resize: none;"></textarea>
+				<textarea rows="" cols="" placeholder="ex) 문의할 내용을 적어주세요." id="input_a" name="input_a" style="resize: none;"></textarea>
+				<span class="error">필수 정보입니다.</span>
 			</div>
-			<span id="error_help">필수 정보입니다.</span>
 	</div>	
-		<input type="button" value="NEXT" id="next_btn">
+		<input type="button" value="확인" id="next_btn">
+		</form>
 	</div>
 </article>
 </body>
