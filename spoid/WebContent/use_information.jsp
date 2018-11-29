@@ -17,6 +17,10 @@
 		list-style-type: none;
 	}
 	
+	#use_all{
+		cursor: default;
+	}
+	
 	#title_text{
 		font-size: 48px;
 	    font-weight: bold;
