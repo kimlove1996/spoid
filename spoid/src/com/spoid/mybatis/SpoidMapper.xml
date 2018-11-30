@@ -58,6 +58,12 @@
 		WHERE id = #{id}
 	</select>
 
+
+	<!-- ID/PW 찾기 -->
+	<select id="FindMember"  parameterType="com.spoid.dto.MemberDTO" resultType="String">
+		SELECT pw FROM SpoidMember
+		WHERE id = #{id} AND hint1 = #{hint1} AND hint2 = #{hint2}
+	</select>
 	<!-- ====================================================================================== -->
 	<select id="countPaging" resultType="int">
 		<![CDATA[

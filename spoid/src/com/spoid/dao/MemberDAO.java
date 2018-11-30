@@ -183,5 +183,26 @@ public class MemberDAO {
 		return memberList;
 	}
 	
+	// ID/PW 찾기
+	public String FindMember(String id, String hint1, String hint2){
+		sqlSession = sqlSessionFactory.openSession();
+		MemberDTO mDto = new MemberDTO();
+		mDto.setId(id);
+		mDto.setHint1(hint1);
+		mDto.setHint2(hint2);
+		List<MemberDTO> loginList = null;
+		String tct = null;
+		System.out.println("왔나???"+mDto.getId());
+		try {
+			tct = sqlSession.selectOne("FindMember", mDto);
+			System.out.println("이걸로 되냐?"+tct);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		
+		return tct; 
+	}
 
 }
