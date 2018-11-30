@@ -170,6 +170,13 @@
     margin-left: 40px;
 }
 
+#trans_wrap {
+	
+}
+#trans_info {
+	font-size: 16px;
+	color: orange;
+}
 
 </style>
 <title>QnA</title>
@@ -203,6 +210,7 @@ $(document).ready(function(){
 		data:$("#help_fmt").serialize(),
 		contentType:'application/x-www-form-urlencoded; charset=UTF-8',
 		success: function(data) {
+			alert("고객님의 소중한 의견을 성공적으로 전공하였습니다.");
 		},
 		error: function() {
 			alert("SYSTEM ERROR");
@@ -248,6 +256,9 @@ $(document).ready(function(){
 			<div id="qna_textarea">
 				<textarea rows="" cols="" placeholder="ex) 문의할 내용을 적어주세요." id="input_a" name="input_a" style="resize: none;"></textarea>
 				<span class="error">필수 정보입니다.</span>
+			</div>
+			<div id="trans_wrap">
+				<span id="trans_info">고객님의 소중한 의견이 전송되었습니다.</span>
 			</div>
 	</div>	
 		<input type="button" value="확인" id="next_btn">

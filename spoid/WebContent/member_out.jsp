@@ -366,6 +366,9 @@
 	#delete_pwd_delete_span{
 		margin-right: 28px;
 	}
+	#delModal{
+		display: block;
+	}
 </style>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -527,7 +530,7 @@ $(document).on("blur","#del_pwd",function(){
 		
 });
 $(document).on("click",".del_modal_close",function(){
-	$("#delModal").css("display","none");
+	/* $("#delModal").css("display","none"); */
 });
 $(document).on("click","#yes_btn",function(){
 	var delPw = $("#del_pwd").val();
