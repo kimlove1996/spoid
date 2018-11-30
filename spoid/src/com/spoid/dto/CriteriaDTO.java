@@ -6,6 +6,7 @@ public class CriteriaDTO {
 	private String keyword;
 	private String flag;
 	private String code;
+	private String category;
 	public CriteriaDTO() {
 		// TODO Auto-generated constructor stub
 		this.page=1;
@@ -26,6 +27,16 @@ public class CriteriaDTO {
 		this.keyword = keyword;
 		this.flag = flag;
 		this.code = code;
+	}
+
+	public CriteriaDTO(int page, int perPageNum, String keyword, String flag, String code, String category) {
+		super();
+		this.page = page;
+		this.perPageNum = perPageNum;
+		this.keyword = keyword;
+		this.flag = flag;
+		this.code = code;
+		this.category = category;
 	}
 
 	public int getPage() {
@@ -77,6 +88,15 @@ public class CriteriaDTO {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		
 	}
 	
 }

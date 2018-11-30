@@ -35,20 +35,22 @@
 	.bl_category > ul > li{
 		display: inline-block;
 	}
-	.bl_category > ul > li >button{
+	.bl_category > ul > li >a{
 		border-radius : 5px;
 		display : inline-block;
-		color : white;
 		height: 30px;
 		vertical-align : middle;
 		padding : 5px;
 		border : none;
 		cursor: pointer;
+		color:black;
 	}
 	.bl_category > ul > li >button:hover{background-color: #30a1c0;}
 	.c_active{
 		background-color: #30a1c0;
+		color:white;
 	}
+
 	.bl_tab{
 		width : 100%;
 		border-collapse: collapse;
@@ -176,23 +178,13 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 
-		
-		$("#bl_search").val("${keyword}");
-		$("#order_sel").val("${code}");
-	
-		
-		if("${flag}==''"){	
-
-			$(".bl_search_sel").val("1");
-		}else{
-			$(".bl_search_sel").val("${flag}");
-		}
+		alert("${keyword}");
 		
 	});
 	$(document).on("click","#bl_search_btn", function () {
 		var flag = $(".bl_search_sel").val();
 		var keyword = $("#bl_search").val();
-		var category = $(".c_active").val();
+		var category = $(".c_active").attr("data-cat");
 		location.href="boardList.spoid?flag="+flag+"&keyword="+keyword+"&category="+category;
 		
 	});
@@ -201,20 +193,17 @@
 		var flag = $(".bl_search_sel").val();
 		var keyword = $("#bl_search").val();
 		var key = $(this).val();
-		var category = $(".c_active").val();
+		var category = $(".c_active").attr("data-cat");
 		location.href = "boardList.spoid?flag="+flag+"&keyword="+keyword+"&key="+key+"&category="+category;
 	});
 	$(document).on("click",".cat_btn",function(){
+		var key = $("#order_sel").val()
 		var flag = $(".bl_search_sel").val();
 		var keyword = $("#bl_search").val();
-		var category = $(this).val();
-		location.href="boardList.spoid?flag="+flag+"&keyword="+keyword+"&category="+category;
-		$(".c_active").removeClass();
+		var category = $(this).attr("data-cat");
+		$(".c_active").removeClass("c_active");
 		$(this).addClass("c_active");
-
-
-
-		
+		location.href = "boardList.spoid?flag="+flag+"&keyword="+keyword+"&key="+key+"&category="+category;
 	});
 </script>
 </head>
@@ -229,9 +218,9 @@
 		</div>
 		<div class="bl_category">
 				<ul>
-					<li><button class="c_active cat_btn" value="all">전체</button></li>
-					<li><button class="cat_btn" value="review">리뷰</button></li>
-					<li><button class="cat_btn" value="free">잡담</button></li>
+					<li><a href = "#" class="c_active cat_btn" data-cat = "0">전체</a></li>
+					<li><a href = "#" class="cat_btn" data-cat = "1">리뷰</a></li>
+					<li><a href = "#" class="cat_btn" data-cat ="2">잡담</a></li>
 				</ul>
 				<div class="clr_both"></div>
 		</div>
@@ -263,7 +252,7 @@
 					<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
 					<tr>
 						<td width ="100" class="bl_num_td">${bDto.bno}</td>
-						<td width = "150" class="bl_cate_td">QnA</td>
+						<td width = "150" class="bl_cate_td">${bDto.category}</td>
 						<td width = "600" class="bl_title_td">
 							<a href="boardviewcnt.spoid?bno=${bDto.bno}" class="bl_title">${bDto.title}</a>
 							<c:if test="${today2==regdate2}">
@@ -333,7 +322,7 @@
 					
 				</c:if>
 				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-					<a href="boardList.spoid?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" <c:out value="${pageMaker.criDto.page==idx?'class=active':''}"/>>${idx}</a>
+					<a href="boardList.spoid?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}&category=${category}" <c:out value="${pageMaker.criDto.page==idx?'class=active':''}"/>>${idx}</a>
 			  	</c:forEach>
 			  	<c:if test="${pageMaker.next}">
 			  		<a href="#">...</a>

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class BoardDTO {
 	private int bno;
+	private String category;
 	private String title;
 	private String content;
 	private String writer;
@@ -63,6 +64,34 @@ public class BoardDTO {
 		this.filename = filename;
 		this.filesize = filesize;
 	}
+
+
+
+
+
+
+
+	public BoardDTO(int bno, String category, String title, String content, String writer, Date regdate, int viewcnt,
+			int replycnt, int goodcnt, String filename, int filesize, int flag) {
+		super();
+		this.bno = bno;
+		this.category = category;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.regdate = regdate;
+		this.viewcnt = viewcnt;
+		this.replycnt = replycnt;
+		this.goodcnt = goodcnt;
+		this.filename = filename;
+		this.filesize = filesize;
+		this.flag = flag;
+	}
+
+
+
+
+
 
 
 	public int getBno() {
@@ -136,6 +165,26 @@ public class BoardDTO {
 
 	public void setFlag(int flag) {
 		this.flag = flag;
+	}
+
+
+
+
+
+
+
+	public String getCategory() {
+		return category;
+	}
+
+
+
+
+
+
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	

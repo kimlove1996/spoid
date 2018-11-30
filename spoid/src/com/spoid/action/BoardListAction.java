@@ -34,45 +34,55 @@ public class BoardListAction implements Action{
 
 		System.out.println("페이지번호 : "+page); 
 		criDto.setPage(page); //CriteriaDTO의 setPage 메소드를 호출하라
-		String code = "new";
+		String code = "new"; //정렬 옵션
+		String category = "0"; // 게시글 카테고리
+		String flag = null; //게시글 검색옵션
+		String keyword = null; // 검색 키워드
+		System.out.println("카테고리 무녀"+request.getParameter("category"));
 		if(request.getParameter("key")!=null) {
 			code =request.getParameter("key");
 		}
-		criDto.setCode(code);
-		request.setAttribute("code", code);
-		
-		String flag = null;
-		String keyword = null;
+		if(request.getParameter("category")!=null) {
+			category = request.getParameter("category");
+		}
 		if(request.getParameter("flag")!=null) {
 			System.out.println("=====>게시글 검색 기능 작동!!!!");
 			flag = request.getParameter("flag");
 			keyword = request.getParameter("keyword");
-			criDto.setFlag(flag);
-			criDto.setKeyword(keyword);
-			
-			request.setAttribute("flag", flag);
-			request.setAttribute("keyword", keyword);
-			
-			System.out.println(page+"페이지 "+flag+","+keyword+code);
+			System.out.println("키워드 무슨 일?"+keyword);
+
 		}
+		criDto.setCode(code);		
+		criDto.setCategory(category);
+		criDto.setFlag(flag);
+		criDto.setKeyword(keyword);		
+		request.setAttribute("flag", flag);
+		request.setAttribute("keyword", keyword);
 		
+		System.out.println(page+"페이지  플래그 : "+flag+","+"키워드"+keyword+code+"게시판 분류  : "+category);
 		request.setAttribute("code", code);
+		
+
+
+
 		BoardDAO bDao = BoardDAO.getInstance();	//생성자 
 		//게시글 목록(정보글) 출력
 		List<BoardDTO> boardList = bDao.boardListAll(criDto); 
-		request.setAttribute("boardList", boardList);
+		System.out.println(boardList.size()+"개가 출력되야함!");
+		request.setAttribute("boardList", boardList); // 검색 결과를 boardList라는 변수에 담는다.
 		
 		
 		//현재 날짜 출력
 		Date today= new Date();
-		request.setAttribute("today",today);
+		request.setAttribute("today",today); //포맷팅을 위한 오늘 날짜 세팅
 				
 
-		
+		// pagination을 만들기 위한 생성자 생성
 		PageMakerDTO pageMaker = new PageMakerDTO();
 		pageMaker.setCriDto(criDto);
-		
+		System.out.println("criDto category"+criDto.getCategory());
 		int totalcount = bDao.totalCount(criDto);
+		System.out.println(totalcount+"개");
 		pageMaker.setTotalCount(totalcount);
 		request.setAttribute("pageMaker", pageMaker);
 		

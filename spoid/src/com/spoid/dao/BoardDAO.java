@@ -44,9 +44,13 @@ public class BoardDAO {
 		List<BoardDTO> list = new ArrayList<>();
 		
 		try {
-
-			list = sqlSession.selectList("boardList",criDto);
 			
+			list = sqlSession.selectList("boardList",criDto);
+			System.out.println(criDto.getCategory()+"카테고리");
+			System.out.println("조건식에 맞는 리스트 수는?"+list);
+			for(int i=0; i<list.size(); i++) {
+				System.out.println(list.get(i).getCategory());
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -61,7 +65,9 @@ public class BoardDAO {
 		sqlSession = sqlSessionFactory.openSession();
 		int result = 0;
 		try {
+			System.out.println(criDto.getCategory()+"?");
 			result = sqlSession.selectOne("countPaging",criDto);
+			System.out.println("카운트 페이징 "+result);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
