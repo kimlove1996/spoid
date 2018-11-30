@@ -32,8 +32,8 @@
 	}
 
 	#wrapper{
-	    margin: 88px auto 63px auto;
-	    width: 31%;
+	    margin: 46px auto 51px auto;
+	    width: 41%;
 	}
 	
 	#wrapper > a{
