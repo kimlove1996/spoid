@@ -29,6 +29,7 @@ import com.spoid.action.ConstractAction;
 import com.spoid.action.DeleteAction;
 import com.spoid.action.GoodCntUpdateAction;
 import com.spoid.action.IdCheckAction;
+import com.spoid.action.IdPwFindAction;
 import com.spoid.action.IndexAction;
 import com.spoid.action.LoginAction;
 import com.spoid.action.LoginOutPlayAction;
@@ -39,7 +40,6 @@ import com.spoid.action.MemberPageAtcion;
 import com.spoid.action.MemberPlayAction;
 import com.spoid.action.MemberUpdateAction;
 import com.spoid.action.MemberUpdatePlayAction;
-import com.spoid.action.PasswordAction;
 import com.spoid.action.PersonalInfoAction;
 import com.spoid.action.PwCheckAction;
 import com.spoid.action.QnaPageAction;
@@ -92,12 +92,9 @@ public class SpoidController extends HttpServlet
 	  }else if(command.equals("/idCheck.spoid")) { // 아이디체크(중복방지)
 		  action = new IdCheckAction();
 		  forward = action.excute(request, response);
-	  }else if(command.equals("/pwdCheck.spoid")) { 
+	  }else if(command.equals("/pwdCheck.spoid")) {  // 비밀번호 체크
 		  action = new PwCheckAction();
 		  forward = action.excute(request, response);		  
-	  }else if(command.equals("/pwdUpdate.spoid")) {
-		  action = new PasswordAction();
-		  forward = action.excute(request, response);
 	  }else if(command.equals("/memberpage.spoid")) { // 회원가입 페이지 이동
 		  action = new MemberPageAtcion();
 		  forward = action.excute(request, response);
@@ -173,7 +170,14 @@ public class SpoidController extends HttpServlet
 	  }else if(command.equals("/qnaplay.spoid")) { // 1:1 문의 play Action단
 		action = new QnaPlayAction();
 		forward = action.excute(request, response);		 		  
+	  }else if(command.equals("/IdPwFind.spoid")) { // ID/PW 찾기
+		action = new IdPwFindAction();
+		forward = action.excute(request, response);		 		
+	  }else if(command.equals("/IdPwFindPage.spoid")) { // ID/PW 찾기 페이지 이동
+		action = new IdPwFindPageAction();
+		forward = action.excute(request, response);		 		
 	  }
+
 
 
 

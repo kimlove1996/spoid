@@ -215,7 +215,7 @@
 	     <!-- 계정찾기, 회원가입 -->
 	     <div id="loginhelp">
 	     	ID/PW를 잊어버리셨나요? <a href="#" id="find_idpw">ID/PW찾기</a> │
-	     	아직 회원이 아니신가요? <a href="#" id="join_mem">회원가입</a>
+	     	아직 회원이 아니신가요? <a href="memberplayaction.spoid" id="join_mem">회원가입</a>
 	     </div>
 	     
 	     
