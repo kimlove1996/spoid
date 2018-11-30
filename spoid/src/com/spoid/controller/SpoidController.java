@@ -30,6 +30,7 @@ import com.spoid.action.DeleteAction;
 import com.spoid.action.GoodCntUpdateAction;
 import com.spoid.action.IdCheckAction;
 import com.spoid.action.IdPwFindAction;
+import com.spoid.action.IdPwFindPageAction;
 import com.spoid.action.IndexAction;
 import com.spoid.action.LoginAction;
 import com.spoid.action.LoginOutPlayAction;
