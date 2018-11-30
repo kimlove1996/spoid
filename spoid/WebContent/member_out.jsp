@@ -279,20 +279,18 @@
 	}
 	#modal_content{
 		margin: auto;
-		display: block;
-		width : 300px;
-		height : 200px;
-		border-radius : 10px;
-		background-color: white;
-		text-align: center;    
+	    display: block;
+	    width: 300px;
+	    height: 200px;
+	    border-radius: 10px;
+	    background-color: white;
+	    text-align: center;
 	    -webkit-animation-name: zoom;
 	    -webkit-animation-duration: 0.6s;
 	    animation-name: zoom;
 	    animation-duration: 0.6s;
-		top : 50%;
-		left: 50%;
-		position : relative;
-		margin : -150px 0 0 -150px;
+	    top: 30%;
+	    position: relative;
 
 	}
 	#m_modal{
@@ -310,15 +308,16 @@
 	    to {transdiv:scale(1)}
 	}
 	#m_header{
-		height: 50px;
+		height: 32px;
 		border-radius: 10px 10px 0px 0px;
 		background-color: rgba(244,221,71,0.92);
 		border-bottom: 5px solid #186786;
+		margin-bottom: 36px;
 		
 	}
 	.del_modal_close{
 		position : absolute;
-		top : -5px;
+		top : -16px;
 		right : 10px;
 	    font-size: 40px;
 	    font-weight: bold;
@@ -330,19 +329,38 @@
 		color : orange;
 		cursor: pointer;
 	}
-	#modal_content > span > a{
-		width : 50px;
-		height : 30px;
-		line-height : 30px;
-		border-radius : 5px;
-		display : inline-block;
-		background-color: #186786;
-		color : rgba(244,221,71,0.92);
+	#yn_btn{
+		width: 174px;
+	    margin: 0 auto;
 	}
-	#modal_content > span > a:hover{
+	#yn_btn > span > a{
+	    width: 66px;
+	    height: 30px;
+	    line-height: 30px;
+	    border-radius: 5px;
+	    display: inline-block;
+	    background-color: #376f86;
+	    color: rgba(255, 252, 228, 0.92);
+	    font-size: 15px;
+	}
+	#yn_btn > span > a:hover{
 		color: #186786;
 		background-color : rgba(244,221,71,0.92);
 	}
+	
+	#yes_btn{
+		float: left;
+	}
+	#no_btn{
+		float: right;
+	}
+	#modal_content > p:nth-child(2) {
+		margin-bottom: 30px;
+	    font-weight: bold;
+	    color: #ff4040;
+	}
+	
+	
 	/* 100% Image Width on Smaller Screens */
 	@media only screen and (max-width: 400px){
 	    .modal-content {
@@ -621,8 +639,10 @@ $(document).on("click","#yes_btn",function(){
 		 </div>
 
 			<p>정말 탈퇴하시겠습니까?</p>
-			<span id="yes_btn"><a href="#">예</a></span> 
-			<span><a href="index.spoid">아니오</a></span>
+			<div id="yn_btn">
+				<span id="yes_btn"><a href="#">예</a></span> 
+				<span id="no_btn"><a href="index.spoid">아니오</a></span>
+			</div>
 		</div>
 </div>
 </body>
