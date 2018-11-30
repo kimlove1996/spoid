@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class DeleteAction implements Action{
 	public ActionForward excute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url = "member_delete.jsp";
+		String url = "member_out.jsp";
 		//회원정보 수정 선행 조건
 		// 로그인이 되있어야힘
 		// session 이 null 이 아니면 로그인
@@ -18,7 +18,7 @@ public class DeleteAction implements Action{
 		if(session.getAttribute("loginUser") == null) { //로그인 안됨
 			url = "index.spoid";
 		}else {
-			url = "member_delete.jsp";
+			url = "member_out.jsp";
 		}
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);

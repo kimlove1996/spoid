@@ -792,7 +792,7 @@ function nickcheck(){
 	<ul id="MJ_menu">
 			<li class="menu_box" id="constract">이용약관</li>
 			<li class="menu_box" id="write_info">정보입력</li>
-			<li class="menu_box" id="authentication">가입인증</li>
+			<li class="menu_box" id="authentication">힌트입력</li>
 			<li class="menu_box" id="complete">가입완료</li>
 	</ul>
 	<div id="MJ_menu_end"></div>

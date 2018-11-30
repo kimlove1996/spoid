@@ -28,8 +28,8 @@ public class MemberUpdatePlayAction implements Action{
 		String rpw = request.getParameter("inputrpw");
 		String nick = request.getParameter("inputnick");
 		String email = request.getParameter("inputemail");
-		String hint1 = request.getParameter("hint_flag");
-		String hint2 = request.getParameter("input_answer");
+		String hint1 = request.getParameter("hint1");
+		String hint2 = request.getParameter("hint2");
 		/*String email = request.getParameter("email")+"@"+request.getParameter("email_url");*/
 		
 		MemberDTO mDto = new MemberDTO(id, pw, rpw, nick, email, hint1, hint2);
@@ -37,6 +37,7 @@ public class MemberUpdatePlayAction implements Action{
 		int result = mDao.updateMember(mDto);
 	
 		if(result > 0) { 
+			System.out.println("회원 수정완료");
 			url = "index.spoid";
 			//session 값을 최신 정보로 수정!
 			session.removeAttribute("id");
@@ -44,6 +45,7 @@ public class MemberUpdatePlayAction implements Action{
 			session.setAttribute("loginUser", mDto);
 			
 		}else {
+			System.out.println("수정실패");
 			url = "memberUpdate.spoid";
 		}
 		ActionForward forward = new ActionForward();

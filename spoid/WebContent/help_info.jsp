@@ -256,12 +256,12 @@ $(document).ready(function(){
 		<div id="hi_info_area">
 			<div class="hi_info">
 			<label for="inputid" id="in_id" class="label_singnin">이름</label>
-			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in">
+			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in" value="${sessionScope.loginUser.nick}"> 
 			<span class="error" style="padding-left: 20%">필수 정보입니다.</span>
 			</div>
 			<div class="hi_info">
 			<label for="inputemail" id="in_email" class="label_singnin">이메일</label>
-			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in">
+			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in" value="${sessionScope.loginUser.email}">
 			<span class="error" style="padding-left: 20%">필수 정보입니다.</span>
 			</div>
 		</div>

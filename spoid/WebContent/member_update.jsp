@@ -22,11 +22,18 @@
     text-align: center;
     display: block;
     margin: 0 auto;
-    width: 800px;
+    width: 400px;
 }
 
+#MJ_menu >li > a {
+	text-decoration: none;
+	color: gray;
+}
 #MJ_menu > li:nth-child(1){
 	border-bottom :4px solid #f4c36a;
+	color: #f8c465;
+}
+#MJ_menu > li:nth-child(1) > a{
 	color: #f8c465;
 }
 
@@ -80,7 +87,9 @@
 
 
 
-
+#authentication_area {
+	display: none;
+}
 
 
 
@@ -114,7 +123,6 @@
 .MJ_content > span{
     border-radius: 5px;
     clear: both;
-    display: block;
     text-align: center;
     font-weight: bold;
     color: #f1b340;
@@ -235,78 +243,183 @@
     padding-left: 5%;
 }
 
-
+#outpage_go {
+	color: gray;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px
+}
+#outpage_go > a {
+	padding-left: 15px;
+    text-decoration: none;
+    color: #16839c;
+}
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
+	$("#hint_flag").val("${sessionScope.loginUser.hint1}");	
+	
+	$("#authentication").click(function(){
+		$("#write_info_area").css("display","none");
+		$("#authentication_area").css("display","block");
+		$("#write_info").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+		$("#writer_info_A").css("color","gray");
+		$("#authentication").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+		$("#authentication_A").css("color","#f8c465");
+	});
+	$("#write_info").click(function(){
+		$("#write_info_area").css("display","block");
+		$("#authentication_area").css("display","none");
+		$("#write_info").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+		$("#writer_info_A").css("color","f8c465");
+		$("#authentication").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
+		$("#authentication_A").css("color","gray");
+	});
+	
+	
+	
+	// 회원가입 정보 입력
+	
+ 	$("#inputid").blur(function(){
+		var inputval = $(this).val();
+		if(inputval == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "none");
+		}
+	});
+ 	$("#inputpw").blur(function(){
+		var inputval2 = $(this).val();
+		if(inputval2 == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "none");
+		}
+	});
+	$("#inputrpw").blur(function(){
+		var inputval3 = $(this).val();
+		if(inputval3 == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "none");
+		}
+	}); 
+ 	$("#inputnick").blur(function(){
+		var inputval4 = $(this).val();
+		if(inputval4 == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "none");
+		}
+	});
+	$("#inputemail").blur(function(){
+		var inputval5 = $(this).val();
+		if(inputval5 == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "none");
+		}
+	});
+	
+	 
+	/* Ajax사용할 아이디 블러 */
+	$("#inputid").blur(function(){
+		/* id값 받아오기 */
+		var idVal = $(this).val();
+		var mid= $(inputid);
 		
-		// 회원가입 정보 입력
-	 	$("#inputpw").blur(function(){
-			var inputval2 = $(this).val();
-			if(inputval2 == ""){
-				$(this).next().css("display", "block");
-			}else {
-				$(this).next().css("display", "none");
+		/* 유효성체크 */
+		/* trim: 앞뒤 공백 제거 */
+		var id=$.trim(mid.val());
+		var regid = /^[a-zA-Z0-9]{4,12}$/; /* 4~12자 까지 영대소문자와 숫자만 입력가능 */		
+		/* 유효검사를 통해 아이가 null인 경우를 실행했으니, null이 아닌경오 Ajax를 실행하겠다는 코드 */
+		if(idVal != ""){
+			if(!regid.test(id)){
+				mid.focus();
+				mid.next().text("4~12까지의 영문자와 숫자만 입력하세요.").css("display","block");
+				mid.parent().css("margin-bottom","30px");
+				return false; /* 이걸해야 submit이 안됨! 꼭 해야함 */				
 			}
-		});
-		$("#inputrpw").blur(function(){
-			var inputval3 = $(this).val();
-			if(inputval3 == ""){
-				$(this).next().css("display", "block");
-			}else {
-				$(this).next().css("display", "none");
-			}
-		}); 
-	 	$("#inputnick").blur(function(){
-			var inputval4 = $(this).val();
-			if(inputval4 == ""){
-				$(this).next().css("display", "block");
-			}else {
-				$(this).next().css("display", "none");
-			}
-		});
-		$("#inputemail").blur(function(){
-			var inputval5 = $(this).val();
-			if(inputval5 == ""){
-				$(this).next().css("display", "block");
-			}else {
-				$(this).next().css("display", "none");
-			}
-		});
-		
-		
-		$("input:password").blur(function(){
-			pwcheck();
-		});
-		
-		$("#inputnick").blur(function(){
-			var nickVal = $(this).val();
-			var mnick= $(inputnick);
-				
-			nickcheck();
-		});
-		
-		$("#hint_next").click(function(){
-			var id = $("#hint_id").val();
-			var hint1 = $("#hint_flag").val();
-			var hint2 = $("#input_answer").val();
-			alert("아이디"+id+"힌트"+hint1+hint2);
-			if(hint2 == ""){
-				$("#input_answer").focus();
-				$("#input_answer").next().text("필수정보 입니다.").css("display","block");;
-			}else {
-				$.ajax({
-					url: "memberupdateplay.spoid",
-					data:$("#memberup_fmt").serialize(),
-					contentType:'application/x-www-form-urlencoded; charset=UTF-8',
-					success: function(data) {
-					},
-					error: function() {
-						alert("SYSTEM ERROR");
+			$.ajax({
+				url: "idCheck.spoid",
+				type: "POST",
+				dateType: "json",
+				data: "id="+ idVal,
+				success: function(data) {
+					if(data.message == "-1"){
+						$("#inputid").next().text("이미 사용중인 아이디입니다.").css("display", "block").css("color", "#F46665");
+						$("#inputid").select();
+						$("#inputid").parent().css("margin-bottom","30px");
+					} else {
+						$("#inputid").next().text("멋진 아이디네요!").css("display", "block").css("color", "#0000FF");
+						$("#inputid").parent().css("margin-bottom","30px");
 					}
-				});
+					
+				},
+				error: function() {
+					alert("SYSTEM ERROR");
+				}
+				
+			});
+		}
+		
+	});
+	
+	$("input:password").blur(function(){
+		pwcheck();
+	});
+	
+	$("#inputnick").blur(function(){
+		var nickVal = $(this).val();
+		var mnick= $(inputnick);
+			
+		nickcheck();
+	});
+	
+	$("#info_next").click(function(){
+	
+ 	$.ajax({
+		url: "memberupdateplay.spoid",
+		data:$("#memberup_fmt").serialize(),
+		contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+		success: function(data) {
+			alert("수정되었습니다.")
+		},
+		error: function() {
+			alert("SYSTEM ERROR");
+		}
+	});
+ 		$("#hint_id").val($("#inputid").val());
+	});
+
+ 	
+ 	
+	// 힌트 입력  후 -> 회원가입 성공
+	 $("#hint_next").click(function(){
+		var id = $("#hint_id").val();
+		var hint1 = $("#hint_flag").val();
+		var hint2 = $("#input_answer").val();
+		alert("아이디"+id+"힌트"+hint1+hint2);
+		if(hint2 == ""){
+			$("#input_answer").focus();
+			$("#input_answer").next().text("필수정보 입니다.").css("display","block");;
+		}else{
+		
+		$.ajax({
+			type:"post",
+			url:"memberhintplay.spoid",
+			data:"id="+id+"&hint1="+hint1+"&hint2="+hint2,
+			success:function(data){
+	 			alert("수정되었습니다.")
+			},
+			error : function(){
+				alert("System Error!!!");
 			}
 		});
+		
+		}
+	});
+			
 	
 	 	
 
@@ -362,27 +475,22 @@ function nickcheck(){
 
 
 
-/* 가입환영인사 및 메인으로 */
-/* 	var cnt=2;
-	function countdown(){// 함수 생성한것 뿐임. 호출 전까진 동작을 하지 않는다.
-		if(cnt == 0){// cnt == 0 이라면 
-			clearInterval(s);	// setinterval 함수를 종료하고 
-			// location.href="index.bizpoll"; // index.bizpoll로 이동하라! 
-		}// 아니라면, 
-		document.getElementById("rCnt").innerHTML=cnt;// rCnt에 cnt(3)을 넣고, cnt를 한번씩 --하라.
-		cnt --;
-	}
-	var s = setInterval(countdown, 1000);  // Start!!! 1000=천 밀리세컨드, 즉 1초단위로 countdown()을 실행합니다. */
 </script>
 </head>
 <body onload="load()">
 <div id="MJ">
-
+<div id="MJ_header">
+	<ul id="MJ_menu">
+			<li class="menu_box" id="write_info"><a href="#" id="writer_info_A">정보입력</a></li>
+			<li class="menu_box" id="authentication"><a href="#" id="authentication_A">힌트입력</a></li>
+	</ul>
+	<div id="MJ_menu_end"></div>
+</div>
 <!-- 정보입력 area -->
 <article id="write_info_area" class="area">
-		<form method="" action="" name="memberup_fmt" id="memberup_fmt">
+<form method="" action="" name="memberup_fmt" id="memberup_fmt">
 	<div class="MJ_content">
-		<i class="fa fa-exclamation"></i><span> 다음과 같이 회원정보가 수정됩니다. 바른 작성 부탁드립니다.</span>
+<!-- 		<i class="fa fa-exclamation"></i><span> 다음과 같이 회원정보가 수정됩니다. 바른 작성 부탁드립니다.</span>-->		
 		<div class="mj_info">
 			<label for="inputid" id="in_id" class="label_singnin">아이디</label>
 			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in" readonly="readonly" value="${sessionScope.loginUser.id}">
@@ -390,32 +498,36 @@ function nickcheck(){
 		</div> 
 		<div class="mj_info">
 			<label for="inputpw" id="in_pw" class="label_singnin">비밀번호</label>
-			<input type="password" id="inputpw" class="input_color input_signin" name="inputpw" class="input_in">
+			<input type="password" id="inputpw" class="input_color input_signin" name="inputpw" class="input_in" value="${sessionScope.loginUser.pw}">
 			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">
 			<label for="inputrpw" id="in_rpw" class="label_singnin">비밀번호 재입력</label>
-			<input type="password" id="inputrpw" class="input_color input_signin" name="inputrpw" class="input_in">
+			<input type="password" id="inputrpw" class="input_color input_signin" name="inputrpw" class="input_in" value="${sessionScope.loginUser.rpw}">
 			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">
 			<label for="inputname" id="in_name" class="label_singnin">닉네임</label>
-			<input type="text" id="inputnick" class="input_color input_signin" name="inputnick" class="input_in">
+			<input type="text" id="inputnick" class="input_color input_signin" name="inputnick" class="input_in" value="${sessionScope.loginUser.nick}">
 			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">
 			<label for="inputemail" id="in_email" class="label_singnin">이메일</label>
-			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in">
+			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in" value="${sessionScope.loginUser.email}">
 			<span class="error">필수 정보입니다.</span>
 		</div> 
 		
+<input type="hidden" id="hint1" name="hint1" value="${sessionScope.loginUser.hint1}">
+<input type="hidden" id="hint2" name="hint2" value="${sessionScope.loginUser.hint2}">
 		
-		<input type="button" value="NEXT" class="login_btn" id="info_next">
+		<input type="button" value="확인" class="login_btn" id="info_next">
 	</div>
-
-<input type="hidden" id="hint_id" value="">
-
+		</form>
+</article>
+<input type="hidden" id="hint_id" value="${sessionScope.loginUser.id}">
 <!-- 가입인증 area -->
+<article id="authentication_area">
+<form id="" name="">
 	<div class="MJ_content">
 		<div id="caution_text">
 			<i class="fa fa-exclamation"></i><span> PW 찾기를 이용하실 시 하단 힌트의 설정한 답을 입력하게 됩니다. 바른 작성 부탁드립니다.</span>
@@ -428,13 +540,17 @@ function nickcheck(){
 				<option value="3">어렸을적 내 별명은?</option>
 			</select>
 		</div>
-			<input id="input_answer" name="input_answer" placeholder="ex)오치동" class="input_color insert_answer">
+			<input id="input_answer" name="input_answer" placeholder="ex)오치동" class="input_color insert_answer" value="${sessionScope.loginUser.hint2}">
 			<span id="error_hint">필수 정보입니다.</span>
 	</div>	
-		<input type="button" value="NEXT" class="login_btn" id="hint_next">
+		<input type="button" value="확인" class="login_btn" id="hint_next">
 	</div>
-		</form>
+</form>
 </article>
+
+<div id="outpage_go">
+	<span id="outpage_text">회원 탈퇴하시겠습니까?</span><a href="memberDelete.spoid">회원탈퇴</a>
+</div>
 
 
 
