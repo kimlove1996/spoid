@@ -18,7 +18,7 @@
 	
 	<select id="confirmPwd" parameterType="com.spoid.dto.MemberDTO"  resultType="String">
 		SELECT * FROM SpoidMember 
-		WHERE id=#{id} and pw=#{pw}
+		WHERE id=#{id} AND pw=#{pw}
 	</select>
 	
 	<select id="loginCheck"  parameterType="com.spoid.dto.MemberDTO" resultType="com.spoid.dto.MemberDTO">
@@ -41,7 +41,7 @@
 			UPDATE SpoidMember SET pw = #{new_pw} WHERE id=#{id} and pw =#{pw}
 	</update> 
 	<delete id="deleteMember" parameterType="String">
-			DELETE FROM SpoidMemberv
+			DELETE FROM SpoidMember
 			WHERE id = #{userid}
 	</delete>
 	

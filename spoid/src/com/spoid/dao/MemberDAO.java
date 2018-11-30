@@ -37,6 +37,7 @@ public class MemberDAO {
 	public static MemberDAO getInstance() {
 		return instance;
 	}
+	
 	//회원가입 = 회원등록
 	public int insertMember(MemberDTO mDto) {
 		int result = 0; 
@@ -92,19 +93,16 @@ public class MemberDAO {
 	}
 	
 	
-	
-	
-	
 	//비밀번호 중복 체크
 	public String confirmPwd(String id, String pw) {
 		String result = null;
-		MemberDTO mDto = new MemberDTO(); // selectOne은 id와 pwd 두개의 변수를 담을 수 없다
-		// 그러므로 가방에 담아 객체로 전달해야한다
+		MemberDTO mDto = new MemberDTO();
+		sqlSession = sqlSessionFactory.openSession();
 		mDto.setId(id);
 		mDto.setPw(pw);
 		try {
-			result = sqlSession.selectOne("confirmPwd",mDto); // selectOne : 한 건만 조회할 때 사용
-			System.out.println(result);
+			System.out.println("담기냐?"+mDto.getId()+mDto.getPw());
+			result = sqlSession.selectOne("confirmPwd",mDto);
 			if(result != null) {
 				result = "-1";
 			}else {
@@ -116,9 +114,9 @@ public class MemberDAO {
 		}finally {
 			sqlSession.close();
 		}		
-				
 		return result;
 	}
+
 	//로그인 기능
 	public MemberDTO loginCheck(String id, String pw){
 		sqlSession = sqlSessionFactory.openSession();
@@ -136,7 +134,7 @@ public class MemberDAO {
 		return mDto;
 	}
 	
-	//회원정보 수정 (비밀번호 제외)
+	//회원정보 수정
 	public int updateMember(MemberDTO mDto) {
 		int result = 0;
 		// 그러므로 가방에 담아 객체로 전달해야한다
@@ -154,42 +152,19 @@ public class MemberDAO {
 				
 		return result;	
 	}
-	//회원정보 수정 (비밀번호만)
-	public int updatePassword(String id, String pw_now, String new_pw) {
-		int result = 0;
-		// 그러므로 가방에 담아 객체로 전달해야한다
-		sqlSession = sqlSessionFactory.openSession();
-		MemberDTO mDto = new MemberDTO();
-		mDto.setId(id);
-		mDto.setPw(pw_now);
-		try {
-			result = sqlSession.update("updatePassword",mDto); // selectOne : 한 건만 조회할 때 사용
-			sqlSession.commit();
-
-		}catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}finally {
-			sqlSession.close();
-		}		
-				
-		return result;	
-	}
-	
 	//회원탈퇴(삭제)
 	public int deleteMember(String userid) {
-		int flag = 0;
+		int result = 0;
 		sqlSession = sqlSessionFactory.openSession();
-		
 		try {
-			flag = sqlSession.delete("deleteMember",userid);
+			result = sqlSession.delete("deleteMember",userid);
 			sqlSession.commit();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {
 			sqlSession.close();
 		}
-		return flag;
+		return result;
 	}
 	
 	// 회원정보 조회

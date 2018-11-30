@@ -42,7 +42,6 @@ import com.spoid.action.MemberUpdatePlayAction;
 import com.spoid.action.PasswordAction;
 import com.spoid.action.PersonalInfoAction;
 import com.spoid.action.PwCheckAction;
-import com.spoid.action.PwdUpdatePlayAction;
 import com.spoid.action.QnaPageAction;
 import com.spoid.action.QnaPlayAction;
 import com.spoid.action.TeamInfoAction;
@@ -98,9 +97,6 @@ public class SpoidController extends HttpServlet
 		  forward = action.excute(request, response);		  
 	  }else if(command.equals("/pwdUpdate.spoid")) {
 		  action = new PasswordAction();
-		  forward = action.excute(request, response);
-	  }else if(command.equals("/pwdupdateplayaction.spoid")) {
-		  action = new PwdUpdatePlayAction();
 		  forward = action.excute(request, response);
 	  }else if(command.equals("/memberpage.spoid")) { // 회원가입 페이지 이동
 		  action = new MemberPageAtcion();

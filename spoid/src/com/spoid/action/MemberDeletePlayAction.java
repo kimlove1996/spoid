@@ -26,20 +26,22 @@ public class MemberDeletePlayAction implements Action{
 		HttpSession session = request.getSession();
 		
 		MemberDAO mDao = MemberDAO.getInstance(); // 객체 빌려오기
-		String message = mDao.confirmPwd(userid,userpw);
+		String message = mDao.confirmPwd(userid, userpw);
 		
-		if(message.equals("-1")) {
-			System.out.println("회원 삭제");
+		
+		// 회원탈퇴기능
+		if(message.equals("-1")) { // 올바른 비밀번호 입력!
+			System.out.println("회원삭제");
+			// 회원 삭제 동작 메서드
 			int flag = mDao.deleteMember(userid);
-			System.out.println("flag"+flag);
-			if(flag > 0) { //삭제 성공
-				if(session != null) {
-					//session을 초기화 => 로그인 정보 삭제
-					  session.invalidate();
-				}				
-			}else { //삭제 실패
+			if(flag >0) { // 회원삭제 성공
+				System.out.println("회원삭제 성공");
+				// session을 초기화 => 로그인정보 삭제
+				session.invalidate();
+			} else { // 회원삭제 실패
+				System.out.println("회원삭제 실패");
+				
 			}
-
 		}
 	
 		JSONObject jObj = new JSONObject();

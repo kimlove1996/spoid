@@ -84,7 +84,7 @@
 	}
 	
 	#shop_logo{
-		padding-left : 85px;
+		padding-left : 42%;
 		width : 431px;
 		display: inline-block;
 		
@@ -384,14 +384,12 @@
 	#delete_pwd_delete_span{
 		margin-right: 28px;
 	}
-	#delModal{
-		display: block;
-	}
 </style>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	
 		var chk_state = "block";
 		var err_msg = "";
 		var b_color = "#186786";
@@ -424,8 +422,7 @@ $(document).ready(function() {
 
 	$(".btn_pwd_delete").click(function(){
 
-	 	var
-			div = $("#delete_pwd_div"),
+	 	var div = $("#delete_pwd_div"),
 			dpwd = $("#del_pwd");
 	 	var input_chk = document.getElementsByClassName("neccessary");
 		/*유효성 체크*/
@@ -452,26 +449,17 @@ $(document).ready(function() {
 	
 		
 	});
-
+	
 
 	
 
 	/*유효성 체크 값이 유효한지 확인 끝!!*/
-
-	
 	
 	
 	
 	
 	/* 클릭시 라벨 텍스트 무빙 */
-	$("#id_label").click(function(){
-		$(this).css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s").css("width","100px");
-		$("#deleteId").focus();
-		$("#deleteId").css("background-color","#e5f3ff").css("transition", "all 0.5s");
-	});
-	$("#deleteId").click(function(){
-		$(this).css("background-color","#e5f3ff").css("transition", "all 0.5s");
-	});
+	$("#id_label").css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s").css("width","100px");
 	
 	$("#pw_label").click(function(){
 		$(this).css("padding-left","0px").css("color","#444444").css("font-size","13px").css("top","7px").css("transition", "all 0.5s").css("width","150px");
@@ -490,24 +478,8 @@ $(document).ready(function() {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 });
 $(document).on("click","#chk_del",function(){
-
 	if($(this).is(":checked")){
 		$("#del_chk_err").css("display","none");
 	}
@@ -531,6 +503,7 @@ $(document).on("blur","#del_pwd",function(){
 						$("#del_pwd").css("border-color","#186786");
 						flag = 1;
 					}else{
+						alert($("#del_pwd").val()+"${sessionScope.loginUser.id}");
 						$("#del_pwd").select();
 						$("#del_pwd").next().text("비밀번호가 일치하지 않습니다.").css("display","block").css("color","red");
 						$("#del_pwd").css("border-color","red");
@@ -547,8 +520,12 @@ $(document).on("blur","#del_pwd",function(){
 		}
 		
 });
+
+
+
+// 모달창 닫기
 $(document).on("click",".del_modal_close",function(){
-	/* $("#delModal").css("display","none"); */
+	$("#delModal").css("display","none");
 });
 $(document).on("click","#yes_btn",function(){
 	var delPw = $("#del_pwd").val();
@@ -556,10 +533,10 @@ $(document).on("click","#yes_btn",function(){
 	
 	if(delPw != ""){
 		$.ajax({
-			url : "memdeleteplayaction.bizpoll",
+			url : "memdeleteplayaction.spoid",
 			type : "POST",
 			dataType : "json",
-			data : "id=${sessionScope.loginUser.id}&"+"pwd="+delPw, //쿼리스트링 공백 넣지 말것!
+			data : "id=${sessionScope.loginUser.id}&"+"pw="+delPw, //쿼리스트링 공백 넣지 말것!
 			success : function(data){
 				
 				if(data.message == "-1"){
