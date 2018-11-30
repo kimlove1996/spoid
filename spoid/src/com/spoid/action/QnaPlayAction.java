@@ -16,13 +16,14 @@ public class QnaPlayAction implements Action{
 		request.setCharacterEncoding("UTF-8");
 		  
 		String id = request.getParameter("inputid");
+		String email = request.getParameter("inputemail");
 		String title = request.getParameter("inputQ");
 		String content = request.getParameter("input_a");
 		
 		System.out.println("고객문의 왔나요?"+id+title+content);
 		
 		OneCenterDAO ocDao = OneCenterDAO.getInstance();
-		OneCenterDTO ocDto = new OneCenterDTO(id, title, content);
+		OneCenterDTO ocDto = new OneCenterDTO(id, email, title, content);
 
 		int result = ocDao.insertOneCenter(ocDto);
 		

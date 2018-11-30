@@ -23,9 +23,7 @@ public class OneCenterDAO {
 		System.out.println(ocDto.toString());
 		try {
 			result = sqlSession.insert("insertOneCenter",ocDto);
-			System.out.println(result);
 			sqlSession.commit(); 
-			System.out.println(ocDto.toString());
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

@@ -170,13 +170,6 @@
     margin-left: 40px;
 }
 
-#trans_wrap {
-	
-}
-#trans_info {
-	font-size: 16px;
-	color: orange;
-}
 
 </style>
 <title>QnA</title>
@@ -189,7 +182,18 @@ $(document).ready(function(){
 		$(this).css("background-color","white").css("transition", "all 1s");
 	});
 	
-	
+	$("#inputid").blur(function(){
+		var id = $("#inputid").val();
+		if(id == "") {
+			$(this).next().css("display","block");			
+		}
+	});
+	$("#inputemail").blur(function(){
+		var email = $("#inputemail").val();
+		if(email == "") {
+			$(this).next().css("display","block");			
+		}
+	});
 	$("#inputQ").blur(function(){
 		var title = $("#inputQ").val();
 		if(title == ""){
@@ -204,19 +208,32 @@ $(document).ready(function(){
 		}
 	});
 	$("#next_btn").click(function(){
+		var id = $("#inputid").val();
+		var email = $("#inputemail").val();
+		var title = $("#inputQ").val();
+		var content = $("#input_a").val();
+	if(id == "" || email == "" || title == "" || content == "" ){
+		alert("모든 항목을 작성해주세요.");
+		$(".error").css("display","block");
+		return false;
+	} else {
 		
 	$.ajax({
 		url: "qnaplay.spoid",
 		data:$("#help_fmt").serialize(),
 		contentType:'application/x-www-form-urlencoded; charset=UTF-8',
 		success: function(data) {
-			alert("고객님의 소중한 의견을 성공적으로 전공하였습니다.");
+			alert("고객님의 소중한 의견을 감사합니다.");
+			$("#inputQ").val("");
+			$("#input_a").val("");
+			$(".error").css("display","none");
 		},
 		error: function() {
 			alert("SYSTEM ERROR");
 		}
 	});
 	
+	}
 	});
 });
 </script>
@@ -238,12 +255,14 @@ $(document).ready(function(){
 		
 		<div id="hi_info_area">
 			<div class="hi_info">
-			<label for="inputid" id="in_id" class="label_singnin">아이디</label>
-			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in" value="${sessionScope.loginUser.id}" readonly="readonly">
+			<label for="inputid" id="in_id" class="label_singnin">이름</label>
+			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in">
+			<span class="error" style="padding-left: 20%">필수 정보입니다.</span>
 			</div>
 			<div class="hi_info">
 			<label for="inputemail" id="in_email" class="label_singnin">이메일</label>
-			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in" value="${sessionScope.loginUser.email}" readonly="readonly">
+			<input type="text" id="inputemail" class="input_color input_signin" name="inputemail" class="input_in">
+			<span class="error" style="padding-left: 20%">필수 정보입니다.</span>
 			</div>
 		</div>
 			
@@ -256,9 +275,6 @@ $(document).ready(function(){
 			<div id="qna_textarea">
 				<textarea rows="" cols="" placeholder="ex) 문의할 내용을 적어주세요." id="input_a" name="input_a" style="resize: none;"></textarea>
 				<span class="error">필수 정보입니다.</span>
-			</div>
-			<div id="trans_wrap">
-				<span id="trans_info">고객님의 소중한 의견이 전송되었습니다.</span>
 			</div>
 	</div>	
 		<input type="button" value="확인" id="next_btn">
