@@ -219,8 +219,8 @@
 		<div class="bl_category">
 				<ul>
 					<li><a href = "#" class="c_active cat_btn" data-cat = "0">전체</a></li>
-					<li><a href = "#" class="cat_btn" data-cat = "1">리뷰</a></li>
-					<li><a href = "#" class="cat_btn" data-cat ="2">잡담</a></li>
+					<li><a href = "#" class="cat_btn" data-cat = "review">리뷰</a></li>
+					<li><a href = "#" class="cat_btn" data-cat ="free">잡담</a></li>
 				</ul>
 				<div class="clr_both"></div>
 		</div>
