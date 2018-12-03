@@ -108,7 +108,6 @@
 	    height: 28px;
 	    border: none;
 	    border-bottom: 3px solid #338298;
-	    margin: 18px 0px 0px 26px;
 	    padding-left: 8px;
 	    font-size: 17px;
 	    border-radius: 5px;
@@ -148,24 +147,60 @@
 	$(document).ready(function(){
 	
 	$("#inputid").blur(function(){
-		if($("#inputid").val() == ""){
-			$(this).next().css("display","block");
+		var inputval = $(this).val();
+		if(inputval == ""){
+			$(this).next().css("display", "block");
+		}else {
+			$(this).next().css("display", "none");
 		}
 	});
+	
 	$("#input_answer").blur(function(){
 		if($("#input_answer").val() == ""){
 			$(this).next().css("display","block");
 		}
 	});
+		 /* Ajax사용할 아이디 블러 */
+		$("#inputid").blur(function(){
+				/* id값 받아오기 */
+			var idVal = $(this).val();
+			var mid= $(inputid);
+				
+			/* 유효검사를 통해 아이가 null인 경우를 실행했으니, null이 아닌경오 Ajax를 실행하겠다는 코드 */
+			if(idVal != ""){
+				$.ajax({
+					url: "idCheck.spoid",
+					type: "POST",
+					dateType: "json",
+					data: "id="+ idVal,
+					success: function(data) {
+						if(data.message == "-1"){
+						} else {
+							$("#inputid").next().text("현재 없는 아이디입니다.").css("display", "block").css("color", "#F46665");
+						}
+							
+					},
+					error: function() {
+						alert("SYSTEM ERROR");
+					}
+						
+				});
+			}
+				
+		});
 	
 	 $("#hint_next").click(function(){
 		 alert("연결");
 		 var id = $("#inputid").val();
+		 
+		 
+		 
+		 
 		 var hint1 = $("#hint_flag").val();
 		 var hint2 = $("#input_answer").val();
 		 var pw = null;
 		 /* 유효성 체크 */
-			if(id != "" && hint2 !=""){
+		if(id != "" && hint2 !=""){
 					$.ajax({
 						url: "IdPwFind.spoid",
 						type: "POST",
@@ -173,16 +208,19 @@
 						data: "id="+id+"&hint1="+hint1+"&hint2="+hint2,
 						success: function(data) {
 							if(data.message =="1"){
-								alert(data.pw);
-								location.href="";
-							} else {
+								alert("비밀번호는 "+data.pw+" 입니다.");
+								alert("비밀번호를 수정해주십시오.");
+								location.href="memberupdate.spoid";
+							}else {
 								$(".error").css("display","block");
 								$(".error").text("ID와 Hint값이 일치하지않습니다.");
 								return false;
 							}
 						},
 						error:function(){
-							alert("SYSTEM ERROR!!");
+							$(".error").css("display","block");
+							$(".error").text("ID와 Hint값이 일치하지않습니다.");
+							return false;
 						}
 						
 					});
@@ -220,7 +258,7 @@
 					</select>
 				</div>
 					<input id="input_answer" name="input_answer" placeholder="ex)오치동" class="input_color insert_answer" value="${sessionScope.loginUser.hint2}">
-					<span class="error" style="padding-left: 7%">필수 정보입니다.</span>
+					<span class="error" style="padding-left: 2%">필수 정보입니다.</span>
 			</div>	
 				<input type="button" value="확인" class="login_btn" id="hint_next">
 			

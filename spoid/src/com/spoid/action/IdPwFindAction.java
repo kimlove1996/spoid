@@ -30,7 +30,10 @@ public class IdPwFindAction implements Action{
 		MemberDTO mDto = new MemberDTO();
 		String pw = mDao.FindMember(id, hint1, hint2);
 		String message = null;
-		if(!pw.equals("")) {
+		if(pw.equals("-1")) {
+			message = "-1";
+			System.out.println("값을 가져오지못한다 <- 없는 값임.");
+		}else {
 			message = "1";
 		}
 		System.out.println("액션 탐"+message);

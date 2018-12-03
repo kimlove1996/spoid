@@ -195,6 +195,9 @@ public class MemberDAO {
 		System.out.println("왔나???"+mDto.getId());
 		try {
 			tct = sqlSession.selectOne("FindMember", mDto);
+			if(tct == "") {
+				tct = "-1";
+			}
 			System.out.println("이걸로 되냐?"+tct);
 		} catch (Exception e) {
 			e.printStackTrace();

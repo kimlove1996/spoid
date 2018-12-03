@@ -208,7 +208,7 @@
 						<p>역할</p>
 						<span class="ment1">슬라임 저작권자</span><br>
 						<p>한마디  : </p>
-						<span class="ment2">" 병가로 불참 "</span>
+						<span class="ment2">" 데일리환자 "</span>
 					</div>
 				</div>
 			</div>
@@ -290,7 +290,7 @@
 						<p>역할</p>
 						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
-						<span class="ment2">" 시*인생 "</span>
+						<span class="ment2">" 담쟁이 "</span>
 					</div>
 				</div>
 			</div>
@@ -318,7 +318,7 @@
 						<p>역할</p>
 						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
-						<span class="ment2">" 취직런 "</span>
+						<span class="ment2">" 자유로운 영혼 "</span>
 					</div>
 				</div>
 			</div>
