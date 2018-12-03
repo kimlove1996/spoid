@@ -1,199 +1,190 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="include/header.jsp" %>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>Insert title here</title>
 <style type="text/css">
-
-
 	#boxoffice_all{
-		height: 2000px;
-	}
-
-	#boxoffice_top_gradation{
-		background: linear-gradient(rgb(245, 245, 245) 0%, #9c9c9c 75%, #a2a2a2 93%, rgb(48, 161, 192) 100%);
-		opacity: 0;
+	    margin: 105px auto 0 auto;
+	    width: 85%;
+	    padding: 20px;
 	}
 	
-	#slider{
-		margin: 0 auto;
-	    height: 100px;
+	#boxoffice_list{
+	    padding: 34px;
+	    border: 1px dashed #c5c5c5;
+	    box-shadow: #bfbfbf 7px 6px 5px -1px;
+	}
+	
+	/* 영화종류 자리*/
+	#movie_text_top{
+		text-align: center;
+	    margin: 0 auto;
+	    width: 313px;
+	    font-size: 27px;
+	    font-weight: bold;
+	    color: #eaa040;
+	}
+	
+	
+	
+	
+	#boxoffice_card{
+		width: 256px;
+		height: 373px;
+		box-shadow: grey 5px 4px 6px 0px;
+		display: inline-block;
+		margin: 24px;
+	}
+	
+	#boxoffice_card > img{
+	    width: 256px;
+	    height: 373px;
+	}
+	
+	#boxoffice_card_label{
+	    height: 120px;
+	    display: inline-block;
+	    width: 97%;
 	    position: relative;
-	    top: 266px;
-	    width: 60%;
+	    bottom: 129px;
+	    left: 4px;
+	    background: linear-gradient(to bottom,#ffffff, #ffffffeb -10%, #ffffffbd 78%);
+	    box-sizing: border-box;
+	    padding: 5px;
+	    border: 1px dotted #dedede;
 	}
 	
-	.slide{
-	    position: absolute;
-	    padding: 5px 5px 2px 5px;
-		background-color: black;
-		transition : all 1s;
+	#boxoffice_card_label > p{
+	    margin: 0 0;
+	    font-size: 12px;
+	    text-align: center;
+	    line-height: 22px;
+	    color: #353535;
+	    font-weight: bold;
+	}
+	#boxoffice_card_label > strong{
+		color: #000000;
+	    font-size: 14px;
 	}
 	
-	#slide_1{
-	    left: 0;
-	    width: 205px;
-	    top: 161%;
-	    z-index: 10;
-
-	}
-	#slide_1>img{ width: 205px;}
-	
-	#slide_2{
-	    left: 20.5%;
-	    width: 184px;
-	    top: 93%;
-	    z-index: 9;
-	}
-	#slide_2 > img{width: 184px;}
-	
-	#slide_3{
-		left: 42%;
-	    width: 172px;
-	    top: 70px;
-	    z-index: 8;
-    }
-    #slide_3>img{width: 172px;}
-    
-	#slide_4{
-		right: 20.5%;
-	    width: 184px;
-	    top: 93%;
-	    z-index: 5;
-	}
-	#slide_4>img{width: 184px;}
-	
-	#slide_5{
-		right: 0;
-	    width: 205px;
-	    top: 161%;
-	    z-index: 6;
-	}
-	#slide_5>img{width: 205px;}
 	
 	
-	#slide_6{
-	    right: -17%;
-	    width: 227px;
-	    top: 257%;
-	    z-index: 5;
-	}
-	#slide_6>img{width: 227px;}
-	
-	#slide_7{
-		right: 7%;
-	    width: 268px;
-	    top: 429%;
-	    z-index:4;
-	}
-	#slide_7>img{ width: 268px;}
-	
-	#slide_8{
-	    left: 37%;
-	    width: 291px;
-	    top: 447%;
-	    z-index: 3;
-    }
-    #slide_8>img{width: 291px;}
-    
-	#slide_9{
-	    left: 7%;
-	    width: 268px;
-	    top: 429%;
-	    z-index: 2;
-	}
-	#slide_9>img{width: 268px;}
-	
-	#slide_10{
-		left: -17%;
-	    width: 227px;
-	    top: 257%;
-	    z-index: 1;
-	}
-	#slide_10>img{width: 227px;}
-	
-
 </style>
 
 <script type="text/javascript">
-	$(document).ready(function(){
 
-		$("#boxoffice_top_gradation").css("transition", "all 1s").css("height","100%").css("opacity","1");
-		
-  		$(".slideNimg1").css("left","20.5%").css("width","184px").css("top","93%"); 
- 		$(".slideNimg2").css("left","42%").css("width","172px").css("top","70%"); 
-		$(".slideNimg3").css("left","62%").css("width","184px").css("top","93%"); 
-		$(".slideNimg4").css("right","0%").css("width","205px").css("top","161%"); 
-		$(".slideNimg5").css("right","-17%").css("width","227px").css("top","257%"); 
- 		$(".slideNimg6").css("right","7%").css("width","268px").css("top","429%"); 
- 	 	$(".slideNimg7").css("right","38%").css("width","291px").css("top","447%"); 
-		$(".slideNimg8").css("left","7%").css("width","268px").css("top","429%"); 
-		$(".slideNimg9").css("left","-17%").css("width","227px").css("top","257%"); 
-		$(".slideNimg10").css("left","0%").css("width","205px").css("top","161%");
-		
-	});
 </script>
 </head>
 <body id="boxoffice">
 <div id="boxoffice_all">
-	<div id="boxoffice_top_gradation">
-		<div id="slider">
-			<div id=slide_wrap>
-				<div id="slide_1" class="slide slideNimg1">
-					<img class="slideNimg1" src="img/poster/movie_image (1).jpg">
-				</div>
-		
-				<div id="slide_2"  class="slide slideNimg2">
-					<img class="slideNimg2" src="img/poster/movie_image (2).jpg">
-				</div>
-				
-				<div id="slide_3"  class="slide slideNimg3">
-					<img class="slideNimg3" src="img/poster/movie_image (3).jpg">
-				</div>
-		
-				<div id="slide_4"  class="slide slideNimg4">
-					<img class="slideNimg4" src="img/poster/movie_image (4).jpg">
-				</div>
-				
-				<div id="slide_5"  class="slide slideNimg5">
-					<img class="slideNimg5" src="img/poster/movie_image (5).jpg">
-				</div>
-				
-				<div id="slide_6" class="slide slideNimg6">
-					<img class="slideNimg6" src="img/poster/movie_image (6).jpg">
-				</div>
-		
-				<div id="slide_7"  class="slide slideNimg7">
-					<img class="slideNimg7" src="img/poster/movie_image (7).jpg">
-				</div>
-				
-				<div id="slide_8"  class="slide slideNimg8">
-					<img class="slideNimg8" src="img/poster/movie_image (8).jpg">
-				</div>
-		
-				<div id="slide_9"  class="slide slideNimg9">
-					<img class="slideNimg9" src="img/poster/movie_image (9).jpg">
-				</div>
-				
-				<div id="slide_10"  class="slide slideNimg10">
-					<img class="slideNimg10" src="img/poster/movie_image (10).jpg">
-				</div>
+
+
+	<div id="boxoffice_list">
+			<div id="movie_text_top">
+				<span>박스오피스</span>
+				<hr>
 			</div>
-		</div>
+		<div id="boxoffice_line">
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (1).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (2).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (3).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (4).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (5).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (6).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (7).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (8).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (9).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
+			<a href="#" id="boxoffice_card" class="boxoffice_card_all">
+				<img src="img/poster/movie_image (10).jpg">
+				<div id="boxoffice_card_label">
+					<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+					<hr>
+					<p>드라마, 모험 | 2012.07.05  개봉</p>
+					<p>109분 | 한국 15세 | 관람가</p>
+				</div>
+			</a>
 			
+			
+		</div>
 	</div>
+	
+	
 </div>
-
-
-
-
-
-
 
 </body>
 </html>
