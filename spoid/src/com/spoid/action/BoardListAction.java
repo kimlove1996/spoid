@@ -58,7 +58,7 @@ public class BoardListAction implements Action{
 		criDto.setKeyword(keyword);		
 		request.setAttribute("flag", flag);
 		request.setAttribute("keyword", keyword);
-		
+		request.setAttribute("category", category);
 		System.out.println(page+"페이지  플래그 : "+flag+","+"키워드"+keyword+code+"게시판 분류  : "+category);
 		request.setAttribute("code", code);
 		

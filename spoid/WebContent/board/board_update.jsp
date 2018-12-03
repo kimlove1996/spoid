@@ -191,7 +191,7 @@ input[type="file"]{display: none;}
 			$("#file-name").text("선택된 파일이 없습니다.");
 			$("#file_close_btn").css("display","none");
 		}
-		alert("${boardView.category}");
+		alert("${boardList.category}");
 		$("#bu_cate").val("${boardView.category}");
 	});
 	$(document).on("click","#bu_update",function(elClickedObj){

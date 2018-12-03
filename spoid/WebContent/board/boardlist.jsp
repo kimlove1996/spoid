@@ -177,8 +177,8 @@
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
-
-		alert("${keyword}");
+		
+		$(".cat_btn[data-cat=${category}]").addClass("c_active");
 		
 	});
 	$(document).on("click","#bl_search_btn", function () {
@@ -218,7 +218,7 @@
 		</div>
 		<div class="bl_category">
 				<ul>
-					<li><a href = "#" class="c_active cat_btn" data-cat = "0">전체</a></li>
+					<li><a href = "#" class="cat_btn" data-cat = "0">전체</a></li>
 					<li><a href = "#" class="cat_btn" data-cat = "review">리뷰</a></li>
 					<li><a href = "#" class="cat_btn" data-cat ="free">잡담</a></li>
 				</ul>
