@@ -105,6 +105,7 @@
     	letter-spacing: 4px;
     	cursor: pointer;
     	float: right;
+    	top: -9px;
      }
      
      #login_text{
