@@ -27,7 +27,7 @@
      
      /* 로그인 전체 라인 */
      #login_all{
-	    margin: 0 auto;
+		margin: 0 auto;
 	    width: 730px;
 	    height: 400px;
 	    border: 7px double #30a1c07d;
@@ -40,9 +40,10 @@
      
      /* 로고 */
      #logo{
-		width: 115px;
+	    width: 335px;
 	    margin: 0 auto;
 	    height: 54px;
+	    color: #76c0d4;
      }
      
      #logo_img{
@@ -102,7 +103,6 @@
    	 	bottom: 30px;
     	background-color: #ffb263;
     	letter-spacing: 4px;
-    	box-shadow: 4px 1px 5px 0px rgba(42, 42, 42, 0.28);
     	cursor: pointer;
     	float: right;
      }
@@ -191,7 +191,7 @@
     
      <div id="login_all">
 	     <div id="logo">
-	     	<span id="logo_img">LOGO</span>
+	     	<span id="logo_img">Spoid's Slime</span>
 	     </div>
 	     
 	     <div id="insert_idpw">
