@@ -503,7 +503,6 @@ $(document).on("blur","#del_pwd",function(){
 						$("#del_pwd").css("border-color","#186786");
 						flag = 1;
 					}else{
-						alert($("#del_pwd").val()+"${sessionScope.loginUser.id}");
 						$("#del_pwd").select();
 						$("#del_pwd").next().text("비밀번호가 일치하지 않습니다.").css("display","block").css("color","red");
 						$("#del_pwd").css("border-color","red");
