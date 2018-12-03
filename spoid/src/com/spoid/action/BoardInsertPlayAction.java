@@ -48,6 +48,7 @@ public class BoardInsertPlayAction implements Action{
 		// cos.jar라는 라이브러리 추가
 		
 		String title = multi.getParameter("title");
+		String category = multi.getParameter("category");
 		String content = multi.getParameter("content");
 		String writer = multi.getParameter("writer");
 		String filename = ""; // (공백)
@@ -73,12 +74,15 @@ public class BoardInsertPlayAction implements Action{
 		String uploadfile = multi.getParameter("uploadfile");
 		System.out.println("========게시글 등록========");
 		System.out.println("title : "+title);
+		System.out.println("category : "+category);
 		System.out.println("content : "+content);
 		System.out.println("writer : "+writer);
 		System.out.println("upload : "+uploadfile);
 		System.out.println("filesize : "+filesize);
 		BoardDAO bDao = BoardDAO.getInstance();
+		
 		BoardDTO bDto = new BoardDTO(title, content, writer,filename,filesize);
+		bDto.setCategory(category);
 		int result = bDao.boardInsert(bDto);
 		
 

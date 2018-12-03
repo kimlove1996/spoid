@@ -20,7 +20,7 @@ ul,li{
 }
 #bu_wrapper{
 	
-	margin :10px auto;
+	margin :5% auto;
 	width : 70%;
 }
 .bu_header{
@@ -191,6 +191,8 @@ input[type="file"]{display: none;}
 			$("#file-name").text("선택된 파일이 없습니다.");
 			$("#file_close_btn").css("display","none");
 		}
+		alert("${boardView.category}");
+		$("#bu_cate").val("${boardView.category}");
 	});
 	$(document).on("click","#bu_update",function(elClickedObj){
 		var title = $("#title").val();
@@ -279,10 +281,9 @@ input[type="file"]{display: none;}
 
 		<form method="POST" action = "boardupdateplay.spoid" id="bu_info" name="bu_info"   enctype="multipart/form-data">
 			<div class="bu_title">
-				<select id="bu_cate">
-					<option selected="selected">질문</option>
-					<option selected="selected">잡담</option>
-					<option selected="selected">공지</option>
+				<select id="bu_cate" name="category">
+					<option value="free">잡담</option>
+					<option value="review">리뷰</option>
 				</select>
 				<input type="hidden" name="bno" id="bno" value="${boardView.bno}">
 				<input type="text" placeholder = "제목을 입력해주세요" id="title" name="title" value="${boardView.title}"> 

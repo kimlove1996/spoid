@@ -47,6 +47,7 @@ public class BoardUpdatePlayAction implements Action{
 		// cos.jar라는 라이브러리 추가
 		String sbno = multi.getParameter("bno");
 		int bno = Integer.parseInt(sbno);
+		String category = multi.getParameter("category");
 		String title = multi.getParameter("title");
 		String content = multi.getParameter("content");
 		String writer = multi.getParameter("writer");
@@ -131,6 +132,7 @@ public class BoardUpdatePlayAction implements Action{
 		}
 		System.out.println("마지막 파일 네임 : "+filename);
 		bDto = new BoardDTO(bno, title, content, writer,filename, filesize);
+		bDto.setCategory(category);
 		int res = bDao.boardUpdate(bDto);
 		if(res!=0) {
 			System.out.println("수정 성공!!!!!");
@@ -138,6 +140,7 @@ public class BoardUpdatePlayAction implements Action{
 		String uploadfile = multi.getParameter("file_name");
 		System.out.println("========게시글 수정========");
 		System.out.println("bno : "+bno);
+		System.out.println("category : "+category);
 		System.out.println("title : "+title);
 		System.out.println("content : "+content);
 		System.out.println("writer : "+writer);

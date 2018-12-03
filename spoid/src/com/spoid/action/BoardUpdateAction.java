@@ -22,6 +22,7 @@ public class BoardUpdateAction implements Action{
 		BoardDAO bDao = BoardDAO.getInstance();
 		BoardDTO bDto = bDao.boardDetailView(bno);
 		System.out.println(bDto.getRegdate());
+		System.out.println();
 		request.setAttribute("boardView", bDto);
 	
 

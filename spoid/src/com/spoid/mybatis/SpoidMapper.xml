@@ -99,7 +99,7 @@
                             FROM( SELECT *
                             FROM spoidboard
                             WHERE bno >0 ]]>
-					        <if test='category == "1" or category == "2"'>
+					        <if test='category == "free" or category == "review"'>
 					            <![CDATA[AND category = #{category}]]>         				
 					        </if>
 					        
@@ -150,10 +150,10 @@
 		
 		<choose>
 			<when test="content != null">
-			INSERT INTO spoidboard(bno, title, content, writer,filename,filesize) VALUES(seq_minions.NEXTVAL, #{title},#{content},#{writer},#{filename},#{filesize})
+			INSERT INTO spoidboard(bno, category, title, content, writer,filename,filesize) VALUES(seq_minions.NEXTVAL,#{category}, #{title},#{content},#{writer},#{filename},#{filesize})
 			</when>
 			<otherwise>
-			INSERT INTO spoidboard(bno, title, writer,filename,filesize) VALUES(seq_minions.NEXTVAL, #{title},#{writer},#{filename},#{filesize})
+			INSERT INTO spoidboard(bno, category, title, writer,filename, filesize) VALUES(seq_minions.NEXTVAL,#{category}, #{title},#{writer},#{filename},#{filesize})
 			</otherwise>
 		
 		</choose>
@@ -161,7 +161,8 @@
 	</insert>
 	<update id="boardUpdate" parameterType="com.spoid.dto.BoardDTO">
 		UPDATE spoidboard 
-			SET title = #{title},
+			SET category = #{category},
+				title = #{title},
 				writer = #{writer}, 
 				
 			<if test="filename != 'no'">	
