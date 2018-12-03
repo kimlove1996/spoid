@@ -179,6 +179,15 @@
 	$(document).ready(function(){
 		
 		$(".cat_btn[data-cat=${category}]").addClass("c_active");
+		$("#order_sel").val("${code}");
+		if("${flag}==null"){
+			$(".bl_search_sel").val("1");
+
+		}else{
+			$(".bl_search_sel").val("${flag}");
+		}
+		
+		$("#bl_search").val("${keyword}");
 		
 	});
 	$(document).on("click","#bl_search_btn", function () {
@@ -192,6 +201,7 @@
 	$(document).on("change","#order_sel",function(){
 		var flag = $(".bl_search_sel").val();
 		var keyword = $("#bl_search").val();
+		
 		var key = $(this).val();
 		var category = $(".c_active").attr("data-cat");
 		location.href = "boardList.spoid?flag="+flag+"&keyword="+keyword+"&key="+key+"&category="+category;
