@@ -30,6 +30,9 @@ public class PwCheckAction implements Action{
 		// db 접속
 		MemberDAO mDao = MemberDAO.getInstance();
 		String message = mDao.confirmPwd(id,pw);
+		/*if(message != "") {
+			message = "-1";
+		}*/
 		System.out.println("결과는? "+message);
 		JSONObject jObj = new JSONObject();
 		jObj.put("message", message);

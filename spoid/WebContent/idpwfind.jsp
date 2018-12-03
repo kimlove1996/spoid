@@ -192,10 +192,6 @@
 	 $("#hint_next").click(function(){
 		 alert("연결");
 		 var id = $("#inputid").val();
-		 
-		 
-		 
-		 
 		 var hint1 = $("#hint_flag").val();
 		 var hint2 = $("#input_answer").val();
 		 var pw = null;

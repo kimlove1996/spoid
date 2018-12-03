@@ -7,6 +7,116 @@
 <meta charset="UTF-8">
 <title>Spoid Member Manager</title>
 <style type="text/css">
+
+/* Modal */
+	.modal{
+		/* display: none; */
+		position : fixed;
+		z-index : 1000;
+		padding-top :3%;
+		top : 0;
+		width : 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.4);
+	}
+	#modal_content{
+		margin: auto;
+	    display: block;
+	    width: 300px;
+	    height: 200px;
+	    border-radius: 10px;
+	    background-color: white;
+	    text-align: center;
+	    -webkit-animation-name: zoom;
+	    -webkit-animation-duration: 0.6s;
+	    animation-name: zoom;
+	    animation-duration: 0.6s;
+	    top: 30%;
+	    position: relative;
+
+	}
+	#m_modal{
+		width : 100%;
+		background-color: rgba(244,221,71,0.92);
+    	border-bottom: 3px solid #186786;
+	}
+	@-webkit-keyframes zoom {
+	    from {-webkit-transdiv:scale(0)} 
+	    to {-webkit-transdiv:scale(1)}
+	}
+	
+	@keyframes zoom {
+	    from {transdiv:scale(0)} 
+	    to {transdiv:scale(1)}
+	}
+	#m_header{
+		height: 32px;
+		border-radius: 10px 10px 0px 0px;
+		background-color: rgba(244,221,71,0.92);
+		border-bottom: 5px solid #186786;
+		margin-bottom: 36px;
+		
+	}
+	#m_header > p {
+		font-size: 14px;
+	    text-align: left;
+	    padding-left: 16px;
+	    padding-top: 10px;
+	}
+	.del_modal_close{
+		position : absolute;
+		top : -16px;
+		right : 10px;
+	    font-size: 40px;
+	    font-weight: bold;
+	    transition: 0.3s;
+	    color: #186786;
+	   
+	}
+	.del_modal_close:hover{
+		color : orange;
+		cursor: pointer;
+	}
+	#yn_btn{
+		width: 174px;
+	    margin: 0 auto;
+	}
+	#yn_btn > span > a{
+	    width: 66px;
+	    height: 30px;
+	    line-height: 30px;
+	    border-radius: 5px;
+	    display: inline-block;
+	    background-color: #376f86;
+	    color: rgba(255, 252, 228, 0.92);
+	    font-size: 15px;
+	}
+	#yn_btn > span > a:hover{
+		color: #186786;
+		background-color : rgba(244,221,71,0.92);
+	}
+	
+	#inputpw_cl {
+		margin-bottom: 10px;
+	    width: 138px;
+	    height: 36px;
+	    padding: 0 13px;
+	    border: none;
+	    border-radius: 3px;
+	    border-bottom: 3px solid #cddde1;
+	    outline: 0;
+	}
+	#pw_error {
+		margin-bottom: 10px;
+		font-size: 10px;
+		color: red;
+		display: none;
+	}
+
+
+
+
+
 /* MemberJoin_TOP */
 #MJ {
     margin: 200px auto 0 auto;
@@ -472,7 +582,47 @@ function nickcheck(){
 }
 
 
-
+//모달창 닫기
+$(document).on("click",".del_modal_close",function(){
+	location.href = "index.spoid";
+});
+$(document).on("click","#yes_btn",function(){
+	var pw = $("#inputpw_cl").val();
+	var id = $("#inputid_cl").val();
+	
+	if(pw != ""){
+		$.ajax({
+			url : "pwdCheck.spoid",
+			type : "POST",
+			dataType : "json",
+			data : "id="+id+"&pw="+pw, //쿼리스트링 공백 넣지 말것!
+			success : function(data){
+				if(data.message == "-1"){
+					//현재 비밀번호가 있는 경우
+					$("#delModal").css("display","none");
+				}else{
+					$("#inputpw_cl").select();
+					$("#inputpw_cl").next().text("비밀번호가 일치하지 않습니다.").css("display","block").css("color","red");
+					$("#inputpw_cl").css("border-color","red");
+					return false;
+				}
+			},
+			error : function(){
+				alert("System Error!!!");
+			}
+			
+			
+		});
+	}
+});
+$(document).on("blur","#inputpw_cl",function(){
+	var pw = $("#inputpw_cl").val();
+	if(pw == ""){
+		$("#inputpw_cl").select();
+		$("#inputpw_cl").next().text("일치하지 않습니다.").css("display","block").css("color","red");
+		$("#inputpw_cl").css("border-color","red");
+	}
+});
 
 
 </script>
@@ -552,7 +702,20 @@ function nickcheck(){
 	<span id="outpage_text">회원 탈퇴하시겠습니까?</span><a href="memberDelete.spoid">회원탈퇴</a>
 </div>
 
-
+<div id="delModal" class="modal">
+		<div id="modal_content">
+		 <div id="m_header">
+		 <p>비밀번호를 입력해주세요</p>
+			<span class="del_modal_close">&times;</span>		 
+		 </div>
+		 	<input id="inputid_cl" type="hidden" value="${sessionScope.loginUser.id}">
+			<input id="inputpw_cl" type="password" placeholder="PASSWORD">
+			<span id="pw_error">필수 정보입니다.</span>
+			<div id="yn_btn">
+				<span id="yes_btn"><a href="#">확인</a></span> 
+			</div>
+		</div>
+</div>
 
 
 </div>
