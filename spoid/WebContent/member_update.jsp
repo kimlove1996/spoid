@@ -619,7 +619,7 @@ $(document).on("blur","#inputpw_cl",function(){
 	var pw = $("#inputpw_cl").val();
 	if(pw == ""){
 		$("#inputpw_cl").select();
-		$("#inputpw_cl").next().text("일치하지 않습니다.").css("display","block").css("color","red");
+		$("#inputpw_cl").next().css("display","block").css("color","red");
 		$("#inputpw_cl").css("border-color","red");
 	}
 });
