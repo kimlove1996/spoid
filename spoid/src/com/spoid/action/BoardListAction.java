@@ -38,7 +38,7 @@ public class BoardListAction implements Action{
 		String category = "0"; // 게시글 카테고리
 		String flag = null; //게시글 검색옵션(default 1 => 제목 + 내용)
 		String keyword = null; // 검색 키워드
-		System.out.println("카테고리 무녀"+request.getParameter("category"));
+		System.out.println("카테고리 : "+request.getParameter("category"));
 		if(request.getParameter("key")!=null) {
 			code =request.getParameter("key");
 		}

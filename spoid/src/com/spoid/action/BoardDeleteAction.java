@@ -31,7 +31,7 @@ public class BoardDeleteAction implements Action{
 		
 		int result = bDao.boardDelete(sbno);
 		
-		System.out.println("삭제 결과?");
+
 		if(result > 0) {
 			System.out.println("삭제 성공!!!!");
 			url = "boardList.spoid";
