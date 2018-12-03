@@ -27,8 +27,8 @@ public class CommentDeletePlayAction implements Action{
 		
 		if(result > 0) {
 			BoardDAO bDao = BoardDAO.getInstance();
-			bDao.updateReplyCnt(bno,flag);
-			System.out.println(rno + "번 댓글 삭제");
+			int comment_result = bDao.updateReplyCnt(bno,flag);
+			System.out.println(rno + "번 댓글 삭제 결과" + comment_result);
 			
 		}else {
 			System.out.println("실패");

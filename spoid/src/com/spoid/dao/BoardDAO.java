@@ -218,15 +218,15 @@ public class BoardDAO {
 			
 	}
 
-	public void updateReplyCnt(String bno, int flag) {
+	public int updateReplyCnt(String bno, int flag) {
 		// TODO Auto-generated method stub
-		
+		int result = 0;
 		sqlSession = sqlSessionFactory.openSession();
 		try {
 			BoardDTO bDto = new BoardDTO();
 			bDto.setBno(Integer.parseInt(bno));
 			bDto.setFlag(flag);
-			sqlSession.update("updateReplyCnt", bDto);
+			result = sqlSession.update("updateReplyCnt", bDto);
 			sqlSession.commit();
 		}catch (Exception e) {
 			// TODO: handle exception
@@ -235,7 +235,7 @@ public class BoardDAO {
 			sqlSession.close();
 		}
 	
-	
+		return result;
 	}
 		
 	public int updateGoodCnt(String bno, HttpSession countSession) {

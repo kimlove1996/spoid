@@ -33,6 +33,7 @@ public class BoardDeleteAction implements Action{
 		
 		System.out.println("삭제 결과?");
 		if(result > 0) {
+			System.out.println("삭제 성공!!!!");
 			url = "boardList.spoid";
 			File file = new File(Constants.UPLOAD_PATH+filename);
 			file.delete();	
@@ -40,11 +41,11 @@ public class BoardDeleteAction implements Action{
 			
 		}else {
 			url = "boardviewcnt.spoid?bno="+sbno;
-			System.out.println("삭제 완료");
+			System.out.println("삭제 실패!!");
 		}
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);
-		forward.setRedirect(false);
+		forward.setRedirect(true);
 		return forward;
 	}
 

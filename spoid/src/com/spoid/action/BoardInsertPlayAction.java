@@ -79,7 +79,9 @@ public class BoardInsertPlayAction implements Action{
 		System.out.println("filesize : "+filesize);
 		BoardDAO bDao = BoardDAO.getInstance();
 		BoardDTO bDto = new BoardDTO(title, content, writer,filename,filesize);
-		bDao.boardInsert(bDto);
+		int result = bDao.boardInsert(bDto);
+		
+
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);
 		forward.setRedirect(true);
