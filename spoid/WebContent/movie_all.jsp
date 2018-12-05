@@ -7,28 +7,41 @@
 <title>Insert title here</title>
 <style type="text/css">
 	#boxoffice_all{
-	    margin: 105px auto 0 auto;
+	   /*  margin: 195px auto 120px auto; */
 	    width: 85%;
-	    padding: 20px;
+	    padding: 142px;
+	    background-color: #f0f0f0;
 	}
 	
 	#boxoffice_list{
 	    padding: 34px;
 	    border: 1px dashed #c5c5c5;
 	    box-shadow: #bfbfbf 7px 6px 5px -1px;
+	    box-sizing: border-box;
+	    width: 1617.55px;
+	   /*  height: 1200px; */
+	    background-color: white;
 	}
 	
 	/* 영화종류 자리*/
 	#movie_text_top{
-		text-align: center;
-	    margin: 0 auto;
+	    text-align: center;
+	    margin: 0 auto 63px auto;
 	    width: 313px;
 	    font-size: 27px;
 	    font-weight: bold;
-	    color: #eaa040;
+	    color: #3d3d3d;
 	}
 	
 	
+	#movie_text_top > hr{
+		border-color: #ff4363;
+		transition: all 1s;
+		width: 0px;
+	}
+	#boxoffice_line{
+		width: 1547px;
+	}
 	
 	
 	#boxoffice_card{
@@ -37,24 +50,31 @@
 		box-shadow: grey 5px 4px 6px 0px;
 		display: inline-block;
 		margin: 24px;
+		transition: all 1.5s;
+		transform:rotateY(180deg);
 	}
+	
+	#boxoffice_card:hover{background-color: #ff510e;}
+	#boxoffice_card>img:hover{padding: 9px;}
+	
 	
 	#boxoffice_card > img{
 	    width: 256px;
 	    height: 373px;
+		box-sizing: border-box;
+		transition: all 0.5s;
 	}
 	
 	#boxoffice_card_label{
 	    height: 120px;
-	    display: inline-block;
-	    width: 97%;
+	    width: 98%;
 	    position: relative;
 	    bottom: 129px;
-	    left: 4px;
 	    background: linear-gradient(to bottom,#ffffff, #ffffffeb -10%, #ffffffbd 78%);
 	    box-sizing: border-box;
 	    padding: 5px;
 	    border: 1px dotted #dedede;
+	    margin: 0 auto;
 	}
 	
 	#boxoffice_card_label > p{
@@ -75,7 +95,10 @@
 </style>
 
 <script type="text/javascript">
-
+$(document).ready(function(){
+	$(".boxoffice_card_all").css("transform","rotateY(360deg)");
+	$("#movie_text_top > hr").css("width","100%");
+});
 </script>
 </head>
 <body id="boxoffice">
@@ -84,7 +107,7 @@
 
 	<div id="boxoffice_list">
 			<div id="movie_text_top">
-				<span>박스오피스</span>
+				<span>전체영화</span>
 				<hr>
 			</div>
 		<div id="boxoffice_line">
