@@ -416,7 +416,7 @@ $(document).ready(function() {
 
 			
 		});
-		$("#delete_div select").click(function () {
+		$("#delete_div select").focus(function () {
 			b_color = "#186786";
 			$(this).css("border-color",b_color);
 		});

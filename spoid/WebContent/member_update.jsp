@@ -62,6 +62,7 @@
 	    text-align: left;
 	    padding-left: 16px;
 	    padding-top: 10px;
+	    color: white;
 	}
 	.del_modal_close{
 		position : absolute;
