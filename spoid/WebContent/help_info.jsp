@@ -100,6 +100,7 @@
     border-radius: 3px;
     border-bottom: 3px solid #cddde1;
     outline: 0;
+    padding-left: 6px;
 }
 
 #inputQ{
