@@ -81,7 +81,7 @@
 	<table id="info_table">
 		<tbody>
 			<tr>
-				<td><img src="img/poster/movie_image (1).jpg" id="poster"></td>
+				<td><img src="img/poster/movie_image (10).jpg" id="poster"></td>
 				<th>
 					<p>보헤미안 렙소디</p>
 					<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>

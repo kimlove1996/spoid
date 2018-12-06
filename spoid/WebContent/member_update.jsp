@@ -502,7 +502,8 @@ $(document).ready(function(){
 		data:$("#memberup_fmt").serialize(),
 		contentType:'application/x-www-form-urlencoded; charset=UTF-8',
 		success: function(data) {
-			alert("수정되었습니다.")
+			alert("수정되었습니다.");
+			$(".error").css("display","none");
 		},
 		error: function() {
 			alert("SYSTEM ERROR");
@@ -522,7 +523,8 @@ $(document).ready(function(){
 		alert("아이디"+id+"힌트"+hint1+hint2);
 		if(hint2 == ""){
 			$("#input_answer").focus();
-			$("#input_answer").next().text("필수정보 입니다.").css("display","block");;
+			$("#input_answer").next().text("필수정보 입니다.").css("display","block");
+			return false;
 		}else{
 		
 		$.ajax({
@@ -530,7 +532,8 @@ $(document).ready(function(){
 			url:"memberhintplay.spoid",
 			data:"id="+id+"&hint1="+hint1+"&hint2="+hint2,
 			success:function(data){
-	 			alert("수정되었습니다.")
+	 			alert("수정되었습니다.");
+	 			$("#error_hint").css("display","none");
 			},
 			error : function(){
 				alert("System Error!!!");
@@ -569,7 +572,6 @@ function pwcheck(){
 		mpw2.parent().css("margin-bottom","30px");
 		return false;
 	} else if(pw != pw2){
-		mpw2.select();
 		mpw2.next().text("비밀번호가 일치하지않습니다.").css("display","block");
 		mpw2.parent().css("margin-bottom","30px");
 		return false;
@@ -651,7 +653,6 @@ $(document).on("blur","#inputpw_cl",function(){
 		<div class="mj_info">
 			<label for="inputid" id="in_id" class="label_singnin">아이디</label>
 			<input type="text" id="inputid" class="input_color input_signin" name="inputid" class="input_in" readonly="readonly" value="${sessionScope.loginUser.id}">
-			<span class="error">필수 정보입니다.</span>
 		</div> 
 		<div class="mj_info">
 			<label for="inputpw" id="in_pw" class="label_singnin">비밀번호</label>
