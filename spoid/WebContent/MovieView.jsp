@@ -16,7 +16,7 @@
 
 #movie_table {
 	height: 150px;
-	background-color: blue;
+	background-color: #dedef1;
 }
 
 
@@ -66,17 +66,41 @@
 #mvbot_wrap {
 	height: 800px;
 	background-color: #eabe85;
-	
 }
+.spoid {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	border-radius: 100%;
+	margin: 0 auto;
+}
+#D_spoid {
+	display: inline-block;
+	background-image: url("img/slime/score5.svg");
+	background-repeat: no-repeat;
+	background-size: 100px;
+}
+#N_spoid {
+	display: inline-block;
+	background-image: url("img/slime/score3.svg");
+	background-repeat: no-repeat;
+	background-size: 100px;
+}
+
 </style>
 </head>
 <body id="MovieView">
 <div id="MovieViewAll">
 	<p>무비</p>
 <div id="movie_table">
-	
+	<ul>
+		<li><a href="#mvtop_wrap">영화상세내용</a></li>
+		<li><a href="#mvmid_wrap">차트 그래프</a></li>
+		<li><a href="#mvbot_wrap">댓글</a></li>
+	</ul>
 </div>
 <article id="mvtop_wrap">
+<h2>영화 상세 내용</h2>
 	<div class="wrap">
 	<table id="info_table">
 		<tbody>
@@ -104,10 +128,23 @@
 	</div>
 </article>
 <article id="mvmid_wrap">
-
+	<h2>차트 그래프</h2>
 </article>
 <article id="mvbot_wrap">
-
+	<div id="N_spoid" class="spoid"></div>
+	<div id="D_spoid" class="spoid"></div>
+	<table>
+		<tbody>
+			<tr>
+				<th>네이버</th>
+				<td>"너무 멋있는 영화였다."</td>
+			</tr>
+			<tr>
+				<th>다음</th>
+				<td>"재밌었다"</td>
+			</tr>
+		</tbody>
+	</table>
 </article>
 
 
