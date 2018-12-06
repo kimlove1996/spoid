@@ -721,6 +721,32 @@ $(document).ready(function(){
 			$("#complete_area").css("display","block");
 			$("#authentication").css("border-bottom-color","#b6b6b6").css("color","#b6b6b6");
 			$("#complete").css("border-bottom-color","#f4c36a").css("color","#f8c465");
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+/* 가입환영인사 및 메인으로 */
+	var cnt=2;
+	function countdown(){// 함수 생성한것 뿐임. 호출 전까진 동작을 하지 않는다.
+		if(cnt == 0){// cnt == 0 이라면 
+			clearInterval(s);	// setinterval 함수를 종료하고 
+			location.href="index.spoid"; // index.bizpoll로 이동하라! 
+		}// 아니라면, 
+		document.getElementById("rCnt").innerHTML=cnt;// rCnt에 cnt(3)을 넣고, cnt를 한번씩 --하라.
+		cnt --;
+	}
+	var s = setInterval(countdown, 1000);  // Start!!! 1000=천 밀리세컨드, 즉 1초단위로 countdown()을 실행합니다.
+			
+			
+			
+			
+			
 			},
 			error : function(){
 				alert("System Error!!!");
@@ -784,17 +810,6 @@ function nickcheck(){
 
 
 
-/* 가입환영인사 및 메인으로 */
-/* 	var cnt=2;
-	function countdown(){// 함수 생성한것 뿐임. 호출 전까진 동작을 하지 않는다.
-		if(cnt == 0){// cnt == 0 이라면 
-			clearInterval(s);	// setinterval 함수를 종료하고 
-			// location.href="index.bizpoll"; // index.bizpoll로 이동하라! 
-		}// 아니라면, 
-		document.getElementById("rCnt").innerHTML=cnt;// rCnt에 cnt(3)을 넣고, cnt를 한번씩 --하라.
-		cnt --;
-	}
-	var s = setInterval(countdown, 1000);  // Start!!! 1000=천 밀리세컨드, 즉 1초단위로 countdown()을 실행합니다. */
 </script>
 </head>
 <body onload="load()">
