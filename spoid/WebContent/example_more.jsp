@@ -39,24 +39,28 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-$(window).on('load', function () {
-    load('#js-load', '5');
-    $("#js-btn-wrap .button").on("click", function () {
-        load('#js-load', '5', '#js-btn-wrap');
+$(window).on('load', function () { // window(화면)가 load(page를 읽어오는 것)를 시작할 경우
+    load('#js-load', '10'); // #js-load (none의 상태)에서#js-load인 id를 5개를 출력시켜준다.
+    $("#js-btn-wrap .button").on("click", function () { // 더보기버튼을 클릭 시
+        load('#js-load', '10', '#js-btn-wrap'); //더보기 버튼을 누를 시 #js-load id가 해당하는 것을 5개 보이게 한다.
     })
 });
  
-function load(id, cnt, btn) {
-    var girls_list = id + " .js-load:not(.active)";
-    var girls_length = $(girls_list).length;
-    var girls_total_cnt;
-    if (cnt < girls_length) {
-        girls_total_cnt = cnt;
-    } else {
-        girls_total_cnt = girls_length;
-        $('.button').hide()
+function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
+    var girls_list = id + " .js-load:not(.active)"; //활동하지 않는 태그들을 제외한 #js-load
+    var girls_length = $(girls_list).length; // 활동할 태그(.js-load)의 개수
+    alert(girls_length);//(-- 50)
+    var girls_total_cnt; // 총 개수를 세는 것
+    if (cnt < girls_length) { // 셀개수가 활동할 태그 개수보다 적을 경우
+        girls_total_cnt = cnt; // 해당 셀 개수 값을 집어 넣습니다.
+        alert("if문탔음" + girls_total_cnt);//(10)
+    } else { //만약 셀 개수와 활동할 태그의 수가 같아질 경우에는
+        girls_total_cnt = girls_length; // 아직 활동하지 않은 개수의 길이(나머지들)를 집어넣습니다.
+        alert(girls_total_cnt);//(10)
+        $('.button').hide() // 더보기 버튼이 사라지며 끝납니다.
     }
     $(girls_list + ":lt(" + girls_total_cnt + ")").addClass("active");
+    // girls_total_cnt보다 작은 (활동하지 않는 태그들을 제외한 #js-load)들의 요소를 선택하여 active라는 클래스를 부여합니다.
 }
 </script>
 </head>
