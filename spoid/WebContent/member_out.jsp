@@ -334,7 +334,7 @@
 		width: 174px;
 	    margin: 0 auto;
 	}
-	#yn_btn > span > a{
+	#yn_btn > span:first-child > a{
 	    width: 66px;
 	    height: 30px;
 	    line-height: 30px;
@@ -352,13 +352,26 @@
 	#yes_btn{
 		float: left;
 	}
+	
 	#no_btn{
 		float: right;
 	}
+	#no_btn > a {
+		width: 66px;
+	    height: 30px;
+	    line-height: 30px;
+	    border-radius: 5px;
+	    display: inline-block;
+	    background-color: #ffffff;
+	    border: 1px solid #186786;
+	    color: #186786;
+	    font-size: 15px;
+	}
+	
 	#modal_content > p:nth-child(2) {
 		margin-bottom: 30px;
 	    font-weight: bold;
-	    color: #ff4040;
+	    color: black;
 	}
 	
 	
