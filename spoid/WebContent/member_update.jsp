@@ -75,7 +75,7 @@
 	   
 	}
 	.del_modal_close:hover{
-		color : orange;
+		color: #ec4c6a;
 		cursor: pointer;
 	}
 	#yn_btn{
