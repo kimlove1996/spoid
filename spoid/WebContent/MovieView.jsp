@@ -22,12 +22,10 @@
 
 /* 영화상세정보 */
 #mvtop_wrap{
-	height: 800px;
 	background-color: #a9a9a9ad;
 }
 #poster {
 	width: 450px;
-	height: 700px;
 	display: inline-block;
 }
 #mv_info {
@@ -47,7 +45,7 @@
 #info_table td{
 	padding-right: 18px;
     border-bottom: 1px solid #d0d0d0;
-    padding: 15px 7px;
+    padding: 15px 200px;
 }
 #info_table  th{
 	width: 100%;
@@ -59,7 +57,7 @@
 /* 차트 */
 #mvmid_wrap {
 	height: 800px;
-	background-color: #ff7878d9;
+	background-color: #30a1c0;
 }
 
 
@@ -67,7 +65,7 @@
 /* 댓글 */
 #mvbot_wrap {
 	height: 800px;
-	background-color: #ffff6db8;
+	background-color: #eabe85;
 	
 }
 </style>
