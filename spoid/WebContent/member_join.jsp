@@ -670,7 +670,17 @@ $(document).ready(function(){
 		});
 		
 		$("#info_next").click(function(){
+		var id = $("#inputid").val();
+		var pw = $("#inputpw").val();
+		var nick = $("#inputnick").val();
+		var email = $("#inputemail").val();
 		
+			
+		if(id == "" || pw =="" || nick == "" || email == ""){
+			alert("필수 항목입니다. 입력해주세요.");
+			return false;
+		}else {
+			
 	 	$.ajax({
 			url: "memberplayaction.spoid",
 			data:$("#memberinfo_fmt").serialize(),
@@ -686,6 +696,7 @@ $(document).ready(function(){
 			}
 		});
 	 		$("#hint_id").val($("#inputid").val());
+		}
 		});
 	
 	 	
