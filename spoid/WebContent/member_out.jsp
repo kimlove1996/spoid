@@ -198,6 +198,7 @@
 		border:none;
 		box-sizing: border-box;
 		line-height: 25px;
+		padding-left: 6px;
 
 	}
 
@@ -310,7 +311,7 @@
 	#m_header{
 		height: 32px;
 		border-radius: 10px 10px 0px 0px;
-		background-color: rgba(244,221,71,0.92);
+		background-color: #8cc8da;
 		border-bottom: 5px solid #186786;
 		margin-bottom: 36px;
 		
@@ -345,7 +346,7 @@
 	}
 	#yn_btn > span > a:hover{
 		color: #186786;
-		background-color : rgba(244,221,71,0.92);
+		background-color : #8cc8da;
 	}
 	
 	#yes_btn{
@@ -586,7 +587,7 @@ $(document).on("click","#yes_btn",function(){
 			<div id="delete_pwd_div">
 				<div class="delete_input" id="input_id_div">
 					<label id="id_label">삭제할 ID</label>	
-					<input type = "text" name="deleteId" id="deleteId" class="delete_idpw" value="${sessionScope.loginUser.id}">
+					<input type = "text" name="deleteId" id="deleteId" class="delete_idpw" value="${sessionScope.loginUser.id}" readonly="readonly">
 				</div>
 				<div class="delete_input" id="input_pw_div">
 				<label id="pw_label">패스워드 입력<strong class="strong_label">*</strong></label>
