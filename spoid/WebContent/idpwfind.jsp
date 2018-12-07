@@ -36,9 +36,10 @@
      
      /* 로고 */
      #logo{
-		width: 115px;
-	    margin: 0 auto;
-	    height: 54px;
+		width: 335px;
+    	margin: 0 auto;
+   		height: 54px;
+    	color: #76c0d4;
      }
      
      #logo_img{
@@ -232,7 +233,7 @@
     
      <div id="login_all">
 	     <div id="logo">
-	     	<span id="logo_img">LOGO</span>
+	     	<span id="logo_img">Spoid's Slime</span>
 	     </div>
 	     
 	     <div id="insert_idpw">
