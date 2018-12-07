@@ -117,8 +117,8 @@
      }
      
      #login_btn_in:hover{
-	    transition: all 2.4s;
-	    transform: rotate(1080deg);
+	    transition: all 1s;
+	    transform: rotate(360deg);
      }
      
      /* 계정 관련 */
