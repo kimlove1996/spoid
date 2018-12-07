@@ -262,7 +262,6 @@
 	     
 	     
      
-<%-- <%@ include file="include/footer.jsp" %> --%>
 </body>
 </html>
 <%@ include file="include/footer.jsp" %>
