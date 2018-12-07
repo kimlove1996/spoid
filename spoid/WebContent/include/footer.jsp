@@ -39,7 +39,7 @@
 	 	border-radius: 100%;
     	margin: 8px auto 0 auto;
 	 }
-	 #top:hover {
+	 #top:hover { 
 	 	color: #f0af24;
 		background-color: white;
 		border: 2px double #30a1c0;
