@@ -18,13 +18,69 @@
 	#line:hover{color : #0e4754}
 	#instagram:hover{color : #0e4754}
 	#twitter:hover{color : #0e4754}
-	
+	#top {
+		cursor: pointer;
+		width: 100px;
+	    height: 100px;
+    	border-radius: 100%;
+    	border: 2px double #30a1c0;
+    	background-color: #30a1c0;
+    	margin: 0 auto;
+    	position: relative;
+    	top: 50px;
+    	color: white;
+    	text-align: center;
+	 }
+	 #t_border {
+	 	width: 80px;
+	 	height: 80px;
+	 	border: 2px solid #30a1c0;
+	 	border-radius: 100%;
+	 	border-radius: 100%;
+    	margin: 8px auto 0 auto;
+	 }
+	 #top:hover {
+	 	color: #f0af24;
+		background-color: white;
+		border: 2px double #30a1c0;
+		transition: all 1s;
+		
+	 }
+	 #top > #t_border > p {
+	 	margin: 0;
+    	margin-top: 15px;
+	 }
+	 #top > #t_border > span {
+	 	margin: 0;
+	 }
 </style>
+<script type="text/javascript">
+
+$(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+            $('#top').fadeIn();
+        } else {
+            $('#top').fadeOut();
+        }
+    });
+    
+    $("#top").click(function() {
+        $('html, body').animate({
+            scrollTop : 0
+        }, 400);
+        return false;
+    });
+});
+
+
+
+</script>
 </head>
 <body id="footer_body"> 
 
+	<div id="top"><div id="t_border"><p>^</p><span>TOP</span></div></div>
 	<div style="height: 250px; background-color: #30a1c0; width: 100%; padding-top: 1%;" >
-	
 		<div style=" padding-top: 1%;">
 			<a class="information" href="#"><span style="color: white; font-size: 40px; font-weight: bolder; margin: 5%;">Spoid</span>
 			<a class="information" href="#"><span id="facebook" class="sns_icon" style=" margin-right: 3%;"><i class="fab fa-facebook-f"></i></span></a>
