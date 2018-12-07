@@ -216,6 +216,34 @@
 		background-color: #cccccc;
 	}
 	#menu_ul>li{cursor: pointer;}
+	
+	
+	
+	
+	/* 로그인 환영 텍스트 */
+	#welcom_login{
+		margin: 14px 0;
+	}
+	
+	#log_section > a:nth-child(3){
+		font-size: 13px;
+	    padding: 5px;
+	    box-sizing: border-box;
+	    border-radius: 3px;
+	    color: #465052;
+	    background-color: ;
+	    font-weight: bold;
+	    background-color: #cacaca;
+	}
+	#log_section > a:nth-child(4){
+	    font-size: 13px;
+	    padding: 5px;
+	    box-sizing: border-box;
+	    border-radius: 3px;
+	    color: #ffffff;
+	    background-color: #82c0ce;
+	    font-weight: bold;
+	}
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -321,7 +349,10 @@
 					</c:when>
 					<c:otherwise>
 						<div id="login_circle" class="img_log" style="background-image: url(<%=path%>/img/menu/login_yes.svg);">	</div>
-						<p>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})님 환영합니다</p>
+						
+						<div id="welcom_login">
+							<strong>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})</strong><span>님 환영합니다</span>
+						</div>
 						<a href="<%=path%>/loginOut.spoid">로그아웃</a>
 						<a href="<%=path%>/memberupdate.spoid">계정관리</a>
 					</c:otherwise>

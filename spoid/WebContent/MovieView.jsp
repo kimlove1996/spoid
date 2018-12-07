@@ -98,6 +98,7 @@
 	border: 1px solid black;
 	border-radius: 100%;
 	margin: 0 auto;
+	background-color: white;
 }
 #D_spoid {
 	display: inline-block;
