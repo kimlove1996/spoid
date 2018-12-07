@@ -10,6 +10,7 @@
 
 #MovieViewAll {
 	width: 1920px;
+	margin: 0;
 	margin-top: 142px;
 	background-color: #f0f0f0;
 }
@@ -18,14 +19,29 @@
 	height: 150px;
 	background-color: #dedef1;
 }
+#movie_table > ul >li {
+	float: left;
+    padding: 5px;
+}
+#movie_table > ul > li > a {
+	text-decoration: none;
+	color: black;
+}
 
 
 /* 영화상세정보 */
+.mv_hr {
+	border: 1px solid whitesmoke;
+}
 #mvtop_wrap{
 	background-color: #a9a9a9ad;
+	height: 700px;	
+}
+.wrap{
+	padding-top: 50px;
 }
 #poster {
-	width: 450px;
+	width: 350px;
 	display: inline-block;
 }
 #mv_info {
@@ -33,9 +49,6 @@
 	display: inline-block;
 }
 #info_table {
-	border: 1px solid #d0d0d0;
-	border-left: none;
-	border-right: none;
 	width: 94%;
 	padding: 10px 6px;
 	margin: 0 auto;
@@ -44,15 +57,20 @@
 
 #info_table td{
 	padding-right: 18px;
-    border-bottom: 1px solid #d0d0d0;
-    padding: 15px 200px;
 }
 #info_table  th{
 	width: 100%;
     text-align: left;
     padding-left: 10px;
-    border-bottom: 1px solid #d0d0d0;
 }
+#mvtop_border {
+    width: 1200px;
+    margin: 0 auto;
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    height: 600px;
+}
+
 
 /* 차트 */
 #mvmid_wrap {
@@ -66,6 +84,13 @@
 #mvbot_wrap {
 	height: 800px;
 	background-color: #eabe85;
+	margin: 0;
+}
+#spoid_score {
+	width: 210px;
+	height: 100px;
+	padding-left: 40%;
+    padding-top: 10%;
 }
 .spoid {
 	width: 100px;
@@ -86,8 +111,21 @@
 	background-repeat: no-repeat;
 	background-size: 100px;
 }
-
+#mvbot_border {
+ 	width: 1200px;
+    margin: 0 auto;
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    height: 600px;
+}
+#reply_table{
+	padding-left: 36%;
+    padding-top: 2%;
+    text-align: left;
+}
 </style>
+<script type="text/javascript">
+</script>
 </head>
 <body id="MovieView">
 <div id="MovieViewAll">
@@ -96,11 +134,13 @@
 	<ul>
 		<li><a href="#mvtop_wrap">영화상세내용</a></li>
 		<li><a href="#mvmid_wrap">차트 그래프</a></li>
-		<li><a href="#mvbot_wrap">댓글</a></li>
+		<li><a href="#mvbot_wrap">댓글 분석</a></li>
 	</ul>
 </div>
 <article id="mvtop_wrap">
 <h2>영화 상세 내용</h2>
+<hr class="mv_hr">
+<div id="mvtop_border">
 	<div class="wrap">
 	<table id="info_table">
 		<tbody>
@@ -126,14 +166,20 @@
 		</tbody>
 	</table>
 	</div>
+</div>
 </article>
 <article id="mvmid_wrap">
-	<h2>차트 그래프</h2>
+	<h2>차트 그래프</h2><hr class="mv_hr">
+	
 </article>
 <article id="mvbot_wrap">
+<h2>댓글 분석</h2><hr class="mv_hr">
+<div id="mvbot_border">
+	<div id="spoid_score">
 	<div id="N_spoid" class="spoid"></div>
 	<div id="D_spoid" class="spoid"></div>
-	<table>
+	</div>
+	<table id="reply_table">
 		<tbody>
 			<tr>
 				<th>네이버</th>
@@ -145,6 +191,7 @@
 			</tr>
 		</tbody>
 	</table>
+</div>
 </article>
 
 

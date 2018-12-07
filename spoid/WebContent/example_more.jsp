@@ -6,6 +6,36 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+
+
+/* 로딩중 */
+#loading {
+ width: 100%;  
+ height: 100%;  
+ top: 0px;
+ left: 0px;
+ position: fixed;  
+ display: block;  
+ opacity: 0.7;  
+ background-color: #fff;  
+ z-index: 99;  
+ text-align: center; } 
+  
+#loading-image {  
+ position: absolute;  
+ top: 50%;  
+ left: 50%; 
+ z-index: 100; }
+
+
+
+
+
+
+
+
+
+
 .js-load {
     display: none;
 }
@@ -48,6 +78,15 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
+
+$(window).load(function() {    
+    $('#loading').hide();  
+});
+
+
+
+
+
 $(window).on('load', function () { // window(화면)가 load(page를 읽어오는 것)를 시작할 경우
     load('#js-load', '10'); // #js-load (none의 상태)에서#js-load인 id를 5개를 출력시켜준다.
     alert("10개가나왔슴다.");
@@ -76,6 +115,11 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 </head>
 <body>
 <header>
+<div id="loading">Loading...<img id="loading-image" src="img/slime/slime.svg" alt="Loading..." /></div>
+
+
+
+
   <h1>더보기(MORE) 버튼을 눌러 일정갯수의 리스트 더 보기</h1>
 </header>
 <div id="contents">
