@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="include/header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -180,7 +181,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 				<hr>
 			</div>
     <ul id="boxoffice_line" class="lists">
-      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (1).jpg">
 					<div id="boxoffice_card_label">
@@ -190,8 +191,8 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>
-            <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>
+            <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (2).jpg">
 					<div id="boxoffice_card_label">
@@ -201,7 +202,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (3).jpg">
 					<div id="boxoffice_card_label">
@@ -211,7 +212,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (4).jpg">
 					<div id="boxoffice_card_label">
@@ -221,7 +222,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (5).jpg">
 					<div id="boxoffice_card_label">
@@ -231,7 +232,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (6).jpg">
 					<div id="boxoffice_card_label">
@@ -241,7 +242,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (7).jpg">
 					<div id="boxoffice_card_label">
@@ -251,7 +252,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (8).jpg">
 					<div id="boxoffice_card_label">
@@ -261,7 +262,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (9).jpg">
 					<div id="boxoffice_card_label">
@@ -271,7 +272,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (10).jpg">
 					<div id="boxoffice_card_label">
@@ -281,8 +282,8 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>
-           <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>
+           <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (1).jpg">
 					<div id="boxoffice_card_label">
@@ -292,8 +293,8 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>
-            <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>
+            <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (2).jpg">
 					<div id="boxoffice_card_label">
@@ -303,7 +304,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (3).jpg">
 					<div id="boxoffice_card_label">
@@ -313,7 +314,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (4).jpg">
 					<div id="boxoffice_card_label">
@@ -323,7 +324,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (5).jpg">
 					<div id="boxoffice_card_label">
@@ -333,7 +334,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (6).jpg">
 					<div id="boxoffice_card_label">
@@ -343,7 +344,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (7).jpg">
 					<div id="boxoffice_card_label">
@@ -353,7 +354,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (8).jpg">
 					<div id="boxoffice_card_label">
@@ -363,7 +364,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (9).jpg">
 					<div id="boxoffice_card_label">
@@ -373,7 +374,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      </a>      <a href="#" id="boxoffice_card_wrap" class="lists__item js-load">
       				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (10).jpg">
 					<div id="boxoffice_card_label">
@@ -383,7 +384,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-      </li>
+      </a>
     </ul>
     <div id="js-btn-wrap" class="btn-wrap"> <a href="javascript:;" class="button">더보기</a> </div>
   </div>

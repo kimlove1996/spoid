@@ -257,7 +257,7 @@
 		
 	});
 
-	function load(){
+	function load2(){
 		  document.body.addEventListener("wheel", zoomShortcut); //add the event
 	}
 
@@ -278,7 +278,7 @@
 
 
 </head>
-<body id="header_body" onload="load()">
+<body id="header_body" onload="load2()">
 	<header id="header_wrap">
 		<div class="header_line">
 			<div class="header_inner">
