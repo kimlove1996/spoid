@@ -49,6 +49,11 @@
      
      
      /* 아이디/비밀번호 인풋 */
+     #insert_id{
+     	margin: 0 0 33px 0;
+     }
+     
+     
      #insert_idpw{
      	display: block;
      	margin-top: 70px;
@@ -78,7 +83,6 @@
 	    outline: 0px;
 	    border-radius: 5px;
      	font-size: 19px;
-    	font-weight: bold;
     	vertical-align: 4px;
      }
      
@@ -90,7 +94,7 @@
 	
 	/* 힌트텍스트와 박스 */
 	#hint_box{
-	    margin: 20px 80px;
+	    margin: 20px 80px 20px 80px;
 	}
 	#hint_box select{
 		height: 30px;
@@ -133,6 +137,8 @@
 	    color: #777;
 	    margin: 7% 45% 4% 42%;
 	    cursor: pointer;
+	    font-weight: bold;
+	    outline: 0;
 	}
 	.login_btn:hover {
 		border: 1px solid #ffa84f;
@@ -148,6 +154,7 @@
 		var inputval = $(this).val();
 		if(inputval == ""){
 			$(this).next().css("display", "block");
+			$("#insert_id").css("margin-bottom","20px")
 		}else {
 			$(this).next().css("display", "none");
 		}
@@ -156,6 +163,7 @@
 	$("#input_answer").blur(function(){
 		if($("#input_answer").val() == ""){
 			$(this).next().css("display","block");
+			$("#hint_box").css("margin-bottom","7px");
 		}
 	});
 		 /* Ajax사용할 아이디 블러 */
@@ -242,7 +250,7 @@
 		     	<input type="text" name="inputid" id="inputid" class="inputidpw">
 				<span class="error" style="padding-left: 18%">필수 정보입니다.</span>
 		     </div>
-		     	<span class="insert_text" style="margin-top: 20px;display: block">Hint </span>
+		     	<span class="insert_text" style="display: block">Hint </span>
 		     <div id="hint_box">
 				<div id="hint1" class="hint">
 					<select id="hint_flag">
@@ -251,7 +259,7 @@
 						<option value="3">어렸을적 내 별명은?</option>
 					</select>
 				</div>
-					<input id="input_answer" name="input_answer" placeholder="ex)오치동" class="input_color insert_answer" value="${sessionScope.loginUser.hint2}">
+					<input class="inputidpw" id="input_answer" name="input_answer" placeholder="ex)오치동" class="input_color insert_answer" value="${sessionScope.loginUser.hint2}">
 					<span class="error" style="padding-left: 2%">필수 정보입니다.</span>
 			</div>	
 				<input type="button" value="확인" class="login_btn" id="hint_next">

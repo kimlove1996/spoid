@@ -72,7 +72,7 @@
 	
 	#boxoffice_card_label{
 	    height: 120px;
-	    width: 98%;
+	    width: 93%;
 	    position: relative;
 	    bottom: 129px;
 	    background: linear-gradient(to bottom,#ffffff, #ffffffeb -10%, #ffffffbd 78%);
