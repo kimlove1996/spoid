@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.spoid.action.Action;
 import com.spoid.action.ActionForward;
+import com.spoid.action.AllMovieAction;
 import com.spoid.action.BoardDeleteAction;
 import com.spoid.action.BoardDetailAction;
 import com.spoid.action.BoardInsertAction;
@@ -21,6 +22,7 @@ import com.spoid.action.BoardSearchAction;
 import com.spoid.action.BoardUpdateAction;
 import com.spoid.action.BoardUpdatePlayAction;
 import com.spoid.action.BoardViewCntAction;
+import com.spoid.action.BoxOfficeAction;
 import com.spoid.action.CommentDeletePlayAction;
 import com.spoid.action.CommentInsertAction;
 import com.spoid.action.CommentListAction;
@@ -41,6 +43,7 @@ import com.spoid.action.MemberPageAtcion;
 import com.spoid.action.MemberPlayAction;
 import com.spoid.action.MemberUpdateAction;
 import com.spoid.action.MemberUpdatePlayAction;
+import com.spoid.action.NowMovieAction;
 import com.spoid.action.PersonalInfoAction;
 import com.spoid.action.PwCheckAction;
 import com.spoid.action.QnaPageAction;
@@ -177,6 +180,15 @@ public class SpoidController extends HttpServlet
 	  }else if(command.equals("/IdPwFindPage.spoid")) { // ID/PW 찾기 페이지 이동
 		action = new IdPwFindPageAction();
 		forward = action.excute(request, response);		 		
+	  }else if(command.equals("/boxoffice.spoid")) { // 박스오피스 페이지 이동
+		action = new BoxOfficeAction();
+		forward = action.excute(request, response);		 		
+	  }else if(command.equals("/nowmovie.spoid")) { // 현상영작 페이지 이동
+		  action = new NowMovieAction();
+		  forward = action.excute(request, response);		 		
+	  }else if(command.equals("/allmovie.spoid")) { // 모든 영화 페이지 이동
+		  action = new AllMovieAction();
+		  forward = action.excute(request, response);		 		
 	  }
 
 
