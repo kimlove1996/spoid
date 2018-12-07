@@ -231,9 +231,8 @@
 	    box-sizing: border-box;
 	    border-radius: 3px;
 	    color: #465052;
-	    background-color: ;
 	    font-weight: bold;
-	    background-color: #cacaca;
+	    background-color: #a2a2a2;
 	}
 	#log_section > a:nth-child(4){
 	    font-size: 13px;
