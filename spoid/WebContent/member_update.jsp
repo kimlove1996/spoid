@@ -391,14 +391,6 @@ $(document).ready(function(){
 	
 	// 회원가입 정보 입력
 	
- 	$("#inputid").blur(function(){
-		var inputval = $(this).val();
-		if(inputval == ""){
-			$(this).next().css("display", "block");
-		}else {
-			$(this).next().css("display", "none");
-		}
-	});
  	$("#inputpw").blur(function(){
 		var inputval2 = $(this).val();
 		if(inputval2 == ""){
@@ -431,49 +423,7 @@ $(document).ready(function(){
 			$(this).next().css("display", "none");
 		}
 	});
-	
-	 
-	/* Ajax사용할 아이디 블러 */
-	$("#inputid").blur(function(){
-		/* id값 받아오기 */
-		var idVal = $(this).val();
-		var mid= $(inputid);
 		
-		/* 유효성체크 */
-		/* trim: 앞뒤 공백 제거 */
-		var id=$.trim(mid.val());
-		var regid = /^[a-zA-Z0-9]{4,12}$/; /* 4~12자 까지 영대소문자와 숫자만 입력가능 */		
-		/* 유효검사를 통해 아이가 null인 경우를 실행했으니, null이 아닌경오 Ajax를 실행하겠다는 코드 */
-		if(idVal != ""){
-			if(!regid.test(id)){
-				mid.focus();
-				mid.next().text("4~12까지의 영문자와 숫자만 입력하세요.").css("display","block");
-				mid.parent().css("margin-bottom","30px");
-				return false; /* 이걸해야 submit이 안됨! 꼭 해야함 */				
-			}
-			$.ajax({
-				url: "idCheck.spoid",
-				type: "POST",
-				dateType: "json",
-				data: "id="+ idVal,
-				success: function(data) {
-					if(data.message == "-1"){
-						$("#inputid").next().text("이미 사용중인 아이디입니다.").css("display", "block").css("color", "#F46665");
-						$("#inputid").parent().css("margin-bottom","30px");
-					} else {
-						$("#inputid").next().text("멋진 아이디네요!").css("display", "block").css("color", "#0000FF");
-						$("#inputid").parent().css("margin-bottom","30px");
-					}
-					
-				},
-				error: function() {
-					alert("SYSTEM ERROR");
-				}
-				
-			});
-		}
-		
-	});
 	
 	$("input:password").blur(function(){
 		pwcheck();
