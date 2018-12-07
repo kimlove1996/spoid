@@ -111,7 +111,7 @@
 	    border: none;
 	    border-bottom: 3px solid #338298;
 	    padding-left: 8px;
-	    font-size: 17px;
+	    font-size: 16px;
 	    border-radius: 5px;
 	}
 	
@@ -126,7 +126,7 @@
 	    display: none;
 	}
 	.login_btn {
-		width: 100px;
+	    width: 100px;
 	    height: 46px;
 	    margin-top: 40px;
 	    border: 1px solid #d4d4d4;
@@ -141,8 +141,8 @@
 	    outline: 0;
 	}
 	.login_btn:hover {
-		border: 1px solid #ffa84f;
-	    background-color: #ffb263;
+	    border: 1px solid #d4d4d4;
+	    background-color: #ffd993;
 	    color: #474747;
 	    font-weight: bold;
 	}

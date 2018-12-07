@@ -379,9 +379,10 @@ h3.article_title {
     color: #777;
     margin: 2% 45% 4% 45%;
     cursor: pointer;
+    font-weight: bold;
 }
 .login_btn:hover {
-    background-color: #ffcd00;
+    background-color: #ffd993;
     color: #474747;
     font-weight: bold;
 }
