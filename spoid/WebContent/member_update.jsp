@@ -98,7 +98,7 @@
 	}
 	
 	#inputpw_cl {
-		margin-bottom: 10px;
+		margin-bottom: 27px;
 	    width: 138px;
 	    height: 36px;
 	    padding: 0 13px;
@@ -108,9 +108,9 @@
 	    outline: 0;
 	}
 	#pw_error {
-		margin-bottom: 10px;
 		font-size: 10px;
 		color: red;
+		margin-bottom:9px;
 		display: none;
 	}
 
@@ -459,7 +459,6 @@ $(document).ready(function(){
 				success: function(data) {
 					if(data.message == "-1"){
 						$("#inputid").next().text("이미 사용중인 아이디입니다.").css("display", "block").css("color", "#F46665");
-						$("#inputid").select();
 						$("#inputid").parent().css("margin-bottom","30px");
 					} else {
 						$("#inputid").next().text("멋진 아이디네요!").css("display", "block").css("color", "#0000FF");
@@ -630,7 +629,7 @@ $(document).on("blur","#inputpw_cl",function(){
 	if(pw == ""){
 		$("#inputpw_cl").select();
 		$("#inputpw_cl").next().css("display","block").css("color","red");
-		$("#inputpw_cl").css("border-color","red");
+		$("#inputpw_cl").css("margin-bottom","5px").css("border-color","red");
 	}
 });
 
