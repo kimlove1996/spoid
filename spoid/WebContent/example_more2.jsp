@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="include/header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
 	#boxoffice_all{
@@ -13,7 +13,7 @@
 	    background-color: #f0f0f0;
 	}
 	
-	#boxoffice_list{
+	#js-load{
 	    padding: 34px;
 	    border: 1px dashed #c5c5c5;
 	    box-shadow: #bfbfbf 7px 6px 5px -1px;
@@ -96,42 +96,50 @@
 		color: #000000;
 	    font-size: 80%;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
 	/* 더보기 기능 관련 */
-	.mv_load{
-		display: none;
+	.js-load {
+	    display: none;
 	}
-	.mv_load.active{
-		display: inline-block;
+	.js-load.active {
+	    display: inline-block;
 	}
-	.btn_wrap, .lists, .main_list {
-    	display: inline-block;
+	.btn-wrap, .lists, .main {
+	    display: inline-block;
 	}
-	
-	
+
+
+
+
+
+
+
+
+
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-/* $(document).ready(function(){ */
-	
-	
 $(window).on('load', function () { // window(화면)가 load(page를 읽어오는 것)를 시작할 경우
-    load('#boxoffice_line', '10'); // #js-load (none의 상태)에서#js-load인 id의 5개를 출력시켜준다.
+    load('#js-load', '5'); // #js-load (none의 상태)에서#js-load인 id의 5개를 출력시켜준다.
     alert("10개가나왔슴다.");
-    $("#mv_btn_wrap .button").on("click", function () { // 더보기버튼을 클릭 시
-        load('#boxoffice_line', '10', '#mv_btn_wrap'); //더보기 버튼을 누를 시 #js-load id가 해당하는 것을 5개 보이게 한다.
+    $("#js-btn-wrap .button").on("click", function () { // 더보기버튼을 클릭 시
+        load('#js-load', '5', '#js-btn-wrap'); //더보기 버튼을 누를 시 #js-load id가 해당하는 것을 5개 보이게 한다.
     })
 });
  
 function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
-    var girls_list = id + " .mv_load:not(.active)"; //활동하지 않는 태그들을 제외한 .js-load
+    var girls_list = id + " .js-load:not(.active)"; //활동하지 않는 태그들을 제외한 .js-load
     var girls_length = $(girls_list).length; // 활동할 태그(.js-load)의 개수
     alert("girls_length = " + girls_length);//(-- 50)
     var girls_total_cnt; // 총 개수를 세는 것
@@ -146,40 +154,22 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
     $(girls_list + ":lt(" + girls_total_cnt + ")").addClass("active");
     // girls_total_cnt보다 작은 (활동하지 않는 태그들을 제외한 #js-load)들의 요소를 선택하여 active라는 클래스를 부여합니다.
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-
-
-/* $(".boxoffice_card_all").css("transform","rotateY(360deg)");
-$("#movie_text_top > hr").css("width","100%");
-}); */
 </script>
 </head>
 <body id="boxoffice">
 <div id="boxoffice_all">
 
 
-	<div id="boxoffice_list"><!-- div -->
-			<div id="movie_text_top">
+
+
+  <div id="js-load" class="main">
+  			<div id="movie_text_top">
 				<span>전체 영화</span>
 				<hr>
 			</div>
-		<div id="boxoffice_line" class="main_list"><!-- ul -->
-			<a href="#" id="boxoffice_card_wrap" class="lists"><!-- li -->
-				<div id="boxoffice_card" class="mv_load"> 
+    <ul id="boxoffice_line" class="lists">
+      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (1).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -188,9 +178,9 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>
+            <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (2).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -199,10 +189,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (3).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -211,10 +199,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (4).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -223,10 +209,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (5).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -235,10 +219,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (6).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -247,10 +229,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (7).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -259,10 +239,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (8).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -271,10 +249,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (9).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -283,10 +259,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (10).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -295,9 +269,9 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>
+           <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (1).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -306,9 +280,9 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>
+            <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (2).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -317,10 +291,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (3).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -329,10 +301,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (4).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -341,10 +311,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (5).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -353,10 +321,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (6).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -365,10 +331,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (7).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -377,10 +341,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (8).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -389,10 +351,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (9).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -401,10 +361,8 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
+      </li>      <li href="#" id="boxoffice_card_wrap" class="lists__item js-load">
+      				<div id="boxoffice_card" class="mv_load"> 
 					<img src="img/poster/movie_image (10).jpg">
 					<div id="boxoffice_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
@@ -413,134 +371,11 @@ $("#movie_text_top > hr").css("width","100%");
 						<p>109분 | 한국 15세 | 관람가</p>
 					</div>
 				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (1).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (2).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (3).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (4).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (5).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (6).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (7).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (8).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (9).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
-			 <a href="#" id="boxoffice_card_wrap" class="lists"><!-- ul -->
-				<div id="boxoffice_card" class="mv_load"> <!-- li -->
-					<img src="img/poster/movie_image (10).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			
-			
-		</div>
-		<div id="mv_btn_wrap" class="btn_wrap"> <a href="javascript:;" class="button">더보기</a> </div>
-	</div>
-	
-	
-</div>
-
+      </li>
+    </ul>
+    <div id="js-btn-wrap" class="btn-wrap"> <a href="javascript:;" class="button">더보기</a> </div>
+  </div>
+</div>  
 </body>
 </html>
 <%@ include file="include/footer.jsp" %>
