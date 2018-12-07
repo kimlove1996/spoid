@@ -215,7 +215,7 @@ $(document).ready(function(){
 		var content = $("#input_a").val();
 	if(id == "" || email == "" || title == "" || content == "" ){
 		alert("모든 항목을 작성해주세요.");
-		$(".error").css("display","block");
+		$("input_color").css("display","block");
 		return false;
 	} else {
 		
