@@ -6,14 +6,14 @@
 <head>
 <title>Insert title here</title>
 <style type="text/css">
-	#boxoffice_all{
+	#nowreleased_all{
 	   /*  margin: 195px auto 120px auto; */
 	    width: 85%;
 	    padding: 142px;
 	    background-color: #f0f0f0;
 	}
 	
-	#boxoffice_list{
+	#nowreleased_list{
 	    padding: 34px;
 	    border: 1px dashed #c5c5c5;
 	    box-shadow: #bfbfbf 7px 6px 5px -1px;
@@ -39,12 +39,12 @@
 		transition: all 1s;
 		width: 0px;
 	}
-	#boxoffice_line{
+	#nowreleased_line{
 		width: 1547px;
 	}
 	
 	
-	#boxoffice_card{
+	#nowreleased_card{
 		width: 256px;
 		height: 373px;
 		box-shadow: grey 5px 4px 6px 0px;
@@ -55,14 +55,14 @@
 		vertical-align: middle;
 	}
 	
-	#boxoffice_card_wrap:hover #boxoffice_card{background-color: #ff510e;}
-	#boxoffice_card_wrap:hover img{padding: 9px;}
-	#boxoffice_card_wrap:hover #boxoffice_card_label{display: block;}
+	#nowreleased_card_wrap:hover #nowreleased_card{background-color: #ff510e;}
+	#nowreleased_card_wrap:hover img{padding: 9px;}
+	#nowreleased_card_wrap:hover #nowreleased_card_label{display: block;}
 	
 	
 	
 	
-	#boxoffice_card > img{
+	#nowreleased_card > img{
 	    width: 256px;
 	    height: 373px;
 		box-sizing: border-box;
@@ -70,11 +70,11 @@
 	}
 	
 	
-	#boxoffice_card_label{
+	#nowreleased_card_label{
 	    height: 120px;
 	    width: 93%;
 	    position: relative;
-	    bottom: 129px;
+	    bottom: 133px;
 	    background: linear-gradient(to bottom,#ffffff, #ffffffeb -10%, #ffffffbd 78%);
 	    box-sizing: border-box;
 	    padding: 5px;
@@ -84,7 +84,7 @@
 	    text-align: center;
 	}
 	
-	#boxoffice_card_label > p{
+	#nowreleased_card_label > p{
 	    margin: 0 0;
 	    font-size: 12px;
 	    text-align: center;
@@ -92,7 +92,7 @@
 	    color: #353535;
 	    font-weight: bold;
 	}
-	#boxoffice_card_label > strong{
+	#nowreleased_card_label > strong{
 		color: #000000;
 	    font-size: 80%;
 	}
@@ -103,25 +103,25 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".boxoffice_card_all").css("transform","rotateY(360deg)");
+	$(".nowreleased_card_all").css("transform","rotateY(360deg)");
 	$("#movie_text_top > hr").css("width","100%");
 });
 </script>
 </head>
-<body id="boxoffice">
-<div id="boxoffice_all">
+<body id="nowreleased">
+<div id="nowreleased_all">
 
 
-	<div id="boxoffice_list">
+	<div id="nowreleased_list">
 			<div id="movie_text_top">
 				<span>현재 상영 영화</span>
 				<hr>
 			</div>
-		<div id="boxoffice_line">
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+		<div id="nowreleased_line">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (1).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -129,10 +129,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (2).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -140,10 +140,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (3).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -151,10 +151,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (4).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -162,10 +162,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (5).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -173,10 +173,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (6).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -184,10 +184,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (7).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -195,10 +195,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (8).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -206,10 +206,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (9).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>
@@ -217,10 +217,10 @@ $(document).ready(function(){
 					</div>
 				</div>
 			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
+			<a href="#" id="nowreleased_card_wrap">
+				<div id="nowreleased_card" class="nowreleased_card_all">
 					<img src="img/poster/movie_image (10).jpg">
-					<div id="boxoffice_card_label">
+					<div id="nowreleased_card_label">
 						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
 						<hr>
 						<p>드라마, 모험 | 2012.07.05  개봉</p>

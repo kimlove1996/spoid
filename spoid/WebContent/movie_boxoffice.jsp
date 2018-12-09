@@ -74,7 +74,7 @@
 	    height: 120px;
 	    width: 93%;
 	    position: relative;
-	    bottom: 129px;
+	    bottom: 133px;
 	    background: linear-gradient(to bottom,#ffffff, #ffffffeb -10%, #ffffffbd 78%);
 	    box-sizing: border-box;
 	    padding: 5px;
