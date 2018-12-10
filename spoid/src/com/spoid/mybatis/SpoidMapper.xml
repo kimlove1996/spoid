@@ -221,4 +221,8 @@
 		INSERT INTO SpoidOneCenter(id,email,title,content)
 		VALUES(#{id},#{email}, #{title}, #{content})
 	</insert>
+	
+	<!-- ==================================================================== -->
+	<!-- MovieDAO -->
+	<select id="dailyboxList" parameterType="String" resultType="com.spoid.dto."></select>
  </mapper>
