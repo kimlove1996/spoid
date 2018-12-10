@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 <title>MovieView</title>
 <style type="text/css">
-
+html {
+	scroll-behavior: smooth;
+}
 #MovieViewAll {
 	width: 1920px;
 	margin: 0;
@@ -75,7 +77,7 @@
 /* 차트 */
 #mvmid_wrap {
 	height: 800px;
-	background-color: #30a1c0;
+	background-color: #b8dec2;
 }
 
 
@@ -83,7 +85,7 @@
 /* 댓글 */
 #mvbot_wrap {
 	height: 800px;
-	background-color: #eabe85;
+	background-color: #f5dd9ba6;
 	margin: 0;
 }
 #spoid_score {
