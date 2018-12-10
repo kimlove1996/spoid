@@ -12,7 +12,7 @@
 	width: 1920px;
 	margin: 0;
 	margin-top: 142px;
-	background-color: #f0f0f0;
+	/* background-color: #f0f0f0; */
 }
 
 #movie_table {
@@ -124,13 +124,38 @@
     padding-top: 2%;
     text-align: left;
 }
+
+
+
+/* 상단 영화명 */
+#movie_name{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+#movie_table > ul{
+	float: right;
+}
+
+#movie_name_underline{
+	margin: 7px auto 11px auto;
+    width: 20%;
+    border: 3px solid #6db9ce;
+}
+
+
+
 </style>
 <script type="text/javascript">
 </script>
 </head>
 <body id="MovieView">
 <div id="MovieViewAll">
-	<p>무비</p>
+	<p id="movie_name">Detail infomation</p>
+	<hr id="movie_name_underline">
 <div id="movie_table">
 	<ul>
 		<li><a href="#mvtop_wrap">영화상세내용</a></li>
