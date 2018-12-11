@@ -224,5 +224,12 @@
 	
 	<!-- ==================================================================== -->
 	<!-- MovieDAO -->
-	<select id="dailyboxList" parameterType="String" resultType="com.spoid.dto."></select>
+	<select id="indexList" resultType="com.spoid.dto.DetailDTO">
+		<![CDATA[
+			SELECT *
+			FROM detailmovie
+			WHERE (kor_tit,firstopen) IN (select movieNm, openDt 
+			                    from (select * from dailybox where rownum <= 10 order by targetdt desc)temp)	
+		]]>		
+	</select>
  </mapper>
