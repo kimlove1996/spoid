@@ -8,6 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Spoid team member</title>
 <style type="text/css">
+
+	body*{clear: both;}
+
 	#team_introduce{
 		margin: 0;
 		padding: 0;
@@ -20,9 +23,7 @@
 	#team_introduce_all{margin: 124px auto 124px auto;}
 	
 	/* Who We Are? 텍스트*/
-	#introduce_text_top{
-		text-align: center;
-	}
+	#introduce_text_top{text-align: center;}
 	
 	#introduce_text_top > span:nth-child(3){
 		line-height: 92px;
@@ -48,14 +49,14 @@
 	}
 	
 	.each_l .introduce_ment{
-	    float: left;
-	    margin-left: 182px;
 	    margin-top: 68px;
+	    box-sizing: border-box;
+	    overflow: hidden;
+	    display: none; 
 	}
 	.each_r .introduce_ment{
-	    float: right;
-	    margin-right: 182px;
 	    margin-top: 68px;
+	    display: none; 
 	}
 	
 	
@@ -94,7 +95,9 @@
 	
 	
 	.produce_box{
-		margin: 24px 39px;
+		height: 302px;
+		box-sizing: border-box;
+		transition:all 1s;
 		
 	}
 	
@@ -110,10 +113,12 @@
 	
 	.box_l{
 	    display: inline-block;
-	    width: 790px;
+	    /* width: 790px; */
 	    border-radius: 5px 154px 154px 5px;
 	    padding: 25px 41px 25px 0px;
 	    background-color: gray;
+	    width: 156px;
+	    margin: 24px 39px 24px 0;
 	}
 	
 	.box_r{
@@ -124,12 +129,14 @@
 	    border-radius: 145px 5px 5px 154px;
 	    padding: 25px 0px 25px 41px;
 	    background-color: gray;
+	    width: 156px;
 	}
 	
 	/* 슬라임 이미지 관련 */
 	.slime_car{
 		display: inline-block;
 		float: left;
+		overflow: hidden;
 	}
 	
 	.slime_car > img{
@@ -137,11 +144,16 @@
 	    border-radius: 139px;
 	    border: 4px double #ede0e0;
 		background-color: white;
+		box-sizing: border-box;
+		overflow: hidden;
 	}
+	
 	
 	.introduce_ment{
 		display: inline-block;
 		text-align: center;
+		overflow: hidden;
+		height: 50%;
 	}
 	
 	.introduce_ment > p:nth-child(1){
@@ -152,13 +164,6 @@
 	    width: 66px;
 	}
 	
-	.introduce_ment > p:nth-child(1) {
-	    font-weight: bold;
-	    padding-bottom: 5px;
-	    border-bottom: 3px solid gray;
-	    margin: 8px auto;
-	    width: 66px;
-	}
 
 	.introduce_ment > p:nth-child(4) {
 	    display: inline-block;
@@ -183,10 +188,41 @@
 	.car_r{float: right;}
 	.car_l{float: left;}
 	
+	
+	.changeCol2{width: 790px;}
+	
 </style>
-
+<script type="text/javascript">
+$(document).ready(function(){
+			$("#produce_box01").addClass("changeCol2");
+			$("#introduce_ment01").css("display","block");
+			
+	$(window).on("scroll", function() {
+	x = 0;
+	$("#span1").text( x= $(window).scrollTop() + " px");
+		if($(window).scrollTop() >= 150){
+			$("#produce_box02").addClass("changeCol2");
+			$("#introduce_ment02").css("display","block");
+		}
+		if($(window).scrollTop() >= 531){
+			$("#produce_box03").addClass("changeCol2");
+			$("#introduce_ment03").css("display","block");
+		}
+		if($(window).scrollTop() >= 989){
+			$("#produce_box04").addClass("changeCol2");
+			$("#introduce_ment04").css("display","block");
+		}
+		if($(window).scrollTop() >= 1409){
+			$("#produce_box05").addClass("changeCol2");
+			$("#introduce_ment05").css("display","block");
+		}
+	});
+});	
+</script>
 </head>
 <body id="team_introduce" onload="load()">
+	<!-- 현 스크롤 위치 확인 -->
+	<!-- <span id="span1" style="position : fixed">0</span> -->
 	<div id="team_introduce_all">
 		<div id="introduce_text_top">
 			<span id="introduce_text">Who We Are?</span><br>
@@ -204,7 +240,7 @@
 						<img src="img/slime/score4.png">
 					</div>
 					
-					<div class="introduce_ment">
+					<div class="introduce_ment" id="introduce_ment01">
 						<p>역할</p>
 						<span class="ment1">슬라임 저작권자</span><br>
 						<p>한마디  : </p>
@@ -233,7 +269,7 @@
 					<div id="slime_car02" class="slime_car car_l">
 						<img src="img/slime/score1.png">
 					</div>
-					<div class="introduce_ment">
+					<div class="introduce_ment" id="introduce_ment02">
 						<p>역할</p>
 						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
@@ -259,7 +295,7 @@
 					<div id="slime_car03" class="slime_car car_r">
 						<img src="img/slime/score5.png">
 					</div>
-					<div class="introduce_ment">
+					<div class="introduce_ment" id="introduce_ment03">
 						<p>역할</p>
 						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
@@ -286,7 +322,7 @@
 					<div id="slime_car04" class="slime_car car_l">
 						<img src="img/slime/score3.png">
 					</div>
-					<div class="introduce_ment">
+					<div class="introduce_ment" id="introduce_ment04">
 						<p>역할</p>
 						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
@@ -314,7 +350,7 @@
 					<div id="slime_car05" class="slime_car car_r">
 						<img src="img/slime/score2.png">
 					</div>
-					<div class="introduce_ment">
+					<div class="introduce_ment" id="introduce_ment05">
 						<p>역할</p>
 						<span class="ment1">디자인, 소스 관련 제작</span><br>
 						<p>한마디  : </p>
