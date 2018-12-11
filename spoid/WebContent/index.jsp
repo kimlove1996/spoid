@@ -261,6 +261,7 @@
 			<div class="topmv_content">
 
 				<div class="inner_topmv">
+					<c:forEach></c:forEach>
 					<div class="col1" data-num="1">
 						<img src="<%=path%>/img/poster/movie_image.jpg">
 						<div class="overlay">

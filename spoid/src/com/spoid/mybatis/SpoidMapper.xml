@@ -224,7 +224,7 @@
 	
 	<!-- ==================================================================== -->
 	<!-- MovieDAO -->
-	<select id="dailybox" resultType="com.spoid.dto.BoXOfficeDTO">
+	<select id="dailybox" resultType="com.spoid.dto.BoxOfficeDTO">
 		<![CDATA[
 			select * from dailybox where rownum <= 10 order by targetdt desc
 		]]>
