@@ -224,6 +224,12 @@
 	
 	<!-- ==================================================================== -->
 	<!-- MovieDAO -->
+	<select id="dailybox" resultType="com.spoid.dto.BoXOfficeDTO">
+		<![CDATA[
+			select * from dailybox where rownum <= 10 order by targetdt desc
+		]]>
+	
+	</select>
 	<select id="indexList" resultType="com.spoid.dto.DetailDTO">
 		<![CDATA[
 			SELECT *
