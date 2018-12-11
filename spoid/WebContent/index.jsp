@@ -33,7 +33,6 @@
 	}
 	
 	.score_view table th,.score_view table td{
-    	border-bottom: 1px solid #cccccc;
     	overflow: hidden;
     	padding : 0 10px;
 
