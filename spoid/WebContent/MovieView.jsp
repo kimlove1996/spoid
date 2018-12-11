@@ -10,25 +10,36 @@
 html {
 	scroll-behavior: smooth;
 }
+
+#header_wrap{
+	background-color: white;
+}
+
+#Movie_bar {
+	position: fixed;
+	width: 100%;
+	background-color: white;
+	top: 0;
+	margin-top: 100px;
+}
+
 #MovieViewAll {
 	width: 1920px;
 	margin: 0;
-	margin-top: 142px;
+	margin-top: 100px;
 	/* background-color: #f0f0f0; */
 }
 
 #movie_table {
-	height: 100px;
+	height: 60px;
 	background-color: #dedef1;
+	
 }
 #movie_table > ul >li {
 	float: left;
     padding: 15px;
-    padding-top: 30px;
-    border: 2px solid #4a4a4a;
-}
-#movie_table > ul >li:hover {
-	border: 2px solid #4a4a4a;
+    padding-top: 10px;
+   
 }
 #movie_table > ul > li > a {
 	text-decoration: none;
@@ -36,12 +47,37 @@ html {
 	font-size: 25px;
 	font-weight: bold;
 }
+/* 상단 영화명 */
 
+#movie_name{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+#movie_table > ul{
+	width: 427px;
+    margin: 0 auto;
+}
+
+#movie_name_underline{
+	margin: 7px auto 11px auto;
+    width: 20%;
+    border: 3px solid #6db9ce;
+}
 
 /* 영화상세정보 */
 #mvtop_wrap{
 	background-color: #f7f9fa;
 	height: 700px;	
+	margin-top: 222px;
+}
+#mvtop_wrap > h2 {
+    padding: 0;
+    margin: 0;
+    line-height: 2;
 }
 .wrap{
 	padding-top: 50px;
@@ -63,12 +99,13 @@ html {
 }
 
 #info_table td{
-	padding-right: 18px;
+	padding-left: 2%;
 }
 #info_table  th{
 	width: 100%;
     text-align: left;
-    padding-left: 10px;
+    padding-right: 2%;
+    padding-left: 6%;
 }
 #mvtop_border {
     width: 1200px;
@@ -85,27 +122,36 @@ html {
 	background-image: url("img/background_dott.PNG");
 	background-color: #dfe5fb;
 }
-
+#mvmid_wrap > h2 {
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+}
 
 
 /* 댓글 */
 #mvbot_wrap {
 	height: 800px;
-	background-color: #f5dd9ba6;
+	background-color: #f7f9fa;
 	margin: 0;
 }
+#mvbot_wrap > h2 {
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+}
 #spoid_score {
-	width: 210px;
-	height: 100px;
-	padding-left: 40%;
-    padding-top: 10%;
+	width: 410px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 10%;
 }
 .spoid {
 	width: 100px;
 	height: 100px;
-	border: 1px solid #f0af24;
+	border: 1px solid #dedef1;
 	border-radius: 100%;
-	margin: 0 auto;
+	margin: 0 50px;
 	background-color: white;
 }
 #D_spoid {
@@ -124,54 +170,74 @@ html {
  	width: 1200px;
     margin: 0 auto;
     margin-top: 70px;
-    border: 2px solid #f5dd9b;
+    border: 2px solid #dedef1;
     border-radius: 50px;
     height: 600px;
 }
 #reply_table{
-	padding-left: 36%;
-    padding-top: 2%;
+	padding-top: 2%;
     text-align: left;
-}
-
-
-
-/* 상단 영화명 */
-#movie_name{
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #4a4a4a;
-    margin: 0;
-}
-
-#movie_table > ul{
-	width: 415px;
     margin: 0 auto;
 }
 
-#movie_name_underline{
-	margin: 7px auto 11px auto;
-    width: 20%;
-    border: 3px solid #6db9ce;
-}
+
+
+
 
 
 
 </style>
 <script type="text/javascript">
+
+$(document).ready(function(){
+	$("#mvtop_cl").click(function(){
+		$("#mvtop_cl").css("color","#6db9ce");
+		$("#mvtop_wrap > h2").css("color","#6db9ce");
+		$("#mvmid_cl").css("color","#4a4a4a");
+		$("#mvmid_wrap > h2").css("color","#4a4a4a");
+		$("#mvbot_cl").css("color","#4a4a4a");
+		$("#mvbot_wrap > h2").css("color","#4a4a4a");
+
+	});
+	
+	$("#mvmid_cl").click(function(){
+		$("#mvmid_cl").css("color","#6db9ce");
+		$("#mvmid_wrap > h2").css("color","#6db9ce");
+		$("#mvtop_cl").css("color","#4a4a4a");
+		$("#mvtop_wrap > h2").css("color","#4a4a4a");
+		$("#mvbot_cl").css("color","#4a4a4a");
+		$("#mvbot_wrap > h2").css("color","#4a4a4a");
+		
+	});
+	
+	$("#mvbot_cl").click(function(){
+		$("#mvbot_cl").css("color","#6db9ce");
+		$("#mvbot_wrap > h2").css("color","#6db9ce");
+		$("#mvmid_cl").css("color","#4a4a4a");
+		$("#mvmid_wrap > h2").css("color","#4a4a4a");
+		$("#mvtop_cl").css("color","#4a4a4a");
+		$("#mvtop_wrap > h2").css("color","#4a4a4a");
+		
+	});
+	
+	
+	
+	
+});
 </script>
 </head>
 <body id="MovieView">
 <div id="MovieViewAll">
-	<p id="movie_name">Detail infomation</p>
+<div id="Movie_bar">
+	<p id="movie_name">Detail information</p>
 	<hr id="movie_name_underline">
 <div id="movie_table">
 	<ul>
-		<li><a href="#mvtop_wrap">상세내용</a></li>
-		<li><a href="#mvmid_wrap">차트그래프</a></li>
-		<li><a href="#mvbot_wrap">댓글분석</a></li>
+		<li><a id="mvtop_cl" onclick="$('html, body').stop().animate({scrollTop : '0'});">상세내용</a></li>
+		<li><a id="mvmid_cl" onclick="$('html, body').stop().animate({scrollTop : '700'});">차트그래프</a></li>
+		<li><a id="mvbot_cl" onclick="$('html, body').stop().animate({scrollTop : '1500'});">댓글분석</a></li>
 	</ul>
+</div>
 </div>
 <article id="mvtop_wrap">
 <h2>상세 내용</h2>
@@ -209,7 +275,7 @@ html {
 	
 </article>
 <article id="mvbot_wrap">
-<h2>댓글 분석</h2><hr style="border: 1px solid #f5dd9b;">
+<h2>댓글 분석</h2><hr style="border: 1px solid #dedef1;">
 <div id="mvbot_border">
 	<div id="spoid_score">
 	<div id="N_spoid" class="spoid"></div>
@@ -219,10 +285,10 @@ html {
 		<tbody>
 			<tr>
 				<th>네이버</th>
-				<td>"너무 멋있는 영화였다."</td>
+				<th>다음</th>
 			</tr>
 			<tr>
-				<th>다음</th>
+				<td>"최곤가?"</td>
 				<td>"재밌었다"</td>
 			</tr>
 		</tbody>

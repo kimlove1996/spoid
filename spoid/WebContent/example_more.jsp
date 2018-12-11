@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 <style type="text/css">
 
+/* 
 
-/* 로딩중 */
 #loading {
  width: 100%;  
  height: 100%;  
@@ -28,7 +28,7 @@
  z-index: 100; }
 
 
-
+ */
 
 
 
@@ -79,10 +79,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-$(window).load(function() {    
+/* $(window).load(function() {    
     $('#loading').hide();  
 });
-
+ */
 
 
 
@@ -115,7 +115,7 @@ function load(id, cnt, btn) { // == #js-load', '5', '#js-btn-wrap
 </head>
 <body>
 <header>
-<div id="loading">Loading...<img id="loading-image" src="img/slime/slime.svg" alt="Loading..." /></div>
+<!-- <div id="loading">Loading...<img id="loading-image" src="img/slime/slime.svg" alt="Loading..." /></div> -->
 
 
 
