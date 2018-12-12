@@ -16,7 +16,6 @@ public class AllMovieAction implements Action{
 	public ActionForward excute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String url = "movie_all.jsp";
-		System.out.println("뭐여?>");
 		DetailDTO dDto = new DetailDTO();
 		MovieDAO mDao = MovieDAO.getInstance();
 		List<DetailDTO> list = mDao.listAllMv();

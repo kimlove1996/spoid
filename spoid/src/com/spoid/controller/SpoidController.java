@@ -187,7 +187,6 @@ public class SpoidController extends HttpServlet
 		  action = new NowMovieAction();
 		  forward = action.excute(request, response);		 		
 	  }else if(command.equals("/allmovie.spoid")) { // 모든 영화 페이지 이동
-		  System.out.println("ㅁㅊ 놈아 가라좀!!");
 		  action = new AllMovieAction();
 		  forward = action.excute(request, response);		 		
 	  }

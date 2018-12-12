@@ -344,21 +344,21 @@
 			<div id="menu_wrapper">
 				<ul id="menu_ul">
 						
-						<li onclick="location.href='boxoffice.spoid'">
-							<div class="menu_li_div" data-li="boxoffice">
+						<li>
+							<div class="menu_li_div" data-li="boxoffice"  onclick="location.href='boxoffice.spoid'">
 								<!-- onclick="location.href=''" 클릭 이벤트 시 해당 주소로 가라> -->
 								<img src="<%=path%>/img/menu/movie_box.png" class="menu_icon">
 								<span class="menu_btn">박스오피스</span>
 							</div>
 						</li>
-						<li onclick="location.href='nowmovie.spoid'">
-							<div class="menu_li_div">
+						<li>
+							<div class="menu_li_div" onclick="location.href='nowmovie.spoid'">
 								<img src="<%=path%>/img/menu/movie_now.png" class="menu_icon" >
 								<span class="menu_btn">현재 상영작</span>
 							</div>
 						</li>
-						<li onclick="location.href='allmovie.spoid'">
-							<div class="menu_li_div">
+						<li>
+							<div class="menu_li_div" onclick="location.href='allmovie.spoid'">
 								<img src="<%=path%>/img/menu/movie_all.png" class="menu_icon" >
 								<span class="menu_btn">모든 영화</span>
 							</div>
