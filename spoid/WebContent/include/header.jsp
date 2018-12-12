@@ -232,15 +232,13 @@
 	    border-radius: 3px;
 	    color: #465052;
 	    font-weight: bold;
-	    background-color: #a2a2a2;
 	}
 	#log_section > a:nth-child(4){
 	    font-size: 13px;
 	    padding: 5px;
 	    box-sizing: border-box;
 	    border-radius: 3px;
-	    color: #ffffff;
-	    background-color: #82c0ce;
+	    color: #465052;
 	    font-weight: bold;
 	}
 </style>
@@ -352,7 +350,7 @@
 						<div id="welcom_login">
 							<strong>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})</strong><span>님 환영합니다</span>
 						</div>
-						<a href="<%=path%>/loginOut.spoid" style="color:#eb2a58;background-color: #dcb7bf">로그아웃</a>
+						<a href="<%=path%>/loginOut.spoid">로그아웃</a>
 						<a href="<%=path%>/memberupdate.spoid">계정관리</a>
 					</c:otherwise>
 				</c:choose>
