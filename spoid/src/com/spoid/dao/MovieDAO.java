@@ -37,4 +37,23 @@ public class MovieDAO {
 		
 		return list;
 	}
+	public List<DetailDTO> listAllMv() {
+		// TODO Auto-generated method stub
+		List<DetailDTO> list = new ArrayList<DetailDTO>();
+		
+		try {
+			System.out.println("2018 모든 영화 조회!!");
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectList("movieAll");
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+	
+		return list;
+		
+	}
 }

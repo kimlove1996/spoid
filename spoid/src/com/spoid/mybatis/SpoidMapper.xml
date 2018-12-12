@@ -238,4 +238,8 @@
 			                    from (select * from dailybox where rownum <= 10 order by targetdt desc)temp)	
 		]]>		
 	</select>
+	<select id="movieAll" resultType="com.spoid.dto.DetailDTO">
+		select * from detailmovie
+	</select>
+	
  </mapper>
