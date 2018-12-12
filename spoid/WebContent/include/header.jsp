@@ -225,22 +225,6 @@
 		margin: 14px 0;
 	}
 	
-	#log_section > a:nth-child(3){
-		font-size: 13px;
-	    padding: 5px;
-	    box-sizing: border-box;
-	    border-radius: 3px;
-	    color: #465052;
-	    font-weight: bold;
-	}
-	#log_section > a:nth-child(4){
-	    font-size: 13px;
-	    padding: 5px;
-	    box-sizing: border-box;
-	    border-radius: 3px;
-	    color: #465052;
-	    font-weight: bold;
-	}
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
