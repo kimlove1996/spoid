@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.spoid.dto.DetailDTO;
+import com.spoid.dto.PeopleDTO;
 import com.spoid.mybatis.SqlMapConfig;
 
 public class MovieDAO {
@@ -55,5 +56,59 @@ public class MovieDAO {
 	
 		return list;
 		
+	}
+	public List<DetailDTO> detailMovie(String movieCd) {
+		// TODO Auto-generated method stub
+		List<DetailDTO> list = new ArrayList<DetailDTO>();
+		
+		try {
+			System.out.println("상세영화 페이지 조회!!");
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectOne("detailMovie");
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+	
+		return list;
+	}
+	public List<PeopleDTO> peopleList(String movieCd) {
+		// TODO Auto-generated method stub
+		List<PeopleDTO> list = new ArrayList<PeopleDTO>();
+		
+		try {
+			System.out.println("감독 및 배우 조회!!");
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectOne("peopleList");
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+	
+		return list;
+	}
+	public List<DetailDTO> nowMovie() {
+		// TODO Auto-generated method stub
+		List<DetailDTO> list = new ArrayList<DetailDTO>();
+		
+		try {
+			System.out.println("현재 상영작 조회!!");
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectOne("nowMVList");
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+	
+		return list;
 	}
 }

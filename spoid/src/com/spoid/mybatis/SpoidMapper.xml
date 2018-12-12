@@ -241,5 +241,28 @@
 	<select id="movieAll" resultType="com.spoid.dto.DetailDTO">
 		select * from detailmovie
 	</select>
+	<select id="detailMovie" parameterType="String" resultType="com.spoid.dto.DetailDTO">
+		select * from detailmovie where movieCd=#{movieCd}
+	</select>
+	<select id="peopleList" parameterType="String" resultType="com.spoid.dto.PeopleDTO">
+		select * from moviepeople where movieCd=#{movieCd}
+	</select>
+	<select id="nreviewList" parameterType="String" resultType="com.spoid.dto.ReviewDTO">
+		select * from naverreview where movieCd=#{movieCd}
+	</select>
+	<select id="dreviewList" parameterType="String" resultType="com.spoid.dto.ReviewDTO">
+		select * from daumreview where movieCd=#{movieCd}
+	</select>
+	<select id="nowMVList" resultType="com.spoid.dto.DetailDTO">
+		<![CDATA[
+			SELECT *
+			FROM detailmovie
+			WHERE (movieCd) IN (select movieCd
+			                    from (select * from dailybox where rownum <= 10 order by regdate desc)temp)	
+		]]>		
+	</select>
+	<select id="searchMV" resultType="">
 	
+	
+	</select>
  </mapper>

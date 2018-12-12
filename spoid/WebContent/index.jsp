@@ -281,7 +281,7 @@
 											<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
 										</div>
 									</div>
-									<a href="#" class="link_detail">자세히 보기</a>
+									<a href="detailmovie.spoid?movieCd=${idxDto.movieCd}" class="link_detail">자세히 보기</a>
 								
 								</div>
 							  </div>
@@ -311,7 +311,7 @@
 												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
 											</div>
 										</div>
-										<a href="#" class="link_detail">자세히 보기</a>
+										<a href="detailmovie.spoid?movieCd=${idxDto.movieCd}" class="link_detail">자세히 보기</a>
 									
 									</div>
 								</div>
@@ -342,7 +342,7 @@
 												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
 											</div>
 										</div>
-										<a href="#" class="link_detail">자세히 보기</a>
+										<a href="detailmovie.spoid?movieCd=${idxDto.movieCd}" class="link_detail">자세히 보기</a>
 									
 									</div>
 								</div>

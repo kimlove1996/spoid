@@ -29,6 +29,7 @@ import com.spoid.action.CommentListAction;
 import com.spoid.action.CommentUpdateAction;
 import com.spoid.action.ConstractAction;
 import com.spoid.action.DeleteAction;
+import com.spoid.action.DetailMovieAction;
 import com.spoid.action.GoodCntUpdateAction;
 import com.spoid.action.IdCheckAction;
 import com.spoid.action.IdPwFindAction;
@@ -189,6 +190,9 @@ public class SpoidController extends HttpServlet
 	  }else if(command.equals("/allmovie.spoid")) { // 모든 영화 페이지 이동
 		  action = new AllMovieAction();
 		  forward = action.excute(request, response);		 		
+	  }else if(command.equals("/detailmovie.spoid")) {
+		  action = new DetailMovieAction();
+		  forward = action.excute(request,response);
 	  }
 
 
