@@ -323,7 +323,7 @@
 					<div class = "inner_topmv">
 						<c:forEach items="${indexList}" var="idxDto" varStatus="status">						
 							<c:if test="${status.count==3||status.count==7||status.count==10}">
-								<div class="col2" data-num="${status.count}">
+								<div class="col1" data-num="${status.count}">
 									<img src="${idxDto.poster}">
 									<div class="overlay">
 										<span>${idxDto.kor_tit}</span>
