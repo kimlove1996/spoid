@@ -146,6 +146,7 @@
 		background-color: white;
 		box-sizing: border-box;
 		overflow: hidden;
+		display: none;
 	}
 	
 	
@@ -196,6 +197,7 @@
 $(document).ready(function(){
 			$("#produce_box01").addClass("changeCol2");
 			$("#introduce_ment01").css("display","block");
+			$("#slime_car01 > img").css("display","block");
 			
 	$(window).on("scroll", function() {
 	x = 0;
@@ -203,13 +205,16 @@ $(document).ready(function(){
 		if($(window).scrollTop() >= 150){
 			$("#produce_box02").addClass("changeCol2");
 			$("#introduce_ment02").css("display","block");
+			$("#slime_car02 > img").css("display","block");
 		}else {
 			$("#produce_box02").removeClass("changeCol2");
 			$("#introduce_ment02").css("display","none");
+			$("#slime_car02 > img").css("display","none");
 		}
 		if($(window).scrollTop() >= 531){
 			$("#produce_box03").addClass("changeCol2");
 			$("#introduce_ment03").css("display","block");
+			$("#slime_car03 > img").css("display","block");
 		}else {
 			$("#produce_box03").removeClass("changeCol2");
 			$("#introduce_ment03").css("display","none");
@@ -217,13 +222,16 @@ $(document).ready(function(){
 		if($(window).scrollTop() >= 989){
 			$("#produce_box04").addClass("changeCol2");
 			$("#introduce_ment04").css("display","block");
+			$("#slime_car04 > img").css("display","block");
 		}else {
 			$("#produce_box04").removeClass("changeCol2");
 			$("#introduce_ment04").css("display","none");
+			$("#slime_car04 > img").css("display","none");
 		}
 		if($(window).scrollTop() >= 1409){
 			$("#produce_box05").addClass("changeCol2");
 			$("#introduce_ment05").css("display","block");
+			$("#slime_car05 > img").css("display","block");
 		}else {
 			$("#produce_box05").removeClass("changeCol2");
 			$("#introduce_ment05").css("display","none");
