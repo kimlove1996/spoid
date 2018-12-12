@@ -261,8 +261,7 @@
 			                    from (select * from dailybox where rownum <= 10 order by regdate desc)temp)	
 		]]>		
 	</select>
-	<select id="searchMV" resultType="">
-	
-	
+	<select id="searchMV" parameterType="String" resultType="">
+		select  d.*,m.*  from detailmovie d , moviepeople m where d.kor_tit like '%'||#{keyword}||'% or pname like '%'||#{keyword}||'%;	
 	</select>
  </mapper>
