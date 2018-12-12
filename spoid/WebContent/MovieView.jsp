@@ -184,8 +184,16 @@ html {
 
 
 
-
-
+#google_trends {
+	height: 366px;
+    width: 600px;
+    display: inline-block;
+    margin-left: 18%;
+}
+#google_upload {
+    width: 600px;
+    display: inline-block;
+}
 
 </style>
 <script type="text/javascript">
@@ -271,7 +279,8 @@ $(document).ready(function(){
 </article>
 <article id="mvmid_wrap">
 	<h2>차트 그래프</h2><hr style="border: 1px solid #cccccc;">
-	
+	<div id="google_trends"><script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"보헤미안","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=KR&q=%2Fg%2F11c5m5019b&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script></div> 
+	<div id="google_upload"><script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"보헤미안","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=KR&q=%2Fg%2F11cp7f65yr&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script></div>
 </article>
 <article id="mvbot_wrap">
 <h2>댓글 분석</h2><hr style="border: 1px solid #dedef1;">
