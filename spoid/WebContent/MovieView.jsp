@@ -39,6 +39,7 @@ html {
 	float: left;
     padding: 15px;
     padding-top: 10px;
+    cursor: pointer;
    
 }
 #movie_table > ul > li > a {
