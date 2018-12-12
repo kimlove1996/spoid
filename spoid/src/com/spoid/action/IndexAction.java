@@ -27,6 +27,7 @@ public class IndexAction implements Action
 		  
 		  
 		  ActionForward forward = new ActionForward();
+		  request.setAttribute("indexList", list);
 		  forward.setPath(url);
 		  forward.setRedirect(false);
 		  return forward;
