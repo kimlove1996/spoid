@@ -9,7 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-   <servlet>
+  <servlet>
     <servlet-name>SpoidController</servlet-name>
     <servlet-class>com.spoid.controller.SpoidController</servlet-class>
   </servlet>

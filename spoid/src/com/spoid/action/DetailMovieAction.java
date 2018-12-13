@@ -23,10 +23,12 @@ public class DetailMovieAction implements Action{
 		
 		System.out.println("조회할 영화코드 : "+movieCd);
 		MovieDAO mDao = MovieDAO.getInstance();
-		List<DetailDTO> dlist = mDao.detailMovie(movieCd);
+		DetailDTO dDto = mDao.detailMovie(movieCd);
 		List<PeopleDTO> plist = mDao.peopleList(movieCd);
 		
-		request.setAttribute("detail", dlist);
+		System.out.println(dDto.getKor_tit() + "의 출연자 "+plist.size()+"명 조회 ");
+		
+		request.setAttribute("detail", dDto);
 		request.setAttribute("people", plist);
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);

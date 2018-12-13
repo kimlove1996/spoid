@@ -171,6 +171,9 @@
 	.col2:hover .overlay{opacity: 1;}
 </style>
 <script type="text/javascript">
+$(document).on("click",".col1",function(){
+	location.href= "detailmovie.spoid?movieCd="+($(this).attr("data-num"));
+});
 
 </script>
 
@@ -262,7 +265,7 @@
 				<div class="inner_topmv">
 					<c:forEach items="${indexList}" var="idxDto" varStatus="status">
 						<c:if test="${status.count==1||status.count==5||status.count==8}">
-							<div class="col1" data-num="${status.count}">
+							<div class="col1" data-num="${idxDto.movieCd}">
 								<img src="${idxDto.poster}">
 								<div class="overlay">
 									<span>${idxDto.kor_tit}</span>
@@ -292,7 +295,7 @@
 					<div class = "inner_topmv">
 						<c:forEach items="${indexList}" var="idxDto" varStatus="status">						
 							<c:if test="${status.count==2||status.count==4||status.count==6||status.count==9}">
-								<div class="col2" data-num="${status.count}">
+								<div class="col2" data-num="${idxDto.movieCd}">
 									<img src="${idxDto.poster}">
 									<div class="overlay">
 										<span>${idxDto.kor_tit}</span>
@@ -323,7 +326,7 @@
 					<div class = "inner_topmv">
 						<c:forEach items="${indexList}" var="idxDto" varStatus="status">						
 							<c:if test="${status.count==3||status.count==7||status.count==10}">
-								<div class="col1" data-num="${status.count}">
+								<div class="col1" data-num="${idxDto.movieCd}">
 									<img src="${idxDto.poster}">
 									<div class="overlay">
 										<span>${idxDto.kor_tit}</span>

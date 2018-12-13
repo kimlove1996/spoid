@@ -25,12 +25,13 @@ public class IndexAction implements Action
 		  List<DetailDTO> list = mDao.indexMovie();
 		  
 		  ReviewDAO rDao = ReviewDAO.getInstance();
-		  rDao.scoreAvg();
+		  double nAvg = rDao.scoreAvg("naver");
+		  double dAvg = rDao.scoreAvg("daum");
 		  
 		  
 		  
 		  System.out.println("====>index 페이지  조회 결과 : "+list.size());
-		  
+		  System.out.println("");
 		  
 		  ActionForward forward = new ActionForward();
 		  request.setAttribute("indexList", list);

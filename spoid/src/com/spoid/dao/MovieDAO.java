@@ -57,14 +57,13 @@ public class MovieDAO {
 		return list;
 		
 	}
-	public List<DetailDTO> detailMovie(String movieCd) {
+	public DetailDTO detailMovie(String movieCd) {
 		// TODO Auto-generated method stub
-		List<DetailDTO> list = new ArrayList<DetailDTO>();
-		
+		DetailDTO dDto = null;
 		try {
 			System.out.println("상세영화 페이지 조회!!");
 			sqlSession = sqlSessionFactory.openSession();
-			list = sqlSession.selectOne("detailMovie");
+			dDto = sqlSession.selectOne("detailMovie",movieCd);
 					
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -73,16 +72,16 @@ public class MovieDAO {
 			sqlSession.close();
 		}
 	
-		return list;
+		return dDto;
 	}
 	public List<PeopleDTO> peopleList(String movieCd) {
 		// TODO Auto-generated method stub
 		List<PeopleDTO> list = new ArrayList<PeopleDTO>();
-		
+	
 		try {
 			System.out.println("감독 및 배우 조회!!");
 			sqlSession = sqlSessionFactory.openSession();
-			list = sqlSession.selectOne("peopleList");
+			list = sqlSession.selectList("peopleList",movieCd);
 					
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -100,7 +99,7 @@ public class MovieDAO {
 		try {
 			System.out.println("현재 상영작 조회!!");
 			sqlSession = sqlSessionFactory.openSession();
-			list = sqlSession.selectOne("nowMVList");
+			list = sqlSession.selectList("nowMVList");
 					
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -109,6 +108,17 @@ public class MovieDAO {
 			sqlSession.close();
 		}
 	
+		return list;
+	}
+	public List<DetailDTO> boxOfficeList() {
+		// TODO Auto-generated method stub
+		List<DetailDTO> list = new ArrayList<DetailDTO>();
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 		return list;
 	}
 }
