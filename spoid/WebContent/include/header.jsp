@@ -84,9 +84,12 @@
 
 	}
 	#menu_section{
-		width : 70%;
-		margin: 5% auto;
-		display: inline-block;
+	    /* width: 73%; */
+	    width:1344px;
+	    margin: 5% auto;
+	    display: inline-block;
+	    height: 680px;
+	    overflow: hidden;
 	}
 	#menu_section > div{
 
@@ -104,10 +107,21 @@
 		background-color: #f1f1f1;
 		height: 610px;
 	}
+	
+	#log_section p:nth-child(2){
+		height: 21px;
+	    overflow: hidden;
+	}
+	#log_section p:nth-child(3){
+		height: 20px;
+	    box-sizing: border-box;
+	    overflow: hidden;
+	}
+
 
 	#menu_ul > li{
 		display: inline-block;
-		width : 32%;
+		width : 300px;
 		height : 300px;
 		background-color: #f1f1f1;
 		margin-bottom: 10px;
@@ -116,9 +130,10 @@
 		margin-left: 10px;
 	}
 	.menu_btn{
-		display: inline-block;
-		width : 100%;
-		height: 100%;
+	    display: inline-block;
+	    width: 100%;
+	    height: 21px;
+	    overflow: hidden;
 	}
 	.search-button{
 		cursor:pointer;  	
@@ -171,7 +186,7 @@
 		line-height: 40px;
 	}
 	.menu_icon{
-		width : 80%;
+		width : 139px;
 		height: 80%;
 	}
 	.menu_li_div{
@@ -200,6 +215,11 @@
 		color:black;
 		font-weight: bold;
 	}
+	
+	#mlog_wrap{
+		height: 21px;
+	    overflow: hidden;
+	}
 	.changeCol{
 		background : linear-gradient(to bottom,#a4a4a4, #dedede38 62%, #ffffff00 100%);
 	}
@@ -225,6 +245,12 @@
 		margin: 14px 0;
 	}
 	
+	
+	
+	/* add class */
+	.add-section{
+   		background-color: black;
+    }
 </style>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -257,8 +283,11 @@
 			$("#menu_modal").width("100%");
 			$("#menu_close").css("display","block");
 			$("#index_box").css("overflow","hidden");
+			$("#menu_section").css("width","1344px");
+			
 		
 		}else{
+			$("#menu_section").css("width","73%");
 			$("#menu_modal").width("0");
 			$("#menu_open").css("display","block");
 			$("#index_box").css("overflow","none");
@@ -325,8 +354,10 @@
 					<c:when test="${empty sessionScope.loginUser}">
 						<div id="login_circle" class="img_log" style="background-image: url(<%=path%>/img/menu/login_no.svg);"></div>
 						<p>로그인을 하지 않으셨어요~~</p>
-						<a href="<%=path%>/login.spoid" class="mlog_btn">로그인</a>
-						<a href="<%=path%>/memberpage.spoid" class="mlog_btn" >회원가입</a>						
+						<div id="mlog_wrap">
+							<a href="<%=path%>/login.spoid" class="mlog_btn">로그인</a>
+							<a href="<%=path%>/memberpage.spoid" class="mlog_btn" >회원가입</a>			
+						</div>			
 					</c:when>
 					<c:otherwise>
 						<div id="login_circle" class="img_log" style="background-image: url(<%=path%>/img/menu/login_yes.svg);">	</div>
@@ -334,8 +365,10 @@
 						<div id="welcom_login">
 							<strong>${sessionScope.loginUser.nick}(${sessionScope.loginUser.id})</strong><span>님 환영합니다</span>
 						</div>
-						<a href="<%=path%>/loginOut.spoid">로그아웃</a>
-						<a href="<%=path%>/memberupdate.spoid">계정관리</a>
+						<div id="mlog_wrap">
+							<a href="<%=path%>/loginOut.spoid">로그아웃</a>
+							<a href="<%=path%>/memberupdate.spoid">계정관리</a>
+						</div>
 					</c:otherwise>
 				</c:choose>
 								
