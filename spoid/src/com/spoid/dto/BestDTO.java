@@ -1,6 +1,6 @@
 package com.spoid.dto;
 
-public class bestDTO {
+public class BestDTO {
 	private String movieCd;
 	private String rcode;
 	private String score;
@@ -9,11 +9,11 @@ public class bestDTO {
 	private String goodcnt;
 	private String regdate;
 	
-	public bestDTO() {
+	public BestDTO() {
 		
 	}
 	
-	public bestDTO(String movieCd, String rcode, String score, String content, String writer,
+	public BestDTO(String movieCd, String rcode, String score, String content, String writer,
 			String goodcnt, String regdate) {
 		super();
 		this.movieCd = movieCd;
