@@ -184,7 +184,7 @@ html {
 
 
 
-#google_trends {
+#google_trend {
 	height: 366px;
     width: 600px;
     display: inline-block;
@@ -254,22 +254,22 @@ $(document).ready(function(){
 	<table id="info_table">
 		<tbody>
 			<tr>
-				<td><img src="img/poster/movie_image (10).jpg" id="poster"></td>
+				<td><img src="${dDto.poster}" id="poster"></td>
 				<th>
-					<p>보헤미안 렙소디</p>
-					<p>드라마 | 12세 관람가 | 2018.10.31 개봉 </p>
+					<fmt:parseDate var="open" value="${dDto.openDt}" pattern="yyyy-MM-dd HH:mm:ss" />
+					<fmt:formatDate var="openQuery" value="${open}" pattern="yyyy-MM-dd"/>
+					<fmt:formatDate var="openDt" value="${open}" pattern="yyyy.MM.dd"/>
+					<fmt:parseDate var="first" value="${dDto.firstOpen}" pattern="yyyy-MM-dd HH:mm:ss" />
+					<fmt:formatDate var="firstDt" value="${first}" pattern="yyyy.MM.dd"/>
+					<strong>${dDto.kor_tit}</strong>
+					<p>${dDto.eng_tit}</p>
+					<p>${dDto.genre} | ${dDto.grade} | ${openDt} 개봉
+						<c:if test="${dDto.firstOpen} != ${dDto.openDt}">
+							| ${firstDt} 재개봉
+						</c:if>
+					</p>
 					<p>줄거리</p>
-					<p>“나는 스타가 되지 않을 것이다, 전설이 될 것이다”<br>
-						공항에서 수하물 노동자로 일하며 음악의 꿈을 키우던 이민자 출신의 아웃사이더 ‘파록버사라’ <br>
-						 보컬을 구하던 로컬 밴드에 들어가게 되면서 ‘프레디 머큐리’라는 이름으로 밴드 ‘퀸’을 이끌게 된다. <br>
-						 시대를 앞서가는 독창적인 음악과 화려한 퍼포먼스로 관중들을 사로잡으며 성장하던 ‘퀸’은 <br>
-						 라디오와 방송에서 외면을 받을 것이라는 음반사의 반대에도 불구하고 <br>
-						 무려 6분 동안 이어지는 실험적인 곡 ‘보헤미안 랩소디’로 대성공을 거두며 월드스타 반열에 오른다. <br>
-						 그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 <br>
-						 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데… <br>
-						 세상에서 소외된 아웃사이더에서 전설의 록밴드 ‘퀸’이 되기까지, <br>
-						 우리가 몰랐던 그들의 진짜 이야기가 시작된다!</p>
-					<p></p>
+					<p>${dDto.story}</p>
 				</th>
 			</tr>
 		</tbody>
@@ -279,8 +279,10 @@ $(document).ready(function(){
 </article>
 <article id="mvmid_wrap">
 	<h2>차트 그래프</h2><hr style="border: 1px solid #cccccc;">
-	<div id="google_trends"><script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"보헤미안","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=KR&q=%2Fg%2F11c5m5019b&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script></div> 
-	<div id="google_upload"><script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"보헤미안","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=KR&q=%2Fg%2F11cp7f65yr&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script></div>
+	<div id="google_trend">
+		<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC04/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"국가부도의 날","geo":"US","time":"2018-11-13 2018-12-13"}],"category":0,"property":""}, {"exploreQuery":"date=${openDt}2018-12-13&geo=US&q=%EA%B5%AD%EA%B0%80%EB%B6%80%EB%8F%84%EC%9D%98%20%EB%82%A0","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
+	</div>
+	<div id="google_upload"><script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"${dDto.kor_tit}","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=KR&q=%2Fg%2F11cp7f65yr&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script></div>
 </article>
 <article id="mvbot_wrap">
 <h2>댓글 분석</h2><hr style="border: 1px solid #dedef1;">

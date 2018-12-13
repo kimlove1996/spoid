@@ -26,10 +26,11 @@ public class DetailMovieAction implements Action{
 		DetailDTO dDto = mDao.detailMovie(movieCd);
 		List<PeopleDTO> plist = mDao.peopleList(movieCd);
 		
+		
 		System.out.println(dDto.getKor_tit() + "의 출연자 "+plist.size()+"명 조회 ");
 		
-		request.setAttribute("detail", dDto);
-		request.setAttribute("people", plist);
+		request.setAttribute("dDto", dDto);
+		request.setAttribute("pList", plist);
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);
 		forward.setRedirect(false);
