@@ -307,7 +307,7 @@ $(document).on("click",".col1",function(){
 										<div class="overlay_score">
 											<div class="oscore_div">
 												<span>네이버</span>
-												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
+												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon"></span>
 											</div>
 											<div class="oscore_div">
 												<span>다음</span>
