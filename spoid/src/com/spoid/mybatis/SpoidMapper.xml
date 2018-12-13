@@ -257,11 +257,15 @@
 		<![CDATA[
 			SELECT *
 			FROM detailmovie
-			WHERE (movieCd) IN (select movieCd
-			                    from (select * from dailybox where rownum <= 10 order by regdate desc)temp)	
+			WHERE (moviecd) IN (select moviecd from releasemv
+                                 where regdate =  (select max(regdate) from releasemv))                          
+
 		]]>		
 	</select>
-	<select id="searchMV" parameterType="String" resultType="">
-		select  d.*,m.*  from detailmovie d , moviepeople m where d.kor_tit like '%'||#{keyword}||'% or pname like '%'||#{keyword}||'%;	
+	<select id="searchMV" parameterType="String" resultType="com.spoid.dto.SearchDTO">
+		select  d.*,m.*  from detailmovie d , moviepeople m where d.kor_tit like '%'||#{keyword}||'%'
+																 or d.eng_tit like '%'||#{keyword}||'%'
+																 or m.pname like '%'||#{keyword}||'%'
+																 or m.eng_name like '%'||#{keyword}||'%'	
 	</select>
  </mapper>

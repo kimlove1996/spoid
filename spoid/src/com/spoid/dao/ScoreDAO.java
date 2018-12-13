@@ -11,7 +11,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
-public class AvgScore {
+public class ScoreDAO {
 	
 	public static void main(String[] args) {
 		MongoClient mongoClient = new MongoClient("localhost",27017);
