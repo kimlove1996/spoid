@@ -25,21 +25,23 @@ public class IndexAction implements Action
 		  MovieDAO mDao = MovieDAO.getInstance();
 		  List<DetailDTO> list = mDao.indexMovie();
 		  
-	/*	  ReviewDAO rDao = ReviewDAO.getInstance();
-		  double nAvg[] = null;
-		  double dAvg[] = null;
+		  ReviewDAO rDao = ReviewDAO.getInstance();
+		  double nAvg[] = new double[list.size()];
+		  double dAvg[] = new double[list.size()];
 		  for (int i = 0; i < list.size(); i++) {
+			  
 			   nAvg[i] = rDao.scoreAvg("naver",list.get(i).getMovieCd());
 			   dAvg[i] = rDao.scoreAvg("daum",list.get(i).getMovieCd());
+			   System.out.println(nAvg[i]);
 		}
-		  */
+		  
 		  System.out.println("====>index 페이지  조회 결과 : "+list.size());
 		  System.out.println("");
 		  
 		  ActionForward forward = new ActionForward();
 		  request.setAttribute("indexList", list);
-		 /* request.setAttribute("nAvg", nAvg);
-		  request.setAttribute("dAvg", dAvg);*/
+		  request.setAttribute("nAvg", nAvg);
+		  request.setAttribute("dAvg", dAvg);
 		  
 		  forward.setPath(url);
 		  forward.setRedirect(false);
