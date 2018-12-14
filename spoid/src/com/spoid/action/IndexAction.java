@@ -37,7 +37,9 @@ public class IndexAction implements Action
 			   nAvg[i] = rDao.scoreAvg("naver",list.get(i).getMovieCd());
 			   dAvg[i] = rDao.scoreAvg("daum",list.get(i).getMovieCd());
 			   
-			   if(nAvg[i]>0 && nAvg[i]<2) {
+			   if(nAvg[i]<=0) {
+				   nSvg[i]=1;
+			   }else if(nAvg[i]>0 && nAvg[i]<2) {
 				   System.out.println(nAvg[i]);
 				   nSvg[i] = 1;
 				   System.out.println("스포이드 >>>"+nSvg[i]);
@@ -59,7 +61,9 @@ public class IndexAction implements Action
 				   System.out.println("스포이드 >>>"+nSvg[i]);
 			   }
 			   
-			   if(dAvg[i]>0 && dAvg[i]<2) {
+			   if(dAvg[i]<=0) {
+				   dSvg[i]=1;
+			   } else if(dAvg[i]>0 && dAvg[i]<2) {
 				   System.out.println(dAvg[i]);
 				   dSvg[i] = 1;
 				   System.out.println("스포이드 >>>"+dSvg[i]);

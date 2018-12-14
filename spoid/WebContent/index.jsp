@@ -32,7 +32,7 @@
 	    margin-bottom: 30px;
 	    padding: 4px 0;
 	    background-color: #a5ddec;
-	    color: #464646;
+	    color: white;
 	    border-radius: 15px;
 	}
 	.score_view table{
