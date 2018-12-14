@@ -97,7 +97,33 @@
 	    font-size: 80%;
 	}
 	
+	.pagenation{
+		text-align: center;
+		clear: both;
+		height: 35px;
+		margin-top: 26px;
+	}
 	
+	.pagenation a{
+	    padding: 4px 8px;
+	    border: 3px solid #d4d4d4;
+	    background-color: #ffffff;
+	    border-radius: 6px;
+	    color: #111111;
+	    border-top: 0.5px solid #d5ced8;
+	    border-left: none;
+	}
+	
+	.pagenation .active{
+	    font-weight: bold;
+	    padding: 4px 8px;
+	    border: 3px solid #9b9b9b;
+	    background-color: #ffffff;
+	    border-radius: 6px;
+	    color: #111111;
+	    border-top: 0.5px solid #9b9b9b;
+	    border-left: none;
+	}	
 	
 </style>
 
@@ -150,23 +176,7 @@ $(document).on("click",".nowreleased_card_wrap",function(){
 			
 
 	</div>
-	<!-- 페이지넘기기 -->
-	<div class="pagenation">
-		<c:if test="${pageMaker.prev}">  
-			<a href="?page=${pageMaker.startPage - 1}">&laquo;</a>
-			<a href="boardList.spoid?page=1">1</a>
-			<a href="#">...</a>		
-		</c:if>																
-		<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-			<a href="?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" 
-			<c:out value="${pageMaker.criMDto.page == idx? 'class=active':''}"/>>${idx}</a> 
-		</c:forEach>
-		<c:if test="${pageMaker.next}">
-			<a href="#">...</a>
-			<a href="?page=${pageMaker.finalPage}">${pageMaker.finalPage}</a>
-			<a href="?page=${pageMaker.endPage + 1}">&raquo;</a>
-		</c:if>															
-	</div>
+
 	
 </div>
 
