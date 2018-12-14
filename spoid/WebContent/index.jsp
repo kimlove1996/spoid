@@ -25,11 +25,22 @@
 		height : 100%;
 		padding: 10% 0 0 4%;
 	}
+	
+	.score_view > p{
+		font-weight: bold;
+	    text-align: center;
+	    margin-bottom: 30px;
+	    padding: 4px 0;
+	    background-color: #a5ddec;
+	    color: #464646;
+	}
 	.score_view table{
-		border-collapse: collapse;
-		text-align: center;
-		text-overflow: ellipsis;
-		width: 100%;
+	    border-collapse: collapse;
+	    text-align: center;
+	    text-overflow: ellipsis;
+	    width: 100%;
+	    transform: rotatey(90deg);
+	    transition: all 1s;
 	}
 	
 	.score_view table th,.score_view table td{
@@ -37,8 +48,18 @@
     	padding : 0 10px;
 
   	}
+  	
+  	/* 애니메이션 효과 만들기 */
+	@Keyframes backgroundColorAnimation{
+		0% {background-color: #F8F6F8;}	/* 애니메이션 시작부분 : 0% = from 라고도 쓸 수잇음 */
+		30% {background-color: white;}	/*  */
+		100% {background-color: #F8F6F8;}	/* 애니메이션 마지막부분 : 100% = to 라고도 쓸 수잇음 */
+	}
+	
 	.score_view table tr:nth-child(odd){
-		background-color: #F8F6F8;
+		animation-name: backgroundColorAnimation;	/* 설정한 애니메이션 이름 */
+		animation-duration : 2s;	/* 1회 애니메이션 동작시간 : 5초 */
+		animation-iteration-count: infinite;	/* 반복 횟수: 무한반복 */
 	}
 	.score_view table th{
 		background-color: white;
@@ -171,6 +192,10 @@
 	.col2:hover .overlay{opacity: 1;}
 </style>
 <script type="text/javascript">
+$(document).ready(function(){
+	$(".score_view > table").css("transform","rotatey(0deg)")
+});
+
 $(document).on("click",".col1",function(){
 	location.href= "detailmovie.spoid?movieCd="+($(this).attr("data-num"));
 });
@@ -187,8 +212,8 @@ $(document).on("click",".col1",function(){
 					<tr>
 						<th>순위</th>
 						<th>이름</th>
-						<th>네이버</th>
-						<th>다음</th>
+						<th style="color:green;">NAVER</th>
+						<th style="color:#568ef7;">DAUM</th>
 					</tr>
 					<tr>
 						<td>1</td>
