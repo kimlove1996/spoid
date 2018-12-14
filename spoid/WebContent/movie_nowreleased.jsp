@@ -139,7 +139,7 @@ $(document).on("click",".nowreleased_card_wrap",function(){
 										| ${firstDt} 재개봉
 									</c:if>								
 								</p>
-								<p>109분 | 한국 15세 | 관람가</p>
+								<p> ${nList.grade} | 관람가</p>
 							</div>
 				
 						</div>			

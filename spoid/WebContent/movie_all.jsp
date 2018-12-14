@@ -6,14 +6,14 @@
 <head>
 <title>Insert title here</title>
 <style type="text/css">
-	#boxoffice_all{
+	#movieall_all{
 	   /*  margin: 195px auto 120px auto; */
 	    width: 85%;
 	    padding: 142px;
 	    background-color: #f0f0f0;
 	}
 	
-	#boxoffice_list{
+	#movieall_list{
 	    padding: 34px;
 	    border: 1px dashed #c5c5c5;
 	    box-shadow: #bfbfbf 7px 6px 5px -1px;
@@ -39,12 +39,10 @@
 		transition: all 1s;
 		width: 0px;
 	}
-	#boxoffice_line{
-		width: 1547px;
-	}
+
 	
 	
-	#boxoffice_card{
+	.movieall_card{
 		width: 256px;
 		height: 373px;
 		box-shadow: grey 5px 4px 6px 0px;
@@ -55,14 +53,14 @@
 		vertical-align: middle;
 	}
 	
-	#boxoffice_card_wrap:hover #boxoffice_card{background-color: #ff510e;}
-	#boxoffice_card_wrap:hover img{padding: 9px;}
-	#boxoffice_card_wrap:hover #boxoffice_card_label{display: block;}
+	.movieall_card_wrap:hover .movieall_card{background-color: #ff510e;}
+	.movieall_card_wrap:hover img{padding: 9px;}
+	.movieall_card_wrap:hover .movieall_card_label{display: block;}
 	
 	
 	
-	
-	#boxoffice_card > img{
+	.movieall_card_wrap{display:inline-block;}
+	.movieall_card > img{
 	    width: 256px;
 	    height: 373px;
 		box-sizing: border-box;
@@ -70,7 +68,7 @@
 	}
 	
 	
-	#boxoffice_card_label{
+	.movieall_card_label{
 	    height: 120px;
 	    width: 93%;
 	    position: relative;
@@ -84,7 +82,7 @@
 	    text-align: center;
 	}
 	
-	#boxoffice_card_label > p{
+	.movieall_card_label > p{
 	    margin: 0 0;
 	    font-size: 12px;
 	    text-align: center;
@@ -92,7 +90,7 @@
 	    color: #353535;
 	    font-weight: bold;
 	}
-	#boxoffice_card_label > strong{
+	.movieall_card_label > strong{
 		color: #000000;
 	    font-size: 80%;
 	}
@@ -151,246 +149,49 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".boxoffice_card_all").css("transform","rotateY(360deg)");
+	$(".movieall_card_all").css("transform","rotateY(360deg)");
 	$("#movie_text_top > hr").css("width","100%");
 });
 </script>
 </head>
-<body id="boxoffice">
-<div id="boxoffice_all">
+<body id="movieall">
+<div id="movieall_all">
 
 
-	<div id="boxoffice_list">
+	<div id="movieall_list">
 			<div id="movie_text_top">
 				<span>전체 영화</span>
 				<hr>
 			</div>
-		<div id="boxoffice_line">
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (1).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (2).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (3).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (4).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (5).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (6).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (7).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (8).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (9).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (10).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
+		<ul>
+	
+			<c:forEach items="${movieAll}" var="mList">
+				<fmt:parseDate var="open" value="${mList.openDt}" pattern="yyyy-MM-dd HH:mm:ss" />
+				<fmt:formatDate var="openDt" value="${open}" pattern="yyyy.MM.dd"/>
+				<fmt:parseDate var="first" value="${mList.firstOpen}" pattern="yyyy-MM-dd HH:mm:ss" />
+				<fmt:formatDate var="firstDt" value="${first}" pattern="yyyy.MM.dd"/>	
+				<li class="movieall_card_wrap" data-mvCd="${mList.movieCd}">
+						<div class="movieall_card_all movieall_card">
+							<img src="${mList.poster}">
+							<div class="movieall_card_label">
+								<strong>${mList.kor_tit}</strong>
+								<hr>
+								<p>${mList.genre} | ${openDt}개봉
+									<c:if test="${mList.firstOpen} != ${mList.openDt}">
+										| ${firstDt} 재개봉
+									</c:if>								
+								</p>
+								<p> ${mList.grade} | 관람가</p>
+							</div>
+				
+						</div>			
+				</li>			
 			
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (1).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (2).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (3).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (4).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (5).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (6).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (7).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (8).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (9).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (10).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			 
+			</c:forEach>
+		</ul>			 
 			 
 			
-		</div>
+	  	</div>
 		
 		
 		
@@ -415,10 +216,10 @@ $(document).ready(function(){
 		
 		
 		
-	</div>
-	
-	
 </div>
+	
+	
+
 
 </body>
 </html>

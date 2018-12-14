@@ -140,7 +140,7 @@ $(document).on("click",".boxoffice_card_wrap",function(){
 										| ${firstDt} 재개봉
 									</c:if>								
 								</p>
-								<p>109분 | 한국 15세 | 관람가</p>
+								<p>${bList.grade } | 관람가</p>
 							</div>
 				
 						</div>			
