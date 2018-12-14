@@ -33,6 +33,7 @@
 	    padding: 4px 0;
 	    background-color: #a5ddec;
 	    color: #464646;
+	    border-radius: 15px;
 	}
 	.score_view table{
 	    border-collapse: collapse;
