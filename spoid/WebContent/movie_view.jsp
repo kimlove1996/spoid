@@ -303,7 +303,7 @@ $(document).ready(function(){
 </article>
 
 <article id="mvb_wrap">
-	<h2 style="margin: 0;">출연 배우들</h2><hr style="border: 1px solid #ccccc;">
+	<h2 style="margin: 0;height: 40px;line-height: 2;">출연 배우</h2><hr style="border: 1px solid #ccccc;">
 	<div id="">
 		
 	</div>
