@@ -190,6 +190,27 @@
 	.oscore_div > span {
 		display: block;
 		text-align: center;
+		font-size: 14px;
+    	font-weight: bold;
+	}
+	.oscore_div:nth-child(1) > span:nth-child(1) {
+	    color: green;
+	}
+	.oscore_div:nth-child(2) > span:nth-child(1) {
+	    color: #568ef7;
+	}
+	.oscore_div > img {
+		border: 1px solid black;
+		border-radius: 100%;
+		display: block;
+		text-align: center;
+		margin-left: 38%;
+	}
+	.oscore_div:nth-child(1) > img {
+	    border-color: green;
+	}
+	.oscore_div:nth-child(2) > img {
+	    border-color: #568ef7;
 	}
 	.link_detail{color:#30a1c0;}
 	.col1:hover .overlay{opacity: 1;}
@@ -307,10 +328,10 @@ $(document).on("click",".col1",function(){
 										<div class="oscore_div">
 											<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
 												<c:if test="${status2.count == status.count}">
-	 											  <span>네이버</span>
+	 											  <span>NAVER</span>
 	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
 												  <c:if test="${status4.count == status.count}">
-												  <span><img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon">${nAvg}</span>
+												  <img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon"><span>${nAvg}</span>
 												  </c:if>
 	 											  </c:forEach>
 												</c:if>									
@@ -319,10 +340,10 @@ $(document).on("click",".col1",function(){
 										<div class="oscore_div">
 											<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
 											<c:if test="${status3.count == status.count}">
-											<span>다음</span>
+											<span>DAUM</span>
 											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
 											<c:if test="${status5.count == status.count }">
-											<span><img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon">${dAvg}</span>
+											<img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon"><span>${dAvg}</span>
 											</c:if>
 											</c:forEach>
 											</c:if>
@@ -353,10 +374,10 @@ $(document).on("click",".col1",function(){
 										<div class="oscore_div">
 											<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
 												<c:if test="${status2.count == status.count}">
-	 											  <span>네이버</span>
+	 											  <span>NAVER</span>
 	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
 												  <c:if test="${status4.count == status.count}">
-												  <span><img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon">${nAvg}</span>
+												  <img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon"><span>${nAvg}</span>
 												  </c:if>
 	 											  </c:forEach>
 												</c:if>									
@@ -365,10 +386,10 @@ $(document).on("click",".col1",function(){
 										<div class="oscore_div">
 											<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
 											<c:if test="${status3.count == status.count}">
-											<span>다음</span>
+											<span>DAUM</span>
 											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
 											<c:if test="${status5.count == status.count }">
-											<span><img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon">${dAvg}</span>
+											<img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon"><span>${dAvg}</span>
 											</c:if>
 											</c:forEach>
 											</c:if>
@@ -400,10 +421,10 @@ $(document).on("click",".col1",function(){
 										<div class="oscore_div">
 											<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
 												<c:if test="${status2.count == status.count}">
-	 											  <span>네이버</span>
+	 											  <span>NAVER</span>
 	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
 												  <c:if test="${status4.count == status.count}">
-												  <span><img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon">${nAvg}</span>
+												  <img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon"><span>${nAvg}</span>
 												  </c:if>
 	 											  </c:forEach>
 												</c:if>									
@@ -412,10 +433,10 @@ $(document).on("click",".col1",function(){
 										<div class="oscore_div">
 											<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
 											<c:if test="${status3.count == status.count}">
-											<span>다음</span>
+											<span>DAUM</span>
 											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
 											<c:if test="${status5.count == status.count }">
-											<span><img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon">${dAvg}</span>
+											<img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon"><span>${dAvg}</span>
 											</c:if>
 											</c:forEach>
 											</c:if>
