@@ -157,12 +157,13 @@ $(document).ready(function(){
 <body id="movieall">
 <div id="movieall_all">
 
-
+	<form>
 	<div id="movieall_list">
 			<div id="movie_text_top">
 				<span>전체 영화</span>
 				<hr>
 			</div>
+	
 		<ul>
 	
 			<c:forEach items="${movieAll}" var="mList">
@@ -206,18 +207,18 @@ $(document).ready(function(){
 		<!-- 페이지넘기기 -->
 			<div class="pagenation">
 				<c:if test="${pageMaker.prev}">  
-						<a href="#?page=${pageMaker.startPage - 1}">&laquo;</a>
+						<a href="?page=${pageMaker.startPage - 1}">&laquo;</a>
 				</c:if>																
 				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-						<a href="#?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" 
+						<a href="?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" 
 						<c:out value="${pageMaker.criMDto.page == idx? 'class=active':''}"/>>${idx}</a> 
 				</c:forEach>
 				<c:if test="${pageMaker.next}">
-						<a href="#?page=${pageMaker.endPage + 1}">&raquo;</a>
+						<a href="?page=${pageMaker.endPage + 1}">&raquo;</a>
 				</c:if>															
 			</div>
 		
-		
+	</form>
 		
 </div>
 	
