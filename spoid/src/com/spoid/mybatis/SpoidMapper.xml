@@ -238,8 +238,21 @@
 			                    from (select * from dailybox where rownum <= 10 order by targetdt desc)temp)	
 		]]>		
 	</select>
+	<select id="countPagingMv" resultType="int">
+		    SELECT count(*) 
+			FROM detailmovie	
+	</select>
 	<select id="movieAll" resultType="com.spoid.dto.DetailDTO">
-		select * from detailmovie
+         	<![CDATA[
+	         	SELECT * FROM ( SELECT rownum rnum, 
+	                            a.* 
+	                            FROM( SELECT *
+	                            FROM DETAILMOVIE
+	
+	                            )a
+	                        )
+	       	 	WHERE rnum BETWEEN #{pageStart} AND #{perPageNum}
+			]]>	
 	</select>
 	<select id="detailMovie" parameterType="String" resultType="com.spoid.dto.DetailDTO">
 		select * from detailmovie where movieCd=#{movieCd}

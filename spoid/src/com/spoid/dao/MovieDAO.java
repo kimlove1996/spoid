@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.spoid.dto.CriteriaMVDTO;
 import com.spoid.dto.DetailDTO;
 import com.spoid.dto.PeopleDTO;
 import com.spoid.mybatis.SqlMapConfig;
@@ -38,14 +39,14 @@ public class MovieDAO {
 		
 		return list;
 	}
-	public List<DetailDTO> listAllMv() {
+	public List<DetailDTO> listAllMv(CriteriaMVDTO criMDto) {
 		// TODO Auto-generated method stub
 		List<DetailDTO> list = new ArrayList<DetailDTO>();
 		
 		try {
 			System.out.println("2018 모든 영화 조회!!");
 			sqlSession = sqlSessionFactory.openSession();
-			list = sqlSession.selectList("movieAll");
+			list = sqlSession.selectList("movieAll",criMDto);
 					
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -124,5 +125,21 @@ public class MovieDAO {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	public int totalCount(CriteriaMVDTO criMDto) {
+		int result=0;
+		try {
+			sqlSession = sqlSessionFactory.openSession();
+			result = sqlSession.selectOne("countPagingMv",criMDto);
+			System.out.println("총 영화 페이지 개수는 "+result+"입니다.");
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return result;
 	}
 }

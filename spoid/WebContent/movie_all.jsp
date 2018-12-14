@@ -172,7 +172,15 @@ $(document).ready(function(){
 				<fmt:formatDate var="firstDt" value="${first}" pattern="yyyy.MM.dd"/>	
 				<li class="movieall_card_wrap" data-mvCd="${mList.movieCd}">
 						<div class="movieall_card_all movieall_card">
-							<img src="${mList.poster}">
+							<c:choose>
+								<c:when test="${empty mList.poster}">
+									<img src="https://ssl.pstatic.net/static/movie/2012/06/dft_img203x290.png">
+								</c:when>
+								<c:otherwise><img src="${mList.poster}"></c:otherwise>														
+							
+							</c:choose>
+	
+
 							<div class="movieall_card_label">
 								<strong>${mList.kor_tit}</strong>
 								<hr>
@@ -200,15 +208,10 @@ $(document).ready(function(){
 				<c:if test="${pageMaker.prev}">  
 						<a href="#?page=${pageMaker.startPage - 1}">&laquo;</a>
 				</c:if>																
-			
 				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-					
-					
 						<a href="#?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" 
-						<c:out value="${pageMaker.criDto.page == idx? 'class=active':''}"/>>${idx}</a> 
-					
+						<c:out value="${pageMaker.criMDto.page == idx? 'class=active':''}"/>>${idx}</a> 
 				</c:forEach>
-				
 				<c:if test="${pageMaker.next}">
 						<a href="#?page=${pageMaker.endPage + 1}">&raquo;</a>
 				</c:if>															
