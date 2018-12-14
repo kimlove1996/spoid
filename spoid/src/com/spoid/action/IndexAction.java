@@ -32,7 +32,6 @@ public class IndexAction implements Action
 			  
 			   nAvg[i] = rDao.scoreAvg("naver",list.get(i).getMovieCd());
 			   dAvg[i] = rDao.scoreAvg("daum",list.get(i).getMovieCd());
-			   System.out.println(nAvg[i]);
 		}
 		  
 		  System.out.println("====>index 페이지  조회 결과 : "+list.size());
