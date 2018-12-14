@@ -142,4 +142,20 @@ public class MovieDAO {
 		
 		return result;
 	}
+	public int totalnowCount(CriteriaMVDTO criMDto) {
+		int result=0;
+		try {
+			sqlSession = sqlSessionFactory.openSession();
+			result = sqlSession.selectOne("countPagingnow",criMDto);
+			System.out.println("총 영화 페이지 개수는 "+result+"입니다.");
+					
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return result;
+	}
 }
