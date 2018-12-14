@@ -114,7 +114,11 @@ public class MovieDAO {
 		// TODO Auto-generated method stub
 		List<DetailDTO> list = new ArrayList<DetailDTO>();
 		try {
+			System.out.println("박스 오피스 조회!!");
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectList("indexList");
 			
+			System.out.println("총 "+list.size()+"건의 박스오피스 영화 조회 성공!!!");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

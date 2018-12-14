@@ -119,30 +119,30 @@ $(document).ready(function(){
 			</div>
 			
 		<ul>
-			<li class="boxoffice_card_wrap">
-					<div class="boxoffice_card_all boxoffice_card">
-						<img src="img/poster/movie_image (1).jpg">
-						<div class="boxoffice_card_label">
-							<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-							<hr>
-							<p>드라마, 모험 | 2012.07.05  개봉</p>
-							<p>109분 | 한국 15세 | 관람가</p>
-						</div>
+	
+			<c:forEach items="${bList}" var="bList">
+				<fmt:parseDate var="open" value="${bList.openDt}" pattern="yyyy-MM-dd HH:mm:ss" />
+				<fmt:formatDate var="openDt" value="${open}" pattern="yyyy.MM.dd"/>
+				<fmt:parseDate var="first" value="${bList.firstOpen}" pattern="yyyy-MM-dd HH:mm:ss" />
+				<fmt:formatDate var="firstDt" value="${first}" pattern="yyyy.MM.dd"/>	
+				<li class="boxoffice_card_wrap" data-mvCd="${bList.movieCd}">
+						<div class="boxoffice_card_all boxoffice_card">
+							<img src="${bList.poster}">
+							<div class="boxoffice_card_label">
+								<strong>${bList.kor_tit}</strong>
+								<hr>
+								<p>${bList.genre} | ${openDt}개봉
+									<c:if test="${bList.firstOpen} != ${bList.openDt}">
+										| ${firstDt} 재개봉
+									</c:if>								
+								</p>
+								<p>109분 | 한국 15세 | 관람가</p>
+							</div>
+				
+						</div>			
+				</li>			
 			
-					</div>			
-			</li>
-			<li class="boxoffice_card_wrap">
-					<div class="boxoffice_card_all boxoffice_card">
-						<img src="img/poster/movie_image (1).jpg">
-						<div class="boxoffice_card_label">
-							<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-							<hr>
-							<p>드라마, 모험 | 2012.07.05  개봉</p>
-							<p>109분 | 한국 15세 | 관람가</p>
-						</div>
-			
-					</div>			
-			</li>		
+			</c:forEach>
 		</ul>
 	</div>
 	
