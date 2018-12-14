@@ -39,12 +39,12 @@
 		transition: all 1s;
 		width: 0px;
 	}
-	#boxoffice_line{
+	.boxoffice_line{
 		width: 1547px;
 	}
 	
-	
-	#boxoffice_card{
+	.boxoffice_card_wrap{display: inline-block;}
+	.boxoffice_card{
 		width: 256px;
 		height: 373px;
 		box-shadow: grey 5px 4px 6px 0px;
@@ -55,14 +55,14 @@
 		vertical-align: middle;
 	}
 	
-	#boxoffice_card_wrap:hover #boxoffice_card{background-color: #ff510e;}
-	#boxoffice_card_wrap:hover img{padding: 9px;}
-	#boxoffice_card_wrap:hover #boxoffice_card_label{display: block;}
+	.boxoffice_card_wrap:hover .boxoffice_card{background-color: #ff510e;}
+	.boxoffice_card_wrap:hover img{padding: 9px;}
+	.boxoffice_card_wrap:hover  .boxoffice_card_label{display: block;}
 	
 	
 	
 	
-	#boxoffice_card > img{
+	.boxoffice_card > img{
 	    width: 256px;
 	    height: 373px;
 		box-sizing: border-box;
@@ -70,7 +70,7 @@
 	}
 	
 	
-	#boxoffice_card_label{
+	.boxoffice_card_label{
 	    height: 120px;
 	    width: 93%;
 	    position: relative;
@@ -84,7 +84,7 @@
 	    text-align: center;
 	}
 	
-	#boxoffice_card_label > p{
+	.boxoffice_card_label > p{
 	    margin: 0 0;
 	    font-size: 12px;
 	    text-align: center;
@@ -92,12 +92,12 @@
 	    color: #353535;
 	    font-weight: bold;
 	}
-	#boxoffice_card_label > strong{
+	.boxoffice_card_label > strong{
 		color: #000000;
 	    font-size: 80%;
 	}
 	
-	
+	.boxoffice_card{cursor: pointer;}
 	
 </style>
 
@@ -117,121 +117,33 @@ $(document).ready(function(){
 				<span>박스오피스</span>
 				<hr>
 			</div>
-		<div id="boxoffice_line">
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (1).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (2).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (3).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (4).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (5).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (6).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (7).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (8).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (9).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
-			<a href="#" id="boxoffice_card_wrap">
-				<div id="boxoffice_card" class="boxoffice_card_all">
-					<img src="img/poster/movie_image (10).jpg">
-					<div id="boxoffice_card_label">
-						<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
-						<hr>
-						<p>드라마, 모험 | 2012.07.05  개봉</p>
-						<p>109분 | 한국 15세 | 관람가</p>
-					</div>
-				</div>
-			 </a>
 			
+		<ul>
+			<li class="boxoffice_card_wrap">
+					<div class="boxoffice_card_all boxoffice_card">
+						<img src="img/poster/movie_image (1).jpg">
+						<div class="boxoffice_card_label">
+							<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+							<hr>
+							<p>드라마, 모험 | 2012.07.05  개봉</p>
+							<p>109분 | 한국 15세 | 관람가</p>
+						</div>
 			
+					</div>			
+			</li>
+			<li class="boxoffice_card_wrap">
+					<div class="boxoffice_card_all boxoffice_card">
+						<img src="img/poster/movie_image (1).jpg">
+						<div class="boxoffice_card_label">
+							<strong>신비한 동물사전 : 그린델왈드의 범죄</strong>
+							<hr>
+							<p>드라마, 모험 | 2012.07.05  개봉</p>
+							<p>109분 | 한국 15세 | 관람가</p>
+						</div>
 			
-		</div>
+					</div>			
+			</li>		
+		</ul>
 	</div>
 	
 	
