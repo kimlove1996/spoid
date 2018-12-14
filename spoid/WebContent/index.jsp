@@ -21,7 +21,7 @@
 	}
 	.graph_div{height : 850px;}
 	.score_view{
-		width : 29%;
+		width : 630px;
 		height : 100%;
 		padding: 10% 0 0 4%;
 	}
