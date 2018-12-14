@@ -222,7 +222,7 @@ $(document).on("click",".col1",function(){
 					<tr>
 						<td>1</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7</td>
 						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>
 					</tr>					
 					<tr>
@@ -308,7 +308,11 @@ $(document).on("click",".col1",function(){
 											<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
 												<c:if test="${status2.count == status.count}">
 	 											  <span>네이버</span>
-												  <span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${nAvg}</span>
+	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
+												  <c:if test="${status4.count == status.count}">
+												  <span><img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon">${nAvg}</span>
+												  </c:if>
+	 											  </c:forEach>
 												</c:if>									
 											</c:forEach>
 										</div>
@@ -316,7 +320,11 @@ $(document).on("click",".col1",function(){
 											<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
 											<c:if test="${status3.count == status.count}">
 											<span>다음</span>
-											<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${dAvg}</span>
+											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
+											<c:if test="${status5.count == status.count }">
+											<span><img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon">${dAvg}</span>
+											</c:if>
+											</c:forEach>
 											</c:if>
 											</c:forEach>
 										</div>
@@ -342,23 +350,31 @@ $(document).on("click",".col1",function(){
 											<p>${idxDto.story}</p>
 										</div>
 										<div class="overlay_score">
-											<div class="oscore_div">
-												<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
+										<div class="oscore_div">
+											<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
 												<c:if test="${status2.count == status.count}">
-												<span>네이버</span>
-												  <span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${nAvg}</span>
+	 											  <span>네이버</span>
+	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
+												  <c:if test="${status4.count == status.count}">
+												  <span><img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon">${nAvg}</span>
+												  </c:if>
+	 											  </c:forEach>
 												</c:if>									
-												</c:forEach>
-											</div>
-											<div class="oscore_div">
-												<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
-												<c:if test="${status3.count == status.count}">
-												<span>다음</span>
-												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${dAvg}</span>
-												</c:if>
-												</c:forEach>
-											</div>
+											</c:forEach>
 										</div>
+										<div class="oscore_div">
+											<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
+											<c:if test="${status3.count == status.count}">
+											<span>다음</span>
+											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
+											<c:if test="${status5.count == status.count }">
+											<span><img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon">${dAvg}</span>
+											</c:if>
+											</c:forEach>
+											</c:if>
+											</c:forEach>
+										</div>
+									</div>
 										<a href="detailmovie.spoid?movieCd=${idxDto.movieCd}" class="link_detail">자세히 보기</a>
 									
 									</div>
@@ -381,23 +397,31 @@ $(document).on("click",".col1",function(){
 											<p>${idxDto.story}</p>
 										</div>
 										<div class="overlay_score">
-											<div class="oscore_div">
-												<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
+										<div class="oscore_div">
+											<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
 												<c:if test="${status2.count == status.count}">
-												  <span>네이버</span>
-												  <span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${nAvg}</span>
+	 											  <span>네이버</span>
+	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
+												  <c:if test="${status4.count == status.count}">
+												  <span><img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon">${nAvg}</span>
+												  </c:if>
+	 											  </c:forEach>
 												</c:if>									
-												</c:forEach>
-											</div>
-											<div class="oscore_div">
-												<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
-												<c:if test="${status3.count == status.count}">
-												<span>다음</span>
-												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${dAvg}</span>
-												</c:if>
-												</c:forEach>
-											</div>
+											</c:forEach>
 										</div>
+										<div class="oscore_div">
+											<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
+											<c:if test="${status3.count == status.count}">
+											<span>다음</span>
+											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
+											<c:if test="${status5.count == status.count }">
+											<span><img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon">${dAvg}</span>
+											</c:if>
+											</c:forEach>
+											</c:if>
+											</c:forEach>
+										</div>
+									</div>
 										<a href="detailmovie.spoid?movieCd=${idxDto.movieCd}" class="link_detail">자세히 보기</a>
 									
 									</div>
