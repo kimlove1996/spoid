@@ -302,19 +302,11 @@ $(document).on("click",".col1",function(){
 									<div class="overlay_score">
 										<div class="oscore_div">
 											<span>네이버</span>
-											<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
-												<c:if test="${status2.count == status.count}">
-												  <span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${nAvg}</span>
-												</c:if>									
-											</c:forEach>
+											<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
 										</div>
 										<div class="oscore_div">
-											<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
-											<c:if test="${status3.count == status.count}">
 											<span>다음</span>
-											<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${dAvg}</span>
-											</c:if>
-											</c:forEach>
+											<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
 										</div>
 									</div>
 									<a href="detailmovie.spoid?movieCd=${idxDto.movieCd}" class="link_detail">자세히 보기</a>
@@ -339,19 +331,12 @@ $(document).on("click",".col1",function(){
 										</div>
 										<div class="overlay_score">
 											<div class="oscore_div">
-												<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
-												<c:if test="${status2.count == status.count}">
-												  <span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${nAvg}</span>
-												</c:if>									
-												</c:forEach>
+												<span>네이버</span>
+												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon"></span>
 											</div>
 											<div class="oscore_div">
-												<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
-												<c:if test="${status3.count == status.count}">
 												<span>다음</span>
-												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${dAvg}</span>
-												</c:if>
-												</c:forEach>
+												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
 											</div>
 										</div>
 										<a href="detailmovie.spoid?movieCd=${idxDto.movieCd}" class="link_detail">자세히 보기</a>
@@ -377,19 +362,12 @@ $(document).on("click",".col1",function(){
 										</div>
 										<div class="overlay_score">
 											<div class="oscore_div">
-												<c:forEach items="${nAvg}" var="nAvg" varStatus="status2">
-												<c:if test="${status2.count == status.count}">
-												  <span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${nAvg}</span>
-												</c:if>									
-												</c:forEach>
+												<span>네이버</span>
+												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
 											</div>
 											<div class="oscore_div">
-												<c:forEach items="${dAvg}" var="dAvg" varStatus="status3">
-												<c:if test="${status3.count == status.count}">
 												<span>다음</span>
-												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">${dAvg}</span>
-												</c:if>
-												</c:forEach>
+												<span><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</span>
 											</div>
 										</div>
 										<a href="detailmovie.spoid?movieCd=${idxDto.movieCd}" class="link_detail">자세히 보기</a>

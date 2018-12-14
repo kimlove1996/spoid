@@ -106,6 +106,10 @@ $(document).ready(function(){
 	$(".boxoffice_card_all").css("transform","rotateY(360deg)");
 	$("#movie_text_top > hr").css("width","100%");
 });
+$(document).on("click",".boxoffice_card_wrap",function(){
+	var movieCd = $(this).attr("data-mvCd");
+	location.href = "detailmovie.spoid?movieCd="+movieCd;
+});
 </script>
 </head>
 <body id="boxoffice">
