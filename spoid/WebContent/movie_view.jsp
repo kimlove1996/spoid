@@ -59,7 +59,7 @@ html {
 }
 
 #movie_table > ul{
-	width: 427px;
+	width: 545px;
     margin: 0 auto;
 }
 
@@ -69,11 +69,18 @@ html {
     border: 3px solid #6db9ce;
 }
 
+/* 영화 출연배우들 */
+#mvb_wrap {
+	background-color: #dedede;
+	height: 730px;	
+}
+
+
 /* 영화상세정보 */
 #mvtop_wrap{
 	background-color: #f7f9fa;
-	height: 700px;	
-	margin-top: 222px;
+	height: 730px;
+	margin-top: 223px;
 }
 #mvtop_wrap > h2 {
     padding: 0;
@@ -206,7 +213,20 @@ $(document).ready(function(){
 		$("#mvmid_wrap > h2").css("color","#4a4a4a");
 		$("#mvbot_cl").css("color","#4a4a4a");
 		$("#mvbot_wrap > h2").css("color","#4a4a4a");
+		$("#mvb_cl").css("color","#4a4a4a");
+		$("#mvb_wrap > h2").css("color","#4a4a4a");
 
+	});
+	
+	$("#mvb_cl").click(function(){
+		$("#mvb_cl").css("color","#6db9ce");
+		$("#mvb_wrap > h2").css("color","#6db9ce");
+		$("#mvtop_cl").css("color","#4a4a4a");
+		$("#mvtop_wrap > h2").css("color","#4a4a4a");
+		$("#mvbot_cl").css("color","#4a4a4a");
+		$("#mvbot_wrap > h2").css("color","#4a4a4a");
+		$("#mvmid_cl").css("color","#4a4a4a");
+		$("#mvmid_wrap > h2").css("color","#4a4a4a");
 	});
 	
 	$("#mvmid_cl").click(function(){
@@ -216,6 +236,8 @@ $(document).ready(function(){
 		$("#mvtop_wrap > h2").css("color","#4a4a4a");
 		$("#mvbot_cl").css("color","#4a4a4a");
 		$("#mvbot_wrap > h2").css("color","#4a4a4a");
+		$("#mvb_cl").css("color","#4a4a4a");
+		$("#mvb_wrap > h2").css("color","#4a4a4a");
 		
 	});
 	
@@ -226,7 +248,8 @@ $(document).ready(function(){
 		$("#mvmid_wrap > h2").css("color","#4a4a4a");
 		$("#mvtop_cl").css("color","#4a4a4a");
 		$("#mvtop_wrap > h2").css("color","#4a4a4a");
-		
+		$("#mvb_cl").css("color","#4a4a4a");
+		$("#mvb_wrap > h2").css("color","#4a4a4a");
 	});
 	
 	
@@ -241,8 +264,9 @@ $(document).ready(function(){
 <div id="movie_table">
 	<ul>
 		<li><a id="mvtop_cl" onclick="$('html, body').stop().animate({scrollTop : '0'});">상세내용</a></li>
-		<li><a id="mvmid_cl" onclick="$('html, body').stop().animate({scrollTop : '700'});">차트그래프</a></li>
-		<li><a id="mvbot_cl" onclick="$('html, body').stop().animate({scrollTop : '1500'});">댓글분석</a></li>
+		<li><a id="mvb_cl" onclick="$('html, body').stop().animate({scrollTop : '730'});">출연배우</a></li>
+		<li><a id="mvmid_cl" onclick="$('html, body').stop().animate({scrollTop : '1460'});">차트그래프</a></li>
+		<li><a id="mvbot_cl" onclick="$('html, body').stop().animate({scrollTop : '2260'});">댓글분석</a></li>
 	</ul>
 </div>
 </div>
@@ -277,6 +301,15 @@ $(document).ready(function(){
 	</div>
 </div>
 </article>
+
+<article id="mvb_wrap">
+	<h2 style="margin: 0;">출연 배우들</h2><hr style="border: 1px solid #ccccc;">
+	<div id="">
+		
+	</div>
+	
+</article>
+
 <article id="mvmid_wrap">
 	<h2>차트 그래프</h2><hr style="border: 1px solid #cccccc;">
 	<div id="google_trend">

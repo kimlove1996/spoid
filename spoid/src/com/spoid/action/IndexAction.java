@@ -36,8 +36,8 @@ public class IndexAction implements Action
 		}
 		  
 		  System.out.println("====>index 페이지  조회 결과 : "+list.size());
-		  System.out.println("");
-		  
+		  System.out.println(nAvg[1]+", "+dAvg[1]);
+
 		  ActionForward forward = new ActionForward();
 		  request.setAttribute("indexList", list);
 		  request.setAttribute("nAvg", nAvg);
