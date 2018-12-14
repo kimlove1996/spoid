@@ -23,7 +23,7 @@
 		top : 0;
 		left : 0;		
 		z-index:1000;
-		width : 100%;
+		width : 1905px;
 		height: 100px;
 		
 	}
