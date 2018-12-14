@@ -6,7 +6,7 @@ public class MoviePageDTO {
 	private int endPage;   // 끝 페이지 번호
 	private boolean prev;  // 이전 페이지
 	private boolean next;  // 다음 페이지
-	private int displayPageNum = 50; //화면에 보이는 블럭 수
+	private int displayPageNum = 10; //화면에 보이는 블럭 수
 	private int finalPage;
 	private CriteriaMVDTO criMDto; //page,perPage 등...
 	
@@ -32,9 +32,9 @@ public class MoviePageDTO {
 		endPage = (int)Math.ceil(criMDto.getPage()/(double)displayPageNum)*displayPageNum;
 						//ceil(1 /10)=>1*10 = 10
 		startPage = (endPage-displayPageNum)+1; //1
-		
+		//1/50 ->1* 50 -> endPage = 50
 		int tempEndPage = (int)(Math.ceil(totalCount/(double)(criMDto.getPerPageNum()/criMDto.getPage())));
-		
+		//990/(2/50)
 		//파이널 페이지 세팅
 		setFinalPage(tempEndPage);
 		
@@ -43,8 +43,13 @@ public class MoviePageDTO {
 			endPage = tempEndPage; // endPage = 2
 		}
 		//prev : 이전버튼 만들기
+		
+		
 		prev = startPage == 1? false : true; // 1이 맞음으로  false
+		System.out.println(startPage+"시작여부 "+prev);
 		next = (endPage*(criMDto.getPerPageNum()/criMDto.getPage()))>=totalCount ? false : true;
+		System.out.println("perpage"+criMDto.getPerPageNum());
+		
 		// 2*(10/1) >=17? -> 맞음으로 false!
 		// next = false
 		

@@ -150,7 +150,23 @@ $(document).on("click",".nowreleased_card_wrap",function(){
 			
 
 	</div>
-	
+	<!-- 페이지넘기기 -->
+	<div class="pagenation">
+		<c:if test="${pageMaker.prev}">  
+			<a href="?page=${pageMaker.startPage - 1}">&laquo;</a>
+			<a href="boardList.spoid?page=1">1</a>
+			<a href="#">...</a>		
+		</c:if>																
+		<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+			<a href="?page=${idx}&flag=${flag}&keyword=${keyword}&key=${code}" 
+			<c:out value="${pageMaker.criMDto.page == idx? 'class=active':''}"/>>${idx}</a> 
+		</c:forEach>
+		<c:if test="${pageMaker.next}">
+			<a href="#">...</a>
+			<a href="?page=${pageMaker.finalPage}">${pageMaker.finalPage}</a>
+			<a href="?page=${pageMaker.endPage + 1}">&raquo;</a>
+		</c:if>															
+	</div>
 	
 </div>
 
