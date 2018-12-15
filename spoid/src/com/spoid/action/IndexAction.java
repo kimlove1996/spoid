@@ -38,7 +38,7 @@ public class IndexAction implements Action
 			   dAvg[i] = rDao.scoreAvg("daum",list.get(i).getMovieCd());
 			   
 			   if(nAvg[i]<=0) {
-				   nSvg[i]=1;
+				   nSvg[i]=0;
 			   }else if(nAvg[i]>0 && nAvg[i]<2) {
 				   System.out.println(nAvg[i]);
 				   nSvg[i] = 1;
@@ -62,7 +62,7 @@ public class IndexAction implements Action
 			   }
 			   
 			   if(dAvg[i]<=0) {
-				   dSvg[i]=1;
+				   dSvg[i]=0;
 			   } else if(dAvg[i]>0 && dAvg[i]<2) {
 				   System.out.println(dAvg[i]);
 				   dSvg[i] = 1;

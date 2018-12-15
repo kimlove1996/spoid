@@ -244,62 +244,62 @@ $(document).on("click",".col1",function(){
 					<tr>
 						<td>1</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>
 					</tr>					
 					<tr>
 						<td>2</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>					
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>					
 					</tr>	
 					<tr>
 						<td>3</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>					
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>					
 					</tr>	
 					<tr>
 						<td>4</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>					
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>					
 					</tr>
 					<tr>
 						<td>5</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>					
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>					
 					</tr>		
 					<tr>
 						<td>6</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>					
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>					
 					</tr>					
 					<tr>
 						<td>7</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>					
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>					
 					</tr>	
 					<tr>
 						<td>8</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon"><span>7.82</span></td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon">7</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon"><span>7.82</span></td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon">7</td>
 					</tr>	
 					<tr>
 						<td>9</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>						
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>						
 					</tr>
 					<tr>
 						<td>10</td>
 						<td>신비한 동물사전:그렌왈드의 범죄</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon naver_score">7.82</td>
-						<td><img src="<%=path%>/img/slime/score4.png" class="score_icon daum_score">7</td>					
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon naver_score">7.82</td>
+						<td><img src="<%=path%>/img/slime/score4.svg" class="score_icon daum_score">7</td>					
 					</tr>				
 				</table>
 			</div>
@@ -332,7 +332,7 @@ $(document).on("click",".col1",function(){
 	 											  <span>NAVER</span>
 	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
 												  <c:if test="${status4.count == status.count}">
-												  <img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon"><span>${nAvg}</span>
+												  <img src="<%=path%>/img/slime/score${nSvg}.svg" class="score_icon"><span>${nAvg}</span>
 												  </c:if>
 	 											  </c:forEach>
 												</c:if>									
@@ -344,7 +344,7 @@ $(document).on("click",".col1",function(){
 											<span>DAUM</span>
 											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
 											<c:if test="${status5.count == status.count }">
-											<img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon"><span>${dAvg}</span>
+											<img src="<%=path%>/img/slime/score${dSvg}.svg" class="score_icon"><span>${dAvg}</span>
 											</c:if>
 											</c:forEach>
 											</c:if>
@@ -378,7 +378,7 @@ $(document).on("click",".col1",function(){
 	 											  <span>NAVER</span>
 	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
 												  <c:if test="${status4.count == status.count}">
-												  <img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon"><span>${nAvg}</span>
+												  <img src="<%=path%>/img/slime/score${nSvg}.svg" class="score_icon"><span>${nAvg}</span>
 												  </c:if>
 	 											  </c:forEach>
 												</c:if>									
@@ -390,7 +390,7 @@ $(document).on("click",".col1",function(){
 											<span>DAUM</span>
 											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
 											<c:if test="${status5.count == status.count }">
-											<img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon"><span>${dAvg}</span>
+											<img src="<%=path%>/img/slime/score${dSvg}.svg" class="score_icon"><span>${dAvg}</span>
 											</c:if>
 											</c:forEach>
 											</c:if>
@@ -425,7 +425,7 @@ $(document).on("click",".col1",function(){
 	 											  <span>NAVER</span>
 	 											  <c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
 												  <c:if test="${status4.count == status.count}">
-												  <img src="<%=path%>/img/slime/score${nSvg}.png" class="score_icon"><span>${nAvg}</span>
+												  <img src="<%=path%>/img/slime/score${nSvg}.svg" class="score_icon"><span>${nAvg}</span>
 												  </c:if>
 	 											  </c:forEach>
 												</c:if>									
@@ -437,7 +437,7 @@ $(document).on("click",".col1",function(){
 											<span>DAUM</span>
 											<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
 											<c:if test="${status5.count == status.count }">
-											<img src="<%=path%>/img/slime/score${dSvg}.png" class="score_icon"><span>${dAvg}</span>
+											<img src="<%=path%>/img/slime/score${dSvg}.svg" class="score_icon"><span>${dAvg}</span>
 											</c:if>
 											</c:forEach>
 											</c:if>
