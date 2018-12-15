@@ -28,6 +28,12 @@ body#header_body{
      margin-top: 100px;
      /* background-color: #f0f0f0; */
 }
+
+#MovieViewAll h2{
+	padding: 0 0 0 20px;
+    margin: 0;
+    line-height: 2;
+}
 #movie_table {
      height: 60px;
      background-color: #dedef1;
@@ -70,7 +76,7 @@ body#header_body{
 /* 영화 출연배우들 */
 #mvb_wrap {
 	background-color: #e8e8e8;
-	height: 730px;	
+	padding-bottom: 50px;
 }
 
 
@@ -80,12 +86,7 @@ body#header_body{
     /* height: 700px; */
     margin-top: 261px;
     /* margin-bottom: 51px; */
-    padding-bottom: 10px;
-}
-#mvtop_wrap > h2 {
-    padding: 0 0 0 20px;
-    margin: 0;
-    line-height: 2;
+    padding-bottom: 50px;
 }
 .wrap{
      padding-top: 50px;
@@ -173,21 +174,11 @@ body#header_body{
      background-image: url("img/background_dott.PNG");
      background-color: #dfe5fb;
 }
-#mvmid_wrap > h2 {
-    padding: 0;
-    margin: 0;
-    line-height: 2;
-}
 /* 댓글 */
 #mvbot_wrap {
      height: 800px;
      background-color: #f7f9fa;
      margin: 0;
-}
-#mvbot_wrap > h2 {
-    padding: 0;
-    margin: 0;
-    line-height: 2;
 }
 #spoid_score {
      width: 410px;
@@ -253,14 +244,59 @@ body#header_body{
 
 /* 출연배우관련 */
 #actor{
-	padding: 12px;
+    padding: 72px;
+    margin: 0 auto;
+    width: 1480px;
+    border: 2px solid #b7b8b8;
+    border-radius: 30px;
+    background-color: #f8f8f8;
+    margin-top: 45px;
 }
 
-#actor>div{
+#actor>p{
     padding: 2px;
     margin: 9px;
     display: inline-block;
 }
+
+#actor_info_all{
+    display: inline-block;
+    width: 333px;
+    padding: 16px;
+}
+
+#actor_info{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#actor_img{
+	display: inline-block;
+	margin-right: 16px;
+}
+
+#actor_info > p{
+	margin: 0 0;
+}
+
+#actor_info > p:nth-child(1) {
+	font-weight: bold;
+    font-size: 18px;
+	margin-bottom: 6px;
+	color: cornflowerblue;
+}
+#actor_info > p:nth-child(2){
+	font-weight: bold;
+}
+
+#actor_info > p:nth-child(3), #actor_info > p:nth-child(4){
+	margin-left: 5px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #474747;
+}
+
+
 </style>
 <script type="text/javascript">
 
@@ -366,17 +402,20 @@ $(window).on("scroll", function() {
 </article>
 
 <article id="mvb_wrap">
-	<h2 style="margin: 0;height: 40px;line-height: 2;">출연 배우</h2><hr style="border: 1px solid #ccccc;">
+	<h2>출연 배우 & 스태프</h2><hr style="border: 1px solid #ccccc;">
 	<div id="actor">
 		<c:forEach items="${pList}" var="pList">
-			<div>${pList.pname}</div>
-			<div>${pList.dept}</div>
-			<div>${pList.eng_name}</div>
-			<div>
-				<img src="${pList.profile}">
+			<div id="actor_info_all">
+				<div id="actor_img">
+					<img src="${pList.profile}">
+				</div>
+				<div id="actor_info">
+					<p>${pList.pname}</p>
+					<p>${pList.eng_name}</p>
+					<p>${pList.dept}(${pList.part})</p>
+					<p>역할 : ${pList.role}</p>
+				</div>
 			</div>
-			<div>${pList.part}</div>
-			<div>${pList.role}</div>
 		</c:forEach>
 	</div>
 	
