@@ -69,7 +69,7 @@ body#header_body{
 
 /* 영화 출연배우들 */
 #mvb_wrap {
-	background-color: #dedede;
+	background-color: #e8e8e8;
 	height: 730px;	
 }
 
@@ -248,6 +248,19 @@ body#header_body{
     background-color: gray;
     box-sizing: border-box;
 }
+
+
+
+/* 출연배우관련 */
+#actor{
+	padding: 12px;
+}
+
+#actor>div{
+    padding: 2px;
+    margin: 9px;
+    display: inline-block;
+}
 </style>
 <script type="text/javascript">
 
@@ -354,8 +367,17 @@ $(window).on("scroll", function() {
 
 <article id="mvb_wrap">
 	<h2 style="margin: 0;height: 40px;line-height: 2;">출연 배우</h2><hr style="border: 1px solid #ccccc;">
-	<div id="">
-		
+	<div id="actor">
+		<c:forEach items="${pList}" var="pList">
+			<div>${pList.pname}</div>
+			<div>${pList.dept}</div>
+			<div>${pList.eng_name}</div>
+			<div>
+				<img src="${pList.profile}">
+			</div>
+			<div>${pList.part}</div>
+			<div>${pList.role}</div>
+		</c:forEach>
 	</div>
 	
 </article>
