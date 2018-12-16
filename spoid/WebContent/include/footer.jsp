@@ -72,7 +72,7 @@ $(function() {
 <body id="footer_body"> 
 
 	<div id="top"><div id="t_border"><p>^</p><span>TOP</span></div></div>
-	<div style="height: 250px; background-color: #30a1c0; width: 100%; padding-top: 1%;" >
+	<div style="height: 250px; background-color: #30a1c0; width: 1903px; padding-top: 1%;" >
 		<div style=" padding-top: 1%;">
 			<a class="information" href="#"><span style="color: white; font-size: 40px; font-weight: bolder; margin: 5%;">Spoid</span>
 			<a class="information" href="#"><span id="facebook" class="sns_icon" style=" margin-right: 3%;"><i class="fab fa-facebook-f"></i></span></a>
