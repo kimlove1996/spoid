@@ -397,7 +397,7 @@ $(window).on("scroll", function() {
 function fnMove2(){
 	/* var mvmid_wrap = move3.offset().top-200; */
 	var move2 = $("#mvb_wrap").offset();
-    $('html, body').animate({scrollTop : move2.top-265}, 400);
+    $('html, body').animate({scrollTop : move2.top-258}, 400);
 }
 function fnMove3(){
 	var move3 = $("#mvmid_wrap").offset();

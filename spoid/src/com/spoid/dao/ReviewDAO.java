@@ -10,6 +10,7 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.spoid.common.DBManager;
 
 public class ReviewDAO {
 	private ReviewDAO() {
@@ -75,4 +76,21 @@ public class ReviewDAO {
 		
 		return avg;
 	}
+	
+	
+	
+	
+	public void bestreview(String movieCd) {
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+	}
+	
+	
+	
 }
