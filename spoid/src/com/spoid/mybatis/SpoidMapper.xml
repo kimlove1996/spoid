@@ -291,7 +291,15 @@
 	
 	<select id="dailyList" resultType="com.spoid.dto.BoxOfficeDTO">
 		<![CDATA[
-			select * from dailybox where rownum <= 10 order by targetdt desc
-		]]>		
+			select * from dailybox where rownum <= 70 order by targetdt desc
+		]]>
+	
 	</select>
+	<select id="dailyListOne" parameterType="com.spoid.dto.BoxOfficeDTO" resultType="com.spoid.dto.BoxOfficeDTO">
+		<![CDATA[
+			select * from dailybox where targetDt = #{targetDt} and movieNm = #{movieNm}
+		]]>
+	
+	</select>
+	
  </mapper>

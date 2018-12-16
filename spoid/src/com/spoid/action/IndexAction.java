@@ -1,6 +1,8 @@
 package com.spoid.action;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -17,7 +19,7 @@ import com.spoid.dto.DetailDTO;
 
 public class IndexAction implements Action
 {
-		public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+		public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException
 		{
 		  String url = "index.jsp";
 		  
@@ -34,11 +36,30 @@ public class IndexAction implements Action
 		  int nSvg[] = new int[list.size()];
 		  int dSvg[] = new int[list.size()];
 		  
-		  Calendar calc = Calendar.getInstance();
-		  
+
 		  List<BoxOfficeDTO> blist = mDao.dailyBoxOffice();
+		  String latest = blist.get(0).gettargetDt();
+		  System.out.println("가장 최근 날짜");
+		  SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		  Calendar calc = Calendar.getInstance();
+		  Calendar calc2 = Calendar.getInstance();
+		  List<BoxOfficeDTO> blist2 = null;
+		 
+		  for(int i=0; i<blist.size(); i++) {
+			  int loop = 0;
+			  calc.setTime(sdf.parse(latest));
+			  if(loop < 7) {
+				 bDto.settargetDt(sdf.format(calc.getTime()));
+				 bDto.setMovieNm(blist.get(i).getMovieNm());
+				 blist2 = mDao.dailyListOne(bDto);
+				 calc.add(calc.DAY_OF_WEEK,-1);
+				 loop++;
+			  }			  
+		  }
 		  
-		
+
+
+		  
 		  
 		  for (int i = 0; i < list.size(); i++) {
 			  

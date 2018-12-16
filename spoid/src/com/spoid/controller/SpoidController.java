@@ -1,6 +1,7 @@
 package com.spoid.controller;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -76,12 +77,15 @@ public class SpoidController extends HttpServlet
 	  System.out.println("url : " + uri);
 	  System.out.println("ctx : " + ctx);
 	  System.out.println("??====>" + command);
+	  try {
 	  if (command.equals("/index.spoid")){ // 인덱스
 	    action = new IndexAction();
 	    forward = action.excute(request, response);
 	  }else if (command.equals("/login.spoid")){ // 로그인페이지 이동
 	    action = new LoginAction();
-	    forward = action.excute(request, response);
+	  
+			forward = action.excute(request, response);
+	
 	  }else if(command.equals("/memberplayaction.spoid")) { // 회원가입기능
 		  action = new MemberPlayAction();
 		   forward = action.excute(request, response);		  
@@ -194,7 +198,10 @@ public class SpoidController extends HttpServlet
 		  action = new DetailMovieAction();
 		  forward = action.excute(request,response);
 	  }
-
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 
 

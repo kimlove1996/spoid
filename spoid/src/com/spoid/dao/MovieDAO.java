@@ -174,4 +174,19 @@ public class MovieDAO {
 		}
 		return list;
 	}
+	public List<BoxOfficeDTO> dailyListOne(BoxOfficeDTO bDto) {
+		// TODO Auto-generated method stub
+		List<BoxOfficeDTO> list = new ArrayList<BoxOfficeDTO>();
+		try {
+			System.out.println("박스 오피스 조회!!");
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectList("dailyListOne",bDto);
+			
+			System.out.println("총 "+list.size()+"건의 박스오피스 영화 조회 성공!!!");
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
