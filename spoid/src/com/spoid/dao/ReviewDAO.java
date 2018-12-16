@@ -1,7 +1,11 @@
 package com.spoid.dao;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
@@ -11,6 +15,8 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.spoid.common.DBManager;
+import com.spoid.dto.BestDTO;
+import com.spoid.mybatis.SqlMapConfig;
 
 public class ReviewDAO {
 	private ReviewDAO() {
@@ -22,6 +28,9 @@ public class ReviewDAO {
 	public static ReviewDAO getInstance(){
 		return instance;
 	}
+	SqlSession sqlSession;
+	SqlSessionFactory sqlSessionFactory = SqlMapConfig.getSqlSession(); 
+	
 	
 	public double scoreAvg(String cate, String movieCd) {
 		int movieCd3 = Integer.parseInt(movieCd);
@@ -78,6 +87,21 @@ public class ReviewDAO {
 	}
 	
 	
-	
+	// 베스트 리뷰 가져오기
+	public ArrayList<BestDTO> selectBest(String movieCd) {
+		List<BestDTO> list = new ArrayList<>();
+		try {
+			System.out.println("베스트 댓글 : " + movieCd);
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectList("bestlist",movieCd);
+			System.out.println(list);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return (ArrayList<BestDTO>) list;
+	}	
 	
 }

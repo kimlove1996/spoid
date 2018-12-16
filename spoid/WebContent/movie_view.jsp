@@ -520,6 +520,22 @@ function fnMove4(){
                    <td>${nAvg}</td>
                    <td>${dAvg}</td>
               </tr>
+              <tr>
+                   <td>작성자</td>
+                   <td>점수</td>
+                   <td>내용</td>
+                   <td>좋아요수</td>
+                   <td>잘성일자</td>
+              </tr>
+              <tr>
+              <c:forEach items="${bestlist}" var="bestlist">
+                   <td>${bestlist.writer}</td>
+                   <td>${bestlist.score}</td>
+                   <td>${bestlist.content}</td>
+                   <td>${bestlist.goodcnt}</td>
+                   <td>${bestlist.regdate}</td>
+              </c:forEach>
+              </tr>
           </tbody>
      </table>
 </div>

@@ -282,4 +282,10 @@
 																 or m.pname like '%'||#{keyword}||'%'
 																 or m.eng_name like '%'||#{keyword}||'%'	
 	</select>
+	
+	
+	<select id="bestlist" resultType="com.spoid.dto.BestDTO">
+		select * from bestreview 
+		WHERE moviecd = #{movieCd}
+	</select>
  </mapper>

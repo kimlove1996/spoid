@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.spoid.dao.MovieDAO;
 import com.spoid.dao.ReviewDAO;
+import com.spoid.dto.BestDTO;
 import com.spoid.dto.DetailDTO;
 import com.spoid.dto.PeopleDTO;
 
@@ -85,7 +86,9 @@ public class DetailMovieAction implements Action{
 		   System.out.println("스포이드 >>>"+dSvg);
 		}
 		
-		  
+		List<BestDTO> bestlist = rDao.selectBest(movieCd);
+		System.out.println("====>>>>>>>>>>>>>>>>>>>>>>"+bestlist.size()+"개");
+		
 		
 		System.out.println(dDto.getKor_tit() + "의 출연자 "+plist.size()+"명 조회 ");
 		
@@ -96,6 +99,9 @@ public class DetailMovieAction implements Action{
 		
 		request.setAttribute("dDto", dDto);
 		request.setAttribute("pList", plist);
+		
+		request.setAttribute("bestlist", bestlist);
+		
 		ActionForward forward = new ActionForward();
 		forward.setPath(url);
 		forward.setRedirect(false);
