@@ -167,7 +167,7 @@ $(document).on("click",".nowreleased_card_wrap",function(){
 		</div>
 		<ul>
 	
-			<c:forEach items="${nowMovie}" var="nList">
+			<c:forEach items="${nowMovie}" var="nList" varStatus="status">
 				<fmt:parseDate var="open" value="${nList.openDt}" pattern="yyyy-MM-dd HH:mm:ss" />
 				<fmt:formatDate var="openDt" value="${open}" pattern="yyyy.MM.dd"/>
 				<fmt:parseDate var="first" value="${nList.firstOpen}" pattern="yyyy-MM-dd HH:mm:ss" />

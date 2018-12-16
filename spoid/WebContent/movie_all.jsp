@@ -188,7 +188,7 @@ $(document).on("click",".movieall_card_wrap",function(){
 	
 		<ul>
 	
-			<c:forEach items="${movieAll}" var="mList">
+			<c:forEach items="${movieAll}" var="mList" varStatus="status">
 				<fmt:parseDate var="open" value="${mList.openDt}" pattern="yyyy-MM-dd HH:mm:ss" />
 				<fmt:formatDate var="openDt" value="${open}" pattern="yyyy.MM.dd"/>
 				<fmt:parseDate var="first" value="${mList.firstOpen}" pattern="yyyy-MM-dd HH:mm:ss" />
