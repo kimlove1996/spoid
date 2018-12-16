@@ -189,13 +189,6 @@ public class BoxOfficeDTO {
 		this.audiAcc = audiAcc;
 	}
 
-	public String getTargetDt() {
-		return targetDt;
-	}
-
-	public void setTargetDt(String targetDt) {
-		this.targetDt = targetDt;
-	}
 
 	public String getYearWeekTime() {
 		return yearWeekTime;

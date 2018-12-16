@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.spoid.dto.BoxOfficeDTO;
 import com.spoid.dto.CriteriaMVDTO;
 import com.spoid.dto.DetailDTO;
 import com.spoid.dto.PeopleDTO;
@@ -157,5 +158,20 @@ public class MovieDAO {
 		}
 		
 		return result;
+	}
+	public List<BoxOfficeDTO> dailyBoxOffice() {
+		// TODO Auto-generated method stub
+		List<BoxOfficeDTO> list = new ArrayList<BoxOfficeDTO>();
+		try {
+			System.out.println("박스 오피스 조회!!");
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectList("dailyList");
+			
+			System.out.println("총 "+list.size()+"건의 박스오피스 영화 조회 성공!!!");
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
 	}
 }

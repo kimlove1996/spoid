@@ -288,4 +288,10 @@
 		select * from bestreview 
 		WHERE moviecd = #{movieCd}
 	</select>
+	
+	<select id="dailyList" resultType="com.spoid.dto.BoxOfficeDTO">
+		<![CDATA[
+			select * from dailybox where rownum <= 10 order by targetdt desc
+		]]>		
+	</select>
  </mapper>

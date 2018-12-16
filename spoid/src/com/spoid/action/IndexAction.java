@@ -1,6 +1,8 @@
 package com.spoid.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -31,6 +33,12 @@ public class IndexAction implements Action
 		  
 		  int nSvg[] = new int[list.size()];
 		  int dSvg[] = new int[list.size()];
+		  
+		  Calendar calc = Calendar.getInstance();
+		  
+		  List<BoxOfficeDTO> blist = mDao.dailyBoxOffice();
+		  
+		
 		  
 		  for (int i = 0; i < list.size(); i++) {
 			  
@@ -88,7 +96,7 @@ public class IndexAction implements Action
 		  
 		  System.out.println("====>index 페이지  조회 결과 : "+list.size());
 		  System.out.println(nAvg[1]+", "+dAvg[1]);
-
+		  System.out.println("박스오피스 조회결과==>"+blist.size());
 		  ActionForward forward = new ActionForward();
 		  request.setAttribute("indexList", list);
 		  request.setAttribute("nAvg", nAvg);
