@@ -193,6 +193,7 @@ body#header_body{
      border-radius: 100%;
      margin: 0 50px;
      background-color: white;
+     display: block;
 }
 #D_spoid {
      display: inline-block;
@@ -248,7 +249,7 @@ body#header_body{
 #actor{
     padding: 72px;
     margin: 0 auto;
-    width: 1480px;
+    width: 1576px;
     border: 2px solid #b7b8b8;
     border-radius: 30px;
     background-color: #f8f8f8;
@@ -268,7 +269,7 @@ body#header_body{
 
 #actor_info_all{
     display: inline-block;
-    width: 333px;
+    width: 355px;
     padding: 16px;
 }
 
@@ -326,6 +327,11 @@ body#header_body{
     font-weight: bold;
     outline: none;
     cursor: pointer;
+}
+
+
+.reviewscore{
+	display: block;
 }
 </style>
 <script type="text/javascript">
@@ -509,37 +515,33 @@ function fnMove4(){
 <h2>댓글 분석</h2><hr style="border: 1px solid #dedef1;">
 <div id="mvbot_border">
      <div id="spoid_score">
-     <div id="N_spoid" class="spoid"></div>
-     <div id="D_spoid" class="spoid"></div>
+     
+     	 <div id="naver_review_box">
+		     <span id="naver_reviewscore" class="reviewscore">NAVER</span>
+		     <div id="N_spoid" class="spoid"></div>
+		     <span id="n_score">${nAvg}</span>
+	     </div>
+	     
+	     <div id="review_review_box">
+		     <span id="daum_reviewscore" class="reviewscore">DAUM</span>
+		     <div id="D_spoid" class="spoid"></div>
+		     <span id="d_score">${dAvg}</span>
+	     </div>
+     
      </div>
-     <table id="reply_table">
-          <tbody>
-              <tr>
-                   <th>네이버</th>
-                   <th>다음</th>
-              </tr>
-              <tr>
-                   <td>${nAvg}</td>
-                   <td>${dAvg}</td>
-              </tr>
-              <tr>
-                   <td>작성자</td>
-                   <td>점수</td>
-                   <td>내용</td>
-                   <td>좋아요수</td>
-                   <td>잘성일자</td>
-              </tr>
-              <tr>
+     <div id="reply_table">
+                   
+                   
               <c:forEach items="${bestlist}" var="bestlist">
-                   <td>${bestlist.writer}</td>
-                   <td>${bestlist.score}</td>
-                   <td>${bestlist.content}</td>
-                   <td>${bestlist.goodcnt}</td>
-                   <td>${bestlist.regdate}</td>
+              <div>
+                   <p>${bestlist.writer}</p>
+                   <p>${bestlist.score}</p>
+                   <p>${bestlist.content}</p>
+                   <p>${bestlist.goodcnt}</p>
+                   <p>${bestlist.regdate}</p>
+              </div>
               </c:forEach>
-              </tr>
-          </tbody>
-     </table>
+     </div>
 </div>
 </article>
 </div>
