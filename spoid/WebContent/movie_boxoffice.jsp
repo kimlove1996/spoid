@@ -99,6 +99,21 @@
 	
 	.boxoffice_card{cursor: pointer;}
 	
+	/* 평점 */
+	.spoid {
+	 width: 40px;
+     border: 2px solid #dedef1;
+     border-radius: 100%;
+     margin: 0 5px;
+	}
+	.n_spoid {
+	 display: inline-block;
+     border-color: green;
+	}
+	.d_spoid {
+	 display: inline-block;
+     border-color: #568ef7;
+	}
 </style>
 
 <script type="text/javascript">
@@ -124,7 +139,7 @@ $(document).on("click",".boxoffice_card_wrap",function(){
 			
 		<ul>
 	
-			<c:forEach items="${bList}" var="bList">
+			<c:forEach items="${bList}" var="bList" varStatus="status">
 				<fmt:parseDate var="open" value="${bList.openDt}" pattern="yyyy-MM-dd HH:mm:ss" />
 				<fmt:formatDate var="openDt" value="${open}" pattern="yyyy.MM.dd"/>
 				<fmt:parseDate var="first" value="${bList.firstOpen}" pattern="yyyy-MM-dd HH:mm:ss" />
@@ -141,6 +156,16 @@ $(document).on("click",".boxoffice_card_wrap",function(){
 									</c:if>								
 								</p>
 								<p>${bList.grade } | 관람가</p>
+								<c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
+								<c:if test="${status4.count == status.count}">
+								<img class="spoid n_spoid" src="img/slime/score${nSvg}.svg">
+								</c:if>
+								</c:forEach>
+								<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
+								<c:if test="${status5.count == status.count}">
+								<img src="img/slime/score${dSvg}.svg" class="spoid d_spoid">
+								</c:if>
+								</c:forEach>
 							</div>
 				
 						</div>			
