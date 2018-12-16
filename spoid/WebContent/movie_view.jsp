@@ -63,7 +63,7 @@ body#header_body{
     margin: 0;
 }
 #movie_table > ul{
-     width: 545px;
+     width: 600px;
     margin: 0 auto;
     height: 60px;
 }
@@ -253,6 +253,11 @@ body#header_body{
     margin-top: 45px;
 }
 
+#actor_wrap{
+    overflow: hidden;
+    height: 365px;
+}
+
 #actor>p{
     padding: 2px;
     margin: 9px;
@@ -291,12 +296,35 @@ body#header_body{
 
 #actor_info > p:nth-child(3), #actor_info > p:nth-child(4){
 	margin-left: 5px;
-    margin-bottom: 8px;
     font-weight: bold;
     color: #474747;
+    margin-top: 5px;
 }
 
+/* 더보기 버튼 */
+#more_button_wrap{
+	margin: 0 auto;
+	text-align: center;
+}
 
+#more_button{
+	padding: 10px 59px;
+    background-color: gray;
+    color: white;
+}
+
+#more_button:hover {
+	cursor: pointer;
+}
+
+.cl{
+	border: navajowhite;
+    background-color: #ffffff00;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
 </style>
 <script type="text/javascript">
 
@@ -347,11 +375,42 @@ $(document).ready(function(){
 		$("#mvb_wrap > h2").css("color","#4a4a4a");
 	});
 
+	
+	$("#more_button_wrap").click(function(){
+		$("#actor_wrap").css("overflow","unset");
+		$("#actor_wrap").css("height","auto");
+		$(this).css("display","none");
+		
+	})
+	
+	
+	
+
+
 });
 $(window).on("scroll", function() {
 	x = 0;
 	$("#span1").text( x= $(window).scrollTop() + " px");
 });
+
+
+function fnMove2(){
+	/* var mvmid_wrap = move3.offset().top-200; */
+	var move2 = $("#mvb_wrap").offset();
+    $('html, body').animate({scrollTop : move2.top-265}, 400);
+}
+function fnMove3(){
+	var move3 = $("#mvmid_wrap").offset();
+    $('html, body').animate({scrollTop : move3.top-265}, 400);
+}
+function fnMove4(){
+	var move4 = $("#mvbot_wrap").offset();
+    $('html, body').animate({scrollTop : move4.top-265}, 400);
+}
+
+
+
+
 </script>
 </head>
 <body id="MovieView">
@@ -362,10 +421,10 @@ $(window).on("scroll", function() {
      <hr id="movie_name_underline">
 <div id="movie_table">
      <ul>
-          <li><a id="mvtop_cl" onclick="$('html, body').stop().animate({scrollTop : '0'});">상세내용</a></li>
-          <li><a id="mvb_cl" onclick="$('html, body').stop().animate({scrollTop : '857'});">출연배우</a></li>
-          <li><a id="mvmid_cl" onclick="$('html, body').stop().animate({scrollTop : '1580'});">차트그래프</a></li>
-          <li><a id="mvbot_cl" onclick="$('html, body').stop().animate({scrollTop : '2385'});">댓글분석</a></li>
+          <li><button class="cl" id="mvtop_cl" onclick="$('html, body').animate({scrollTop : '0'});">상세내용</button></li>
+          <li><button class="cl" id="mvb_cl" onclick="fnMove2()">출연배우</button></li>
+          <li><button class="cl" id="mvmid_cl" onclick="fnMove3()">차트그래프</button></li>
+          <li><button class="cl" id="mvbot_cl" onclick="fnMove4()">댓글분석</button></li>
      </ul>
 </div>
 </div>
@@ -402,21 +461,30 @@ $(window).on("scroll", function() {
 </article>
 
 <article id="mvb_wrap">
-	<h2>출연 배우 & 스태프</h2><hr style="border: 1px solid #ccccc;">
+	<h2>출연 배우 및 감독</h2><hr style="border: 1px solid #ccccc;">
 	<div id="actor">
-		<c:forEach items="${pList}" var="pList">
-			<div id="actor_info_all">
-				<div id="actor_img">
-					<img src="${pList.profile}">
+		<div id="actor_wrap">
+			<c:forEach items="${pList}" var="pList">
+				<div id="actor_info_all">
+					<div id="actor_img">
+						<img src="${pList.profile}">
+					</div>
+					<div id="actor_info">
+					
+						<p>${pList.pname}</p>
+						<p>${pList.eng_name}</p>
+						<p>${pList.dept}<c:if test="${!empty pList.part}">(${pList.part})</c:if>
+						</p>
+						<c:if test="${!empty pList.role}">
+							<p>${pList.role}</p>
+						</c:if>
+					</div>
 				</div>
-				<div id="actor_info">
-					<p>${pList.pname}</p>
-					<p>${pList.eng_name}</p>
-					<p>${pList.dept}(${pList.part})</p>
-					<p>역할 : ${pList.role}</p>
-				</div>
-			</div>
-		</c:forEach>
+			</c:forEach>
+		</div>
+		<div id="more_button_wrap">
+			<a id="more_button">더보기</a>
+		</div>
 	</div>
 	
 </article>
