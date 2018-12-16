@@ -181,7 +181,7 @@ body#header_body{
 }
 #spoid_score {
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 3%;
 }
 .spoid {
      width: 100px;
@@ -211,6 +211,7 @@ body#header_body{
     display: block;
     font-weight: bold;
     font-size: 32px;
+    color: ff3a3a;
 }
 #mvbot_border {
      width: 1200px;
@@ -219,11 +220,17 @@ body#header_body{
     border: 2px solid #dedef1;
     border-radius: 50px;
     text-align: center;
+    padding-bottom: 64px;
 }
 #reply_table{
     text-align: left;
     margin: 27px 47px;
-    padding: 12px;
+    padding: 27px 35px;
+    border: 1px solid #c7c7c7;
+    border-radius: 18px;
+    height: 463px;
+    overflow: overlay;
+    background-color: white;
 }
 #google_trends {
      height: 366px;
@@ -356,7 +363,8 @@ body#header_body{
 }
 
 #n_reviewinfo{
-    margin: 6px 0;
+    margin: 13px 0;
+    padding: 5px 0;
     border-bottom: 1px solid #d4d4d4;
 }
 
@@ -379,7 +387,7 @@ body#header_body{
     font-weight: bold;
 }
 
-.fas{
+.fa-quote-left{
 	vertical-align: 9px;
     padding: 0 9px;
 }
@@ -388,12 +396,21 @@ body#header_body{
 	display: inline-block;
 }
 #n_content_box2{
-    width: 943px;
+    width: 894px;
     display: inline-block;
     vertical-align: -7px;
     line-height: 28px;
 }
 
+#nbreply_text{
+    margin: 75px 0 0 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.fa-heart{
+	vertical-align: 1px;
+}
 </style>
 <script type="text/javascript">
 
@@ -483,7 +500,7 @@ function fnMove4(){
 </script>
 </head>
 <body id="MovieView">
-<span id="span1" style="position : fixed">0</span>
+<!-- <span id="span1" style="position : fixed">0</span> -->
 <div id="MovieViewAll">
 <div id="Movie_bar">
      <p id="movie_name">Detail information</p>
@@ -590,15 +607,14 @@ function fnMove4(){
 	     </div>
      
      </div>
+              <div id="nbreply_text">네이버의 베스트댓글</div>
      <div id="reply_table">
-                   
-                   
               <c:forEach items="${bestlist}" var="bestlist">
               <div id="n_reviewinfo">
               	   <div id="reviewinfo_area1">
                    		<span id="n_writer">${bestlist.writer}</span>
                    		<span id="n_goodcnt">${bestlist.regdate}</span>
-                   		<span id="n_goodcnt">${bestlist.goodcnt}</span>
+                   		<i class="fas fa-heart"></i> <span id="n_goodcnt">${bestlist.goodcnt}</span>
                    </div>
                    <div id="reviewinfo_area2">
 	                   <div id="n_content_box1">
