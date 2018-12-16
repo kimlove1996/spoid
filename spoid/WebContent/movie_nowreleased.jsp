@@ -71,10 +71,10 @@
 	
 	
 	.nowreleased_card_label{
-	    height: 120px;
+	    height: 170px;
 	    width: 93%;
 	    position: relative;
-	    bottom: 133px;
+	    bottom: 183px;
 	    background: linear-gradient(to bottom,#ffffff, #ffffffeb -10%, #ffffffbd 78%);
 	    box-sizing: border-box;
 	    padding: 5px;

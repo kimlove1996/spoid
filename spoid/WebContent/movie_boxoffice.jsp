@@ -71,10 +71,10 @@
 	
 	
 	.boxoffice_card_label{
-	    height: 120px;
+		height: 170px;
 	    width: 93%;
 	    position: relative;
-	    bottom: 133px;
+	    bottom: 183px;
 	    background: linear-gradient(to bottom,#ffffff, #ffffffeb -10%, #ffffffbd 78%);
 	    box-sizing: border-box;
 	    padding: 5px;
@@ -92,6 +92,11 @@
 	    color: #353535;
 	    font-weight: bold;
 	}
+	
+	.boxoffice_card_label > p:nth-child(4){
+		
+	}
+	
 	.boxoffice_card_label > strong{
 		color: #000000;
 	    font-size: 80%;
@@ -101,10 +106,12 @@
 	
 	/* 평점 */
 	.spoid {
-	 width: 40px;
-     border: 2px solid #dedef1;
-     border-radius: 100%;
-     margin: 0 5px;
+	    width: 35px;
+	    border: 2px solid #dedef1;
+	    border-radius: 100%;
+	    margin: 0 5px;
+	    background-color: #ffffffbf;
+	    margin-top: 7px;
 	}
 	.n_spoid {
 	 display: inline-block;

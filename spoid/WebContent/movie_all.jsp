@@ -59,7 +59,7 @@
 	
 	
 	
-	.movieall_card_wrap{display:inline-block;}
+	.movieall_card_wrap{display:inline-block;cursor: pointer;}
 	.movieall_card > img{
 	    width: 256px;
 	    height: 373px;
@@ -69,10 +69,10 @@
 	
 	
 	.movieall_card_label{
-	    height: 120px;
+	    height: 170px;
 	    width: 93%;
 	    position: relative;
-	    bottom: 133px;
+	    bottom: 183px;
 	    background: linear-gradient(to bottom,#ffffff, #ffffffeb -10%, #ffffffbd 78%);
 	    box-sizing: border-box;
 	    padding: 5px;
@@ -151,6 +151,11 @@
 $(document).ready(function(){
 	$(".movieall_card_all").css("transform","rotateY(360deg)");
 	$("#movie_text_top > hr").css("width","100%");
+});
+
+$(document).on("click",".movieall_card_wrap",function(){
+	var movieCd = $(this).attr("data-mvCd");
+	location.href = "detailmovie.spoid?movieCd="+movieCd;
 });
 </script>
 </head>
