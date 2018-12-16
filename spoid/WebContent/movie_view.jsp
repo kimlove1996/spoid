@@ -176,13 +176,10 @@ body#header_body{
 }
 /* 댓글 */
 #mvbot_wrap {
-     height: 800px;
      background-color: #f7f9fa;
      margin: 0;
 }
 #spoid_score {
-    width: 414px;
-    height: 100px;
     margin: 0 auto;
     margin-top: 10%;
 }
@@ -209,18 +206,24 @@ body#header_body{
      background-size: 100px;
      border: 2px solid green;
 }
+
+.nd_score{
+    display: block;
+    font-weight: bold;
+    font-size: 32px;
+}
 #mvbot_border {
      width: 1200px;
     margin: 0 auto;
     margin-top: 70px;
     border: 2px solid #dedef1;
     border-radius: 50px;
-    height: 600px;
+    text-align: center;
 }
 #reply_table{
-     padding-top: 2%;
     text-align: left;
-    margin: 0 auto;
+    margin: 27px 47px;
+    padding: 12px;
 }
 #google_trends {
      height: 366px;
@@ -332,6 +335,47 @@ body#header_body{
 
 .reviewscore{
 	display: block;
+}
+
+#naver_review_box{
+	display: inline-block;
+}
+#daum_review_box{
+	display: inline-block;
+}
+
+#naver_reviewscore{
+	color: green;
+    font-weight: bold;
+    font-size: 22px;
+}
+#daum_reviewscore{
+    color: #568ef7;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#n_reviewinfo{
+	margin: 6px 0;
+}
+
+#reviewinfo_area1{
+	color: gray;
+}
+#n_writer{
+	font-weight: bold;
+    color: #5d5d5d;
+}
+
+#n_score{
+	font-weight: bold;
+    color: red;
+    font-size: 26px;
+}
+
+#n_score_tx{
+	font-size: 26px;
+    font-weight: bold;
 }
 </style>
 <script type="text/javascript">
@@ -519,13 +563,13 @@ function fnMove4(){
      	 <div id="naver_review_box">
 		     <span id="naver_reviewscore" class="reviewscore">NAVER</span>
 		     <div id="N_spoid" class="spoid"></div>
-		     <span id="n_score">${nAvg}</span>
+		     <span id="naver_score" class="nd_score">${nAvg}</span>
 	     </div>
 	     
-	     <div id="review_review_box">
+	     <div id="daum_review_box">
 		     <span id="daum_reviewscore" class="reviewscore">DAUM</span>
 		     <div id="D_spoid" class="spoid"></div>
-		     <span id="d_score">${dAvg}</span>
+		     <span id="daum_score" class="nd_score">${dAvg}</span>
 	     </div>
      
      </div>
@@ -533,13 +577,18 @@ function fnMove4(){
                    
                    
               <c:forEach items="${bestlist}" var="bestlist">
-              <div>
-                   <p>${bestlist.writer}</p>
-                   <p>${bestlist.score}</p>
-                   <p>${bestlist.content}</p>
-                   <p>${bestlist.goodcnt}</p>
-                   <p>${bestlist.regdate}</p>
+              <div id="n_reviewinfo">
+              	   <div id="reviewinfo_area1">
+                   		<span id="n_writer">${bestlist.writer}</span>
+                   		<span id="n_goodcnt">${bestlist.regdate}</span>
+                   		<span id="n_goodcnt">${bestlist.goodcnt}</span>
+                   </div>
+                   <div id="reviewinfo_area2">
+	                   <i class="fas fa-quote-left"></i><span id="n_score">${bestlist.score}</span><span id="n_score_tx">점!</span><i class="fas fa-quote-right"></i>
+	                   <span id="n_content">${bestlist.content}</span>
+                   </div>
               </div>
+              <hr>
               </c:forEach>
      </div>
 </div>
