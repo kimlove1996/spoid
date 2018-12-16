@@ -356,7 +356,8 @@ body#header_body{
 }
 
 #n_reviewinfo{
-	margin: 6px 0;
+    margin: 6px 0;
+    border-bottom: 1px solid #d4d4d4;
 }
 
 #reviewinfo_area1{
@@ -377,6 +378,22 @@ body#header_body{
 	font-size: 26px;
     font-weight: bold;
 }
+
+.fas{
+	vertical-align: 9px;
+    padding: 0 9px;
+}
+
+#n_content_box1{
+	display: inline-block;
+}
+#n_content_box2{
+    width: 943px;
+    display: inline-block;
+    vertical-align: -7px;
+    line-height: 28px;
+}
+
 </style>
 <script type="text/javascript">
 
@@ -584,11 +601,14 @@ function fnMove4(){
                    		<span id="n_goodcnt">${bestlist.goodcnt}</span>
                    </div>
                    <div id="reviewinfo_area2">
-	                   <i class="fas fa-quote-left"></i><span id="n_score">${bestlist.score}</span><span id="n_score_tx">점!</span><i class="fas fa-quote-right"></i>
-	                   <span id="n_content">${bestlist.content}</span>
+	                   <div id="n_content_box1">
+		                   <i class="fas fa-quote-left"></i><span id="n_score">${bestlist.score}</span><span id="n_score_tx">점!</span><i class="fas fa-quote-right"></i>
+		               </div>    
+	                   <div id="n_content_box2">
+	                   		<span id="n_content"> : ${bestlist.content}</span>
+	                   </div>
                    </div>
               </div>
-              <hr>
               </c:forEach>
      </div>
 </div>
