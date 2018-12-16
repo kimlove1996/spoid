@@ -82,10 +82,10 @@
 		min-height: 500px;
 	}
 	.topmv_content{
-		
-		width : 90%;
-		margin: 0 auto;
-		padding : 50px 50px 50px 150px;
+	    width: 1894px;
+	    margin: 0 auto;
+	    padding: 50px 50px 50px 150px;
+	    box-sizing: border-box;
 	}
 	.graph_div > div{
 		display: inline-block;
