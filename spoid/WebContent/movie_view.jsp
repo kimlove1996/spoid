@@ -196,13 +196,13 @@ body#header_body{
 }
 #D_spoid {
      display: inline-block;
-     background-image: url("img/slime/score5.svg");
+     background-image: url("img/slime/score${dSvg}.svg");
      background-repeat: no-repeat;
      background-size: 100px;
 }
 #N_spoid {
      display: inline-block;
-     background-image: url("img/slime/score3.svg");
+     background-image: url("img/slime/score${nSvg}.svg");
      background-repeat: no-repeat;
      background-size: 100px;
 }
@@ -449,8 +449,8 @@ $(window).on("scroll", function() {
                    <th>다음</th>
               </tr>
               <tr>
-                   <td>"최곤가?"</td>
-                   <td>"재밌었다"</td>
+                   <td>${nAvg}</td>
+                   <td>${dAvg}</td>
               </tr>
           </tbody>
      </table>
