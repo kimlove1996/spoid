@@ -80,17 +80,4 @@ public class ReviewDAO {
 	
 	
 	
-	public void bestreview(String movieCd) {
-		try {
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} finally {
-			DBManager.close(conn, pstmt, rs);
-		}
-	}
-	
-	
-	
 }

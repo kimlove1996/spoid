@@ -125,6 +125,24 @@
 	    border-left: none;
 	}	
 	
+	
+	/* 평점 */
+	.spoid {
+	    width: 35px;
+	    border: 2px solid #dedef1;
+	    border-radius: 100%;
+	    margin: 0 5px;
+	    background-color: #ffffffbf;
+	    margin-top: 7px;
+	}
+	.n_spoid {
+		 display: inline-block;
+	     border-color: green;
+	}
+	.d_spoid {
+		 display: inline-block;
+	     border-color: #568ef7;
+	}
 </style>
 
 <script type="text/javascript">
@@ -166,6 +184,16 @@ $(document).on("click",".nowreleased_card_wrap",function(){
 									</c:if>								
 								</p>
 								<p> ${nList.grade} | 관람가</p>
+								<c:forEach items="${nSvg}" var="nSvg" varStatus="status4">
+								<c:if test="${status4.count == status.count}">
+								<img class="spoid n_spoid" src="img/slime/score${nSvg}.svg">
+								</c:if>
+								</c:forEach>
+								<c:forEach items="${dSvg}" var="dSvg" varStatus="status5">
+								<c:if test="${status5.count == status.count}">
+								<img src="img/slime/score${dSvg}.svg" class="spoid d_spoid">
+								</c:if>
+								</c:forEach>
 							</div>
 				
 						</div>			

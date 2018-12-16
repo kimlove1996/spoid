@@ -114,12 +114,12 @@
 	    margin-top: 7px;
 	}
 	.n_spoid {
-	 display: inline-block;
-     border-color: green;
+		 display: inline-block;
+	     border-color: green;
 	}
 	.d_spoid {
-	 display: inline-block;
-     border-color: #568ef7;
+		 display: inline-block;
+	     border-color: #568ef7;
 	}
 </style>
 
