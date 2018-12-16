@@ -181,7 +181,7 @@ body#header_body{
      margin: 0;
 }
 #spoid_score {
-     width: 410px;
+    width: 414px;
     height: 100px;
     margin: 0 auto;
     margin-top: 10%;
@@ -199,12 +199,14 @@ body#header_body{
      background-image: url("img/slime/score${dSvg}.svg");
      background-repeat: no-repeat;
      background-size: 100px;
+     border: 2px solid #568ef7;
 }
 #N_spoid {
      display: inline-block;
      background-image: url("img/slime/score${nSvg}.svg");
      background-repeat: no-repeat;
      background-size: 100px;
+     border: 2px solid green;
 }
 #mvbot_border {
      width: 1200px;
