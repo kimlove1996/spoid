@@ -58,7 +58,7 @@ public class IndexAction implements Action
 		  }
 		  
 
-
+		  System.out.println("개별박스오피스 : "+blist2.size());
 		  
 		  
 		  for (int i = 0; i < list.size(); i++) {
@@ -119,6 +119,7 @@ public class IndexAction implements Action
 		  System.out.println(nAvg[1]+", "+dAvg[1]);
 		  System.out.println("박스오피스 조회결과==>"+blist.size());
 		  ActionForward forward = new ActionForward();
+		  request.setAttribute("blist",blist);
 		  request.setAttribute("indexList", list);
 		  request.setAttribute("nAvg", nAvg);
 		  request.setAttribute("nSvg", nSvg);

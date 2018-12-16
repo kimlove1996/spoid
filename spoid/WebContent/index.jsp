@@ -420,19 +420,61 @@ $(document).on("click",".col1",function(){
 		
 	</div>
 	<script>
+	
 	var lineChartData = {
-		    labels: ["Data 1", "Data 2", "Data 3", "Data 4", "Data 5", "Data 6", "Data 7"],
+		    labels: ["날짜1", "날짜2", "날짜3", "날짜4", "날짜5", "날짜6", "날짜7"],
 		    datasets: [{
 		        fillColor: "rgba(220,220,220,0)",
 		        strokeColor: "rgba(220,180,0,1)",
 		        pointColor: "rgba(220,180,0,1)",
-		        data: [20, 30, 80, 20, 40, 10, 60]
+		        data: [2, 3, 8, 2, 4, 1, 6]
 		    }, {
 		        fillColor: "rgba(151,187,205,0)",
 		        strokeColor: "rgba(151,187,205,1)",
 		        pointColor: "rgba(151,187,205,1)",
-		        data: [60, 10, 40, 30, 80, 30, 20]
-		    }]
+		        data: [6, 1, 4, 3, 8, 3, 2]
+		    },{
+		        fillColor: "rgba(151,187,205,0)",
+		        strokeColor: "rgba(151,187,205,1)",
+		        pointColor: "rgba(151,187,205,1)",
+		        data: [5, 2, 3, 4, 7, 2, 3]
+		    },{
+		        fillColor: "rgba(151,187,205,0)",
+		        strokeColor: "rgba(151,187,205,1)",
+		        pointColor: "rgba(151,187,205,1)",
+		        data: [5, 2, 3, 4, 7, 2, 3]
+		    },{
+		        fillColor: "rgba(151,187,205,0)",
+		        strokeColor: "rgba(151,187,205,1)",
+		        pointColor: "rgba(151,187,205,1)",
+		        data: [5, 2, 3, 4, 7, 2, 3]
+		    },{
+		        fillColor: "rgba(151,187,205,0)",
+		        strokeColor: "rgba(151,187,205,1)",
+		        pointColor: "rgba(151,187,205,1)",
+		        data: [5, 2, 3, 4, 7, 2, 3]
+		    },{
+		        fillColor: "rgba(151,187,205,0)",
+		        strokeColor: "rgba(151,187,205,1)",
+		        pointColor: "rgba(151,187,205,1)",
+		        data: [5, 2, 3, 4, 7, 2, 3]
+		    },{
+		        fillColor: "rgba(151,187,205,0)",
+		        strokeColor: "rgba(151,187,205,1)",
+		        pointColor: "rgba(151,187,205,1)",
+		        data: [5, 2, 3, 4, 7, 2, 3]
+		    },{
+		        fillColor: "rgba(151,187,205,0)",
+		        strokeColor: "rgba(151,187,205,1)",
+		        pointColor: "rgba(151,187,205,1)",
+		        data: [5, 2, 3, 4, 7, 2, 3]
+		    },{
+		        fillColor: "rgba(151,187,205,0)",
+		        strokeColor: "rgba(151,187,205,1)",
+		        pointColor: "rgba(151,187,205,1)",
+		        data: [5, 2, 3, 4, 7, 2, 3]
+		    }
+		    ]
 
 		}
 

@@ -13,6 +13,10 @@ html {
 body#header_body{
      background-color: #f7f9fa;
 }
+#myChart{
+	width : 800px;
+	height: 300px;
+}
 #header_wrap{
      background-color: white;
 }
@@ -170,7 +174,6 @@ body#header_body{
 }
 /* 차트 */
 #mvmid_wrap {
-     height: 800px;
      background-image: url("img/background_dott.PNG");
      background-color: #dfe5fb;
 }
@@ -587,6 +590,7 @@ function fnMove4(){
               <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC03/embed_loader.js"></script>
               <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"${dDto.kor_tit}","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=KR&q=%2Fg%2F11cp7f65yr&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script>
      	  </div>
+     	  <canvas id="myChart"></canvas>
      </div>
 </article>
 <article id="mvbot_wrap">
@@ -630,6 +634,62 @@ function fnMove4(){
 </div>
 </article>
 </div>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    datasets: [{
+      label: '# of Tomatoes',
+      data: [12, 19, 3, 5, 2, 3, 20, 3, 5, 6, 2, 1],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: false,
+    scales: {
+      xAxes: [{
+        ticks: {
+          maxRotation: 90,
+          minRotation: 80
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+</script>
 </body>
 </html>
 <%@ include file="include/footer.jsp" %>

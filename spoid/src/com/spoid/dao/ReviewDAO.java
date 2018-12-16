@@ -60,7 +60,9 @@ public class ReviewDAO {
 			int i= 0;
 			AggregateIterable<Document> iterable = collections.aggregate(Arrays.asList(
 					new Document("$match", new Document("movieCd",movieCd3)),
-					new Document("$group", new Document("_id", new Document("movieCd", "$movieCd")).append("total", new Document("$sum",1)).append("avgScore", new Document("$avg", "$score")))));
+					new Document("$group", new Document("_id", new Document("movieCd", "$movieCd"))
+							.append("total", new Document("$sum",1))
+							.append("avgScore", new Document("$avg", "$score")))));
 			
 			for(Document doc : iterable) {
 				System.out.println(doc);
@@ -103,5 +105,5 @@ public class ReviewDAO {
 		}
 		return (ArrayList<BestDTO>) list;
 	}	
-	
+
 }

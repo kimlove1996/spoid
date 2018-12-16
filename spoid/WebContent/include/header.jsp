@@ -316,7 +316,7 @@
 
 
 </head>
-<body id="header_body" onload="load2()">
+<body id="header_body">
 	<header id="header_wrap">
 		<div class="header_line">
 			<div class="header_inner">
