@@ -614,7 +614,7 @@ function fnMove4(){
 	     </div>
      
      </div>
-              <div id="nbreply_text">베스트댓글</div>
+              <div id="nbreply_text">네이버 베스트댓글</div>
      <div id="reply_table">
               <c:forEach items="${bestlist}" var="bestlist">
               <div id="n_reviewinfo">
