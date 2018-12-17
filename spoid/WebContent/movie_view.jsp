@@ -644,13 +644,13 @@ var ctx2 = document.getElementById('myChart2').getContext('2d');
 var ctx2 = document.getElementById("myChart2");
 var arr = [[],[]];
 var arr2 = [[],[]];
-<c:forEach items = "${nlist}" var="item">	
+<c:forEach items="${nlist}" var="item">	
 	arr[0].push("${item.score}");
 	arr[1].push("${item.total}");
 </c:forEach>
-<c:forEach items = "${blist}" var="item2">	
-arr[0].push("${item2.score}");
-arr[1].push("${item2.total}");
+<c:forEach items="${dlist}" var="item2">	
+	arr2[0].push("${item2.score}");
+	arr2[1].push("${item2.total}");
 </c:forEach>
 var myChart = new Chart(ctx, {
   type: 'bar',

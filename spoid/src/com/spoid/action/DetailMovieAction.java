@@ -39,6 +39,7 @@ public class DetailMovieAction implements Action{
 		  
 		ArrayList<ReviewCountDTO> list = rDao.scoreCount(movieCd, "naverreview"); 
 		ArrayList<ReviewCountDTO> dlist = rDao.scoreCount(movieCd, "daumreview"); 
+
 		
 		nAvg = rDao.scoreAvg("naver",movieCd);
 		dAvg = rDao.scoreAvg("daum",movieCd);
