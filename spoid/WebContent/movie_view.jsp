@@ -592,8 +592,8 @@ function fnMove4(){
               <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC03/embed_loader.js"></script>
               <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"${dDto.kor_tit}","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=KR&q=%2Fg%2F11cp7f65yr&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script>
      	  </div>
-     	  <canvas id="myChart" style="display:inline-block"></canvas>
-     	  <canvas id="myChart2" style="display:inline-block"></canvas>
+     	  <canvas id="myChart" style="display:inline-block;margin-left: 25px;"></canvas>
+     	  <canvas id="myChart2" style="display:inline-block;margin-left: 50px"></canvas>
      </div>
 </article>
 <article id="mvbot_wrap">
