@@ -50,6 +50,7 @@ import com.spoid.action.PersonalInfoAction;
 import com.spoid.action.PwCheckAction;
 import com.spoid.action.QnaPageAction;
 import com.spoid.action.QnaPlayAction;
+import com.spoid.action.SearchMovieAction;
 import com.spoid.action.TeamInfoAction;
 import com.spoid.action.UseInfoAction;
 
@@ -197,8 +198,12 @@ public class SpoidController extends HttpServlet
 	  }else if(command.equals("/detailmovie.spoid")) {
 		  action = new DetailMovieAction();
 		  forward = action.excute(request,response);
+	  }else if(command.equals("/searchmovie.spoid")) {
+		  action = new SearchMovieAction();
+		  forward = action.excute(request, response);
+		  
 	  }
-		} catch (ParseException e) {
+	} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -276,11 +276,9 @@
 		]]>		
 	</select>
 
-	<select id="searchMV" parameterType="String" resultType="com.spoid.dto.SearchDTO">
-		select  d.*,m.*  from detailmovie d , moviepeople m where d.kor_tit like '%'||#{keyword}||'%'
-																 or d.eng_tit like '%'||#{keyword}||'%'
-																 or m.pname like '%'||#{keyword}||'%'
-																 or m.eng_name like '%'||#{keyword}||'%'	
+	<select id="searchMV" parameterType="String" resultType="com.spoid.dto.DetailDTO">
+		select * from detailmovie where kor_tit like '%'||#{keyword}||'%'
+										or eng_tit like '%'||#{keyword}||'%'
 	</select>
 	
 	

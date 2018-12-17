@@ -529,7 +529,7 @@ function fnMove4(){
               <tr>
                    <td><img src="${dDto.poster}" id="poster"></td>
                    <th>
-                   					<fmt:parseDate var="open" value="${dDto.openDt}" pattern="yyyy-MM-dd HH:mm:ss" />
+                   	<fmt:parseDate var="open" value="${dDto.openDt}" pattern="yyyy-MM-dd HH:mm:ss" />
 					<fmt:formatDate var="openQuery" value="${open}" pattern="yyyy-MM-dd"/>
 					<fmt:formatDate var="openDt" value="${open}" pattern="yyyy.MM.dd"/>
 					<fmt:parseDate var="first" value="${dDto.firstOpen}" pattern="yyyy-MM-dd HH:mm:ss" />

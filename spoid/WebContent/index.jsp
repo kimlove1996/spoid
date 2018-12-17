@@ -222,8 +222,8 @@ $(document).ready(function(){
 	$(".score_view > table").css("transform","rotatey(0deg)")
 });
 
-$(document).on("click",".col1",function(){
-	location.href= "detailmovie.spoid?movieCd="+($(this).attr("data-num"));
+$(document).on("click",".col1,.col2",function(){
+	location.href="detailmovie.spoid?movieCd="+($(this).attr("data-num"));
 });
 
 </script>

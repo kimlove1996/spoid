@@ -259,6 +259,10 @@
 			$(".search-button").css("border-radius","0px 4px 4px 0px");
 			$(".search-box").addClass("s_active");
 			$(".search-box").focus();
+			if($(".search-box").val() != ""){
+				location.href = "searchmovie.spoid?keyword="+($(".search-box").val());
+			}
+			
 		});
 		$(window).on('scroll', function() {
 			if($(window).scrollTop()){
@@ -269,12 +273,6 @@
 			}	
 		});
 		
-		$('.icon').click(function(){
-			$('.search').toggleClass('s_active');
-			
-		});
-		
-
 	});
 	$(document).on("click",".menu_ham",function(){
 		var menu_state = $.trim($(this).text()); // 메뉴 햄버거 버튼의 이름을 가지고 온다

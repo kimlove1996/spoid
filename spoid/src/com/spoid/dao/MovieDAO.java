@@ -189,4 +189,18 @@ public class MovieDAO {
 		}
 		return list;
 	}
+	public List<DetailDTO> searchMovie(String keyword){
+		List<DetailDTO> list = new ArrayList<DetailDTO>();
+		try {
+		
+			sqlSession = sqlSessionFactory.openSession();
+			list = sqlSession.selectList("searchMV",keyword);
+			
+			System.out.println("총 "+list.size()+"건의 박스오피스 영화 조회 성공!!!");
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;		
+	}
 }
