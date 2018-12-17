@@ -216,6 +216,10 @@
 	.link_detail{color:#30a1c0;}
 	.col1:hover .overlay{opacity: 1;}
 	.col2:hover .overlay{opacity: 1;}
+	#canvas{
+		    padding-top: 17%;
+	
+	}
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -422,7 +426,7 @@ $(document).on("click",".col1,.col2",function(){
 	<script>
 	
 	var lineChartData = {
-		    labels: ["날짜1", "날짜2", "날짜3", "날짜4", "날짜5", "날짜6", "날짜7"],
+		    labels: ["Data 1", "Data 2", "Data 3", "Data 4", "Data 5", "Data 6", "Data 7"],
 		    datasets: [{
 		        fillColor: "rgba(220,220,220,0)",
 		        strokeColor: "rgba(220,180,0,1)",
@@ -432,49 +436,8 @@ $(document).on("click",".col1,.col2",function(){
 		        fillColor: "rgba(151,187,205,0)",
 		        strokeColor: "rgba(151,187,205,1)",
 		        pointColor: "rgba(151,187,205,1)",
-		        data: [6, 1, 4, 3, 8, 3, 2]
-		    },{
-		        fillColor: "rgba(151,187,205,0)",
-		        strokeColor: "rgba(151,187,205,1)",
-		        pointColor: "rgba(151,187,205,1)",
-		        data: [5, 2, 3, 4, 7, 2, 3]
-		    },{
-		        fillColor: "rgba(151,187,205,0)",
-		        strokeColor: "rgba(151,187,205,1)",
-		        pointColor: "rgba(151,187,205,1)",
-		        data: [5, 2, 3, 4, 7, 2, 3]
-		    },{
-		        fillColor: "rgba(151,187,205,0)",
-		        strokeColor: "rgba(151,187,205,1)",
-		        pointColor: "rgba(151,187,205,1)",
-		        data: [5, 2, 3, 4, 7, 2, 3]
-		    },{
-		        fillColor: "rgba(151,187,205,0)",
-		        strokeColor: "rgba(151,187,205,1)",
-		        pointColor: "rgba(151,187,205,1)",
-		        data: [5, 2, 3, 4, 7, 2, 3]
-		    },{
-		        fillColor: "rgba(151,187,205,0)",
-		        strokeColor: "rgba(151,187,205,1)",
-		        pointColor: "rgba(151,187,205,1)",
-		        data: [5, 2, 3, 4, 7, 2, 3]
-		    },{
-		        fillColor: "rgba(151,187,205,0)",
-		        strokeColor: "rgba(151,187,205,1)",
-		        pointColor: "rgba(151,187,205,1)",
-		        data: [5, 2, 3, 4, 7, 2, 3]
-		    },{
-		        fillColor: "rgba(151,187,205,0)",
-		        strokeColor: "rgba(151,187,205,1)",
-		        pointColor: "rgba(151,187,205,1)",
-		        data: [5, 2, 3, 4, 7, 2, 3]
-		    },{
-		        fillColor: "rgba(151,187,205,0)",
-		        strokeColor: "rgba(151,187,205,1)",
-		        pointColor: "rgba(151,187,205,1)",
-		        data: [5, 2, 3, 4, 7, 2, 3]
-		    }
-		    ]
+		        data: [6, 1, 4, 3, 10, 3, 2]
+		    }]
 
 		}
 
@@ -492,7 +455,6 @@ $(document).on("click",".col1,.col2",function(){
 		var LineChartDemo = new Chart(ctx, {
 			type:"line",
 			data:lineChartData
-
 		});
 	</script>	
 </body>
