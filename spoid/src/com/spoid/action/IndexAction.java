@@ -36,7 +36,7 @@ public class IndexAction implements Action
 		  int nSvg[] = new int[list.size()];
 		  int dSvg[] = new int[list.size()];
 		  
-
+/*
 		  List<BoxOfficeDTO> blist = mDao.dailyBoxOffice();
 		  String latest = blist.get(0).gettargetDt();
 		  System.out.println("가장 최근 날짜");
@@ -56,9 +56,9 @@ public class IndexAction implements Action
 				 loop++;
 			  }			  
 		  }
-		  
+		  */
 
-		  System.out.println("개별박스오피스 : "+blist2.size());
+/*		  System.out.println("개별박스오피스 : "+blist2.size());*/
 		  
 		  
 		  for (int i = 0; i < list.size(); i++) {
@@ -117,9 +117,9 @@ public class IndexAction implements Action
 		  
 		  System.out.println("====>index 페이지  조회 결과 : "+list.size());
 		  System.out.println(nAvg[1]+", "+dAvg[1]);
-		  System.out.println("박스오피스 조회결과==>"+blist.size());
+		  //System.out.println("박스오피스 조회결과==>"+blist.size());
 		  ActionForward forward = new ActionForward();
-		  request.setAttribute("blist",blist);
+	/*	  request.setAttribute("blist",blist);*/
 		  request.setAttribute("indexList", list);
 		  request.setAttribute("nAvg", nAvg);
 		  request.setAttribute("nSvg", nSvg);
