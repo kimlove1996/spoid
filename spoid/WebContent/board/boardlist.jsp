@@ -318,7 +318,7 @@
 			</div>
 			<div class="clr_both"></div>
 		</div>
-		<c:if test="${not empty flag}">
+		<c:if test="${not empty flag && not empty keyword}">
 				<div class="search_result">
 					${keyword}에 대한 검색 결과가 총 ${pageMaker.totalCount}개 나왔습니다.	
 				</div>
