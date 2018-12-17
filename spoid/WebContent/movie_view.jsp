@@ -13,9 +13,11 @@ html {
 body#header_body{
      background-color: #f7f9fa;
 }
-#myChart{
-	width : 800px;
+canvas{
+	width : 600px;
 	height: 300px;
+	display: inline-block;
+	background-color: white;
 }
 #header_wrap{
      background-color: white;
@@ -590,7 +592,8 @@ function fnMove4(){
               <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1671_RC03/embed_loader.js"></script>
               <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"${dDto.kor_tit}","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"geo=KR&q=%2Fg%2F11cp7f65yr&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"}); </script>
      	  </div>
-     	  <canvas id="myChart"></canvas>
+     	  <canvas id="myChart" style="display:inline-block"></canvas>
+     	  <canvas id="myChart2" style="display:inline-block"></canvas>
      </div>
 </article>
 <article id="mvbot_wrap">
@@ -637,13 +640,25 @@ function fnMove4(){
 <script type="text/javascript">
 var ctx = document.getElementById('myChart').getContext('2d');
 var ctx = document.getElementById("myChart");
+var ctx2 = document.getElementById('myChart2').getContext('2d');
+var ctx2 = document.getElementById("myChart2");
+var arr = [[],[]];
+var arr2 = [[],[]];
+<c:forEach items = "${nlist}" var="item">	
+	arr[0].push("${item.score}");
+	arr[1].push("${item.total}");
+</c:forEach>
+<c:forEach items = "${blist}" var="item2">	
+arr[0].push("${item2.score}");
+arr[1].push("${item2.total}");
+</c:forEach>
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    labels:["0","1","2","3","4","5","6","7","8","9","10"],
     datasets: [{
-      label: '# of Tomatoes',
-      data: [12, 19, 3, 5, 2, 3, 20, 3, 5, 6, 2, 1],
+      label: '네이버',
+      data:arr[1],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -672,7 +687,7 @@ var myChart = new Chart(ctx, {
     }]
   },
   options: {
-    responsive: false,
+    responsive: false,                        
     scales: {
       xAxes: [{
         ticks: {
@@ -688,6 +703,57 @@ var myChart = new Chart(ctx, {
     }
   }
 });
+var myChart2 = new Chart(ctx2, {
+	  type: 'bar',
+	  data: {
+	    labels:["0","1","2","3","4","5","6","7","8","9","10"],
+	    datasets: [{
+	      label: '다음',
+	      data:arr2[1],
+	      backgroundColor: [
+	        'rgba(255, 99, 132, 0.2)',
+	        'rgba(54, 162, 235, 0.2)',
+	        'rgba(255, 206, 86, 0.2)',
+	        'rgba(75, 192, 192, 0.2)',
+	        'rgba(153, 102, 255, 0.2)',
+	        'rgba(255, 159, 64, 0.2)',
+	        'rgba(255, 99, 132, 0.2)',
+	        'rgba(54, 162, 235, 0.2)',
+	        'rgba(255, 206, 86, 0.2)',
+	        'rgba(75, 192, 192, 0.2)'
+	      ],
+	      borderColor: [
+	        'rgba(255,99,132,1)',
+	        'rgba(54, 162, 235, 1)',
+	        'rgba(255, 206, 86, 1)',
+	        'rgba(75, 192, 192, 1)',
+	        'rgba(153, 102, 255, 1)',
+	        'rgba(255, 159, 64, 1)',
+	        'rgba(255,99,132,1)',
+	        'rgba(54, 162, 235, 1)',
+	        'rgba(255, 206, 86, 1)',
+	        'rgba(75, 192, 192, 1)'
+	      ],
+	      borderWidth: 1
+	    }]
+	  },
+	  options: {
+	    responsive: false,
+	    scales: {
+	      xAxes: [{
+	        ticks: {
+	          maxRotation: 90,
+	          minRotation: 80
+	        }
+	      }],
+	      yAxes: [{
+	        ticks: {
+	          beginAtZero: true
+	        }
+	      }]
+	    }
+	  }
+	});
 
 </script>
 </body>

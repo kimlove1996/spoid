@@ -14,8 +14,11 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Aggregates;
+import com.mongodb.client.model.Sorts;
 import com.spoid.common.DBManager;
 import com.spoid.dto.BestDTO;
+import com.spoid.dto.ReviewCountDTO;
 import com.spoid.mybatis.SqlMapConfig;
 
 public class ReviewDAO {
@@ -105,5 +108,57 @@ public class ReviewDAO {
 		}
 		return (ArrayList<BestDTO>) list;
 	}	
+	//평점 분포 
+	public ArrayList<ReviewCountDTO> scoreCount(String moviecode,String cate) {
+		int movieCd = Integer.parseInt(moviecode);
+		
+		MongoClient mongoClient = new MongoClient("localhost",27017);
+		System.out.println("MongoClient Connected");
+		
+		ArrayList<ReviewCountDTO> list = new ArrayList<>();
+		
+		MongoDatabase db = mongoClient.getDatabase("movie");
+		System.out.println("Get 'movie' MongoDatabase");
+		String collection = "naverreview";
+		if(cate.equals("daum")) {
+			collection = "daumreview";
+		}
+		MongoCollection<Document> collections = db.getCollection(collection);
+		System.out.println("데이터베이스명: "+db.getName());
+		
+		FindIterable<Document> iterate = collections.find();
+		MongoCursor<Document> cursor = iterate.iterator();
 
+		
+		System.out.println("==================="+cate+"======================="+movieCd);
+		// 평점평균 출력
+		while(cursor.hasNext()) {
+			Document document = cursor.next();
+			int i= 0;
+
+			AggregateIterable<Document> iterable = collections.aggregate(Arrays.asList(
+					new Document("$match", new Document("movieCd",movieCd)),
+					new Document("$group", new Document("_id","$score")
+								.append("total", new Document("$sum",1))),
+					Aggregates.sort(Sorts.ascending("_id"))
+					));
+			
+			for(Document doc : iterable) {
+				
+				System.out.println(doc);
+				
+				int score = doc.getInteger("_id");
+				int total = doc.getInteger("total");
+				System.out.println("점수 : "+score + "개수 "+total);
+				
+				ReviewCountDTO rdto = new ReviewCountDTO(score, total);
+				
+				list.add(rdto);
+			
+			}
+			break;
+		}
+		return list;
+					
+	}
 }

@@ -1,6 +1,7 @@
 package com.spoid.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import com.spoid.dao.ReviewDAO;
 import com.spoid.dto.BestDTO;
 import com.spoid.dto.DetailDTO;
 import com.spoid.dto.PeopleDTO;
+import com.spoid.dto.ReviewCountDTO;
 
 public class DetailMovieAction implements Action{
 
@@ -35,10 +37,14 @@ public class DetailMovieAction implements Action{
 		int nSvg=0;
 		int dSvg=0;
 		  
-			  
+		ArrayList<ReviewCountDTO> list = rDao.scoreCount(movieCd, "naverreview"); 
+		ArrayList<ReviewCountDTO> dlist = rDao.scoreCount(movieCd, "daumreview"); 
+		
 		nAvg = rDao.scoreAvg("naver",movieCd);
 		dAvg = rDao.scoreAvg("daum",movieCd);
-			   
+		
+		
+		System.out.println("네이버 "+list.size());	   
 		if(nAvg<=0) {
 		   nSvg=0;
 		}else if(nAvg>0 && nAvg<2) {
@@ -91,6 +97,9 @@ public class DetailMovieAction implements Action{
 		
 		
 		System.out.println(dDto.getKor_tit() + "의 출연자 "+plist.size()+"명 조회 ");
+		
+		request.setAttribute("nlist", list);
+		request.setAttribute("dlist", dlist);
 		
 		request.setAttribute("nAvg", nAvg);
 		request.setAttribute("nSvg", nSvg);
